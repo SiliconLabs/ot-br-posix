@@ -70,7 +70,7 @@ install_openthread_binraries()
     cd third_party/openthread/repo
     mkdir -p build && cd build
 
-    cmake .. -GNinja -DOT_PLATFORM=simulation -DOT_COMMISSIONER=ON -DOT_JOINER=ON
+    cmake .. -GNinja -DOT_PLATFORM=simulation -DOT_FULL_LOGS=1 -DOT_COMMISSIONER=ON -DOT_JOINER=ON
     ninja
     sudo ninja install
 
@@ -183,7 +183,7 @@ case "$(uname)" in
         ;;
 
     "Darwin")
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
         ;;
 
     *)
