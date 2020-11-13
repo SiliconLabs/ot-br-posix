@@ -51,6 +51,11 @@
 #include <ot-legacy-pairing-ext.h>
 #endif
 
+
+#if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
+#include OPENTHREAD_POSIX_VENDOR_CLI_HEADER
+#endif
+
 static bool sReset;
 using std::chrono::duration_cast;
 using std::chrono::microseconds;
@@ -112,6 +117,12 @@ otbrError ControllerOpenThread::Init(void)
 
     mInstance = otSysInit(&mConfig);
     otCliUartInit(mInstance);
+
+#if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
+    // Add vendor CLI commands
+    vendorCliInit();
+#endif
+
 #if OTBR_ENABLE_LEGACY
     otLegacyInit();
 #endif

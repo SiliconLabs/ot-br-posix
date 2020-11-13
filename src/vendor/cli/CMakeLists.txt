@@ -26,4 +26,30 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-add_subdirectory(cli)
+set(VENDOR_SOURCES
+    src/vendor_cli_example.c
+)
+
+if(NOT OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
+    set(OPENTHREAD_POSIX_VENDOR_CLI_HEADER "vendor_cli_example.h")
+endif()
+
+add_library(ot-vendor-cli STATIC ${VENDOR_SOURCES})
+
+target_include_directories(ot-vendor-cli
+    PUBLIC
+        include
+    PRIVATE
+        src
+        ${COMMON_INCLUDES}
+)
+
+target_link_libraries(ot-vendor-cli PRIVATE
+    openthread-cli-ftd
+    ${OT_PLATFORM_LIB}
+    ot-config
+)
+
+target_compile_definitions(ot-vendor-cli PUBLIC
+    OPENTHREAD_POSIX_VENDOR_CLI_HEADER="${OPENTHREAD_POSIX_VENDOR_CLI_HEADER}"
+)

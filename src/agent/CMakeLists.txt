@@ -91,3 +91,10 @@ install(FILES otbr-agent.default
     DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/default
     RENAME otbr-agent
 )
+
+set(OTBR_POSIX_VENDOR_CLI "" CACHE STRING "Path to ot-vendor-cli library folder")
+
+if (OTBR_POSIX_VENDOR_CLI)
+    add_subdirectory(${OTBR_POSIX_VENDOR_CLI} ${CMAKE_BINARY_DIR}/vendor)
+    target_link_libraries(otbr-agent PRIVATE ot-vendor-cli)
+endif()
