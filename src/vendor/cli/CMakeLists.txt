@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2019, The OpenThread Authors.
+#  Copyright (c) 2020, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -53,3 +53,4 @@ target_link_libraries(ot-vendor-cli PRIVATE
 target_compile_definitions(ot-vendor-cli PUBLIC
     OPENTHREAD_POSIX_VENDOR_CLI_HEADER="${OPENTHREAD_POSIX_VENDOR_CLI_HEADER}"
 )
+

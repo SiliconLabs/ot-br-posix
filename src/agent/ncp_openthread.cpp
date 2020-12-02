@@ -51,7 +51,6 @@
 #include <ot-legacy-pairing-ext.h>
 #endif
 
-
 #if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
 #include OPENTHREAD_POSIX_VENDOR_CLI_HEADER
 #endif

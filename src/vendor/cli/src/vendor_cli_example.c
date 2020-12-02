@@ -38,7 +38,7 @@
 /**
  * @brief Sample vendor command
  */
-static void HandleMyCommand(void * aContext, uint8_t aArgsLength, char * aArgs[])
+static void HandleMyCommand(void *aContext, uint8_t aArgsLength, char *aArgs[])
 {
     OT_UNUSED_VARIABLE(aContext);
     OT_UNUSED_VARIABLE(aArgsLength);

@@ -43,4 +43,3 @@ void vendorCliInit(void);
 #endif
 
 #endif // VENDOR_CLI_EXAMPLE_H_
-
