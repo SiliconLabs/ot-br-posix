@@ -30,6 +30,7 @@
 readonly OTBR_TOP_BUILDDIR="${BUILD_DIR}/otbr"
 readonly OTBR_TOP_SRCDIR="$PWD"
 readonly OTBR_OPTIONS="${OTBR_OPTIONS:-}"
+readonly OTBR_POSIX_VENDOR_CLI="${OTBR_POSIX_VENDOR_CLI:-}"
 readonly REFERENCE_DEVICE="${REFERENCE_DEVICE:-0}"
 
 otbr_uninstall()
@@ -62,7 +63,7 @@ otbr_install()
     fi
 
     if [[ ${OTBR_POSIX_VENDOR_CLI} ]]; then
-        otbr_options+="-DOTBR_POSIX_VENDOR_CLI=${OTBR_POSIX_VENDOR_CLI}"
+        read -r -a otbr_options <<<"-DOTBR_POSIX_VENDOR_CLI=${OTBR_POSIX_VENDOR_CLI}"
     fi
 
     otbr_options=(
