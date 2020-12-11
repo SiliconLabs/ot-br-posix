@@ -134,10 +134,6 @@ static const struct blobmsg_policy setModePolicy[SET_NETWORK_MAX] = {
     [SETNETWORK] = {.name = "mode", .type = BLOBMSG_TYPE_STRING},
 };
 
-static const struct blobmsg_policy setLeaderPartitionIdPolicy[SET_NETWORK_MAX] = {
-    [SETNETWORK] = {.name = "leaderpartitionid", .type = BLOBMSG_TYPE_INT32},
-};
-
 static const struct blobmsg_policy macfilterAddPolicy[SET_NETWORK_MAX] = {
     [SETNETWORK] = {.name = "addr", .type = BLOBMSG_TYPE_STRING},
 };
@@ -191,9 +187,7 @@ static const struct ubus_method otbrMethods[] = {
     {"parent", &UbusServer::UbusParentHandler, 0, 0, nullptr, 0},
     {"mode", &UbusServer::UbusModeHandler, 0, 0, nullptr, 0},
     {"setmode", &UbusServer::UbusSetModeHandler, 0, 0, setModePolicy, ARRAY_SIZE(setModePolicy)},
-    {"leaderpartitionid", &UbusServer::UbusLeaderPartitionIdHandler, 0, 0, nullptr, 0},
-    {"setleaderpartitionid", &UbusServer::UbusSetLeaderPartitionIdHandler, 0, 0, setLeaderPartitionIdPolicy,
-     ARRAY_SIZE(setLeaderPartitionIdPolicy)},
+    {"partitionid", &UbusServer::UbusPartitionIdHandler, 0, 0, nullptr, 0},
     {"leave", &UbusServer::UbusLeaveHandler, 0, 0, nullptr, 0},
     {"leaderdata", &UbusServer::UbusLeaderdataHandler, 0, 0, nullptr, 0},
     {"networkdata", &UbusServer::UbusNetworkdataHandler, 0, 0, nullptr, 0},
@@ -535,22 +529,13 @@ int UbusServer::UbusSetModeHandler(struct ubus_context *     aContext,
     return GetInstance().UbusSetInformation(aContext, aObj, aRequest, aMethod, aMsg, "mode");
 }
 
-int UbusServer::UbusLeaderPartitionIdHandler(struct ubus_context *     aContext,
-                                             struct ubus_object *      aObj,
-                                             struct ubus_request_data *aRequest,
-                                             const char *              aMethod,
-                                             struct blob_attr *        aMsg)
+int UbusServer::UbusPartitionIdHandler(struct ubus_context *     aContext,
+                                       struct ubus_object *      aObj,
+                                       struct ubus_request_data *aRequest,
+                                       const char *              aMethod,
+                                       struct blob_attr *        aMsg)
 {
-    return GetInstance().UbusGetInformation(aContext, aObj, aRequest, aMethod, aMsg, "leaderpartitionid");
-}
-
-int UbusServer::UbusSetLeaderPartitionIdHandler(struct ubus_context *     aContext,
-                                                struct ubus_object *      aObj,
-                                                struct ubus_request_data *aRequest,
-                                                const char *              aMethod,
-                                                struct blob_attr *        aMsg)
-{
-    return GetInstance().UbusSetInformation(aContext, aObj, aRequest, aMethod, aMsg, "leaderpartitionid");
+    return GetInstance().UbusGetInformation(aContext, aObj, aRequest, aMethod, aMsg, "partitionid");
 }
 
 int UbusServer::UbusLeaveHandler(struct ubus_context *     aContext,
@@ -1161,9 +1146,9 @@ int UbusServer::UbusGetInformation(struct ubus_context *     aContext,
         }
         blobmsg_add_string(&mBuf, "Mode", mode);
     }
-    else if (!strcmp(aAction, "leaderpartitionid"))
+    else if (!strcmp(aAction, "partitionid"))
     {
-        blobmsg_add_u32(&mBuf, "Leaderpartitionid", otThreadGetLocalLeaderPartitionId(mController->GetInstance()));
+        blobmsg_add_u32(&mBuf, "Partitionid", otThreadGetPartitionId(mController->GetInstance()));
     }
     else if (!strcmp(aAction, "leaderdata"))
     {
@@ -1190,16 +1175,13 @@ int UbusServer::UbusGetInformation(struct ubus_context *     aContext,
             uint8_t             tlvTypes[OT_NETWORK_DIAGNOSTIC_TYPELIST_MAX_ENTRIES];
             uint8_t             count             = 0;
             char                multicastAddr[10] = "ff03::2";
-            long                value;
 
             blob_buf_init(&mNetworkdataBuf, 0);
 
             SuccessOrExit(error = otIp6AddressFromString(multicastAddr, &address));
 
-            value             = 5;
-            tlvTypes[count++] = static_cast<uint8_t>(value);
-            value             = 16;
-            tlvTypes[count++] = static_cast<uint8_t>(value);
+            tlvTypes[count++] = static_cast<uint8_t>(OT_NETWORK_DIAGNOSTIC_TLV_ROUTE);
+            tlvTypes[count++] = static_cast<uint8_t>(OT_NETWORK_DIAGNOSTIC_TLV_CHILD_TABLE);
 
             sBufNum = 0;
             otThreadSendDiagnosticGet(mController->GetInstance(), &address, tlvTypes, count);
@@ -1343,7 +1325,7 @@ void UbusServer::HandleDiagnosticGetResponse(otError aError, otMessage *aMessage
 
     if (IsRoutingLocator(&aMessageInfo->mSockAddr))
     {
-        sockRloc16 = aMessageInfo->mPeerAddr.mFields.m16[7];
+        sockRloc16 = ntohs(aMessageInfo->mPeerAddr.mFields.m16[7]);
         sprintf(xrloc, "0x%04x", sockRloc16);
         blobmsg_add_string(&mNetworkdataBuf, "rloc", xrloc);
     }
@@ -1544,17 +1526,6 @@ int UbusServer::UbusSetInformation(struct ubus_context *     aContext,
             }
 
             SuccessOrExit(error = otThreadSetLinkMode(mController->GetInstance(), linkMode));
-        }
-    }
-    else if (!strcmp(aAction, "leaderpartitionid"))
-    {
-        struct blob_attr *tb[SET_NETWORK_MAX];
-
-        blobmsg_parse(setLeaderPartitionIdPolicy, SET_NETWORK_MAX, tb, blob_data(aMsg), blob_len(aMsg));
-        if (tb[SETNETWORK] != nullptr)
-        {
-            uint32_t input = blobmsg_get_u32(tb[SETNETWORK]);
-            otThreadSetLocalLeaderPartitionId(mController->GetInstance(), input);
         }
     }
     else if (!strcmp(aAction, "macfilteradd"))
