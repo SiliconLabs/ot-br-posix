@@ -62,6 +62,10 @@ otbr_install()
         read -r -a otbr_options <<<"${OTBR_OPTIONS}"
     fi
 
+    if [[ ${OTBR_POSIX_VENDOR_CLI} ]]; then
+        otbr_options+="-DOTBR_POSIX_VENDOR_CLI=${OTBR_POSIX_VENDOR_CLI}"
+    fi
+
     otbr_options=(
         "-DBUILD_TESTING=OFF"
         "-DCMAKE_INSTALL_PREFIX=/usr"

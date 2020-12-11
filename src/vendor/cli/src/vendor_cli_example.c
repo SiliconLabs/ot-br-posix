@@ -44,7 +44,7 @@ static void HandleMyCommand(void *aContext, uint8_t aArgsLength, char *aArgs[])
     OT_UNUSED_VARIABLE(aArgsLength);
     OT_UNUSED_VARIABLE(aArgs);
 
-    otCliOutputFormat("Hello world!");
+    otCliOutputFormat("Hello world!\n");
 }
 
 otCliCommand vendorCommands[] = {

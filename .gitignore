@@ -120,3 +120,19 @@ autoconf-config.h
 autoconf-config.h.in
 
 introspect.hpp
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CPack*.cmake
+
+# Ninja
+*.ninja
