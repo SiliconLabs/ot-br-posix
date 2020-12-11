@@ -12,16 +12,3 @@ For example:
 ```shell
 $ OTBR_POSIX_VENDOR_CLI=/absolute/path/to/src/vendor/cli ./script/setup
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
