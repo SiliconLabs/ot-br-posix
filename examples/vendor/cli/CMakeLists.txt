@@ -30,8 +30,8 @@ set(VENDOR_SOURCES
     src/vendor_cli_example.c
 )
 
-if(NOT OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
-    set(OPENTHREAD_POSIX_VENDOR_CLI_HEADER "vendor_cli_example.h")
+if(NOT VENDOR_CLI_HEADER)
+    set(VENDOR_CLI_HEADER "vendor_cli_example.h")
 endif()
 
 add_library(ot-vendor-cli STATIC ${VENDOR_SOURCES})
@@ -51,6 +51,6 @@ target_link_libraries(ot-vendor-cli PRIVATE
 )
 
 target_compile_definitions(ot-vendor-cli PUBLIC
-    OPENTHREAD_POSIX_VENDOR_CLI_HEADER="${OPENTHREAD_POSIX_VENDOR_CLI_HEADER}"
+    OPENTHREAD_POSIX_VENDOR_CLI_HEADER="${VENDOR_CLI_HEADER}"
 )
 
