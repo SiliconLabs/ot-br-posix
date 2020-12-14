@@ -124,7 +124,7 @@ otbrError ControllerOpenThread::Init(void)
 
 #if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
     // Add vendor CLI commands
-    vendorCliInit();
+    otVendorCliInit();
 #endif
 
 #if OTBR_ENABLE_LEGACY

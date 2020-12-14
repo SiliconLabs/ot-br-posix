@@ -36,7 +36,7 @@ extern "C" {
 /**
  * Hook for vendor specific commands
  */
-void vendorCliInit(void);
+void otVendorCliInit(void);
 
 #ifdef __cplusplus
 }

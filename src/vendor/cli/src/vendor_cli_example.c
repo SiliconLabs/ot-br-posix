@@ -55,7 +55,7 @@ otCliCommand vendorCommands[] = {
 /**
  * Set user commands to vendor commands
  */
-void vendorCliInit(void)
+void otVendorCliInit(void)
 {
     const uint8_t numCommands = sizeof(vendorCommands) / sizeof(otCliCommand);
     otCliSetUserCommands(vendorCommands, numCommands, NULL);
