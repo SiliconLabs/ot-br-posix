@@ -13,5 +13,5 @@ To include `ot-vendor-cli` in the `otbr-agent` build, the vendor simply has to d
 For example:
 
 ```shell
-$ OTBR_POSIX_VENDOR_SRCDIR=/absolute/path/to/src/vendor/cli ./script/setup
+$ OTBR_POSIX_VENDOR_SRCDIR=/absolute/path/to/examples/vendor/cli ./script/setup
 ```
