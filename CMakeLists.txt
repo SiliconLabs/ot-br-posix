@@ -38,6 +38,7 @@ option(OTBR_OPENWRT          "Build OpenWrt support" OFF)
 option(OTBR_UNSECURE_JOIN    "Enable unsecure joining" OFF)
 option(OTBR_WEB              "Build Web GUI" OFF)
 option(OTBR_REST             "Build Rest Server" OFF)
+option(OTBR_DOC              "Build documentation" OFF)
 
 
 if(NOT CMAKE_C_STANDARD)
@@ -96,6 +97,7 @@ if (OTBR_BACKBONE_ROUTER)
     target_compile_definitions(otbr-config INTERFACE
             OTBR_ENABLE_BACKBONE_ROUTER=1
     )
+    set(OT_BACKBONE_ROUTER_DUA_NDPROXYING ON CACHE BOOL "Enable Backbone Router DUA ND Proxying in OpenThread" FORCE)
     set(OT_THREAD_VERSION 1.2 CACHE STRING "Backbone Router requires Thread 1.2 or higher" FORCE)
     set(OT_BACKBONE_ROUTER ON CACHE BOOL "Enable Backbone Router feature in OpenThread" FORCE)
     set(OT_SERVICE ON CACHE BOOL "Backbone Router requires Thread network service" FORCE)
@@ -164,4 +166,8 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "OpenThread Authors <openthread-users@googlegroups.com")
     set(CPACK_PACKAGE_CONTACT "OpenThread Authors <openthread-users@googlegroups.com")
     include(CPack)
+endif()
+
+if (OTBR_DOC)
+    add_subdirectory(doc)
 endif()

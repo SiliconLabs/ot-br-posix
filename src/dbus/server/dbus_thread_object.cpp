@@ -40,7 +40,6 @@
 #include <openthread/platform/radio.h>
 
 #include "common/byteswap.hpp"
-#include "common/region_code.hpp"
 #include "dbus/common/constants.hpp"
 #include "dbus/server/dbus_agent.hpp"
 #include "dbus/server/dbus_thread_object.hpp"
@@ -140,8 +139,10 @@ otbrError DBusThreadObject::Init(void)
                                std::bind(&DBusThreadObject::SetLegacyUlaPrefixHandler, this, _1));
     RegisterSetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_LINK_MODE,
                                std::bind(&DBusThreadObject::SetLinkModeHandler, this, _1));
-    RegisterSetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_REGION,
-                               std::bind(&DBusThreadObject::SetRegionHandler, this, _1));
+    RegisterSetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_ACTIVE_DATASET_TLVS,
+                               std::bind(&DBusThreadObject::SetActiveDatasetTlvsHandler, this, _1));
+    RegisterSetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_RADIO_REGION,
+                               std::bind(&DBusThreadObject::SetRadioRegionHandler, this, _1));
 
     RegisterGetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_LINK_MODE,
                                std::bind(&DBusThreadObject::GetLinkModeHandler, this, _1));
@@ -196,8 +197,10 @@ otbrError DBusThreadObject::Init(void)
                                std::bind(&DBusThreadObject::GetRadioTxPowerHandler, this, _1));
     RegisterGetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_EXTERNAL_ROUTES,
                                std::bind(&DBusThreadObject::GetExternalRoutesHandler, this, _1));
-    RegisterGetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_REGION,
-                               std::bind(&DBusThreadObject::GetRegionHandler, this, _1));
+    RegisterGetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_ACTIVE_DATASET_TLVS,
+                               std::bind(&DBusThreadObject::GetActiveDatasetTlvsHandler, this, _1));
+    RegisterGetPropertyHandler(OTBR_DBUS_THREAD_INTERFACE, OTBR_DBUS_PROPERTY_RADIO_REGION,
+                               std::bind(&DBusThreadObject::GetRadioRegionHandler, this, _1));
 
     return error;
 }
@@ -269,7 +272,11 @@ void DBusThreadObject::AttachHandler(DBusRequest &aRequest)
 
     auto args = std::tie(masterKey, panid, name, extPanId, pskc, channelMask);
 
-    if (DBusMessageToTuple(*aRequest.GetMessage(), args) != OTBR_ERROR_NONE)
+    if (IsDBusMessageEmpty(*aRequest.GetMessage()))
+    {
+        threadHelper->Attach([aRequest](otError aError) mutable { aRequest.ReplyOtResult(aError); });
+    }
+    else if (DBusMessageToTuple(*aRequest.GetMessage(), args) != OTBR_ERROR_NONE)
     {
         aRequest.ReplyOtResult(OT_ERROR_INVALID_ARGS);
     }
@@ -495,18 +502,6 @@ exit:
     return error;
 }
 
-otError DBusThreadObject::SetRegionHandler(DBusMessageIter &aIter)
-{
-    std::string regionCode;
-    otError     error = OT_ERROR_NONE;
-
-    VerifyOrExit(DBusMessageExtractFromVariant(&aIter, regionCode) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
-    mNcp->SetRegionCode(regionCode);
-
-exit:
-    return error;
-}
-
 otError DBusThreadObject::GetLinkModeHandler(DBusMessageIter &aIter)
 {
     auto             threadHelper = mNcp->GetThreadHelper();
@@ -529,8 +524,7 @@ otError DBusThreadObject::GetDeviceRoleHandler(DBusMessageIter &aIter)
     auto         threadHelper = mNcp->GetThreadHelper();
     otDeviceRole role         = otThreadGetDeviceRole(threadHelper->GetInstance());
     std::string  roleName     = GetDeviceRoleName(role);
-    ;
-    otError error = OT_ERROR_NONE;
+    otError      error        = OT_ERROR_NONE;
 
     VerifyOrExit(DBusMessageEncodeToVariant(&aIter, roleName) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
 
@@ -681,9 +675,8 @@ exit:
 otError DBusThreadObject::GetSupportedChannelMaskHandler(DBusMessageIter &aIter)
 {
     auto     threadHelper = mNcp->GetThreadHelper();
-    uint32_t channelMask  = otLinkGetSupportedChannelMask(threadHelper->GetInstance()) &
-                           GetSupportedChannelMaskForRegion(mNcp->GetRegionCode());
-    otError error = OT_ERROR_NONE;
+    uint32_t channelMask  = otLinkGetSupportedChannelMask(threadHelper->GetInstance());
+    otError  error        = OT_ERROR_NONE;
 
     VerifyOrExit(DBusMessageEncodeToVariant(&aIter, channelMask) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
 
@@ -980,12 +973,69 @@ exit:
     return error;
 }
 
-otError DBusThreadObject::GetRegionHandler(DBusMessageIter &aIter)
+otError DBusThreadObject::SetActiveDatasetTlvsHandler(DBusMessageIter &aIter)
 {
-    otError     error = OT_ERROR_NONE;
-    std::string regionName(mNcp->GetRegionCode());
+    auto                     threadHelper = mNcp->GetThreadHelper();
+    std::vector<uint8_t>     data;
+    otOperationalDatasetTlvs datasetTlvs;
+    otError                  error = OT_ERROR_NONE;
 
-    VerifyOrExit(DBusMessageEncodeToVariant(&aIter, regionName) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
+    VerifyOrExit(DBusMessageExtractFromVariant(&aIter, data) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
+    VerifyOrExit(data.size() <= sizeof(datasetTlvs.mTlvs));
+    std::copy(std::begin(data), std::end(data), std::begin(datasetTlvs.mTlvs));
+    datasetTlvs.mLength = data.size();
+    error               = otDatasetSetActiveTlvs(threadHelper->GetInstance(), &datasetTlvs);
+
+exit:
+    return error;
+}
+
+otError DBusThreadObject::GetActiveDatasetTlvsHandler(DBusMessageIter &aIter)
+{
+    auto                     threadHelper = mNcp->GetThreadHelper();
+    otError                  error        = OT_ERROR_NONE;
+    std::vector<uint8_t>     data;
+    otOperationalDatasetTlvs datasetTlvs;
+
+    SuccessOrExit(error = otDatasetGetActiveTlvs(threadHelper->GetInstance(), &datasetTlvs));
+    data = std::vector<uint8_t>{std::begin(datasetTlvs.mTlvs), std::begin(datasetTlvs.mTlvs) + datasetTlvs.mLength};
+
+    VerifyOrExit(DBusMessageEncodeToVariant(&aIter, data) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
+
+exit:
+    return error;
+}
+
+otError DBusThreadObject::SetRadioRegionHandler(DBusMessageIter &aIter)
+{
+    auto        threadHelper = mNcp->GetThreadHelper();
+    std::string radioRegion;
+    uint16_t    regionCode;
+    otError     error = OT_ERROR_NONE;
+
+    VerifyOrExit(DBusMessageExtractFromVariant(&aIter, radioRegion) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
+    VerifyOrExit(radioRegion.size() == sizeof(uint16_t), error = OT_ERROR_INVALID_ARGS);
+    regionCode = radioRegion[0] << 8 | radioRegion[1];
+
+    error = otPlatRadioSetRegion(threadHelper->GetInstance(), regionCode);
+
+exit:
+    return error;
+}
+
+otError DBusThreadObject::GetRadioRegionHandler(DBusMessageIter &aIter)
+{
+    auto        threadHelper = mNcp->GetThreadHelper();
+    otError     error        = OT_ERROR_NONE;
+    std::string radioRegion;
+    uint16_t    regionCode;
+
+    SuccessOrExit(error = otPlatRadioGetRegion(threadHelper->GetInstance(), &regionCode));
+    radioRegion.resize(sizeof(uint16_t), '\0');
+    radioRegion[0] = static_cast<char>((regionCode >> 8) & 0xff);
+    radioRegion[1] = static_cast<char>(regionCode & 0xff);
+
+    VerifyOrExit(DBusMessageEncodeToVariant(&aIter, radioRegion) == OTBR_ERROR_NONE, error = OT_ERROR_INVALID_ARGS);
 
 exit:
     return error;

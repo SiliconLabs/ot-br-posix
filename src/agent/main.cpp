@@ -28,7 +28,9 @@
 
 #include <openthread-br/config.h>
 
+#include <fstream>
 #include <mutex>
+#include <sstream>
 #include <thread>
 
 #include <errno.h>
@@ -47,7 +49,6 @@
 #include "agent/ncp_openthread.hpp"
 #include "common/code_utils.hpp"
 #include "common/logging.hpp"
-#include "common/region_code.hpp"
 #include "common/types.hpp"
 #if OTBR_ENABLE_REST_SERVER
 #include "rest/rest_web_server.hpp"
@@ -72,32 +73,26 @@ static const char kDefaultInterfaceName[] = "wpan0";
 
 enum
 {
-#if OTBR_ENABLE_BACKBONE_ROUTER
     OTBR_OPT_BACKBONE_INTERFACE_NAME = 'B',
-#endif
-    OTBR_OPT_DEBUG_LEVEL    = 'd',
-    OTBR_OPT_HELP           = 'h',
-    OTBR_OPT_INTERFACE_NAME = 'I',
-    OTBR_OPT_VERBOSE        = 'v',
-    OTBR_OPT_VERSION        = 'V',
-    OTBR_OPT_SHORTMAX       = 128,
+    OTBR_OPT_DEBUG_LEVEL             = 'd',
+    OTBR_OPT_HELP                    = 'h',
+    OTBR_OPT_INTERFACE_NAME          = 'I',
+    OTBR_OPT_VERBOSE                 = 'v',
+    OTBR_OPT_VERSION                 = 'V',
+    OTBR_OPT_SHORTMAX                = 128,
     OTBR_OPT_RADIO_VERSION,
-    OTBR_OPT_REGION,
 };
 
 // Default poll timeout.
 static const struct timeval kPollTimeout = {10, 0};
 static const struct option  kOptions[]   = {
-#if OTBR_ENABLE_BACKBONE_ROUTER
     {"backbone-ifname", required_argument, nullptr, OTBR_OPT_BACKBONE_INTERFACE_NAME},
-#endif
     {"debug-level", required_argument, nullptr, OTBR_OPT_DEBUG_LEVEL},
     {"help", no_argument, nullptr, OTBR_OPT_HELP},
     {"thread-ifname", required_argument, nullptr, OTBR_OPT_INTERFACE_NAME},
     {"verbose", no_argument, nullptr, OTBR_OPT_VERBOSE},
     {"version", no_argument, nullptr, OTBR_OPT_VERSION},
     {"radio-version", no_argument, nullptr, OTBR_OPT_RADIO_VERSION},
-    {"reg", required_argument, nullptr, OTBR_OPT_REGION},
     {0, 0, 0, 0}};
 
 static void HandleSignal(int aSignal)
@@ -107,17 +102,17 @@ static void HandleSignal(int aSignal)
 
 static int Mainloop(otbr::AgentInstance &aInstance, const char *aInterfaceName)
 {
-    int error = EXIT_FAILURE;
+    int                   error         = EXIT_FAILURE;
+    ControllerOpenThread &ncpOpenThread = static_cast<ControllerOpenThread &>(aInstance.GetNcp());
+
 #if OTBR_ENABLE_DBUS_SERVER
-    ControllerOpenThread *     ncpOpenThread = reinterpret_cast<ControllerOpenThread *>(&aInstance.GetNcp());
-    std::unique_ptr<DBusAgent> dbusAgent     = std::unique_ptr<DBusAgent>(new DBusAgent(aInterfaceName, ncpOpenThread));
+    std::unique_ptr<DBusAgent> dbusAgent = std::unique_ptr<DBusAgent>(new DBusAgent(aInterfaceName, &ncpOpenThread));
     dbusAgent->Init();
 #else
     (void)aInterfaceName;
 #endif
 #if OTBR_ENABLE_REST_SERVER
-    ControllerOpenThread *ncpOpenThreadRest = reinterpret_cast<ControllerOpenThread *>(&aInstance.GetNcp());
-    RestWebServer *       restServer        = RestWebServer::GetRestWebServer(ncpOpenThreadRest);
+    RestWebServer *restServer = RestWebServer::GetRestWebServer(&ncpOpenThread);
     restServer->Init();
 #endif
     otbrLog(OTBR_LOG_INFO, "Border router agent started.");
@@ -155,13 +150,11 @@ static int Mainloop(otbr::AgentInstance &aInstance, const char *aInterfaceName)
         rval = select(mainloop.mMaxFd + 1, &mainloop.mReadFdSet, &mainloop.mWriteFdSet, &mainloop.mErrorFdSet,
                       &mainloop.mTimeout);
 
-#if OTBR_ENABLE_DBUS_SERVER
-        if (ncpOpenThread->IsResetRequested())
+        if (ncpOpenThread.IsResetRequested())
         {
-            ncpOpenThread->Reset();
+            ncpOpenThread.Reset();
             continue;
         }
-#endif
 
         if (rval >= 0)
         {
@@ -196,7 +189,7 @@ static int Mainloop(otbr::AgentInstance &aInstance, const char *aInterfaceName)
 
 static void PrintHelp(const char *aProgramName)
 {
-    fprintf(stderr, "Usage: %s [--reg region] [-I interfaceName] [-d DEBUG_LEVEL] [-v] RADIO_URL\n", aProgramName);
+    fprintf(stderr, "Usage: %s [-I interfaceName] [-d DEBUG_LEVEL] [-v] RADIO_URL\n", aProgramName);
     fprintf(stderr, "%s", otSysGetRadioUrlHelpString());
 }
 
@@ -225,26 +218,20 @@ int main(int argc, char *argv[])
     const char *                     backboneInterfaceName = "";
     otbr::Ncp::Controller *          ncp                   = nullptr;
     otbr::Ncp::ControllerOpenThread *ncpOpenThread         = nullptr;
-    bool                             verbose               = false;
-    bool                             printRadioVersion     = false;
-    std::string                      regionCode;
+    otbr::Ncp::PowerMap              powerMap;
+    bool                             verbose           = false;
+    bool                             printRadioVersion = false;
 
     std::set_new_handler(OnAllocateFailed);
 
-    while ((opt = getopt_long(argc, argv,
-#if OTBR_ENABLE_BACKBONE_ROUTER
-                              "B:"
-#endif
-                              "d:hI:Vv",
-                              kOptions, nullptr)) != -1)
+    while ((opt = getopt_long(argc, argv, "B:d:hI:Vv", kOptions, nullptr)) != -1)
     {
         switch (opt)
         {
-#if OTBR_ENABLE_BACKBONE_ROUTER
         case OTBR_OPT_BACKBONE_INTERFACE_NAME:
             backboneInterfaceName = optarg;
             break;
-#endif
+
         case OTBR_OPT_DEBUG_LEVEL:
             logLevel = atoi(optarg);
             VerifyOrExit(logLevel >= OTBR_LOG_EMERG && logLevel <= OTBR_LOG_DEBUG, ret = EXIT_FAILURE);
@@ -272,10 +259,6 @@ int main(int argc, char *argv[])
             printRadioVersion = true;
             break;
 
-        case OTBR_OPT_REGION:
-            regionCode = optarg;
-            break;
-
         default:
             PrintHelp(argv[0]);
             ExitNow(ret = EXIT_FAILURE);
@@ -292,24 +275,13 @@ int main(int argc, char *argv[])
     VerifyOrExit(ncp != nullptr, ret = EXIT_FAILURE);
 
     otbrLog(OTBR_LOG_INFO, "Thread interface %s", interfaceName);
-#if OTBR_ENABLE_BACKBONE_ROUTER
     otbrLog(OTBR_LOG_INFO, "Backbone interface %s", backboneInterfaceName);
-#endif
-    otbrLog(OTBR_LOG_INFO, "Backbone interface %s",
-            backboneInterfaceName == nullptr ? "(null)" : backboneInterfaceName);
-    if (!regionCode.empty())
-    {
-        otbrLog(OTBR_LOG_INFO, "Region %s", regionCode.c_str());
-    }
-    ncpOpenThread->SetRegionCode(regionCode);
 
     {
         otbr::AgentInstance instance(ncp);
 
         otbr::InstanceParams::Get().SetThreadIfName(interfaceName);
-#if OTBR_ENABLE_BACKBONE_ROUTER
         otbr::InstanceParams::Get().SetBackboneIfName(backboneInterfaceName);
-#endif
 
         SuccessOrExit(ret = instance.Init());
 

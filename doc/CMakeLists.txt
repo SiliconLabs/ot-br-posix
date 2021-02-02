@@ -1,6 +1,5 @@
-#!/bin/bash
 #
-#  Copyright (c) 2019, The OpenThread Authors.
+#  Copyright (c) 2021, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -27,28 +26,34 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-[ -n "$BUILD_TARGET" ] || exit 0
+find_package(Doxygen)
 
-set -e
+if (DOXYGEN_FOUND)
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
-codecov_upload()
-{
-    curl -s https://codecov.io/bash >codecov
-    chmod a+x codecov
+    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+    message("Doxygen build started")
 
-    # Assume gcov by default, and llvm-cov if CC is clang
-    if [[ -z $CC ]]; then
-        ./codecov
-    elif "$CC" --version | grep -q gcc; then
-        ./codecov
-    elif "$CC" --version | grep -q clang; then
-        ./codecov -x "llvm-cov gcov"
-    fi
-}
+    add_custom_target(otbr-doc)
 
-main()
-{
-    codecov_upload
-}
+    add_custom_target(doxygen ALL
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating documentation with Doxygen"
+        VERBATIM)
+    add_dependencies(otbr-doc doxygen)
 
-main "$@"
+    if(OTBR_DBUS)
+        set(DBUS_DOC_SRC ${CMAKE_BINARY_DIR}/src/dbus/server/index.html)
+        set(DBUS_DOC_TARGET ${CMAKE_CURRENT_BINARY_DIR}/html/dbus-api.html)
+        add_custom_target(otbr-dbus-server-doc-copy ALL
+            COMMAND cp ${DBUS_DOC_SRC} ${DBUS_DOC_TARGET}
+            VERBATIM
+        )
+        add_dependencies(otbr-dbus-server-doc-copy otbr-dbus-server-doc)
+        add_dependencies(otbr-doc otbr-dbus-server-doc-copy)
+    endif()
+else()
+    message("Doxygen must be installed to generate doxygen documentation")
+endif()

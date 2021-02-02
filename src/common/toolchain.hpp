@@ -1,5 +1,5 @@
 /*
- *    Copyright (c) 2020, The OpenThread Authors.
+ *    Copyright (c) 2021, The OpenThread Authors.
  *    All rights reserved.
  *
  *    Redistribution and use in source and binary forms, with or without
@@ -26,45 +26,58 @@
  *    POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "region_code.hpp"
+#ifndef OTBR_COMMON_TOOLCHAIN_HPP_
+#define OTBR_COMMON_TOOLCHAIN_HPP_
 
-namespace {
+/**
+ * @def OTBR_TOOL_PACKED_BEGIN
+ *
+ * Compiler-specific indication that a class or struct must be byte packed.
+ *
+ */
 
-constexpr uint32_t kChannelMask11To24 = 0x1fff800;
-constexpr uint32_t kChannelMask11To25 = 0x3fff800;
-constexpr uint32_t kChannelMask11To26 = 0x7fff800;
+/**
+ * @def OTBR_TOOL_PACKED_END
+ *
+ * Compiler-specific indication at the end of a byte packed class or struct.
+ *
+ */
 
-constexpr char kRegionCodeUS[] = "US";
-constexpr char kRegionCodeCA[] = "CA";
+// =========== TOOLCHAIN SELECTION : START ===========
 
-} // namespace
+#if defined(__GNUC__) || defined(__clang__) || defined(__CC_ARM) || defined(__TI_ARM__)
 
-namespace otbr {
+// https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html
+// http://www.keil.com/support/man/docs/armcc/armcc_chr1359124973480.htm
 
-uint32_t GetSupportedChannelMaskForRegion(const std::string &aRegionCode)
-{
-    uint32_t mask = kChannelMask11To26;
+#define OTBR_TOOL_PACKED_BEGIN
+#define OTBR_TOOL_PACKED_END __attribute__((packed))
 
-    // US or CA
-    if (aRegionCode == kRegionCodeUS || aRegionCode == kRegionCodeCA)
-    {
-        mask = kChannelMask11To25;
-    }
+#elif defined(__ICCARM__) || defined(__ICC8051__)
 
-    return mask;
-}
+// http://supp.iar.com/FilesPublic/UPDINFO/004916/arm/doc/EWARM_DevelopmentGuide.ENU.pdf
 
-uint32_t GetPreferredChannelMaskForRegion(const std::string &aRegionCode)
-{
-    uint32_t mask = kChannelMask11To26;
+#include "intrinsics.h"
 
-    // US or CA
-    if (aRegionCode == kRegionCodeUS || aRegionCode == kRegionCodeCA)
-    {
-        mask = kChannelMask11To24;
-    }
+#define OTBR_TOOL_PACKED_BEGIN __packed
+#define OTBR_TOOL_PACKED_END
 
-    return mask;
-}
+#elif defined(__SDCC)
 
-} // namespace otbr
+// Structures are packed by default in sdcc, as it primarily targets 8-bit MCUs.
+
+#define OTBR_TOOL_PACKED_BEGIN
+#define OTBR_TOOL_PACKED_END
+
+#else
+
+#error "Error: No valid Toolchain specified"
+
+// Symbols for Doxygen
+
+#define OTBR_TOOL_PACKED_BEGIN
+#define OTBR_TOOL_PACKED_END
+
+#endif
+
+#endif // OTBR_COMMON_TOOLCHAIN_HPP_

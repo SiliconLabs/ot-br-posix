@@ -26,34 +26,25 @@
 #  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 #  POSSIBILITY OF SUCH DAMAGE.
 #
-#   Description:
-#       This script manipulates smcroute configuration.
+
+#
+# This script tests publishing single service with custom host name & address.
 #
 
-smcroute_uninstall()
+# shellcheck source=tests/mdns/test_init
+. "$(dirname "$0")/test_init"
+
+main()
 {
-    with BACKBONE_ROUTER || return 0
+    if [[ ${OTBR_MDNS} == 'mDNSResponder' ]]; then
+        start_publisher sc
 
-    sudo smcroutectl kill || true
-
-    test -d "$BUILD_DIR"/smcroute || return 0
-
-    (cd "$BUILD_DIR"/smcroute \
-        && (test ! -f config.status || sudo make uninstall))
+        dns_sd_check SingleService _meshcop._udp 'custom-host.local.'
+        dns_sd_check_host 'custom-host.local.' '2002:0000:0000:0000:0000:0000:0000:0001'
+    else
+        #TODO:
+        echo "not implemented yet"
+    fi
 }
 
-smcroute_install()
-{
-    with BACKBONE_ROUTER || return 0
-
-    test -d "$BUILD_DIR"/smcroute || (cd "$BUILD_DIR" \
-        && git clone -b ip6_mf --depth 1 https://github.com/librasungirl/smcroute.git) || die 'Failed to download source code of SMCRoute!'
-
-    (
-        cd "$BUILD_DIR"/smcroute || return 1
-        test -f configure || ./autogen.sh
-        test -f config.status || ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
-        make
-        sudo make install
-    )
-}
+main "$@"

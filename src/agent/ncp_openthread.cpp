@@ -41,6 +41,7 @@
 #include <openthread/thread_ftd.h>
 #include <openthread/platform/logging.h>
 #include <openthread/platform/misc.h>
+#include <openthread/platform/radio.h>
 #include <openthread/platform/settings.h>
 
 #include "common/code_utils.hpp"
@@ -63,7 +64,8 @@ namespace Ncp {
 ControllerOpenThread::ControllerOpenThread(const char *aInterfaceName,
                                            const char *aRadioUrl,
                                            const char *aBackboneInterfaceName)
-    : mTriedAttach(false)
+    : mInstance(nullptr)
+    , mTriedAttach(false)
 {
     memset(&mConfig, 0, sizeof(mConfig));
 
@@ -127,8 +129,6 @@ otbrError ControllerOpenThread::Init(void)
     otBackboneRouterSetDomainPrefixCallback(mInstance, &ControllerOpenThread::HandleBackboneRouterDomainPrefixEvent,
                                             this);
     otBackboneRouterSetNdProxyCallback(mInstance, &ControllerOpenThread::HandleBackboneRouterNdProxyEvent, this);
-    otBackboneRouterSetMulticastListenerCallback(
-        mInstance, &ControllerOpenThread::HandleBackboneRouterMulticastListenerEvent, this);
 #endif
 
     mThreadHelper = std::unique_ptr<otbr::agent::ThreadHelper>(new otbr::agent::ThreadHelper(mInstance, this));
@@ -244,6 +244,8 @@ void ControllerOpenThread::Process(const otSysMainloopContext &aMainloop)
 
 void ControllerOpenThread::Reset(void)
 {
+    gPlatResetReason = OT_PLAT_RESET_REASON_SOFTWARE;
+
     otInstanceFinalize(mInstance);
     otSysDeinit();
     Init();
@@ -251,7 +253,8 @@ void ControllerOpenThread::Reset(void)
     {
         handler();
     }
-    sReset = false;
+    mTriedAttach = false;
+    sReset       = false;
 }
 
 bool ControllerOpenThread::IsResetRequested(void)
@@ -348,19 +351,6 @@ void ControllerOpenThread::HandleBackboneRouterNdProxyEvent(otBackboneRouterNdPr
 {
     EventEmitter::Emit(kEventBackboneRouterNdProxyEvent, aEvent, aAddress);
 }
-
-void ControllerOpenThread::HandleBackboneRouterMulticastListenerEvent(void *                                 aContext,
-                                                                      otBackboneRouterMulticastListenerEvent aEvent,
-                                                                      const otIp6Address *                   aAddress)
-{
-    static_cast<ControllerOpenThread *>(aContext)->HandleBackboneRouterMulticastListenerEvent(aEvent, aAddress);
-}
-
-void ControllerOpenThread::HandleBackboneRouterMulticastListenerEvent(otBackboneRouterMulticastListenerEvent aEvent,
-                                                                      const otIp6Address *                   aAddress)
-{
-    EventEmitter::Emit(kEventBackboneRouterMulticastListenerEvent, aEvent, aAddress);
-}
 #endif
 
 Controller *Controller::Create(const char *aInterfaceName, const char *aRadioUrl, const char *aBackboneInterfaceName)
@@ -414,5 +404,6 @@ extern "C" void otPlatLog(otLogLevel aLogLevel, otLogRegion aLogRegion, const ch
 void otPlatReset(otInstance *aInstance)
 {
     OT_UNUSED_VARIABLE(aInstance);
+
     sReset = true;
 }

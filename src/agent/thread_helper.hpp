@@ -26,6 +26,11 @@
  *    POSSIBILITY OF SUCH DAMAGE.
  */
 
+/**
+ * @file
+ *   This file includes definitions for Thread helper.
+ */
+
 #ifndef OTBR_THREAD_HELPER_HPP_
 #define OTBR_THREAD_HELPER_HPP_
 
@@ -54,6 +59,9 @@ class ControllerOpenThread;
 namespace otbr {
 namespace agent {
 
+/**
+ * This class implements Thread helper.
+ */
 class ThreadHelper
 {
 public:
@@ -118,6 +126,17 @@ public:
                 const std::vector<uint8_t> &aPSKc,
                 uint32_t                    aChannelMask,
                 ResultHandler               aHandler);
+
+    /**
+     * This method attaches the device to the Thread network.
+     *
+     * @note The joiner start and the attach proccesses are exclusive, and the
+     *       network parameter will be set through the active dataset.
+     *
+     * @param[in]   aHandler        The attach result handler.
+     *
+     */
+    void Attach(ResultHandler aHandler);
 
     /**
      * This method resets the OpenThread stack.
