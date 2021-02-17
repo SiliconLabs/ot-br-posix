@@ -73,6 +73,8 @@ enum
     kEventBackboneRouterNdProxyEvent,      ///< Backbone Router ND Proxy event arrived.
 };
 
+using PowerMap = std::map<std::string, std::vector<int8_t>>;
+
 /**
  * This interface defines NCP Controller functionality.
  *

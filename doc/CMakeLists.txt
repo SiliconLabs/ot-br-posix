@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2020, The OpenThread Authors.
+#  Copyright (c) 2021, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -26,37 +26,34 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-if(OTBR_MDNS STREQUAL "avahi")
-    add_library(otbr-mdns
-        mdns.cpp
-        mdns_avahi.cpp
-    )
-    target_compile_definitions(otbr-mdns PUBLIC
-        OTBR_ENABLE_MDNS_AVAHI=1
-    )
-    target_link_libraries(otbr-mdns
-        PUBLIC
-            otbr-common
-        PRIVATE
-            otbr-utils
-            avahi-client
-            avahi-common
-    )
-endif()
+find_package(Doxygen)
 
-if(OTBR_MDNS STREQUAL "mDNSResponder")
-    add_library(otbr-mdns
-        mdns.cpp
-        mdns_mdnssd.cpp
-    )
-    target_compile_definitions(otbr-mdns PUBLIC
-        OTBR_ENABLE_MDNS_MDNSSD=1
-    )
-    target_link_libraries(otbr-mdns
-        PUBLIC
-            otbr-common
-        PRIVATE
-            otbr-utils
-            dns_sd
-    )
+if (DOXYGEN_FOUND)
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+    message("Doxygen build started")
+
+    add_custom_target(otbr-doc)
+
+    add_custom_target(doxygen ALL
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating documentation with Doxygen"
+        VERBATIM)
+    add_dependencies(otbr-doc doxygen)
+
+    if(OTBR_DBUS)
+        set(DBUS_DOC_SRC ${CMAKE_BINARY_DIR}/src/dbus/server/index.html)
+        set(DBUS_DOC_TARGET ${CMAKE_CURRENT_BINARY_DIR}/html/dbus-api.html)
+        add_custom_target(otbr-dbus-server-doc-copy ALL
+            COMMAND cp ${DBUS_DOC_SRC} ${DBUS_DOC_TARGET}
+            VERBATIM
+        )
+        add_dependencies(otbr-dbus-server-doc-copy otbr-dbus-server-doc)
+        add_dependencies(otbr-doc otbr-dbus-server-doc-copy)
+    endif()
+else()
+    message("Doxygen must be installed to generate doxygen documentation")
 endif()

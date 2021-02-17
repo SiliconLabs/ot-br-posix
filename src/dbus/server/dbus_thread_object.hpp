@@ -26,6 +26,11 @@
  *    POSSIBILITY OF SUCH DAMAGE.
  */
 
+/**
+ * @file
+ * This file includes definitions for the d-bus object of OpenThread service.
+ */
+
 #ifndef OTBR_DBUS_THREAD_OBJECT_HPP_
 #define OTBR_DBUS_THREAD_OBJECT_HPP_
 
@@ -38,6 +43,17 @@
 
 namespace otbr {
 namespace DBus {
+
+/**
+ * @addtogroup border-router-dbus-server
+ *
+ * @brief
+ *   This module includes the <a href="dbus-api.html">dbus server api</a>.
+ *
+ * @{
+ * @}
+ *
+ */
 
 class DBusAgent;
 
@@ -86,7 +102,8 @@ private:
     otError SetMeshLocalPrefixHandler(DBusMessageIter &aIter);
     otError SetLegacyUlaPrefixHandler(DBusMessageIter &aIter);
     otError SetLinkModeHandler(DBusMessageIter &aIter);
-    otError SetRegionHandler(DBusMessageIter &aIter);
+    otError SetActiveDatasetTlvsHandler(DBusMessageIter &aIter);
+    otError SetRadioRegionHandler(DBusMessageIter &aIter);
 
     otError GetLinkModeHandler(DBusMessageIter &aIter);
     otError GetDeviceRoleHandler(DBusMessageIter &aIter);
@@ -114,7 +131,8 @@ private:
     otError GetInstantRssiHandler(DBusMessageIter &aIter);
     otError GetRadioTxPowerHandler(DBusMessageIter &aIter);
     otError GetExternalRoutesHandler(DBusMessageIter &aIter);
-    otError GetRegionHandler(DBusMessageIter &aIter);
+    otError GetActiveDatasetTlvsHandler(DBusMessageIter &aIter);
+    otError GetRadioRegionHandler(DBusMessageIter &aIter);
 
     void ReplyScanResult(DBusRequest &aRequest, otError aError, const std::vector<otActiveScanResult> &aResult);
 

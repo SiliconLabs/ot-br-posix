@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  Copyright (c) 2017, The OpenThread Authors.
+#  Copyright (c) 2020, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -27,33 +27,29 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-set -e
-set -x
+#
+# This script tests publishing single service with custom host name & address.
+#
 
-export PATH=/usr/local/bin:$PATH
+# shellcheck source=tests/mdns/test_init
+. "$(dirname "$0")/test_init"
 
-case $BUILD_TARGET in
-    meshcop)
-        ./script/bootstrap
-        ./script/test build
+main()
+{
+    if [[ ${OTBR_MDNS} == 'mDNSResponder' ]]; then
+        start_publisher mc
 
-        OT_CLI="ot-cli-mtd" ./script/test meshcop
-        OT_CLI="ot-cli-ftd" ./script/test meshcop
-        OTBR_USE_WEB_COMMISSIONER=1 ./script/test meshcop
-        ;;
+        dns_sd_check MultipleService11 _meshcop._udp 'custom-host-1.local.'
+        dns_sd_check MultipleService12 _meshcop._udp 'custom-host-1.local.'
+        dns_sd_check_host 'custom-host-1.local.' '2002:0000:0000:0000:0000:0000:0000:0001'
 
-    openwrt-check)
-        ./script/test openwrt
-        ;;
+        dns_sd_check MultipleService21 _meshcop._udp 'custom-host-2.local.'
+        dns_sd_check MultipleService22 _meshcop._udp 'custom-host-2.local.'
+        dns_sd_check_host 'custom-host-2.local.' '2002:0000:0000:0000:0000:0000:0000:0001'
+    else
+        #TODO:
+        echo "not implemented yet"
+    fi
+}
 
-    docker-check)
-        .travis/check-docker
-        ;;
-
-    otbr-dbus-check)
-        .travis/check-otbr-dbus
-        ;;
-    *)
-        false
-        ;;
-esac
+main "$@"

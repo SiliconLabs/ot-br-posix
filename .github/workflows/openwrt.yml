@@ -26,30 +26,29 @@
 ##  POSSIBILITY OF SUCH DAMAGE.
 ##
 
-name: Raspbian
+name: OpenWrt
 
 on: [push, pull_request]
 
 jobs:
 
   cancel-previous-runs:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: rokroskar/workflow-run-cleanup-action@master
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       if: "github.ref != 'refs/heads/master'"
 
-  raspbian-check:
-    runs-on: ubuntu-20.04
-    env:
-      IMAGE_URL: https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-01-12/2021-01-11-raspios-buster-armhf-lite.zip
-      BUILD_TARGET: raspbian-gcc
+  openwrt:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: recursive
+        submodules: true
     - name: Bootstrap
+      env:
+        BUILD_TARGET: "openwrt-check"
       run: tests/scripts/bootstrap.sh
-    - name: Build
-      run: tests/scripts/check-raspbian
+    - name: Check
+      run: script/test openwrt
