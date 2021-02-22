@@ -97,6 +97,6 @@ install(FILES otbr-agent.default
 set(OTBR_POSIX_VENDOR_SRCDIR "" CACHE STRING "Path to ot-vendor-cli library folder")
 
 if (OTBR_POSIX_VENDOR_SRCDIR)
-    add_subdirectory(${OTBR_POSIX_VENDOR_SRCDIR} ${CMAKE_BINARY_DIR}/vendor)
+    add_subdirectory("${OTBR_POSIX_VENDOR_SRCDIR}" "${CMAKE_BINARY_DIR}/vendor")
     target_link_libraries(otbr-agent PRIVATE ot-vendor-cli)
 endif()
