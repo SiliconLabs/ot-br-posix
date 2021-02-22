@@ -35,6 +35,9 @@ extern "C" {
 
 /**
  * Hook for vendor specific commands
+ *
+ * NOTE: This function MUST be defined. It is what `src/agent/ncp_openthread.cpp`
+ * calls during initialization
  */
 void otVendorCliInit(void);
 

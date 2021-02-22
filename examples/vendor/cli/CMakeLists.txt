@@ -26,13 +26,15 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Define sources
 set(VENDOR_SOURCES
     src/vendor_cli_example.c
 )
 
-if(NOT VENDOR_CLI_HEADER)
-    set(VENDOR_CLI_HEADER "vendor_cli_example.h")
-endif()
+# Define a header file that will be used by `src/agent/ncp_openthread.cpp`
+set(VENDOR_CLI_HEADER "vendor_cli_example.h")
+
+#===============================================================================
 
 add_library(ot-vendor-cli STATIC ${VENDOR_SOURCES})
 
@@ -52,5 +54,6 @@ target_link_libraries(ot-vendor-cli PRIVATE
 
 target_compile_definitions(ot-vendor-cli PUBLIC
     OPENTHREAD_POSIX_VENDOR_CLI_HEADER="${VENDOR_CLI_HEADER}"
+    OPENTHREAD_ENABLE_OTBR_VENDOR_CLI
 )
 

@@ -53,7 +53,7 @@
 #include <ot-legacy-pairing-ext.h>
 #endif
 
-#if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
+#if defined(OPENTHREAD_ENABLE_OTBR_VENDOR_CLI)
 #include OPENTHREAD_POSIX_VENDOR_CLI_HEADER
 #endif
 
@@ -120,7 +120,7 @@ otbrError ControllerOpenThread::Init(void)
     mInstance = otSysInit(&mConfig);
     otCliUartInit(mInstance);
 
-#if defined(OPENTHREAD_POSIX_VENDOR_CLI_HEADER)
+#if defined(OPENTHREAD_ENABLE_OTBR_VENDOR_CLI)
     // Add vendor CLI commands
     otVendorCliInit();
 #endif
