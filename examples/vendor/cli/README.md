@@ -18,11 +18,11 @@ cli
 
 The quickest way to start a new implementation would be to copy this project and
 use it as a template. The source files for the new implementation may live
-anywhere and does not have to be in this repository.
+anywhere and do not have to be in this repository.
 
 ### Required definitions
 
-The first file to look at is [CMakeLists.txt]([CMakeLists.txt]), which defines
+The first file to look at is [CMakeLists.txt](CMakeLists.txt), which defines
 the `ot-vendor-cli` library. In here, two variable definitions are required:
 
 - `VENDOR_CLI_SOURCES` - This defines the list of source files in the library
@@ -43,14 +43,30 @@ In the example implementation, this function is defined in
 ## Usage
 
 To include `ot-vendor-cli` in the `otbr-agent` build, the vendor simply has to
-define the `OTBR_POSIX_VENDOR_SRCDIR` variable prior to running
+define the location of the library as `OTBR_POSIX_VENDOR_SRCDIR` prior to running
 `./script/setup`.
 
 The path assigned to `OTBR_POSIX_VENDOR_SRCDIR` must be an **absolute** path
 
-For example:
+**Example**
 ```shell
-$ OTBR_POSIX_VENDOR_SRCDIR=/home/vendor-user/my-ot-vendor-cli-lib/ ./script/setup
+$ OTBR_POSIX_VENDOR_SRCDIR=/home/user/ot-br-posix/examples/vendor/ ./script/setup
 ```
 
+Once the setup has completed successfully, restart the `otbr-agent` service and
+the vendor commands should appear at the tail of the commands listed with `help`
+
+**Example**
+```shell
+$ sudo systemctl restart otbr-agent.service
+$ sudo ot-ctl
+> help
+...
+version
+myCommand
+Done
+> myCommand
+Hello world!
+>
+```
 
