@@ -62,30 +62,17 @@ endif()
 
 add_compile_options(-Wall -Wextra -Werror -Wfatal-errors -Wno-missing-braces)
 
-
-execute_process(
-    COMMAND git describe --dirty --always
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    OUTPUT_VARIABLE OTBR_GIT_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-
-if(OTBR_GIT_VERSION)
-    set(OTBR_VERSION "${PROJECT_VERSION}-${OTBR_GIT_VERSION}")
-else()
-    set(OTBR_VERSION "${PROJECT_VERSION}")
-endif()
-
-message(STATUS "Version: ${OTBR_VERSION}")
-
-
 target_include_directories(otbr-config INTERFACE
     ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/src
 )
 target_compile_definitions(otbr-config INTERFACE
-    "OTBR_PACKAGE_NAME=\"OPENTHREAD_BR\""
+    "OTBR_PACKAGE_NAME=\"${OTBR_NAME}\""
     "OTBR_PACKAGE_VERSION=\"${OTBR_VERSION}\""
 )
+
+message(STATUS "OTBR Package: ${OTBR_NAME}/${OTBR_VERSION}")
+message(STATUS "OTBR/OpenThread Package: ${OT_PACKAGE_NAME}/${OT_PACKAGE_VERSION}")
 
 if(BUILD_SHARED_LIBS)
     target_link_libraries(otbr-config INTERFACE -Wl,--unresolved-symbols=ignore-in-shared-libs)
@@ -100,6 +87,9 @@ if (OTBR_SRP_ADVERTISING_PROXY)
     )
 endif()
 
+set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread" FORCE)
+set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread" FORCE)
+
 if (OTBR_BACKBONE_ROUTER)
     target_compile_definitions(otbr-config INTERFACE
             OTBR_ENABLE_BACKBONE_ROUTER=1
@@ -107,6 +97,8 @@ if (OTBR_BACKBONE_ROUTER)
     set(OT_BACKBONE_ROUTER_DUA_NDPROXYING ON CACHE BOOL "Enable Backbone Router DUA ND Proxying in OpenThread" FORCE)
     set(OT_THREAD_VERSION 1.2 CACHE STRING "Backbone Router requires Thread 1.2 or higher" FORCE)
     set(OT_BACKBONE_ROUTER ON CACHE BOOL "Enable Backbone Router feature in OpenThread" FORCE)
+    set(OT_DUA ON CACHE BOOL "Enable DUA feature in OpenThread" FORCE)
+    set(OT_MLR ON CACHE BOOL "Enable MLR feature in OpenThread" FORCE)
     set(OT_SERVICE ON CACHE BOOL "Backbone Router requires Thread network service" FORCE)
 endif()
 
