@@ -68,8 +68,14 @@ if (OTBR_BACKBONE_ROUTER)
 endif()
 
 if (OT_THREAD_VERSION STREQUAL "1.2")
+    set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA by default")
     set(OT_MLR ON CACHE BOOL "Enable Thread 1.2 MLR by default")
 endif()
+
+# SiLabs OpenThread Border Router only
+set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread" FORCE)
+set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread" FORCE)
+set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
 
 list(APPEND OT_PLATFORM_DEFINES "-DOPENTHREAD_CONFIG_POSIX_SETTINGS_PATH=\"/var/lib/thread\"")
 

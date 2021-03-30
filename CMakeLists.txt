@@ -90,9 +90,6 @@ if (OTBR_SRP_ADVERTISING_PROXY)
     )
 endif()
 
-set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread" FORCE)
-set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread" FORCE)
-
 if (OTBR_BACKBONE_ROUTER)
     target_compile_definitions(otbr-config INTERFACE
             OTBR_ENABLE_BACKBONE_ROUTER=1
