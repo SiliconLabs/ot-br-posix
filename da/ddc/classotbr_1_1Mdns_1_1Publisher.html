@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3fee4f3</span>
+   &#160;<span id="projectnumber">0.3.0-9242530</span>
    </div>
   </td>
  </tr>
@@ -94,6 +94,10 @@ Inheritance diagram for otbr::Mdns::Publisher:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dee/structotbr_1_1Mdns_1_1Publisher_1_1TxtEntry.html">TxtEntry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -106,6 +110,10 @@ Public Types</h2></td></tr>
 <tr class="memitem:a82b48b525850f59986482f05949881dd"><td class="memItemLeft" align="right" valign="top"><a id="a82b48b525850f59986482f05949881dd"></a>
 typedef std::vector&lt; <a class="el" href="../../d0/dee/structotbr_1_1Mdns_1_1Publisher_1_1TxtEntry.html">TxtEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TxtList</b></td></tr>
 <tr class="separator:a82b48b525850f59986482f05949881dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28cea59926db61523595d4e6967afd7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> = std::function&lt; void(const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)&gt;</td></tr>
+<tr class="separator:ae28cea59926db61523595d4e6967afd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1cfd72140d8d469b149ee279b44766"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> = std::function&lt; void(const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)&gt;</td></tr>
+<tr class="separator:aea1cfd72140d8d469b149ee279b44766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a606c109ff3092857eae8a7db0a199d11"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a>) (void *aContext, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">State</a> aState)</td></tr>
 <tr class="separator:a606c109ff3092857eae8a7db0a199d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58c302643f9b2f3c28509a68b025ebc2"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a58c302643f9b2f3c28509a68b025ebc2">PublishServiceHandler</a>) (const char *aName, const char *aType, <a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError, void *aContext)</td></tr>
@@ -133,6 +141,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6651081fd49213b92b066f0126d3eb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa3a71982003da8ec92b297dc3a7551d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aaa3a71982003da8ec92b297dc3a7551d">UnpublishHost</a> (const char *aName)=0</td></tr>
 <tr class="separator:aaa3a71982003da8ec92b297dc3a7551d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e445114c02d9fd53f962c464f4f8e02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a9e445114c02d9fd53f962c464f4f8e02">SubscribeService</a> (const std::string &amp;aType, const std::string &amp;aInstanceName)=0</td></tr>
+<tr class="separator:a9e445114c02d9fd53f962c464f4f8e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf808a791a332255fef305a2756f3c6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aacf808a791a332255fef305a2756f3c6">UnsubscribeService</a> (const std::string &amp;aType, const std::string &amp;aInstanceName)=0</td></tr>
+<tr class="separator:aacf808a791a332255fef305a2756f3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454e7ed9403a336941633b1610251567"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a454e7ed9403a336941633b1610251567">SubscribeHost</a> (const std::string &amp;aHostName)=0</td></tr>
+<tr class="separator:a454e7ed9403a336941633b1610251567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f355fa9bac6f1c92d34c2dc984c149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a78f355fa9bac6f1c92d34c2dc984c149">UnsubscribeHost</a> (const std::string &amp;aHostName)=0</td></tr>
+<tr class="separator:a78f355fa9bac6f1c92d34c2dc984c149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c2b8868a5db165c6d27730e6d42f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#af7c2b8868a5db165c6d27730e6d42f6f">SetSubscriptionCallbacks</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> aInstanceCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> aHostCallback)</td></tr>
+<tr class="separator:af7c2b8868a5db165c6d27730e6d42f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classotbr_1_1MainloopProcessor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classotbr_1_1MainloopProcessor')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></td></tr>
 <tr class="memitem:a537ae40626823cf2a044d4764dcc0c0d inherit pub_methods_classotbr_1_1MainloopProcessor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">Update</a> (<a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop)=0</td></tr>
 <tr class="separator:a537ae40626823cf2a044d4764dcc0c0d inherit pub_methods_classotbr_1_1MainloopProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,10 +188,46 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mServiceHandlerCont
 <tr class="memitem:a35f75f22ca2bbb5af3ae5a129ac7706c"><td class="memItemLeft" align="right" valign="top"><a id="a35f75f22ca2bbb5af3ae5a129ac7706c"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext</b> = nullptr</td></tr>
 <tr class="separator:a35f75f22ca2bbb5af3ae5a129ac7706c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c0ca1d9c12de55767a9e52ae4be4a0"><td class="memItemLeft" align="right" valign="top"><a id="a09c0ca1d9c12de55767a9e52ae4be4a0"></a>
+<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredServiceInstanceCallback</b> = nullptr</td></tr>
+<tr class="separator:a09c0ca1d9c12de55767a9e52ae4be4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038f0ae3dccc7e9e701e7b647b8d19ca"><td class="memItemLeft" align="right" valign="top"><a id="a038f0ae3dccc7e9e701e7b647b8d19ca"></a>
+<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredHostCallback</b> = nullptr</td></tr>
+<tr class="separator:a038f0ae3dccc7e9e701e7b647b8d19ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This interface defines the functionality of MDNS service. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aea1cfd72140d8d469b149ee279b44766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1cfd72140d8d469b149ee279b44766">&#9670;&nbsp;</a></span>DiscoveredHostCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">otbr::Mdns::Publisher::DiscoveredHostCallback</a> =  std::function&lt;void(const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function is called to notify a discovered host. </p>
+
+</div>
+</div>
+<a id="ae28cea59926db61523595d4e6967afd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28cea59926db61523595d4e6967afd7">&#9670;&nbsp;</a></span>DiscoveredServiceInstanceCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">otbr::Mdns::Publisher::DiscoveredServiceInstanceCallback</a> =  std::function&lt;void(const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function is called to notify a discovered service instance. </p>
+
+</div>
+</div>
 <a id="a63b0143769df1e0c21e6304bf9a69ef0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63b0143769df1e0c21e6304bf9a69ef0">&#9670;&nbsp;</a></span>PublishHostHandler</h2>
 
@@ -731,6 +785,50 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 
 </div>
 </div>
+<a id="af7c2b8868a5db165c6d27730e6d42f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c2b8868a5db165c6d27730e6d42f6f">&#9670;&nbsp;</a></span>SetSubscriptionCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Mdns::Publisher::SetSubscriptionCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>&#160;</td>
+          <td class="paramname"><em>aInstanceCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a>&#160;</td>
+          <td class="paramname"><em>aHostCallback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method sets the callbacks for subscriptions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aInstanceCallback</td><td>The callback function to receive discovered service instances. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHostCallback</td><td>The callback function to receive discovered hosts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac7ec38aa3c41207981ab5779a6abfa9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7ec38aa3c41207981ab5779a6abfa9c">&#9670;&nbsp;</a></span>Start()</h2>
 
@@ -793,6 +891,91 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 <p>This method stops the MDNS service. </p>
 
 <p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#abfeabad327ca1ba53e4bae200d7f99af">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a8e994c6a3e82bda87653e123fb67b8eb">otbr::Mdns::PublisherMDnsSd</a>.</p>
+
+</div>
+</div>
+<a id="a454e7ed9403a336941633b1610251567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454e7ed9403a336941633b1610251567">&#9670;&nbsp;</a></span>SubscribeHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Mdns::Publisher::SubscribeHost </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aHostName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method subscribes a given host.</p>
+<p>mDNS implementations should use the <code>DiscoveredHostCallback</code> function to notify discovered hosts.</p>
+<dl class="section note"><dt>Note</dt><dd>Discovery Proxy implementation guarantees no duplicate subscriptions for the same host.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The host name (without domain). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d">otbr::Mdns::PublisherMDnsSd</a>.</p>
+
+</div>
+</div>
+<a id="a9e445114c02d9fd53f962c464f4f8e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e445114c02d9fd53f962c464f4f8e02">&#9670;&nbsp;</a></span>SubscribeService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Mdns::Publisher::SubscribeService </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aInstanceName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method subscribes a given service or service instance.</p>
+<p>If <code>aInstanceName</code> is not empty, this method subscribes the service instance. Otherwise, this method subscribes the service. mDNS implementations should use the <code>DiscoveredServiceInstanceCallback</code> function to notify discovered service instances.</p>
+<dl class="section note"><dt>Note</dt><dd>Discovery Proxy implementation guarantees no duplicate subscriptions for the same service or service instance.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The service type. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aInstanceName</td><td>The service instance to subscribe, or empty to subscribe the service. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24">otbr::Mdns::PublisherMDnsSd</a>.</p>
 
 </div>
 </div>
@@ -888,6 +1071,90 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 </dl>
 
 <p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a543d998febc5af4840b41f4c7b800e1b">otbr::Mdns::PublisherMDnsSd</a>.</p>
+
+</div>
+</div>
+<a id="a78f355fa9bac6f1c92d34c2dc984c149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f355fa9bac6f1c92d34c2dc984c149">&#9670;&nbsp;</a></span>UnsubscribeHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Mdns::Publisher::UnsubscribeHost </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aHostName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method unsubscribes a given host.</p>
+<dl class="section note"><dt>Note</dt><dd>Discovery Proxy implementation guarantees no redundant unsubscription for a host.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The host name (without domain). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a03600b58800e7dd611d622848800cd47">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a294e5e02fb32367c3aef2032c11a1515">otbr::Mdns::PublisherMDnsSd</a>.</p>
+
+</div>
+</div>
+<a id="aacf808a791a332255fef305a2756f3c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf808a791a332255fef305a2756f3c6">&#9670;&nbsp;</a></span>UnsubscribeService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Mdns::Publisher::UnsubscribeService </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aInstanceName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method unsubscribes a given service or service instance.</p>
+<p>If <code>aInstanceName</code> is not empty, this method unsubscribes the service instance. Otherwise, this method unsubscribes the service.</p>
+<dl class="section note"><dt>Note</dt><dd>Discovery Proxy implementation guarantees no redundant unsubscription for a service or service instance.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The service type. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aInstanceName</td><td>The service instance to unsubscribe, or empty to unsubscribe the service. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a9f97aa1e8ee870f730332c39ca051097">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a94c7cbf31e9f1518edcb96869a96fa92">otbr::Mdns::PublisherMDnsSd</a>.</p>
 
 </div>
 </div>

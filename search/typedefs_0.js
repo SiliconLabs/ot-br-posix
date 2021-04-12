@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mainloopcontext_1099',['MainloopContext',['../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60',1,'otbr']]]
+  ['discoveredhostcallback_1160',['DiscoveredHostCallback',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766',1,'otbr::Mdns::Publisher']]],
+  ['discoveredserviceinstancecallback_1161',['DiscoveredServiceInstanceCallback',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7',1,'otbr::Mdns::Publisher']]]
 ];

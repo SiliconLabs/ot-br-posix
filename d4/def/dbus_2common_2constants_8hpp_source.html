@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3fee4f3</span>
+   &#160;<span id="projectnumber">0.3.0-9242530</span>
    </div>
   </td>
  </tr>
@@ -113,54 +113,55 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define OTBR_DBUS_SCAN_METHOD &quot;Scan&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define OTBR_DBUS_ATTACH_METHOD &quot;Attach&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define OTBR_DBUS_FACTORY_RESET_METHOD &quot;FactoryReset&quot;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define OTBR_DBUS_RESET_METHOD &quot;Reset&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define OTBR_DBUS_ADD_ON_MESH_PREFIX_METHOD &quot;AddOnMeshPrefix&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define OTBR_DBUS_REMOVE_ON_MESH_PREFIX_METHOD &quot;RemoveOnMeshPrefix&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PERMIT_UNSECURE_JOIN_METHOD &quot;PermitUnsecureJoin&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define OTBR_DBUS_JOINER_START_METHOD &quot;JoinerStart&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define OTBR_DBUS_JOINER_STOP_METHOD &quot;JoinerStop&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define OTBR_DBUS_ADD_EXTERNAL_ROUTE_METHOD &quot;AddExternalRoute&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define OTBR_DBUS_REMOVE_EXTERNAL_ROUTE_METHOD &quot;RemoveExternalRoute&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_MESH_LOCAL_PREFIX &quot;MeshLocalPrefix&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LEGACY_ULA_PREFIX &quot;LegacyULAPrefix&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LINK_MODE &quot;LinkMode&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_DEVICE_ROLE &quot;DeviceRole&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NETWORK_NAME &quot;NetworkName&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_PANID &quot;PanId&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTPANID &quot;ExtPanId&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL &quot;Channel&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_MASTER_KEY &quot;MasterKey&quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CCA_FAILURE_RATE &quot;CcaFailureRate&quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LINK_COUNTERS &quot;LinkCounters&quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_IP6_COUNTERS &quot;Ip6Counters&quot;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_SUPPORTED_CHANNEL_MASK &quot;LinkSupportedChannelMask&quot;</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RLOC16 &quot;Rloc16&quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTENDED_ADDRESS &quot;ExtendedAddress&quot;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_ROUTER_ID &quot;RouterID&quot;</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LEADER_DATA &quot;LeaderData&quot;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NETWORK_DATA_PRPOERTY &quot;NetworkData&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_STABLE_NETWORK_DATA_PRPOERTY &quot;StableNetworkData&quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LOCAL_LEADER_WEIGHT &quot;LocalLeaderWeight&quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL_MONITOR_SAMPLE_COUNT &quot;ChannelMonitorSampleCount&quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL_MONITOR_ALL_CHANNEL_QUALITIES &quot;ChannelMonitorAllChannelQualities&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHILD_TABLE &quot;ChildTable&quot;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NEIGHBOR_TABLE_PROEPRTY &quot;NeighborTable&quot;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_PARTITION_ID_PROEPRTY &quot;PartitionID&quot;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_INSTANT_RSSI &quot;InstantRssi&quot;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RADIO_TX_POWER &quot;RadioTxPower&quot;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTERNAL_ROUTES &quot;ExternalRoutes&quot;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_ACTIVE_DATASET_TLVS &quot;ActiveDatasetTlvs&quot;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RADIO_REGION &quot;RadioRegion&quot;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_DISABLED &quot;disabled&quot;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_DETACHED &quot;detached&quot;</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_CHILD &quot;child&quot;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_ROUTER &quot;router&quot;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_LEADER &quot;leader&quot;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif // OTBR_DBUS_CONSTANTS_HPP_</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define OTBR_DBUS_DETACH_METHOD &quot;Detach&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define OTBR_DBUS_FACTORY_RESET_METHOD &quot;FactoryReset&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define OTBR_DBUS_RESET_METHOD &quot;Reset&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define OTBR_DBUS_ADD_ON_MESH_PREFIX_METHOD &quot;AddOnMeshPrefix&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define OTBR_DBUS_REMOVE_ON_MESH_PREFIX_METHOD &quot;RemoveOnMeshPrefix&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PERMIT_UNSECURE_JOIN_METHOD &quot;PermitUnsecureJoin&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define OTBR_DBUS_JOINER_START_METHOD &quot;JoinerStart&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define OTBR_DBUS_JOINER_STOP_METHOD &quot;JoinerStop&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define OTBR_DBUS_ADD_EXTERNAL_ROUTE_METHOD &quot;AddExternalRoute&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define OTBR_DBUS_REMOVE_EXTERNAL_ROUTE_METHOD &quot;RemoveExternalRoute&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_MESH_LOCAL_PREFIX &quot;MeshLocalPrefix&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LEGACY_ULA_PREFIX &quot;LegacyULAPrefix&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LINK_MODE &quot;LinkMode&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_DEVICE_ROLE &quot;DeviceRole&quot;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NETWORK_NAME &quot;NetworkName&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_PANID &quot;PanId&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTPANID &quot;ExtPanId&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL &quot;Channel&quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_MASTER_KEY &quot;MasterKey&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CCA_FAILURE_RATE &quot;CcaFailureRate&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LINK_COUNTERS &quot;LinkCounters&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_IP6_COUNTERS &quot;Ip6Counters&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_SUPPORTED_CHANNEL_MASK &quot;LinkSupportedChannelMask&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RLOC16 &quot;Rloc16&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTENDED_ADDRESS &quot;ExtendedAddress&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_ROUTER_ID &quot;RouterID&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LEADER_DATA &quot;LeaderData&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NETWORK_DATA_PRPOERTY &quot;NetworkData&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_STABLE_NETWORK_DATA_PRPOERTY &quot;StableNetworkData&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_LOCAL_LEADER_WEIGHT &quot;LocalLeaderWeight&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL_MONITOR_SAMPLE_COUNT &quot;ChannelMonitorSampleCount&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHANNEL_MONITOR_ALL_CHANNEL_QUALITIES &quot;ChannelMonitorAllChannelQualities&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_CHILD_TABLE &quot;ChildTable&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_NEIGHBOR_TABLE_PROEPRTY &quot;NeighborTable&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_PARTITION_ID_PROEPRTY &quot;PartitionID&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_INSTANT_RSSI &quot;InstantRssi&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RADIO_TX_POWER &quot;RadioTxPower&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_EXTERNAL_ROUTES &quot;ExternalRoutes&quot;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_ACTIVE_DATASET_TLVS &quot;ActiveDatasetTlvs&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define OTBR_DBUS_PROPERTY_RADIO_REGION &quot;RadioRegion&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_DISABLED &quot;disabled&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_DETACHED &quot;detached&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_CHILD &quot;child&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_ROUTER &quot;router&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define OTBR_ROLE_NAME_LEADER &quot;leader&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif // OTBR_DBUS_CONSTANTS_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

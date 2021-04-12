@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3fee4f3</span>
+   &#160;<span id="projectnumber">0.3.0-9242530</span>
    </div>
   </td>
  </tr>
@@ -105,73 +105,75 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/db1/instance__params_8hpp.html">agent/instance_params.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">agent/ncp_openthread.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d28/nd__proxy_8hpp.html">backbone_router/nd_proxy.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>BackboneRouter {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">BackboneAgent</a> : <span class="keyword">public</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">   63</a></span>&#160;    <span class="keyword">static</span> constexpr uint16_t <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">kBackboneUdpPort</a> = 61631; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#a2c4e0a327629dd17bab5d4f13c3fef10">BackboneAgent</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#adba1dbc71363fdd10b5454293f6cfa05">Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#aa4dac952819c7dbdb8f606a3942da448">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#ac64cdbf61afdf711fcee2687c3523cda">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span>        OnBecomePrimary(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span>        OnResignPrimary(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">bool</span>        IsPrimary(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mBackboneRouterState == OT_BACKBONE_ROUTER_STATE_PRIMARY; }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span>        HandleThreadStateChanged(otChangedFlags aFlags);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterState(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterDomainPrefixEvent(<span class="keywordtype">void</span> *                            aContext,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                      otBackboneRouterDomainPrefixEvent aEvent,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterDomainPrefixEvent(otBackboneRouterDomainPrefixEvent aEvent,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DUA_ROUTING</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterNdProxyEvent(<span class="keywordtype">void</span> *                       aContext,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                 otBackboneRouterNdProxyEvent aEvent,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                 <span class="keyword">const</span> otIp6Address *         aAddress);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterNdProxyEvent(otBackboneRouterNdProxyEvent aEvent, <span class="keyword">const</span> otIp6Address *aAddress);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *StateToString(otBackboneRouterState aState);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    otBackboneRouterState            mBackboneRouterState;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a>                        mDomainPrefix;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/daf/dua__routing__manager_8hpp.html">backbone_router/dua_routing_manager.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d28/nd__proxy_8hpp.html">backbone_router/nd_proxy.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>BackboneRouter {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">BackboneAgent</a> : <span class="keyword">public</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">   64</a></span>&#160;    <span class="keyword">static</span> constexpr uint16_t <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">kBackboneUdpPort</a> = 61631; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#a2c4e0a327629dd17bab5d4f13c3fef10">BackboneAgent</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#adba1dbc71363fdd10b5454293f6cfa05">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#aa4dac952819c7dbdb8f606a3942da448">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#ac64cdbf61afdf711fcee2687c3523cda">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span>        OnBecomePrimary(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span>        OnResignPrimary(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span>        IsPrimary(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mBackboneRouterState == OT_BACKBONE_ROUTER_STATE_PRIMARY; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span>        HandleThreadStateChanged(otChangedFlags aFlags);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterState(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterDomainPrefixEvent(<span class="keywordtype">void</span> *                            aContext,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                      otBackboneRouterDomainPrefixEvent aEvent,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterDomainPrefixEvent(otBackboneRouterDomainPrefixEvent aEvent,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DUA_ROUTING</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterNdProxyEvent(<span class="keywordtype">void</span> *                       aContext,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                 otBackboneRouterNdProxyEvent aEvent,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                 <span class="keyword">const</span> otIp6Address *         aAddress);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterNdProxyEvent(otBackboneRouterNdProxyEvent aEvent, <span class="keyword">const</span> otIp6Address *aAddress);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *StateToString(otBackboneRouterState aState);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    otBackboneRouterState            mBackboneRouterState;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a>                        mDomainPrefix;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DUA_ROUTING</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    NdProxyManager mNdProxyManager;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;} <span class="comment">// namespace BackboneRouter</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif // BACKBONE_ROUTER_BACKBONE_AGENT_HPP_</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    NdProxyManager    mNdProxyManager;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    DuaRoutingManager mDuaRoutingManager;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace BackboneRouter</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif // BACKBONE_ROUTER_BACKBONE_AGENT_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="adua__routing__manager_8hpp_html"><div class="ttname"><a href="../../d7/daf/dua__routing__manager_8hpp.html">dua_routing_manager.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
 <div class="ttc" id="and__proxy_8hpp_html"><div class="ttname"><a href="../../d1/d28/nd__proxy_8hpp.html">nd_proxy.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_afababca22a73f485b146e58c4a09111b"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">otbr::BackboneRouter::BackboneAgent::kBackboneUdpPort</a></div><div class="ttdeci">static constexpr uint16_t kBackboneUdpPort</div><div class="ttdoc">The BBR port.</div><div class="ttdef"><b>Definition:</b> backbone_agent.hpp:63</div></div>
-<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_aa4dac952819c7dbdb8f606a3942da448"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#aa4dac952819c7dbdb8f606a3942da448">otbr::BackboneRouter::BackboneAgent::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:142</div></div>
+<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_afababca22a73f485b146e58c4a09111b"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#afababca22a73f485b146e58c4a09111b">otbr::BackboneRouter::BackboneAgent::kBackboneUdpPort</a></div><div class="ttdeci">static constexpr uint16_t kBackboneUdpPort</div><div class="ttdoc">The BBR port.</div><div class="ttdef"><b>Definition:</b> backbone_agent.hpp:64</div></div>
+<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_aa4dac952819c7dbdb8f606a3942da448"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#aa4dac952819c7dbdb8f606a3942da448">otbr::BackboneRouter::BackboneAgent::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:144</div></div>
 <div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_a2c4e0a327629dd17bab5d4f13c3fef10"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#a2c4e0a327629dd17bab5d4f13c3fef10">otbr::BackboneRouter::BackboneAgent::BackboneAgent</a></div><div class="ttdeci">BackboneAgent(otbr::Ncp::ControllerOpenThread &amp;aNcp)</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:46</div></div>
 <div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:55</div></div>
-<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_ac64cdbf61afdf711fcee2687c3523cda"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#ac64cdbf61afdf711fcee2687c3523cda">otbr::BackboneRouter::BackboneAgent::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:151</div></div>
+<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_ac64cdbf61afdf711fcee2687c3523cda"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#ac64cdbf61afdf711fcee2687c3523cda">otbr::BackboneRouter::BackboneAgent::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:153</div></div>
 <div class="ttc" id="ainstance__params_8hpp_html"><div class="ttname"><a href="../../dd/db1/instance__params_8hpp.html">instance_params.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1Ip6Prefix_html"><div class="ttname"><a href="../../da/d3a/classotbr_1_1Ip6Prefix.html">otbr::Ip6Prefix</a></div><div class="ttdef"><b>Definition:</b> types.hpp:264</div></div>
+<div class="ttc" id="aclassotbr_1_1Ip6Prefix_html"><div class="ttname"><a href="../../da/d3a/classotbr_1_1Ip6Prefix.html">otbr::Ip6Prefix</a></div><div class="ttdef"><b>Definition:</b> types.hpp:308</div></div>
 <div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html_adba1dbc71363fdd10b5454293f6cfa05"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html#adba1dbc71363fdd10b5454293f6cfa05">otbr::BackboneRouter::BackboneAgent::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> backbone_agent.cpp:55</div></div>
 <div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:56</div></div>
-<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">otbr::BackboneRouter::BackboneAgent</a></div><div class="ttdef"><b>Definition:</b> backbone_agent.hpp:60</div></div>
+<div class="ttc" id="aclassotbr_1_1BackboneRouter_1_1BackboneAgent_html"><div class="ttname"><a href="../../da/d5a/classotbr_1_1BackboneRouter_1_1BackboneAgent.html">otbr::BackboneRouter::BackboneAgent</a></div><div class="ttdef"><b>Definition:</b> backbone_agent.hpp:61</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['statehandler_1102',['StateHandler',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11',1,'otbr::Mdns::Publisher']]]
+  ['publishhosthandler_1163',['PublishHostHandler',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a63b0143769df1e0c21e6304bf9a69ef0',1,'otbr::Mdns::Publisher']]],
+  ['publishservicehandler_1164',['PublishServiceHandler',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a58c302643f9b2f3c28509a68b025ebc2',1,'otbr::Mdns::Publisher']]]
 ];

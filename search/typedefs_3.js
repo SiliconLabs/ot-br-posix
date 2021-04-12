@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['task_1103',['Task',['../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef',1,'otbr::TaskRunner']]]
+  ['statehandler_1165',['StateHandler',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11',1,'otbr::Mdns::Publisher']]]
 ];
