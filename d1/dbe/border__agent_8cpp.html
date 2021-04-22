@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-75ef16d</span>
+   &#160;<span id="projectnumber">0.3.0-a362436</span>
    </div>
   </td>
  </tr>
@@ -81,6 +81,7 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;openthread/border_agent.h&gt;</code><br />
 <code>#include &lt;openthread/thread_ftd.h&gt;</code><br />
 <code>#include &lt;openthread/platform/toolchain.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d9a/ncp__openthread_8hpp_source.html">agent/ncp_openthread.hpp</a>&quot;</code><br />
@@ -99,9 +100,6 @@ Enumerations</h2></td></tr>
 <a class="el" href="../../d1/dbe/border__agent_8cpp.html#a6432a34ab942f33605d6558d873b645ba5165d1d4a5c9a22fa7424af418198d90">otbr::kInvalidLocator</a> = 0xffff
  }</td></tr>
 <tr class="separator:a6432a34ab942f33605d6558d873b645b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb60d939b1539b3474bb743b395239d4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d1/dbe/border__agent_8cpp.html#afb60d939b1539b3474bb743b395239d4ab87b6aaa38167efb880dc7bd457744fc">otbr::kBorderAgentUdpPort</a> = 49191
- }</td></tr>
-<tr class="separator:afb60d939b1539b3474bb743b395239d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file implements the Thread border agent. </p>
@@ -122,25 +120,6 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6432a34ab942f33605d6558d873b645ba7bd5f433e16e0182794b7793153f6eba"></a>kAloc16Leader&#160;</td><td class="fielddoc"><p>leader anycast locator. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a6432a34ab942f33605d6558d873b645ba5165d1d4a5c9a22fa7424af418198d90"></a>kInvalidLocator&#160;</td><td class="fielddoc"><p>invalid locator. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="afb60d939b1539b3474bb743b395239d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb60d939b1539b3474bb743b395239d4">&#9670;&nbsp;</a></span>anonymous enum</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>UDP ports </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afb60d939b1539b3474bb743b395239d4ab87b6aaa38167efb880dc7bd457744fc"></a>kBorderAgentUdpPort&#160;</td><td class="fielddoc"><p>Thread commissioning port. </p>
 </td></tr>
 </table>
 
