@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 #
-#  Copyright (c) 2017, The OpenThread Authors.
+#  Copyright (c) 2020, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -26,18 +26,22 @@
 #  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 #  POSSIBILITY OF SUCH DAMAGE.
 #
+#   Description:
+#       This script manipulates router tables.
+#
 
-# shellcheck disable=SC2034
-SUDO_EXTEND_TIME=false
+rt_tables_uninstall()
+{
+    with BACKBONE_ROUTER || return 0
 
-SWAP_REQUIRED=false
+    sudo sed -i.bak '/88\s\+openthread/d' /etc/iproute2/rt_tables
+}
 
-NAT64=1
-DNS64=1
-DHCPV6_PD=0
-NETWORK_MANAGER=1
-# disabled unless specifically added for the device
-NETWORK_MANAGER_WIFI=0
-BACKBONE_ROUTER=0
-BORDER_ROUTING=0
-WEB_GUI=1
+rt_tables_install()
+{
+    with BACKBONE_ROUTER || return 0
+
+    rt_tables_uninstall
+
+    sudo sh -c 'echo "88 openthread" >>/etc/iproute2/rt_tables'
+}

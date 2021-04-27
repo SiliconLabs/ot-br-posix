@@ -42,6 +42,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <openthread/border_agent.h>
 #include <openthread/thread_ftd.h>
 #include <openthread/platform/toolchain.h>
 
@@ -72,15 +73,6 @@ enum
     kInvalidLocator = 0xffff, ///< invalid locator.
 };
 
-/**
- * UDP ports
- *
- */
-enum
-{
-    kBorderAgentUdpPort = 49191, ///< Thread commissioning port.
-};
-
 uint32_t BorderAgent::StateBitmap::ToUint32(void) const
 {
     uint32_t bitmap = 0;
@@ -103,6 +95,9 @@ BorderAgent::BorderAgent(otbr::Ncp::ControllerOpenThread &aNcp)
 #endif
 #else
     , mPublisher(nullptr)
+#endif
+#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY
+    , mDiscoveryProxy(aNcp, *mPublisher)
 #endif
 #if OTBR_ENABLE_BACKBONE_ROUTER
     , mBackboneAgent(aNcp)
@@ -142,6 +137,11 @@ otbrError BorderAgent::Start(void)
     mAdvertisingProxy.Start();
 #endif
     UpdateMeshCopService();
+
+#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY
+    mDiscoveryProxy.Start();
+#endif
+
 #endif // OTBR_ENABLE_MDNS_AVAHI || OTBR_ENABLE_MDNS_MDNSSD || OTBR_ENABLE_MDNS_MOJO
 
 exit:
@@ -158,6 +158,11 @@ void BorderAgent::Stop(void)
 #if OTBR_ENABLE_SRP_ADVERTISING_PROXY
     mAdvertisingProxy.Stop();
 #endif
+
+#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY
+    mDiscoveryProxy.Stop();
+#endif
+
 #endif
 }
 
@@ -289,8 +294,8 @@ void BorderAgent::PublishMeshCopService(void)
     txtList.emplace_back("dn", otThreadGetDomainName(instance));
 #endif
 
-    mPublisher->PublishService(/* aHostName */ nullptr, kBorderAgentUdpPort, networkName, kBorderAgentServiceType,
-                               txtList);
+    mPublisher->PublishService(/* aHostName */ nullptr, otBorderAgentGetUdpPort(instance), networkName,
+                               kBorderAgentServiceType, txtList);
 }
 
 void BorderAgent::UnpublishMeshCopService(void)

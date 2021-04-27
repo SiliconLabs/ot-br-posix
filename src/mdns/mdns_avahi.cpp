@@ -623,10 +623,10 @@ otbrError PublisherAvahi::PublishService(const char *   aHostName,
 
     for (const auto &txtEntry : aTxtList)
     {
-        const char *   name        = txtEntry.mName;
-        size_t         nameLength  = txtEntry.mNameLength;
-        const uint8_t *value       = txtEntry.mValue;
-        size_t         valueLength = txtEntry.mValueLength;
+        const char *   name        = txtEntry.mName.c_str();
+        size_t         nameLength  = txtEntry.mName.length();
+        const uint8_t *value       = txtEntry.mValue.data();
+        size_t         valueLength = txtEntry.mValue.size();
         // +1 for the size of "=", avahi doesn't need '\0' at the end of the entry
         size_t needed = sizeof(AvahiStringList) - sizeof(AvahiStringList::text) + nameLength + valueLength + 1;
 
@@ -818,6 +818,36 @@ std::string PublisherAvahi::MakeFullName(const char *aName)
     fullHostName += (mDomain == nullptr ? "local." : mDomain);
 
     return fullHostName;
+}
+
+void PublisherAvahi::SubscribeService(const std::string &aType, const std::string &aInstanceName)
+{
+    OTBR_UNUSED_VARIABLE(aType);
+    OTBR_UNUSED_VARIABLE(aInstanceName);
+
+    VerifyOrDie(false, "SubscribeService is not implemented with avahi");
+}
+
+void PublisherAvahi::UnsubscribeService(const std::string &aType, const std::string &aInstanceName)
+{
+    OTBR_UNUSED_VARIABLE(aType);
+    OTBR_UNUSED_VARIABLE(aInstanceName);
+
+    VerifyOrDie(false, "UnsubscribeService is not implemented with avahi");
+}
+
+void PublisherAvahi::SubscribeHost(const std::string &aHostName)
+{
+    OTBR_UNUSED_VARIABLE(aHostName);
+
+    VerifyOrDie(false, "SubscribeHost is not implemented with avahi");
+}
+
+void PublisherAvahi::UnsubscribeHost(const std::string &aHostName)
+{
+    OTBR_UNUSED_VARIABLE(aHostName);
+
+    VerifyOrDie(false, "UnsubscribeHost is not implemented with avahi");
 }
 
 Publisher *Publisher::Create(int aFamily, const char *aDomain, StateHandler aHandler, void *aContext)
