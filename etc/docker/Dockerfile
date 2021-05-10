@@ -54,7 +54,8 @@ ENV DOCKER 1
 
 RUN env
 
-COPY . /app
+COPY ./ot-br-posix /app
+COPY ./openthread /openthread
 WORKDIR /app
 
 # Required during build or run
