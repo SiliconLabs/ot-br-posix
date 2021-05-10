@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-a362436</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -98,143 +98,156 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *    POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/da9/logging_8hpp.html">common/logging.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d73/dbus__message__dump_8hpp.html">dbus/common/dbus_message_dump.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dea/dbus__message__helper_8hpp.html">dbus/common/dbus_message_helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d54/dbus__resources_8hpp.html">dbus/common/dbus_resources.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/da9/error__helper_8hpp.html">dbus/server/error_helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>DBus {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">   58</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">DBusRequest</a>(DBusConnection *aConnection, DBusMessage *aMessage)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        : mConnection(aConnection)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        , mMessage(aMessage)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        dbus_message_ref(aMessage);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        dbus_connection_ref(aConnection);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">   72</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">DBusRequest</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        : mConnection(nullptr)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        , mMessage(nullptr)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        CopyFrom(aOther);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">   85</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        CopyFrom(aOther);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">   97</a></span>&#160;    DBusMessage *<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">GetMessage</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mMessage; }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">  105</a></span>&#160;    DBusConnection *<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">GetConnection</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mConnection; }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">  113</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt; <span class="keywordtype">void</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">Reply</a>(<span class="keyword">const</span> std::tuple&lt;Args...&gt; &amp;aReply)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        UniqueDBusMessage reply{dbus_message_new_method_return(mMessage)};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(reply != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(<a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a569a0d7730d586e49fece349ee137306">otbr::DBus::TupleToDBusMessage</a>(*reply, aReply) == <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432">OTBR_ERROR_NONE</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/da9/logging_8hpp.html#adf6eaf3ff77296eb5582c03e1a4efedc">otbrLogGetLevel</a>() &gt;= OTBR_LOG_DEBUG)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="../../d0/da9/logging_8hpp.html#a7b7dbf451e3c68eac8f0a7d09df427ef">otbrLog</a>(OTBR_LOG_DEBUG, <span class="stringliteral">&quot;Replied to %s.%s :&quot;</span>, dbus_message_get_interface(mMessage),</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    dbus_message_get_member(mMessage));</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#ae1ff1319b519ce23b219248e1b1e57f0">DumpDBusMessage</a>(*reply);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        dbus_connection_send(mConnection, reply.get(), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    exit:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">  138</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">ReplyOtResult</a>(otError aError)</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        UniqueDBusMessage reply{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">auto</span>              logLevel = (aError == OT_ERROR_NONE) ? OTBR_LOG_INFO : OTBR_LOG_ERR;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="../../d0/da9/logging_8hpp.html#a7b7dbf451e3c68eac8f0a7d09df427ef">otbrLog</a>(logLevel, <span class="stringliteral">&quot;Replied to %s.%s with result %s&quot;</span>, dbus_message_get_interface(mMessage),</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                dbus_message_get_member(mMessage), <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">ConvertToDBusErrorName</a>(aError));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_LOG_TAG</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_LOG_TAG &quot;DBUS&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/da9/logging_8hpp.html">common/logging.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d73/dbus__message__dump_8hpp.html">dbus/common/dbus_message_dump.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dea/dbus__message__helper_8hpp.html">dbus/common/dbus_message_helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d54/dbus__resources_8hpp.html">dbus/common/dbus_resources.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/da9/error__helper_8hpp.html">dbus/server/error_helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>DBus {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">   62</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">DBusRequest</a>(DBusConnection *aConnection, DBusMessage *aMessage)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        : mConnection(aConnection)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        , mMessage(aMessage)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        dbus_message_ref(aMessage);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        dbus_connection_ref(aConnection);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">   76</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">DBusRequest</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        : mConnection(nullptr)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        , mMessage(nullptr)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        CopyFrom(aOther);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">   89</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        CopyFrom(aOther);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">  101</a></span>&#160;    DBusMessage *<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">GetMessage</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mMessage; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">  109</a></span>&#160;    DBusConnection *<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">GetConnection</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mConnection; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">  117</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt; <span class="keywordtype">void</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">Reply</a>(<span class="keyword">const</span> std::tuple&lt;Args...&gt; &amp;aReply)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        UniqueDBusMessage reply{dbus_message_new_method_return(mMessage)};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(reply != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(<a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a569a0d7730d586e49fece349ee137306">otbr::DBus::TupleToDBusMessage</a>(*reply, aReply) == <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432">OTBR_ERROR_NONE</a>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/da9/logging_8hpp.html#afc9ce29e790e067ca79760c96f794d43">otbrLogGetLevel</a>() &gt;= OTBR_LOG_DEBUG)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="../../d0/da9/logging_8hpp.html#a9b4d3c93aabc4c083089de439213931a">otbrLogDebug</a>(<span class="stringliteral">&quot;Replied to %s.%s :&quot;</span>, dbus_message_get_interface(mMessage), dbus_message_get_member(mMessage));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#ae1ff1319b519ce23b219248e1b1e57f0">DumpDBusMessage</a>(*reply);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        dbus_connection_send(mConnection, reply.get(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    exit:</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">  141</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">ReplyOtResult</a>(otError aError)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        UniqueDBusMessage reply{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (aError == OT_ERROR_NONE)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            reply = UniqueDBusMessage(dbus_message_new_method_return(mMessage));</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            reply = UniqueDBusMessage(dbus_message_new_error(mMessage, <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">ConvertToDBusErrorName</a>(aError), <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(reply != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        dbus_connection_send(mConnection, reply.get(), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    exit:</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">  165</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">~DBusRequest</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (mConnection)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            dbus_connection_unref(mConnection);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span> (mMessage)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            dbus_message_unref(mMessage);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> CopyFrom(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">if</span> (mMessage)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            dbus_message_unref(mMessage);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (mConnection)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            dbus_connection_unref(mConnection);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        mConnection = aOther.mConnection;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        mMessage    = aOther.mMessage;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        dbus_message_ref(mMessage);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        dbus_connection_ref(mConnection);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    DBusConnection *mConnection;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    DBusMessage *   mMessage;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;} <span class="comment">// namespace DBus</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="../../d0/da9/logging_8hpp.html#a5ca08d770b1d74e048e5c9c45c266306">otbrLogInfo</a>(<span class="stringliteral">&quot;Replied to %s.%s with result %s&quot;</span>, dbus_message_get_interface(mMessage),</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        dbus_message_get_member(mMessage), <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">ConvertToDBusErrorName</a>(aError));</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="../../d0/da9/logging_8hpp.html#a515116900189d28bff910e7e28d36603">otbrLogErr</a>(<span class="stringliteral">&quot;Replied to %s.%s with result %s&quot;</span>, dbus_message_get_interface(mMessage),</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                       dbus_message_get_member(mMessage), <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">ConvertToDBusErrorName</a>(aError));</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (aError == OT_ERROR_NONE)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            reply = UniqueDBusMessage(dbus_message_new_method_return(mMessage));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            reply = UniqueDBusMessage(dbus_message_new_error(mMessage, <a class="code" href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">ConvertToDBusErrorName</a>(aError), <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(reply != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        dbus_connection_send(mConnection, reply.get(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    exit:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">  176</a></span>&#160;    <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">~DBusRequest</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">if</span> (mConnection)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            dbus_connection_unref(mConnection);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">if</span> (mMessage)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            dbus_message_unref(mMessage);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> CopyFrom(<span class="keyword">const</span> <a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aOther)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span> (mMessage)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            dbus_message_unref(mMessage);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">if</span> (mConnection)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            dbus_connection_unref(mConnection);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        mConnection = aOther.mConnection;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        mMessage    = aOther.mMessage;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        dbus_message_ref(mMessage);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        dbus_connection_ref(mConnection);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    DBusConnection *mConnection;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    DBusMessage *   mMessage;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;};</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;} <span class="comment">// namespace DBus</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;} <span class="comment">// namespace otbr</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceotbr_1_1DBus_html_ae1ff1319b519ce23b219248e1b1e57f0"><div class="ttname"><a href="../../df/de9/namespaceotbr_1_1DBus.html#ae1ff1319b519ce23b219248e1b1e57f0">otbr::DBus::DumpDBusMessage</a></div><div class="ttdeci">void DumpDBusMessage(DBusMessage &amp;aMessage)</div><div class="ttdef"><b>Definition:</b> dbus_message_dump.cpp:168</div></div>
+<div class="ttc" id="anamespaceotbr_1_1DBus_html_ae1ff1319b519ce23b219248e1b1e57f0"><div class="ttname"><a href="../../df/de9/namespaceotbr_1_1DBus.html#ae1ff1319b519ce23b219248e1b1e57f0">otbr::DBus::DumpDBusMessage</a></div><div class="ttdeci">void DumpDBusMessage(DBusMessage &amp;aMessage)</div><div class="ttdef"><b>Definition:</b> dbus_message_dump.cpp:170</div></div>
 <div class="ttc" id="adbus__message__helper_8hpp_html"><div class="ttname"><a href="../../d0/dea/dbus__message__helper_8hpp.html">dbus_message_helper.hpp</a></div></div>
 <div class="ttc" id="anamespaceotbr_1_1DBus_html_a58c42079fc5b54e90b4246dbbd93a221"><div class="ttname"><a href="../../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221">otbr::DBus::ConvertToDBusErrorName</a></div><div class="ttdeci">const char * ConvertToDBusErrorName(otError aError)</div><div class="ttdef"><b>Definition:</b> error_helper.cpp:75</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a5948a3c18efa1352df77adac74347e6f"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">otbr::DBus::DBusRequest::Reply</a></div><div class="ttdeci">void Reply(const std::tuple&lt; Args... &gt; &amp;aReply)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:113</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">otbr::DBus::DBusRequest</a></div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:48</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a2068483960b718d7a3eb7b12ac4cea94"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">otbr::DBus::DBusRequest::ReplyOtResult</a></div><div class="ttdeci">void ReplyOtResult(otError aError)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:138</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a5948a3c18efa1352df77adac74347e6f"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">otbr::DBus::DBusRequest::Reply</a></div><div class="ttdeci">void Reply(const std::tuple&lt; Args... &gt; &amp;aReply)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:117</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">otbr::DBus::DBusRequest</a></div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:52</div></div>
+<div class="ttc" id="alogging_8hpp_html_afc9ce29e790e067ca79760c96f794d43"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#afc9ce29e790e067ca79760c96f794d43">otbrLogGetLevel</a></div><div class="ttdeci">otbrLogLevel otbrLogGetLevel(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:54</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a2068483960b718d7a3eb7b12ac4cea94"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">otbr::DBus::DBusRequest::ReplyOtResult</a></div><div class="ttdeci">void ReplyOtResult(otError aError)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:141</div></div>
 <div class="ttc" id="adbus__resources_8hpp_html"><div class="ttname"><a href="../../d5/d54/dbus__resources_8hpp.html">dbus_resources.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a7a566c4df51e89f5f3522a71da6671f7"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">otbr::DBus::DBusRequest::GetConnection</a></div><div class="ttdeci">DBusConnection * GetConnection(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:105</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a7a566c4df51e89f5f3522a71da6671f7"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">otbr::DBus::DBusRequest::GetConnection</a></div><div class="ttdeci">DBusConnection * GetConnection(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:109</div></div>
 <div class="ttc" id="aerror__helper_8hpp_html"><div class="ttname"><a href="../../da/da9/error__helper_8hpp.html">error_helper.hpp</a></div></div>
 <div class="ttc" id="alogging_8hpp_html"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html">logging.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_ab69ad080396114483b20a1d6cad2f0f4"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">otbr::DBus::DBusRequest::operator=</a></div><div class="ttdeci">DBusRequest &amp; operator=(const DBusRequest &amp;aOther)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:85</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_ab69ad080396114483b20a1d6cad2f0f4"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#ab69ad080396114483b20a1d6cad2f0f4">otbr::DBus::DBusRequest::operator=</a></div><div class="ttdeci">DBusRequest &amp; operator=(const DBusRequest &amp;aOther)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:89</div></div>
+<div class="ttc" id="alogging_8hpp_html_a9b4d3c93aabc4c083089de439213931a"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a9b4d3c93aabc4c083089de439213931a">otbrLogDebug</a></div><div class="ttdeci">#define otbrLogDebug(...)</div><div class="ttdef"><b>Definition:</b> logging.hpp:229</div></div>
 <div class="ttc" id="adbus__message__dump_8hpp_html"><div class="ttname"><a href="../../d7/d73/dbus__message__dump_8hpp.html">dbus_message_dump.hpp</a></div></div>
 <div class="ttc" id="anamespaceotbr_1_1DBus_html_a569a0d7730d586e49fece349ee137306"><div class="ttname"><a href="../../df/de9/namespaceotbr_1_1DBus.html#a569a0d7730d586e49fece349ee137306">otbr::DBus::TupleToDBusMessage</a></div><div class="ttdeci">otbrError TupleToDBusMessage(DBusMessage &amp;aMessage, const std::tuple&lt; FieldTypes... &gt; &amp;aValues)</div><div class="ttdef"><b>Definition:</b> dbus_message_helper.hpp:568</div></div>
-<div class="ttc" id="acode__utils_8hpp_html_a42e32454ca5e456d5ce5a260c735abed"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a></div><div class="ttdeci">#define VerifyOrExit(aCondition,...)</div><div class="ttdef"><b>Definition:</b> code_utils.hpp:104</div></div>
+<div class="ttc" id="acode__utils_8hpp_html_a42e32454ca5e456d5ce5a260c735abed"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a></div><div class="ttdeci">#define VerifyOrExit(aCondition,...)</div><div class="ttdef"><b>Definition:</b> code_utils.hpp:108</div></div>
+<div class="ttc" id="alogging_8hpp_html_a5ca08d770b1d74e048e5c9c45c266306"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a5ca08d770b1d74e048e5c9c45c266306">otbrLogInfo</a></div><div class="ttdeci">#define otbrLogInfo(...)</div><div class="ttdef"><b>Definition:</b> logging.hpp:228</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432">OTBR_ERROR_NONE</a></div><div class="ttdeci">@ OTBR_ERROR_NONE</div><div class="ttdoc">No error.</div><div class="ttdef"><b>Definition:</b> types.hpp:72</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a879f418bc6986d20c2bdb6aa07f5afa0"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">otbr::DBus::DBusRequest::GetMessage</a></div><div class="ttdeci">DBusMessage * GetMessage(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:97</div></div>
-<div class="ttc" id="alogging_8hpp_html_adf6eaf3ff77296eb5582c03e1a4efedc"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#adf6eaf3ff77296eb5582c03e1a4efedc">otbrLogGetLevel</a></div><div class="ttdeci">int otbrLogGetLevel(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:46</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a03f7c8cb8a7052ab4f7e9461991c90de"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">otbr::DBus::DBusRequest::DBusRequest</a></div><div class="ttdeci">DBusRequest(const DBusRequest &amp;aOther)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:72</div></div>
-<div class="ttc" id="alogging_8hpp_html_a7b7dbf451e3c68eac8f0a7d09df427ef"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a7b7dbf451e3c68eac8f0a7d09df427ef">otbrLog</a></div><div class="ttdeci">void otbrLog(int aLevel, const char *aFormat,...)</div><div class="ttdef"><b>Definition:</b> logging.cpp:62</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a52d0ecd65c43d2c19a7463f89d8b8a69"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">otbr::DBus::DBusRequest::~DBusRequest</a></div><div class="ttdeci">~DBusRequest(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:165</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a04266b2a92f8e0516a6b7af6c2d27e7a"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">otbr::DBus::DBusRequest::DBusRequest</a></div><div class="ttdeci">DBusRequest(DBusConnection *aConnection, DBusMessage *aMessage)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:58</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a879f418bc6986d20c2bdb6aa07f5afa0"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a879f418bc6986d20c2bdb6aa07f5afa0">otbr::DBus::DBusRequest::GetMessage</a></div><div class="ttdeci">DBusMessage * GetMessage(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:101</div></div>
+<div class="ttc" id="alogging_8hpp_html_a515116900189d28bff910e7e28d36603"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a515116900189d28bff910e7e28d36603">otbrLogErr</a></div><div class="ttdeci">#define otbrLogErr(...)</div><div class="ttdef"><b>Definition:</b> logging.hpp:225</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a03f7c8cb8a7052ab4f7e9461991c90de"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a03f7c8cb8a7052ab4f7e9461991c90de">otbr::DBus::DBusRequest::DBusRequest</a></div><div class="ttdeci">DBusRequest(const DBusRequest &amp;aOther)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:76</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a52d0ecd65c43d2c19a7463f89d8b8a69"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">otbr::DBus::DBusRequest::~DBusRequest</a></div><div class="ttdeci">~DBusRequest(void)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:176</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html_a04266b2a92f8e0516a6b7af6c2d27e7a"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a04266b2a92f8e0516a6b7af6c2d27e7a">otbr::DBus::DBusRequest::DBusRequest</a></div><div class="ttdeci">DBusRequest(DBusConnection *aConnection, DBusMessage *aMessage)</div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:62</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

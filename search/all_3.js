@@ -54,7 +54,7 @@ var searchData=
   ['discovery_5fproxy_2ecpp_106',['discovery_proxy.cpp',['../d8/d57/discovery__proxy_8cpp.html',1,'']]],
   ['discovery_5fproxy_2ehpp_107',['discovery_proxy.hpp',['../df/d90/discovery__proxy_8hpp.html',1,'']]],
   ['dns_5futils_2ehpp_108',['dns_utils.hpp',['../d9/d29/dns__utils_8hpp.html',1,'']]],
-  ['dnsnametype_109',['DnsNameType',['../d9/d29/dns__utils_8hpp.html#acd12d41e145ce949df9c371551812640',1,'dns_utils.hpp']]],
+  ['dnsnameinfo_109',['DnsNameInfo',['../d1/de1/structDnsNameInfo.html',1,'']]],
   ['dua_5frouting_5fmanager_2ecpp_110',['dua_routing_manager.cpp',['../d4/de7/dua__routing__manager_8cpp.html',1,'']]],
   ['dua_5frouting_5fmanager_2ehpp_111',['dua_routing_manager.hpp',['../d7/daf/dua__routing__manager_8hpp.html',1,'']]],
   ['dumpdbusmessage_112',['DumpDBusMessage',['../df/de9/namespaceotbr_1_1DBus.html#ae1ff1319b519ce23b219248e1b1e57f0',1,'otbr::DBus']]]

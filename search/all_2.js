@@ -19,7 +19,7 @@ var searchData=
   ['connection_2ehpp_42',['connection.hpp',['../dd/d42/connection_8hpp.html',1,'']]],
   ['connectivity2jsonstring_43',['Connectivity2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a4c92d39ff1ddc4bfd5a6c5b869342d4e',1,'otbr::rest::Json']]],
   ['constants_2ehpp_44',['constants.hpp',['../d6/dc0/backbone__router_2constants_8hpp.html',1,'(Global Namespace)'],['../d4/def/dbus_2common_2constants_8hpp.html',1,'(Global Namespace)']]],
-  ['controlleropenthread_45',['ControllerOpenThread',['../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html',1,'otbr::Ncp::ControllerOpenThread'],['../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9ce3ebb1eac5e301f6db36b59af22458',1,'otbr::Ncp::ControllerOpenThread::ControllerOpenThread()']]],
+  ['controlleropenthread_45',['ControllerOpenThread',['../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html',1,'otbr::Ncp::ControllerOpenThread'],['../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a07b5a202dcb1c7b41a1ac246dcdf7085',1,'otbr::Ncp::ControllerOpenThread::ControllerOpenThread()']]],
   ['convertfromdbuserrorname_46',['ConvertFromDBusErrorName',['../df/de9/namespaceotbr_1_1DBus.html#a01663aee099dd6dffd4ea608f9cf5473',1,'otbr::DBus']]],
   ['converttodbuserrorname_47',['ConvertToDBusErrorName',['../df/de9/namespaceotbr_1_1DBus.html#a58c42079fc5b54e90b4246dbbd93a221',1,'otbr::DBus']]],
   ['copyfrom_48',['CopyFrom',['../d2/dfe/classotbr_1_1Ip6Address.html#a2b0c6e5c8b3ddfaf19d086241a89acd3',1,'otbr::Ip6Address::CopyFrom(const struct sockaddr_in6 &amp;aSockAddr)'],['../d2/dfe/classotbr_1_1Ip6Address.html#aeb7c2b8de4f8a1a15efd0acf0d18ca9c',1,'otbr::Ip6Address::CopyFrom(const struct in6_addr &amp;aIn6Addr)']]],

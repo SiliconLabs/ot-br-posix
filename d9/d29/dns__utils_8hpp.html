@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-a362436</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">dns_utils.hpp File Reference</div>  </div>
@@ -77,19 +77,15 @@ $(function() {
 </div>
 <p><a href="../../d9/d29/dns__utils_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:acd12d41e145ce949df9c371551812640"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#acd12d41e145ce949df9c371551812640">DnsNameType</a> { <b>kDnsNameTypeUnknown</b>, 
-<b>kDnsNameTypeService</b>, 
-<b>kDnsNameTypeInstance</b>, 
-<b>kDnsNameTypeHost</b>
- }</td></tr>
-<tr class="separator:acd12d41e145ce949df9c371551812640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0179b4d512165f7d5907add836044c11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#acd12d41e145ce949df9c371551812640">DnsNameType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#a0179b4d512165f7d5907add836044c11">GetDnsNameType</a> (const std::string &amp;aFullName)</td></tr>
-<tr class="separator:a0179b4d512165f7d5907add836044c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf75513be9970a7e1748fdbb4c8d78a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#aaaf75513be9970a7e1748fdbb4c8d78a">SplitFullDnsName</a> (const std::string &amp;aName)</td></tr>
+<tr class="separator:aaaf75513be9970a7e1748fdbb4c8d78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a581ad1a6f4677cb958d2fc8f9081a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#a05a581ad1a6f4677cb958d2fc8f9081a">SplitFullServiceName</a> (const std::string &amp;aFullName, std::string &amp;aType, std::string &amp;aDomain)</td></tr>
 <tr class="separator:a05a581ad1a6f4677cb958d2fc8f9081a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf88ef7618d5246f10d62e57aa1064cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#adf88ef7618d5246f10d62e57aa1064cd">SplitFullServiceInstanceName</a> (const std::string &amp;aFullName, std::string &amp;aInstanceName, std::string &amp;aType, std::string &amp;aDomain)</td></tr>
@@ -99,46 +95,31 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes DNS utilities. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="acd12d41e145ce949df9c371551812640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd12d41e145ce949df9c371551812640">&#9670;&nbsp;</a></span>DnsNameType</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aaaf75513be9970a7e1748fdbb4c8d78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf75513be9970a7e1748fdbb4c8d78a">&#9670;&nbsp;</a></span>SplitFullDnsName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="../../d9/d29/dns__utils_8hpp.html#acd12d41e145ce949df9c371551812640">DnsNameType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This enum represents a DNS name type. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a0179b4d512165f7d5907add836044c11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0179b4d512165f7d5907add836044c11">&#9670;&nbsp;</a></span>GetDnsNameType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d9/d29/dns__utils_8hpp.html#acd12d41e145ce949df9c371551812640">DnsNameType</a> GetDnsNameType </td>
+          <td class="memname"><a class="el" href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a> SplitFullDnsName </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>aFullName</em></td><td>)</td>
+          <td class="paramname"><em>aName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function gets the DNS name type.</p>
+<p>This method splits a full DNS name into name components.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aFullName</td><td>The DNS name.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The full DNS name to dissect.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The DNS name type. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a></code> structure containing DNS name information.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a> </dd></dl>
 
 </div>
 </div>

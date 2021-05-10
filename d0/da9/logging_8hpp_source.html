@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-a362436</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -106,56 +106,70 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;common/types.hpp&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">enum</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    OTBR_LOG_EMERG,   <span class="comment">/* system is unusable */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    OTBR_LOG_ALERT,   <span class="comment">/* action must be taken immediately */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    OTBR_LOG_CRIT,    <span class="comment">/* critical conditions */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    OTBR_LOG_ERR,     <span class="comment">/* error conditions */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    OTBR_LOG_WARNING, <span class="comment">/* warning conditions */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    OTBR_LOG_NOTICE,  <span class="comment">/* normal but significant condition */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    OTBR_LOG_INFO,    <span class="comment">/* informational */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    OTBR_LOG_DEBUG,   <span class="comment">/* debug-level messages */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/da9/logging_8hpp.html#adf6eaf3ff77296eb5582c03e1a4efedc">otbrLogGetLevel</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a762b4410fc095825139d18166e8a64e6">otbrLogEnableSyslog</a>(<span class="keywordtype">bool</span> aEnabled);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#aa70366d1b518e115c7fc3bf7ed9da758">otbrLogInit</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aIdent, <span class="keywordtype">int</span> aLevel, <span class="keywordtype">bool</span> aPrintStderr);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a7b7dbf451e3c68eac8f0a7d09df427ef">otbrLog</a>(<span class="keywordtype">int</span> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aFormat, ...);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a8de3dbe15c57a9fb48c735835b20d939">  101</a></span>&#160;<span class="preprocessor">#define otbrLogResult(aError, aFormat, ...)                                                                \</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">    do                                                                                                     \</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">    {                                                                                                      \</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">        otbrError _err = (aError);                                                                         \</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">        otbrLog(_err == OTBR_ERROR_NONE ? OTBR_LOG_INFO : OTBR_LOG_WARNING, aFormat &quot;: %s&quot;, ##__VA_ARGS__, \</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">                otbrErrorString(_err));                                                                    \</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a7f7ac1b8219a2883df264559ffd91fba">otbrLogv</a>(<span class="keywordtype">int</span> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aFormat, va_list);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a4e9b1ae7e5d59c205377bd96221c9ea9">otbrDump</a>(<span class="keywordtype">int</span> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aPrefix, <span class="keyword">const</span> <span class="keywordtype">void</span> *aMemory, <span class="keywordtype">size_t</span> aSize);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a>(<a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a5a2bf385c625fa5e9beaba21d26326fe">otbrLogDeinit</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif // OTBR_COMMON_LOGGING_HPP_</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef OTBR_LOG_TAG</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#error &quot;OTBR_LOG_TAG is not defined&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;common/types.hpp&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">   51</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    OTBR_LOG_EMERG,   <span class="comment">/* system is unusable */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    OTBR_LOG_ALERT,   <span class="comment">/* action must be taken immediately */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    OTBR_LOG_CRIT,    <span class="comment">/* critical conditions */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    OTBR_LOG_ERR,     <span class="comment">/* error conditions */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    OTBR_LOG_WARNING, <span class="comment">/* warning conditions */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    OTBR_LOG_NOTICE,  <span class="comment">/* normal but significant condition */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    OTBR_LOG_INFO,    <span class="comment">/* informational */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    OTBR_LOG_DEBUG,   <span class="comment">/* debug-level messages */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> <a class="code" href="../../d0/da9/logging_8hpp.html#afc9ce29e790e067ca79760c96f794d43">otbrLogGetLevel</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a762b4410fc095825139d18166e8a64e6">otbrLogEnableSyslog</a>(<span class="keywordtype">bool</span> aEnabled);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a2ab1c49e91aaaac6da657a9e323f5212">otbrLogInit</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aIdent, <a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, <span class="keywordtype">bool</span> aPrintStderr);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#aae81f9dc34535f2621fe586172f968e6">otbrLog</a>(<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aLogTag, <span class="keyword">const</span> <span class="keywordtype">char</span> *aFormat, ...);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a4f8039b108e2b4f1ab02eff7f66dcadc">otbrLogv</a>(<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aFormat, va_list);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#ad32a7bd42b17181465ed622f88b53aeb">otbrDump</a>(<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, <span class="keyword">const</span> <span class="keywordtype">char</span> *aPrefix, <span class="keyword">const</span> <span class="keywordtype">void</span> *aMemory, <span class="keywordtype">size_t</span> aSize);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a>(<a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/da9/logging_8hpp.html#a5a2bf385c625fa5e9beaba21d26326fe">otbrLogDeinit</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a8de3dbe15c57a9fb48c735835b20d939">  143</a></span>&#160;<span class="preprocessor">#define otbrLogResult(aError, aFormat, ...)                                                               \</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">    do                                                                                                    \</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">    {                                                                                                     \</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">        otbrError _err = (aError);                                                                        \</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">        otbrLog(_err == OTBR_ERROR_NONE ? OTBR_LOG_INFO : OTBR_LOG_WARNING, OTBR_LOG_TAG, aFormat &quot;: %s&quot;, \</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">                ##__VA_ARGS__, otbrErrorString(_err));                                                    \</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a4fb3e86078f983c4beadc5fb3a6cedf0">  222</a></span>&#160;<span class="preprocessor">#define otbrLogEmerg(...) otbrLog(OTBR_LOG_EMERG, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a2a3eb6877eb1355b2853b024166380c8">  223</a></span>&#160;<span class="preprocessor">#define otbrLogAlert(...) otbrLog(OTBR_LOG_ALERT, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#ac52111920fb6c0d541a1f01c1de15222">  224</a></span>&#160;<span class="preprocessor">#define otbrLogCrit(...) otbrLog(OTBR_LOG_CRIT, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a515116900189d28bff910e7e28d36603">  225</a></span>&#160;<span class="preprocessor">#define otbrLogErr(...) otbrLog(OTBR_LOG_ERR, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#ab49c142f1e0b2ff0f42f3d99c6826af7">  226</a></span>&#160;<span class="preprocessor">#define otbrLogWarning(...) otbrLog(OTBR_LOG_WARNING, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#aae7a8b8c381d3664d9fe53ed145d9a86">  227</a></span>&#160;<span class="preprocessor">#define otbrLogNotice(...) otbrLog(OTBR_LOG_NOTICE, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a5ca08d770b1d74e048e5c9c45c266306">  228</a></span>&#160;<span class="preprocessor">#define otbrLogInfo(...) otbrLog(OTBR_LOG_INFO, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../d0/da9/logging_8hpp.html#a9b4d3c93aabc4c083089de439213931a">  229</a></span>&#160;<span class="preprocessor">#define otbrLogDebug(...) otbrLog(OTBR_LOG_DEBUG, OTBR_LOG_TAG, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#endif // OTBR_COMMON_LOGGING_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="alogging_8hpp_html_a4e9b1ae7e5d59c205377bd96221c9ea9"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a4e9b1ae7e5d59c205377bd96221c9ea9">otbrDump</a></div><div class="ttdeci">void otbrDump(int aLevel, const char *aPrefix, const void *aMemory, size_t aSize)</div><div class="ttdef"><b>Definition:</b> logging.cpp:83</div></div>
-<div class="ttc" id="alogging_8hpp_html_a5a2bf385c625fa5e9beaba21d26326fe"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a5a2bf385c625fa5e9beaba21d26326fe">otbrLogDeinit</a></div><div class="ttdeci">void otbrLogDeinit(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:182</div></div>
+<div class="ttc" id="alogging_8hpp_html_a2ab1c49e91aaaac6da657a9e323f5212"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a2ab1c49e91aaaac6da657a9e323f5212">otbrLogInit</a></div><div class="ttdeci">void otbrLogInit(const char *aIdent, otbrLogLevel aLevel, bool aPrintStderr)</div><div class="ttdef"><b>Definition:</b> logging.cpp:60</div></div>
+<div class="ttc" id="alogging_8hpp_html_a5a2bf385c625fa5e9beaba21d26326fe"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a5a2bf385c625fa5e9beaba21d26326fe">otbrLogDeinit</a></div><div class="ttdeci">void otbrLogDeinit(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:224</div></div>
+<div class="ttc" id="alogging_8hpp_html_afc9ce29e790e067ca79760c96f794d43"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#afc9ce29e790e067ca79760c96f794d43">otbrLogGetLevel</a></div><div class="ttdeci">otbrLogLevel otbrLogGetLevel(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:54</div></div>
 <div class="ttc" id="alogging_8hpp_html_a762b4410fc095825139d18166e8a64e6"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a762b4410fc095825139d18166e8a64e6">otbrLogEnableSyslog</a></div><div class="ttdeci">void otbrLogEnableSyslog(bool aEnabled)</div></div>
-<div class="ttc" id="alogging_8hpp_html_aa70366d1b518e115c7fc3bf7ed9da758"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#aa70366d1b518e115c7fc3bf7ed9da758">otbrLogInit</a></div><div class="ttdeci">void otbrLogInit(const char *aIdent, int aLevel, bool aPrintStderr)</div><div class="ttdef"><b>Definition:</b> logging.cpp:52</div></div>
+<div class="ttc" id="alogging_8hpp_html_ad32a7bd42b17181465ed622f88b53aeb"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ad32a7bd42b17181465ed622f88b53aeb">otbrDump</a></div><div class="ttdeci">void otbrDump(otbrLogLevel aLevel, const char *aPrefix, const void *aMemory, size_t aSize)</div><div class="ttdef"><b>Definition:</b> logging.cpp:125</div></div>
+<div class="ttc" id="alogging_8hpp_html_a4f8039b108e2b4f1ab02eff7f66dcadc"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a4f8039b108e2b4f1ab02eff7f66dcadc">otbrLogv</a></div><div class="ttdeci">void otbrLogv(otbrLogLevel aLevel, const char *aFormat, va_list)</div><div class="ttdef"><b>Definition:</b> logging.cpp:114</div></div>
+<div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a></div><div class="ttdeci">otbrLogLevel</div><div class="ttdef"><b>Definition:</b> logging.hpp:51</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:70</div></div>
-<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:133</div></div>
-<div class="ttc" id="alogging_8hpp_html_adf6eaf3ff77296eb5582c03e1a4efedc"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#adf6eaf3ff77296eb5582c03e1a4efedc">otbrLogGetLevel</a></div><div class="ttdeci">int otbrLogGetLevel(void)</div><div class="ttdef"><b>Definition:</b> logging.cpp:46</div></div>
+<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:175</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
-<div class="ttc" id="alogging_8hpp_html_a7b7dbf451e3c68eac8f0a7d09df427ef"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a7b7dbf451e3c68eac8f0a7d09df427ef">otbrLog</a></div><div class="ttdeci">void otbrLog(int aLevel, const char *aFormat,...)</div><div class="ttdef"><b>Definition:</b> logging.cpp:62</div></div>
-<div class="ttc" id="alogging_8hpp_html_a7f7ac1b8219a2883df264559ffd91fba"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#a7f7ac1b8219a2883df264559ffd91fba">otbrLogv</a></div><div class="ttdeci">void otbrLogv(int aLevel, const char *aFormat, va_list)</div><div class="ttdef"><b>Definition:</b> logging.cpp:72</div></div>
+<div class="ttc" id="alogging_8hpp_html_aae81f9dc34535f2621fe586172f968e6"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#aae81f9dc34535f2621fe586172f968e6">otbrLog</a></div><div class="ttdeci">void otbrLog(otbrLogLevel aLevel, const char *aLogTag, const char *aFormat,...)</div><div class="ttdef"><b>Definition:</b> logging.cpp:95</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
