@@ -99,7 +99,7 @@ target_compile_definitions(ot-config INTERFACE
 )
 
 # SubGhz support
-if (OTBR_SUBGHZ_SUPPORT)
+if (OTBR_PROPRIETARY_RADIO_SUPPORT)
     target_compile_definitions(ot-config INTERFACE
         "-DOPENTHREAD_CONFIG_LOG_PLATFORM=1"
         "-DOPENTHREAD_CONFIG_PLATFORM_RADIO_PROPRIETARY_SUPPORT=1"
