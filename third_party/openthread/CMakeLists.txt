@@ -98,8 +98,8 @@ target_compile_definitions(ot-config INTERFACE
     "-DOPENTHREAD_CONFIG_TMF_PROXY_DUA_ENABLE=$<BOOL:${OTBR_DUA_ROUTING}>"
 )
 
-# SiLabs OpenThread Border Router only
-if (SL_SUBGHZ_SUPPORT)
+# SubGhz support
+if (OTBR_SUBGHZ_SUPPORT)
     target_compile_definitions(ot-config INTERFACE
         "-DOPENTHREAD_CONFIG_LOG_PLATFORM=1"
         "-DOPENTHREAD_CONFIG_PLATFORM_RADIO_PROPRIETARY_SUPPORT=1"
