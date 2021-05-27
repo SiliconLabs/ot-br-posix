@@ -80,6 +80,7 @@ set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread")
 set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
 set(OT_FULL_LOGS ON CACHE BOOL "Enable debug level logging" FORCE)
 set(OT_LOG_LEVEL "NONE" CACHE STRING "Set OpenThread log level to NONE by default" FORCE)
+set(OT_COPROCESSOR_RPC ON CACHE BOOL "Enable co-processor RPC support" FORCE)
 
 if (OTBR_DNSSD_DISCOVERY_PROXY)
     set(OT_DNSSD_SERVER ON CACHE BOOL "enable DNS-SD server support" FORCE)
