@@ -90,6 +90,15 @@ if (NOT OT_POSIX_SETTINGS_PATH)
     set(OT_POSIX_SETTINGS_PATH "\"/var/lib/thread\"" CACHE STRING "set the directory to store Thread data" FORCE)
 endif()
 
+# Multi-PAN RCP support
+if (OT_MULTIPAN_RCP)
+    set(OT_RCP_RESTORATION_MAX_COUNT "100" CACHE STRING "set max RCP restoration count" FORCE)
+    set(OT_POSIX_MAX_POWER_TABLE OFF CACHE BOOL "enable max power table" FORCE)
+    set(OT_CHANNEL_MANAGER OFF CACHE BOOL "enable channel manager support" FORCE)
+    set(OT_CHANNEL_MONITOR OFF CACHE BOOL "enable channel monitor support" FORCE)
+    set(OT_THREAD_VERSION 1.1 CACHE STRING "" FORCE)
+endif()
+
 add_subdirectory(repo EXCLUDE_FROM_ALL)
 
 target_compile_definitions(ot-config INTERFACE
