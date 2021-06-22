@@ -82,13 +82,6 @@ set(OT_FULL_LOGS ON CACHE BOOL "Enable debug level logging" FORCE)
 set(OT_LOG_LEVEL "NONE" CACHE STRING "Set OpenThread log level to NONE by default" FORCE)
 set(OT_COPROCESSOR_RPC ON CACHE BOOL "Enable co-processor RPC support" FORCE)
 
-if (OT_COPROCESSOR_RPC)
-    # NOTE: The following must be true otherwise prints on the POSIX Host will be truncated.
-    #    OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH >= OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE
-    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH=1200")
-    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE=1200")
-endif()
-
 if (OTBR_DNSSD_DISCOVERY_PROXY)
     set(OT_DNSSD_SERVER ON CACHE BOOL "enable DNS-SD server support" FORCE)
 endif()
@@ -107,6 +100,13 @@ if (OT_MULTIPAN_RCP)
 endif()
 
 add_subdirectory(repo EXCLUDE_FROM_ALL)
+
+if (OT_COPROCESSOR_RPC)
+    # NOTE: The following must be true otherwise prints on the POSIX Host will be truncated.
+    #    OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH >= OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH=1200")
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE=1200")
+endif()
 
 target_compile_definitions(ot-config INTERFACE
     "-DOPENTHREAD_CONFIG_LOG_CLI=1"
