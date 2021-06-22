@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.0-d85d558</span>
    </div>
   </td>
  </tr>
@@ -110,10 +110,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a91ab183bddec56d954d1035cdbc25ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa92ab821547510668be173daaadc93fa"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#aa92ab821547510668be173daaadc93fa">UbusSetPskcHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
 <tr class="separator:aa92ab821547510668be173daaadc93fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6102b042f8be97d058372c802930526f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a6102b042f8be97d058372c802930526f">UbusMasterkeyHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
-<tr class="separator:a6102b042f8be97d058372c802930526f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464d964bcfb726c07f21c1e50104eb02"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a464d964bcfb726c07f21c1e50104eb02">UbusSetMasterkeyHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
-<tr class="separator:a464d964bcfb726c07f21c1e50104eb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50766381a843e3607d191f3fc4869a7a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a50766381a843e3607d191f3fc4869a7a">UbusNetworkkeyHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
+<tr class="separator:a50766381a843e3607d191f3fc4869a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac67bc750d27e8308a296e23c5c3d9046"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#ac67bc750d27e8308a296e23c5c3d9046">UbusSetNetworkkeyHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
+<tr class="separator:ac67bc750d27e8308a296e23c5c3d9046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a08c8e44aa030fae649b45745eaf96b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a7a08c8e44aa030fae649b45745eaf96b">UbusRloc16Handler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
 <tr class="separator:a7a08c8e44aa030fae649b45745eaf96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17468499cc962afa48d75e3ba4c47280"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a17468499cc962afa48d75e3ba4c47280">UbusExtPanIdHandler</a> (struct ubus_context *aContext, struct ubus_object *aObj, struct ubus_request_data *aRequest, const char *aMethod, struct blob_attr *aMsg)</td></tr>
@@ -1347,77 +1347,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6102b042f8be97d058372c802930526f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6102b042f8be97d058372c802930526f">&#9670;&nbsp;</a></span>UbusMasterkeyHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int otbr::ubus::UbusServer::UbusMasterkeyHandler </td>
-          <td>(</td>
-          <td class="paramtype">struct ubus_context *&#160;</td>
-          <td class="paramname"><em>aContext</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct ubus_object *&#160;</td>
-          <td class="paramname"><em>aObj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct ubus_request_data *&#160;</td>
-          <td class="paramname"><em>aRequest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>aMethod</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct blob_attr *&#160;</td>
-          <td class="paramname"><em>aMsg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method handle ubus get masterkey function request.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aObj</td><td>A pointer to the ubus object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aRequest</td><td>A pointer to the ubus request. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMethod</td><td>A pointer to the ubus method. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMsg</td><td>A pointer to the ubus message.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Successfully handler the request. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a43b0ace01c987460ecadc1602a5278a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43b0ace01c987460ecadc1602a5278a6">&#9670;&nbsp;</a></span>UbusMgmtsetHandler()</h2>
 
@@ -1683,6 +1612,77 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This method handle ubus get networkdata function request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aObj</td><td>A pointer to the ubus object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRequest</td><td>A pointer to the ubus request. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMethod</td><td>A pointer to the ubus method. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMsg</td><td>A pointer to the ubus message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Successfully handler the request. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a50766381a843e3607d191f3fc4869a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50766381a843e3607d191f3fc4869a7a">&#9670;&nbsp;</a></span>UbusNetworkkeyHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int otbr::ubus::UbusServer::UbusNetworkkeyHandler </td>
+          <td>(</td>
+          <td class="paramtype">struct ubus_context *&#160;</td>
+          <td class="paramname"><em>aContext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct ubus_object *&#160;</td>
+          <td class="paramname"><em>aObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct ubus_request_data *&#160;</td>
+          <td class="paramname"><em>aRequest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>aMethod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct blob_attr *&#160;</td>
+          <td class="paramname"><em>aMsg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method handle ubus get networkkey function request.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
@@ -2341,77 +2341,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a464d964bcfb726c07f21c1e50104eb02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a464d964bcfb726c07f21c1e50104eb02">&#9670;&nbsp;</a></span>UbusSetMasterkeyHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int otbr::ubus::UbusServer::UbusSetMasterkeyHandler </td>
-          <td>(</td>
-          <td class="paramtype">struct ubus_context *&#160;</td>
-          <td class="paramname"><em>aContext</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct ubus_object *&#160;</td>
-          <td class="paramname"><em>aObj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct ubus_request_data *&#160;</td>
-          <td class="paramname"><em>aRequest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>aMethod</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct blob_attr *&#160;</td>
-          <td class="paramname"><em>aMsg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method handle ubus set masterkey function request.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aObj</td><td>A pointer to the ubus object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aRequest</td><td>A pointer to the ubus request. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMethod</td><td>A pointer to the ubus method. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMsg</td><td>A pointer to the ubus message.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Successfully handler the request. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a9c6637e4495f363862773b597c6fe028"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c6637e4495f363862773b597c6fe028">&#9670;&nbsp;</a></span>UbusSetModeHandler()</h2>
 
@@ -2464,6 +2393,77 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This method handle ubus set mode function request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aObj</td><td>A pointer to the ubus object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRequest</td><td>A pointer to the ubus request. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMethod</td><td>A pointer to the ubus method. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMsg</td><td>A pointer to the ubus message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Successfully handler the request. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac67bc750d27e8308a296e23c5c3d9046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac67bc750d27e8308a296e23c5c3d9046">&#9670;&nbsp;</a></span>UbusSetNetworkkeyHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int otbr::ubus::UbusServer::UbusSetNetworkkeyHandler </td>
+          <td>(</td>
+          <td class="paramtype">struct ubus_context *&#160;</td>
+          <td class="paramname"><em>aContext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct ubus_object *&#160;</td>
+          <td class="paramname"><em>aObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct ubus_request_data *&#160;</td>
+          <td class="paramname"><em>aRequest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>aMethod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct blob_attr *&#160;</td>
+          <td class="paramname"><em>aMsg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method handle ubus set networkkey function request.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to the ubus context. </td></tr>
