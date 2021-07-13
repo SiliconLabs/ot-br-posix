@@ -101,6 +101,13 @@ endif()
 
 add_subdirectory(repo EXCLUDE_FROM_ALL)
 
+if (OT_COPROCESSOR_RPC)
+    # NOTE: The following must be true otherwise prints on the POSIX Host will be truncated.
+    #    OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH >= OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_CLI_MAX_LINE_LENGTH=1200")
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_COPROCESSOR_RPC_OUTPUT_BUFFER_SIZE=1200")
+endif()
+
 target_compile_definitions(ot-config INTERFACE
     "-DOPENTHREAD_CONFIG_LOG_CLI=1"
     "-DOPENTHREAD_CONFIG_MAX_STATECHANGE_HANDLERS=3"
