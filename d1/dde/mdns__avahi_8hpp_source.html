@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-d85d558</span>
+   &#160;<span id="projectnumber">0.3.0-70893d0</span>
    </div>
   </td>
  </tr>
@@ -192,271 +192,277 @@ $(function() {
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ~<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a4b73e2444e12a0fd6d65a70f4bdc5077">PublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *   aHostName,</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                             uint16_t       aPort,</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *   aName,</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *   aType,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                             <span class="keyword">const</span> TxtList &amp;aTxtList) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">UnpublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#afa648a53895c0cb910d5ea4486de4842">PublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#accc56484c174164af831f5b2fc0163c9">UnpublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6">SubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a9f97aa1e8ee870f730332c39ca051097">UnsubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee">SubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a03600b58800e7dd611d622848800cd47">UnsubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3bdb05d4fc0f3d001a17fc78f64c8fec">Start</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3621443d0205c646a0702adfc9ce5655">IsStarted</a>(<span class="keywordtype">void</span>) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#abfeabad327ca1ba53e4bae200d7f99af">Stop</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a04c4a63b7542a9d6228c52d93efb39d9">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ab4baff8a4eb1676aca691f6e69c813fb">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keyword">enum</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        kMaxSizeOfTxtRecord   = 1024,</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        kMaxSizeOfServiceName = AVAHI_LABEL_MAX,</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        kMaxSizeOfHost        = AVAHI_LABEL_MAX,</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        kMaxSizeOfDomain      = AVAHI_LABEL_MAX,</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        kMaxSizeOfServiceType = AVAHI_LABEL_MAX,</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        kDefaultTtl           = 10,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    };</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">struct </span>Service</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        std::string      mName;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        std::string      mType;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        std::string      mHostName;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        uint16_t         mPort  = 0;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        AvahiEntryGroup *mGroup = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    };</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt; Services;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">struct </span>Host</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        std::string      mHostName;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        AvahiAddress     mAddress = {};</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        AvahiEntryGroup *mGroup   = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    };</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keyword">struct </span>Subscription</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> *mPublisherAvahi;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">explicit</span> Subscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aPublisherAvahi)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            : mPublisherAvahi(&amp;aPublisherAvahi)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    };</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keyword">struct </span>ServiceSubscription : <span class="keyword">public</span> Subscription</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keyword">explicit</span> ServiceSubscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aPublisherAvahi, std::string aType, std::string aInstanceName)</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            : Subscription(aPublisherAvahi)</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            , mType(std::move(aType))</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            , mInstanceName(std::move(aInstanceName))</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            , mServiceBrowser(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            , mServiceResolver(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordtype">void</span> Release(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordtype">void</span> Browse(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordtype">void</span> Resolve(uint32_t aInterfaceIndex, <span class="keyword">const</span> <span class="keywordtype">char</span> *aInstanceName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> <span class="keywordtype">char</span> *aDomain);</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordtype">void</span> GetAddrInfo(uint32_t aInterfaceIndex);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBrowseResult(AvahiServiceBrowser *  aServiceBrowser,</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                                       AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                                       AvahiProtocol          aProtocol,</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                                       AvahiBrowserEvent      aEvent,</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                                       AvahiLookupResultFlags aFlags,</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                                       <span class="keywordtype">void</span> *                 aContext);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordtype">void</span> HandleBrowseResult(AvahiServiceBrowser *  aServiceBrowser,</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                AvahiProtocol          aProtocol,</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                AvahiBrowserEvent      aEvent,</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                                AvahiLookupResultFlags aFlags);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(AvahiServiceResolver * aServiceResolver,</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                        AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                        AvahiProtocol          Protocol,</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                                        AvahiResolverEvent     aEvent,</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                        <span class="keyword">const</span> AvahiAddress *   aAddress,</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                        uint16_t               aPort,</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                                        AvahiStringList *      aTxt,</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                                        AvahiLookupResultFlags aFlags,</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordtype">void</span> HandleResolveResult(AvahiServiceResolver * aServiceResolver,</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                                 AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                                 AvahiProtocol          Protocol,</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                                 AvahiResolverEvent     aEvent,</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                                 <span class="keyword">const</span> AvahiAddress *   aAddress,</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                                 uint16_t               aPort,</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                                 AvahiStringList *      aTxt,</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                                 AvahiLookupResultFlags aFlags);</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        std::string            mType;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        std::string            mInstanceName;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <a class="code" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> mInstanceInfo;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        AvahiServiceBrowser *  mServiceBrowser;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        AvahiServiceResolver * mServiceResolver;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    };</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keyword">struct </span>HostSubscription : <span class="keyword">public</span> Subscription</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    {</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keyword">explicit</span> HostSubscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aMDnsSd, std::string aHostName)</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            : Subscription(aMDnsSd)</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            , mHostName(std::move(aHostName))</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            , mRecordBrowser(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        {</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        }</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordtype">void</span>        Release(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <span class="keywordtype">void</span>        Resolve(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(AvahiRecordBrowser *   aRecordBrowser,</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                        AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                                        AvahiProtocol          aProtocol,</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                                        AvahiBrowserEvent      aEvent,</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                                        uint16_t               aClazz,</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                                        uint16_t               aType,</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">void</span> *           aRdata,</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                                        <span class="keywordtype">size_t</span>                 aSize,</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                        AvahiLookupResultFlags aFlags,</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <span class="keywordtype">void</span> HandleResolveResult(AvahiRecordBrowser *   aRecordBrowser,</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                 AvahiIfIndex           aInterfaceIndex,</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                                 AvahiProtocol          aProtocol,</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                                 AvahiBrowserEvent      aEvent,</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                                 uint16_t               aClazz,</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                                 uint16_t               aType,</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">void</span> *           aRdata,</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                 <span class="keywordtype">size_t</span>                 aSize,</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                 AvahiLookupResultFlags aFlags);</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        std::string         mHostName;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <a class="code" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a>  mHostInfo;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        AvahiRecordBrowser *mRecordBrowser;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    };</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;                Hosts;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;ServiceSubscription&gt; ServiceSubscriptionList;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;HostSubscription&gt;    HostSubscriptionList;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleClientState(AvahiClient *aClient, AvahiClientState aState, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordtype">void</span>        HandleClientState(AvahiClient *aClient, AvahiClientState aState);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#adeda36ef8540234c074760ace55223b4">PublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *       aHostName,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                             uint16_t           aPort,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *       aName,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *       aType,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                             <span class="keyword">const</span> SubTypeList &amp;aSubTypeList,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                             <span class="keyword">const</span> TxtList &amp;    aTxtList) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">UnpublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#afa648a53895c0cb910d5ea4486de4842">PublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#accc56484c174164af831f5b2fc0163c9">UnpublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6">SubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a9f97aa1e8ee870f730332c39ca051097">UnsubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee">SubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a03600b58800e7dd611d622848800cd47">UnsubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3bdb05d4fc0f3d001a17fc78f64c8fec">Start</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3621443d0205c646a0702adfc9ce5655">IsStarted</a>(<span class="keywordtype">void</span>) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#abfeabad327ca1ba53e4bae200d7f99af">Stop</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a04c4a63b7542a9d6228c52d93efb39d9">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ab4baff8a4eb1676aca691f6e69c813fb">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keyword">enum</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        kMaxSizeOfTxtRecord   = 1024,</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        kMaxSizeOfServiceName = AVAHI_LABEL_MAX,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        kMaxSizeOfHost        = AVAHI_LABEL_MAX,</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        kMaxSizeOfDomain      = AVAHI_LABEL_MAX,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        kMaxSizeOfServiceType = AVAHI_LABEL_MAX,</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        kDefaultTtl           = 10,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    };</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">struct </span>Service</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        std::string      mName;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        std::string      mType;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        SubTypeList      mSubTypeList;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        std::string      mHostName;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        uint16_t         mPort  = 0;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        AvahiEntryGroup *mGroup = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    };</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt; Services;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keyword">struct </span>Host</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        std::string      mHostName;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        AvahiAddress     mAddress = {};</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        AvahiEntryGroup *mGroup   = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    };</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">struct </span>Subscription</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> *mPublisherAvahi;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">explicit</span> Subscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aPublisherAvahi)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            : mPublisherAvahi(&amp;aPublisherAvahi)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    };</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keyword">struct </span>ServiceSubscription : <span class="keyword">public</span> Subscription</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">explicit</span> ServiceSubscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aPublisherAvahi, std::string aType, std::string aInstanceName)</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            : Subscription(aPublisherAvahi)</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            , mType(std::move(aType))</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            , mInstanceName(std::move(aInstanceName))</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            , mServiceBrowser(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            , mServiceResolver(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordtype">void</span> Release(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordtype">void</span> Browse(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordtype">void</span> Resolve(uint32_t aInterfaceIndex, <span class="keyword">const</span> <span class="keywordtype">char</span> *aInstanceName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> <span class="keywordtype">char</span> *aDomain);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordtype">void</span> GetAddrInfo(uint32_t aInterfaceIndex);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBrowseResult(AvahiServiceBrowser *  aServiceBrowser,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                                       AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                       AvahiProtocol          aProtocol,</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                                       AvahiBrowserEvent      aEvent,</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                                       AvahiLookupResultFlags aFlags,</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                       <span class="keywordtype">void</span> *                 aContext);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordtype">void</span> HandleBrowseResult(AvahiServiceBrowser *  aServiceBrowser,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                                AvahiProtocol          aProtocol,</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                                AvahiBrowserEvent      aEvent,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                AvahiLookupResultFlags aFlags);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(AvahiServiceResolver * aServiceResolver,</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                        AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                        AvahiProtocol          Protocol,</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                        AvahiResolverEvent     aEvent,</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                                        <span class="keyword">const</span> AvahiAddress *   aAddress,</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                        uint16_t               aPort,</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                                        AvahiStringList *      aTxt,</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                                        AvahiLookupResultFlags aFlags,</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordtype">void</span> HandleResolveResult(AvahiServiceResolver * aServiceResolver,</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                                 AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                                 AvahiProtocol          Protocol,</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                                 AvahiResolverEvent     aEvent,</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aType,</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aDomain,</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                                 <span class="keyword">const</span> AvahiAddress *   aAddress,</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                                 uint16_t               aPort,</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                                 AvahiStringList *      aTxt,</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                                 AvahiLookupResultFlags aFlags);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        std::string            mType;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        std::string            mInstanceName;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        <a class="code" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> mInstanceInfo;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        AvahiServiceBrowser *  mServiceBrowser;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        AvahiServiceResolver * mServiceResolver;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    };</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keyword">struct </span>HostSubscription : <span class="keyword">public</span> Subscription</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        <span class="keyword">explicit</span> HostSubscription(<a class="code" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">PublisherAvahi</a> &amp;aMDnsSd, std::string aHostName)</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            : Subscription(aMDnsSd)</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            , mHostName(std::move(aHostName))</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            , mRecordBrowser(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <span class="keywordtype">void</span>        Release(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keywordtype">void</span>        Resolve(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(AvahiRecordBrowser *   aRecordBrowser,</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                                        AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                                        AvahiProtocol          aProtocol,</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                                        AvahiBrowserEvent      aEvent,</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                                        uint16_t               aClazz,</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                        uint16_t               aType,</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">void</span> *           aRdata,</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                                        <span class="keywordtype">size_t</span>                 aSize,</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                                        AvahiLookupResultFlags aFlags,</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordtype">void</span> HandleResolveResult(AvahiRecordBrowser *   aRecordBrowser,</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                                 AvahiIfIndex           aInterfaceIndex,</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                                 AvahiProtocol          aProtocol,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                                 AvahiBrowserEvent      aEvent,</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *           aName,</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                 uint16_t               aClazz,</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                 uint16_t               aType,</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">void</span> *           aRdata,</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                                 <span class="keywordtype">size_t</span>                 aSize,</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                                 AvahiLookupResultFlags aFlags);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        std::string         mHostName;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <a class="code" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a>  mHostInfo;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        AvahiRecordBrowser *mRecordBrowser;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    };</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;                Hosts;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;ServiceSubscription&gt; ServiceSubscriptionList;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;HostSubscription&gt;    HostSubscriptionList;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    Hosts::iterator FindHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName);</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>       CreateHost(AvahiClient &amp;aClient, <span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName, Hosts::iterator &amp;aOutHostIt);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleClientState(AvahiClient *aClient, AvahiClientState aState, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keywordtype">void</span>        HandleClientState(AvahiClient *aClient, AvahiClientState aState);</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    Services::iterator FindService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType);</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>          CreateService(AvahiClient &amp;       aClient,</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">char</span> *        aName,</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                                     Services::iterator &amp;aOutServiceIt);</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>        CreateGroup(AvahiClient &amp;aClient, AvahiEntryGroup *&amp;aOutGroup);</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> ResetGroup(AvahiEntryGroup *aGroup);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> FreeGroup(AvahiEntryGroup *aGroup);</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordtype">void</span>             FreeAllGroups(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>      HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordtype">void</span>             HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <span class="keywordtype">void</span>             CallHostOrServiceCallback(AvahiEntryGroup *aGroup, <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    std::string MakeFullName(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordtype">void</span>        OnServiceResolved(ServiceSubscription &amp;aService);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> OnServiceResolveFailed(<span class="keyword">const</span> ServiceSubscription &amp;aService, <span class="keywordtype">int</span> aErrorCode);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordtype">void</span>        OnHostResolved(HostSubscription &amp;aHost);</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordtype">void</span>        OnHostResolveFailed(<span class="keyword">const</span> HostSubscription &amp;aHost, <span class="keywordtype">int</span> aErrorCode);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    Hosts::iterator FindHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>       CreateHost(AvahiClient &amp;aClient, <span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName, Hosts::iterator &amp;aOutHostIt);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    Services::iterator FindService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>          CreateService(AvahiClient &amp;       aClient,</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">char</span> *        aName,</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                                     Services::iterator &amp;aOutServiceIt);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span>        IsServiceOutdated(<span class="keyword">const</span> Service &amp;    aService,</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                                         <span class="keyword">const</span> <span class="keywordtype">char</span> *       aNewHostName,</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                         uint16_t           aNewPort,</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                                         <span class="keyword">const</span> SubTypeList &amp;aNewSubTypeList);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>        CreateGroup(AvahiClient &amp;aClient, AvahiEntryGroup *&amp;aOutGroup);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> ResetGroup(AvahiEntryGroup *aGroup);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> FreeGroup(AvahiEntryGroup *aGroup);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordtype">void</span>             FreeAllGroups(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>      HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordtype">void</span>             HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordtype">void</span>             CallHostOrServiceCallback(AvahiEntryGroup *aGroup, <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    AvahiClient *mClient;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    Hosts        mHosts;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    Services     mServices;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html">Poller</a>       mPoller;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordtype">int</span>          mProtocol;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> * mDomain;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">State</a>        mState;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a> mStateHandler;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordtype">void</span> *       mContext;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    ServiceSubscriptionList mSubscribedServices;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    HostSubscriptionList    mSubscribedHosts;</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;};</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;} <span class="comment">// namespace Mdns</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_MDNS_AVAHI_HPP_</span></div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    std::string MakeFullName(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keywordtype">void</span>        OnServiceResolved(ServiceSubscription &amp;aService);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> OnServiceResolveFailed(<span class="keyword">const</span> ServiceSubscription &amp;aService, <span class="keywordtype">int</span> aErrorCode);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordtype">void</span>        OnHostResolved(HostSubscription &amp;aHost);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keywordtype">void</span>        OnHostResolveFailed(<span class="keyword">const</span> HostSubscription &amp;aHost, <span class="keywordtype">int</span> aErrorCode);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    AvahiClient *mClient;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    Hosts        mHosts;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    Services     mServices;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <a class="code" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html">Poller</a>       mPoller;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="keywordtype">int</span>          mProtocol;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> * mDomain;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">State</a>        mState;</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a> mStateHandler;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordtype">void</span> *       mContext;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    ServiceSubscriptionList mSubscribedServices;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    HostSubscriptionList    mSubscribedHosts;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;};</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;} <span class="comment">// namespace Mdns</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_MDNS_AVAHI_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructAvahiTimeout_html_a76c67524edf8a11df3d09bc64933ed0b"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html#a76c67524edf8a11df3d09bc64933ed0b">AvahiTimeout::mTimeout</a></div><div class="ttdeci">otbr::Timepoint mTimeout</div><div class="ttdoc">Absolute time when this timer timeout.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:97</div></div>
 <div class="ttc" id="astructAvahiWatch_html_a3924018de3fcf1df54feec74ac44a851"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html#a3924018de3fcf1df54feec74ac44a851">AvahiWatch::mEvents</a></div><div class="ttdeci">AvahiWatchEvent mEvents</div><div class="ttdoc">The interested events.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:65</div></div>
 <div class="ttc" id="astructAvahiWatch_html_a0fc963ea1064fadf30c8f3116661e896"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html#a0fc963ea1064fadf30c8f3116661e896">AvahiWatch::mCallback</a></div><div class="ttdeci">AvahiWatchCallback mCallback</div><div class="ttdoc">The function to be called when interested events happened on mFd.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:67</div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
-<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo_html"><div class="ttname"><a href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">otbr::Mdns::Publisher::DiscoveredInstanceInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:98</div></div>
+<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo_html"><div class="ttname"><a href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">otbr::Mdns::Publisher::DiscoveredInstanceInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:99</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Poller_html"><div class="ttname"><a href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html">otbr::Mdns::Poller</a></div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:122</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a3bdb05d4fc0f3d001a17fc78f64c8fec"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3bdb05d4fc0f3d001a17fc78f64c8fec">otbr::Mdns::PublisherAvahi::Start</a></div><div class="ttdeci">otbrError Start(void) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:312</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_afa648a53895c0cb910d5ea4486de4842"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#afa648a53895c0cb910d5ea4486de4842">otbr::Mdns::PublisherAvahi::PublishHost</a></div><div class="ttdeci">otbrError PublishHost(const char *aName, const uint8_t *aAddress, uint8_t aAddressLength) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:724</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_ac96dc07653c50aab9c15ff1ac178a6e6"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6">otbr::Mdns::PublisherAvahi::SubscribeService</a></div><div class="ttdeci">void SubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:824</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a603ce7086c98a52973934c7c8a164c2d"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">otbr::Mdns::PublisherAvahi::UnpublishService</a></div><div class="ttdeci">otbrError UnpublishService(const char *aName, const char *aType) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:705</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_afa648a53895c0cb910d5ea4486de4842"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#afa648a53895c0cb910d5ea4486de4842">otbr::Mdns::PublisherAvahi::PublishHost</a></div><div class="ttdeci">otbrError PublishHost(const char *aName, const uint8_t *aAddress, uint8_t aAddressLength) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:744</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_ac96dc07653c50aab9c15ff1ac178a6e6"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6">otbr::Mdns::PublisherAvahi::SubscribeService</a></div><div class="ttdeci">void SubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:844</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a603ce7086c98a52973934c7c8a164c2d"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">otbr::Mdns::PublisherAvahi::UnpublishService</a></div><div class="ttdeci">otbrError UnpublishService(const char *aName, const char *aType) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:725</div></div>
 <div class="ttc" id="astructAvahiTimeout_html_af23c27653d8f950b2e40b8003db665ff"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html#af23c27653d8f950b2e40b8003db665ff">AvahiTimeout::mCallback</a></div><div class="ttdeci">AvahiTimeoutCallback mCallback</div><div class="ttdoc">The function to be called when timeout.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:98</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a9f97aa1e8ee870f730332c39ca051097"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a9f97aa1e8ee870f730332c39ca051097">otbr::Mdns::PublisherAvahi::UnsubscribeService</a></div><div class="ttdeci">void UnsubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:841</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_adeda36ef8540234c074760ace55223b4"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#adeda36ef8540234c074760ace55223b4">otbr::Mdns::PublisherAvahi::PublishService</a></div><div class="ttdeci">otbrError PublishService(const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const SubTypeList &amp;aSubTypeList, const TxtList &amp;aTxtList) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:604</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a9f97aa1e8ee870f730332c39ca051097"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a9f97aa1e8ee870f730332c39ca051097">otbr::Mdns::PublisherAvahi::UnsubscribeService</a></div><div class="ttdeci">void UnsubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:861</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:55</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a4b73e2444e12a0fd6d65a70f4bdc5077"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a4b73e2444e12a0fd6d65a70f4bdc5077">otbr::Mdns::PublisherAvahi::PublishService</a></div><div class="ttdeci">otbrError PublishService(const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const TxtList &amp;aTxtList) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:596</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:160</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:161</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Poller_html_a3905ff38028fc207a90016a4a8ca3cd7"><div class="ttname"><a href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a3905ff38028fc207a90016a4a8ca3cd7">otbr::Mdns::Poller::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:242</div></div>
-<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo_html"><div class="ttname"><a href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">otbr::Mdns::Publisher::DiscoveredHostInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:126</div></div>
+<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo_html"><div class="ttname"><a href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">otbr::Mdns::Publisher::DiscoveredHostInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:127</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_abfeabad327ca1ba53e4bae200d7f99af"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#abfeabad327ca1ba53e4bae200d7f99af">otbr::Mdns::PublisherAvahi::Stop</a></div><div class="ttdeci">void Stop(void) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:333</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Poller_html_a12c7711328d9cb94ccb562931b6eacfc"><div class="ttname"><a href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a12c7711328d9cb94ccb562931b6eacfc">otbr::Mdns::Poller::GetAvahiPoll</a></div><div class="ttdeci">const AvahiPoll * GetAvahiPoll(void) const</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:153</div></div>
 <div class="ttc" id="astructAvahiWatch_html_a17ce363afafc18d22279ab10de4540d4"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html#a17ce363afafc18d22279ab10de4540d4">AvahiWatch::mFd</a></div><div class="ttdeci">int mFd</div><div class="ttdoc">The file descriptor to watch.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:64</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a04c4a63b7542a9d6228c52d93efb39d9"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a04c4a63b7542a9d6228c52d93efb39d9">otbr::Mdns::PublisherAvahi::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:586</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a04c4a63b7542a9d6228c52d93efb39d9"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a04c4a63b7542a9d6228c52d93efb39d9">otbr::Mdns::PublisherAvahi::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:594</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:63</div></div>
 <div class="ttc" id="astructAvahiWatch_html"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html">AvahiWatch</a></div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:62</div></div>
 <div class="ttc" id="astructAvahiWatch_html_ae34ec326119f93541228ac8f76423e1a"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html#ae34ec326119f93541228ac8f76423e1a">AvahiWatch::AvahiWatch</a></div><div class="ttdeci">AvahiWatch(int aFd, AvahiWatchEvent aEvents, AvahiWatchCallback aCallback, void *aContext, void *aPoller)</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:81</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a03600b58800e7dd611d622848800cd47"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a03600b58800e7dd611d622848800cd47">otbr::Mdns::PublisherAvahi::UnsubscribeHost</a></div><div class="ttdeci">void UnsubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:898</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a03600b58800e7dd611d622848800cd47"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a03600b58800e7dd611d622848800cd47">otbr::Mdns::PublisherAvahi::UnsubscribeHost</a></div><div class="ttdeci">void UnsubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:918</div></div>
 <div class="ttc" id="astructAvahiTimeout_html"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html">AvahiTimeout</a></div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:95</div></div>
 <div class="ttc" id="astructAvahiTimeout_html_a7cc8a98d3f52ef029374cdb09c811be1"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html#a7cc8a98d3f52ef029374cdb09c811be1">AvahiTimeout::mPoller</a></div><div class="ttdeci">void * mPoller</div><div class="ttdoc">The poller created this timer.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:100</div></div>
 <div class="ttc" id="astructAvahiWatch_html_a2a718bf695e9d354d7f9cd0f9278f4c9"><div class="ttname"><a href="../../de/d3f/structAvahiWatch.html#a2a718bf695e9d354d7f9cd0f9278f4c9">AvahiWatch::mPoller</a></div><div class="ttdeci">void * mPoller</div><div class="ttdoc">The poller created this watch.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:69</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:69</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a606c109ff3092857eae8a7db0a199d11"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">otbr::Mdns::Publisher::StateHandler</a></div><div class="ttdeci">void(* StateHandler)(void *aContext, State aState)</div><div class="ttdef"><b>Definition:</b> mdns.hpp:173</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a606c109ff3092857eae8a7db0a199d11"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">otbr::Mdns::Publisher::StateHandler</a></div><div class="ttdeci">void(* StateHandler)(void *aContext, State aState)</div><div class="ttdef"><b>Definition:</b> mdns.hpp:174</div></div>
 <div class="ttc" id="astructAvahiTimeout_html_afc4eeab8341016771d0d43d83f5df199"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html#afc4eeab8341016771d0d43d83f5df199">AvahiTimeout::mContext</a></div><div class="ttdeci">void * mContext</div><div class="ttdoc">The pointer to application-specific context.</div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:99</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a5380ae44ef5f58e1751a888aae90b8ee"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee">otbr::Mdns::PublisherAvahi::SubscribeHost</a></div><div class="ttdeci">void SubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:889</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a5380ae44ef5f58e1751a888aae90b8ee"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee">otbr::Mdns::PublisherAvahi::SubscribeHost</a></div><div class="ttdeci">void SubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:909</div></div>
 <div class="ttc" id="astructAvahiTimeout_html_a2ef35a3e6549ddf6745f4e5b7549a39c"><div class="ttname"><a href="../../db/dfa/structAvahiTimeout.html#a2ef35a3e6549ddf6745f4e5b7549a39c">AvahiTimeout::AvahiTimeout</a></div><div class="ttdeci">AvahiTimeout(const struct timeval *aTimeout, AvahiTimeoutCallback aCallback, void *aContext, void *aPoller)</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:56</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_ab4baff8a4eb1676aca691f6e69c813fb"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ab4baff8a4eb1676aca691f6e69c813fb">otbr::Mdns::PublisherAvahi::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:591</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_ab4baff8a4eb1676aca691f6e69c813fb"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ab4baff8a4eb1676aca691f6e69c813fb">otbr::Mdns::PublisherAvahi::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:599</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html">otbr::Mdns::PublisherAvahi</a></div><div class="ttdef"><b>Definition:</b> mdns_avahi.hpp:187</div></div>
 <div class="ttc" id="amdns_8hpp_html"><div class="ttname"><a href="../../de/d7c/mdns_8hpp.html">mdns.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_accc56484c174164af831f5b2fc0163c9"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#accc56484c174164af831f5b2fc0163c9">otbr::Mdns::PublisherAvahi::UnpublishHost</a></div><div class="ttdeci">otbrError UnpublishHost(const char *aName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:794</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_accc56484c174164af831f5b2fc0163c9"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#accc56484c174164af831f5b2fc0163c9">otbr::Mdns::PublisherAvahi::UnpublishHost</a></div><div class="ttdeci">otbrError UnpublishHost(const char *aName) override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:814</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherAvahi_html_a3621443d0205c646a0702adfc9ce5655"><div class="ttname"><a href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a3621443d0205c646a0702adfc9ce5655">otbr::Mdns::PublisherAvahi::IsStarted</a></div><div class="ttdeci">bool IsStarted(void) const override</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:328</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Poller_html_a12af7a3b0c9e4bc06a543a3218c584ff"><div class="ttname"><a href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a12af7a3b0c9e4bc06a543a3218c584ff">otbr::Mdns::Poller::Poller</a></div><div class="ttdeci">Poller(void)</div><div class="ttdef"><b>Definition:</b> mdns_avahi.cpp:78</div></div>
 <div class="ttc" id="atime_8hpp_html"><div class="ttname"><a href="../../de/d99/time_8hpp.html">time.hpp</a></div></div>

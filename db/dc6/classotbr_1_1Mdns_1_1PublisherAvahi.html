@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-d85d558</span>
+   &#160;<span id="projectnumber">0.3.0-70893d0</span>
    </div>
   </td>
  </tr>
@@ -91,8 +91,8 @@ Inheritance diagram for otbr::Mdns::PublisherAvahi:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0bbadc85d8c5a8abd6c20cf516d863d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a0bbadc85d8c5a8abd6c20cf516d863d8">PublisherAvahi</a> (int aProtocol, const char *aDomain, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a> aHandler, void *aContext)</td></tr>
 <tr class="separator:a0bbadc85d8c5a8abd6c20cf516d863d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b73e2444e12a0fd6d65a70f4bdc5077"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a4b73e2444e12a0fd6d65a70f4bdc5077">PublishService</a> (const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const TxtList &amp;aTxtList) override</td></tr>
-<tr class="separator:a4b73e2444e12a0fd6d65a70f4bdc5077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeda36ef8540234c074760ace55223b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#adeda36ef8540234c074760ace55223b4">PublishService</a> (const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const SubTypeList &amp;aSubTypeList, const TxtList &amp;aTxtList) override</td></tr>
+<tr class="separator:adeda36ef8540234c074760ace55223b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a603ce7086c98a52973934c7c8a164c2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a603ce7086c98a52973934c7c8a164c2d">UnpublishService</a> (const char *aName, const char *aType) override</td></tr>
 <tr class="separator:a603ce7086c98a52973934c7c8a164c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa648a53895c0cb910d5ea4486de4842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#afa648a53895c0cb910d5ea4486de4842">PublishHost</a> (const char *aName, const uint8_t *aAddress, uint8_t aAddressLength) override</td></tr>
@@ -135,6 +135,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a82b48b525850f59986482f05949881dd inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a82b48b525850f59986482f05949881dd"></a>
 typedef std::vector&lt; <a class="el" href="../../d0/dee/structotbr_1_1Mdns_1_1Publisher_1_1TxtEntry.html">TxtEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TxtList</b></td></tr>
 <tr class="separator:a82b48b525850f59986482f05949881dd inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a00fd84593789223af5c34de69a43c inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a67a00fd84593789223af5c34de69a43c"></a>
+typedef std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SubTypeList</b></td></tr>
+<tr class="separator:a67a00fd84593789223af5c34de69a43c inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae28cea59926db61523595d4e6967afd7 inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> = std::function&lt; void(const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)&gt;</td></tr>
 <tr class="separator:ae28cea59926db61523595d4e6967afd7 inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea1cfd72140d8d469b149ee279b44766 inherit pub_types_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> = std::function&lt; void(const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)&gt;</td></tr>
@@ -364,8 +367,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 
 </div>
 </div>
-<a id="a4b73e2444e12a0fd6d65a70f4bdc5077"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b73e2444e12a0fd6d65a70f4bdc5077">&#9670;&nbsp;</a></span>PublishService()</h2>
+<a id="adeda36ef8540234c074760ace55223b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeda36ef8540234c074760ace55223b4">&#9670;&nbsp;</a></span>PublishService()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,6 +403,12 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const SubTypeList &amp;&#160;</td>
+          <td class="paramname"><em>aSubTypeList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const TxtList &amp;&#160;</td>
           <td class="paramname"><em>aTxtList</em>&#160;</td>
         </tr>
@@ -419,9 +428,10 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The name of the host which this service resides on. If NULL is provided, this service resides on local host and it is the implementation to provide specific host name. Otherwise, the caller MUST publish the host with method PublishHost. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPort</td><td>The port number of this service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The type of this service. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPort</td><td>The port number of this service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aSubTypeList</td><td>A list of service subtypes. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aTxtList</td><td>A list of TXT name/value pairs.</td></tr>
   </table>
   </dd>
@@ -434,7 +444,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a2c89cf71d8b4dff07200be665ddd9b17">otbr::Mdns::Publisher</a>.</p>
+<p>Implements <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a3084f15e747eb211acb267bf1446a764">otbr::Mdns::Publisher</a>.</p>
 
 </div>
 </div>

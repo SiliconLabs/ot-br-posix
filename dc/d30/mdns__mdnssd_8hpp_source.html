@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-d85d558</span>
+   &#160;<span id="projectnumber">0.3.0-70893d0</span>
    </div>
   </td>
  </tr>
@@ -124,262 +124,266 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ~<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a5f76fb605b72de07301fa08817e423b8">PublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *   aHostName,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                             uint16_t       aPort,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *   aName,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *   aType,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                             <span class="keyword">const</span> TxtList &amp;aTxtList) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a543d998febc5af4840b41f4c7b800e1b">UnpublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a9cf41b571b5700a4daa34e6a8e813414">PublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a674e32710b426829ca0602929cfe9088">UnpublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24">SubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a94c7cbf31e9f1518edcb96869a96fa92">UnsubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d">SubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a294e5e02fb32367c3aef2032c11a1515">UnsubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aac65edb03f195098dd9c628d27735a64">Start</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a4415a4f7d927ddbf82f17daba70475b4">IsStarted</a>(<span class="keywordtype">void</span>) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a8e994c6a3e82bda87653e123fb67b8eb">Stop</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#ab52daeadfc58cb1f9220fef797524c92">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a80cf77c567d3128f8bb92156c382eb9b">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">enum</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        kMaxSizeOfTxtRecord   = 256,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        kMaxSizeOfServiceName = kDNSServiceMaxServiceName,</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        kMaxSizeOfHost        = 128,</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        kMaxSizeOfDomain      = kDNSServiceMaxDomainName,</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        kMaxSizeOfServiceType = 69,</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    };</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">struct </span>Service</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordtype">char</span>          mName[kMaxSizeOfServiceName];</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordtype">char</span>          mType[kMaxSizeOfServiceType];</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        DNSServiceRef mService;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    };</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">struct </span>Host</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordtype">char</span>                                       mName[kMaxSizeOfServiceName];</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        std::array&lt;uint8_t, OTBR_IP6_ADDRESS_SIZE&gt; mAddress;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        DNSRecordRef                               mRecord;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    };</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">struct </span>Subscription</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> *mMDnsSd;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        DNSServiceRef    mServiceRef;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">explicit</span> Subscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            : mMDnsSd(&amp;aMDnsSd)</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            , mServiceRef(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">void</span> Release(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordtype">void</span> DeallocateServiceRef(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    };</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">struct </span>ServiceSubscription : <span class="keyword">public</span> Subscription</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keyword">explicit</span> ServiceSubscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd, std::string aType, std::string aInstanceName)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            : Subscription(aMDnsSd)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            , mType(std::move(aType))</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            , mInstanceName(std::move(aInstanceName))</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordtype">void</span> Browse(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordtype">void</span> Resolve(uint32_t aInterfaceIndex, <span class="keyword">const</span> <span class="keywordtype">char</span> *aInstanceName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> <span class="keywordtype">char</span> *aDomain);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">void</span> GetAddrInfo(uint32_t aInterfaceIndex);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBrowseResult(DNSServiceRef       aServiceRef,</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                       DNSServiceFlags     aFlags,</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                       uint32_t            aInterfaceIndex,</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                       DNSServiceErrorType aErrorCode,</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aInstanceName,</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aDomain,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                       <span class="keywordtype">void</span> *              aContext);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordtype">void</span>        HandleBrowseResult(DNSServiceRef       aServiceRef,</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                       DNSServiceFlags     aFlags,</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                       uint32_t            aInterfaceIndex,</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                       DNSServiceErrorType aErrorCode,</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aInstanceName,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aDomain);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(DNSServiceRef        aServiceRef,</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                        DNSServiceFlags      aFlags,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                        uint32_t             aInterfaceIndex,</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                        DNSServiceErrorType  aErrorCode,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aFullName,</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aHostTarget,</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                        uint16_t             aPort, <span class="comment">// In network byte order.</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                        uint16_t             aTxtLen,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *aTxtRecord,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                        <span class="keywordtype">void</span> *               aContext);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordtype">void</span>        HandleResolveResult(DNSServiceRef        aServiceRef,</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                        DNSServiceFlags      aFlags,</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                        uint32_t             aInterfaceIndex,</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                                        DNSServiceErrorType  aErrorCode,</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aFullName,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aHostTarget,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                        uint16_t             aPort, <span class="comment">// In network byte order.</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                        uint16_t             aTxtLen,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *aTxtRecord);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleGetAddrInfoResult(DNSServiceRef          aServiceRef,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                            DNSServiceFlags        aFlags,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                            uint32_t               aInterfaceIndex,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                            DNSServiceErrorType    aErrorCode,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                            <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                            uint32_t               aTtl,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                            <span class="keywordtype">void</span> *                 aContext);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordtype">void</span>        HandleGetAddrInfoResult(DNSServiceRef          aServiceRef,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                            DNSServiceFlags        aFlags,</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                            uint32_t               aInterfaceIndex,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                            DNSServiceErrorType    aErrorCode,</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                            <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                            uint32_t               aTtl);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        std::string            mType;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        std::string            mInstanceName;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> mInstanceInfo;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    };</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keyword">struct </span>HostSubscription : <span class="keyword">public</span> Subscription</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">explicit</span> HostSubscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd, std::string aHostName)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            : Subscription(aMDnsSd)</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            , mHostName(std::move(aHostName))</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">void</span>        Resolve(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(DNSServiceRef          aServiceRef,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                        DNSServiceFlags        aFlags,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                        uint32_t               aInterfaceIndex,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                        DNSServiceErrorType    aErrorCode,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                        <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                        uint32_t               aTtl,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordtype">void</span>        HandleResolveResult(DNSServiceRef          aServiceRef,</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                        DNSServiceFlags        aFlags,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                        uint32_t               aInterfaceIndex,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                        DNSServiceErrorType    aErrorCode,</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                        <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                        uint32_t               aTtl);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        std::string        mHostName;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <a class="code" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> mHostInfo;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    };</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt;             Services;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;                Hosts;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt;::iterator   ServiceIterator;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;::iterator      HostIterator;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;ServiceSubscription&gt; ServiceSubscriptionList;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;HostSubscription&gt;    HostSubscriptionList;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span> DiscardService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, DNSServiceRef aServiceRef = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">void</span> RecordService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, DNSServiceRef aServiceRef);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a64f236bf7ca4222a6c71d127afb3a94d">PublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *       aHostName,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                             uint16_t           aPort,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *       aName,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">char</span> *       aType,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                             <span class="keyword">const</span> SubTypeList &amp;aSubTypeList,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                             <span class="keyword">const</span> TxtList &amp;    aTxtList) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a543d998febc5af4840b41f4c7b800e1b">UnpublishService</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a9cf41b571b5700a4daa34e6a8e813414">PublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a674e32710b426829ca0602929cfe9088">UnpublishHost</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24">SubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a94c7cbf31e9f1518edcb96869a96fa92">UnsubscribeService</a>(<span class="keyword">const</span> std::string &amp;aType, <span class="keyword">const</span> std::string &amp;aInstanceName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d">SubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a294e5e02fb32367c3aef2032c11a1515">UnsubscribeHost</a>(<span class="keyword">const</span> std::string &amp;aHostName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aac65edb03f195098dd9c628d27735a64">Start</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a4415a4f7d927ddbf82f17daba70475b4">IsStarted</a>(<span class="keywordtype">void</span>) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a8e994c6a3e82bda87653e123fb67b8eb">Stop</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#ab52daeadfc58cb1f9220fef797524c92">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a80cf77c567d3128f8bb92156c382eb9b">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">enum</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        kMaxSizeOfTxtRecord   = 256,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        kMaxSizeOfServiceName = kDNSServiceMaxServiceName,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        kMaxSizeOfHost        = 128,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        kMaxSizeOfDomain      = kDNSServiceMaxDomainName,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        kMaxSizeOfServiceType = 69,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    };</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">struct </span>Service</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">char</span>          mName[kMaxSizeOfServiceName];</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordtype">char</span>          mType[kMaxSizeOfServiceType];</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        std::string   mRegType; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        DNSServiceRef mService;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    };</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">struct </span>Host</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">char</span>                                       mName[kMaxSizeOfServiceName];</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        std::array&lt;uint8_t, OTBR_IP6_ADDRESS_SIZE&gt; mAddress;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        DNSRecordRef                               mRecord;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    };</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">struct </span>Subscription</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> *mMDnsSd;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        DNSServiceRef    mServiceRef;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keyword">explicit</span> Subscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            : mMDnsSd(&amp;aMDnsSd)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            , mServiceRef(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordtype">void</span> Release(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordtype">void</span> DeallocateServiceRef(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    };</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">struct </span>ServiceSubscription : <span class="keyword">public</span> Subscription</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">explicit</span> ServiceSubscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd, std::string aType, std::string aInstanceName)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            : Subscription(aMDnsSd)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            , mType(std::move(aType))</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            , mInstanceName(std::move(aInstanceName))</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordtype">void</span> Browse(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordtype">void</span> Resolve(uint32_t aInterfaceIndex, <span class="keyword">const</span> <span class="keywordtype">char</span> *aInstanceName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> <span class="keywordtype">char</span> *aDomain);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordtype">void</span> GetAddrInfo(uint32_t aInterfaceIndex);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBrowseResult(DNSServiceRef       aServiceRef,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                       DNSServiceFlags     aFlags,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                       uint32_t            aInterfaceIndex,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                       DNSServiceErrorType aErrorCode,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aInstanceName,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aDomain,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                       <span class="keywordtype">void</span> *              aContext);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordtype">void</span>        HandleBrowseResult(DNSServiceRef       aServiceRef,</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                       DNSServiceFlags     aFlags,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                       uint32_t            aInterfaceIndex,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                       DNSServiceErrorType aErrorCode,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aInstanceName,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aType,</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span> *        aDomain);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(DNSServiceRef        aServiceRef,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                        DNSServiceFlags      aFlags,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                        uint32_t             aInterfaceIndex,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                        DNSServiceErrorType  aErrorCode,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aFullName,</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aHostTarget,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                        uint16_t             aPort, <span class="comment">// In network byte order.</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                        uint16_t             aTxtLen,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *aTxtRecord,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                        <span class="keywordtype">void</span> *               aContext);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordtype">void</span>        HandleResolveResult(DNSServiceRef        aServiceRef,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                                        DNSServiceFlags      aFlags,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                        uint32_t             aInterfaceIndex,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                        DNSServiceErrorType  aErrorCode,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aFullName,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *         aHostTarget,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                        uint16_t             aPort, <span class="comment">// In network byte order.</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                        uint16_t             aTxtLen,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *aTxtRecord);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleGetAddrInfoResult(DNSServiceRef          aServiceRef,</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                            DNSServiceFlags        aFlags,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                            uint32_t               aInterfaceIndex,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                            DNSServiceErrorType    aErrorCode,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                            <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                            uint32_t               aTtl,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                            <span class="keywordtype">void</span> *                 aContext);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordtype">void</span>        HandleGetAddrInfoResult(DNSServiceRef          aServiceRef,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                            DNSServiceFlags        aFlags,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                            uint32_t               aInterfaceIndex,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                            DNSServiceErrorType    aErrorCode,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                            <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                            uint32_t               aTtl);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        std::string            mType;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        std::string            mInstanceName;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> mInstanceInfo;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    };</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keyword">struct </span>HostSubscription : <span class="keyword">public</span> Subscription</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keyword">explicit</span> HostSubscription(<a class="code" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">PublisherMDnsSd</a> &amp;aMDnsSd, std::string aHostName)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            : Subscription(aMDnsSd)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            , mHostName(std::move(aHostName))</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">void</span>        Resolve(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> HandleResolveResult(DNSServiceRef          aServiceRef,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                        DNSServiceFlags        aFlags,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                        uint32_t               aInterfaceIndex,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                        DNSServiceErrorType    aErrorCode,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                        <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                        uint32_t               aTtl,</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                        <span class="keywordtype">void</span> *                 aContext);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordtype">void</span>        HandleResolveResult(DNSServiceRef          aServiceRef,</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                        DNSServiceFlags        aFlags,</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                        uint32_t               aInterfaceIndex,</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                        DNSServiceErrorType    aErrorCode,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">char</span> *           aHostName,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                        <span class="keyword">const</span> <span class="keyword">struct</span> sockaddr *aAddress,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                        uint32_t               aTtl);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        std::string        mHostName;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> mHostInfo;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    };</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt;             Services;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;                Hosts;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Service&gt;::iterator   ServiceIterator;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Host&gt;::iterator      HostIterator;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;ServiceSubscription&gt; ServiceSubscriptionList;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;HostSubscription&gt;    HostSubscriptionList;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> DiscardHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keywordtype">bool</span> aSendGoodbye = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">void</span>      RecordHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength, DNSRecordRef aRecordRef);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleServiceRegisterResult(DNSServiceRef         aService,</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                            <span class="keyword">const</span> DNSServiceFlags aFlags,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                            DNSServiceErrorType   aError,</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aName,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aType,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aDomain,</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                            <span class="keywordtype">void</span> *                aContext);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">void</span>        HandleServiceRegisterResult(DNSServiceRef         aService,</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                                            <span class="keyword">const</span> DNSServiceFlags aFlags,</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                                            DNSServiceErrorType   aError,</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aName,</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aType,</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aDomain);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleRegisterHostResult(DNSServiceRef       aHostsConnection,</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                         DNSRecordRef        aHostRecord,</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                         DNSServiceFlags     aFlags,</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                         DNSServiceErrorType aErrorCode,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                                         <span class="keywordtype">void</span> *              aContext);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">void</span>        HandleRegisterHostResult(DNSServiceRef       aHostsConnection,</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                         DNSRecordRef        aHostRecord,</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                         DNSServiceFlags     aFlags,</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                         DNSServiceErrorType aErrorCode);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> MakeFullName(<span class="keywordtype">char</span> *aFullName, <span class="keywordtype">size_t</span> aFullNameLength, <span class="keyword">const</span> <span class="keywordtype">char</span> *aName);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    ServiceIterator FindPublishedService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    ServiceIterator FindPublishedService(<span class="keyword">const</span> DNSServiceRef &amp;aServiceRef);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    HostIterator    FindPublishedHost(<span class="keyword">const</span> DNSRecordRef &amp;aRecordRef);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    HostIterator    FindPublishedHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordtype">void</span>        DiscardService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, DNSServiceRef aServiceRef = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">void</span>        RecordService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> <span class="keywordtype">char</span> *aRegType, DNSServiceRef aServiceRef);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> IsServiceOutdated(<span class="keyword">const</span> Service &amp;service, <span class="keyword">const</span> std::string &amp;aNewRegType);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> DiscardHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keywordtype">bool</span> aSendGoodbye = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordtype">void</span>      RecordHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> uint8_t *aAddress, uint8_t aAddressLength, DNSRecordRef aRecordRef);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleServiceRegisterResult(DNSServiceRef         aService,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                            <span class="keyword">const</span> DNSServiceFlags aFlags,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                            DNSServiceErrorType   aError,</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aName,</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aType,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aDomain,</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                            <span class="keywordtype">void</span> *                aContext);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">void</span>        HandleServiceRegisterResult(DNSServiceRef         aService,</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                            <span class="keyword">const</span> DNSServiceFlags aFlags,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                            DNSServiceErrorType   aError,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aName,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aType,</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                            <span class="keyword">const</span> <span class="keywordtype">char</span> *          aDomain);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleRegisterHostResult(DNSServiceRef       aHostsConnection,</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                         DNSRecordRef        aHostRecord,</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                         DNSServiceFlags     aFlags,</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                         DNSServiceErrorType aErrorCode,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                         <span class="keywordtype">void</span> *              aContext);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">void</span>        HandleRegisterHostResult(DNSServiceRef       aHostsConnection,</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                                         DNSRecordRef        aHostRecord,</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                         DNSServiceFlags     aFlags,</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                         DNSServiceErrorType aErrorCode);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>          MakeFullName(<span class="keywordtype">char</span> *aFullName, <span class="keywordtype">size_t</span> aFullNameLength, <span class="keyword">const</span> <span class="keywordtype">char</span> *aName);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">static</span> std::string MakeRegType(<span class="keyword">const</span> <span class="keywordtype">char</span> *aType, <span class="keyword">const</span> SubTypeList &amp;aSubTypeList);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordtype">void</span>        OnServiceResolved(ServiceSubscription &amp;aService);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> OnServiceResolveFailed(<span class="keyword">const</span> ServiceSubscription &amp;aService, DNSServiceErrorType aErrorCode);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordtype">void</span>        OnHostResolved(HostSubscription &amp;aHost);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordtype">void</span>        OnHostResolveFailed(<span class="keyword">const</span> HostSubscription &amp;aHost, DNSServiceErrorType aErrorCode);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    ServiceIterator FindPublishedService(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aType);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    ServiceIterator FindPublishedService(<span class="keyword">const</span> DNSServiceRef &amp;aServiceRef);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    HostIterator    FindPublishedHost(<span class="keyword">const</span> DNSRecordRef &amp;aRecordRef);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    HostIterator    FindPublishedHost(<span class="keyword">const</span> <span class="keywordtype">char</span> *aHostName);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    Services      mServices;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    Hosts         mHosts;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    DNSServiceRef mHostsRef;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *  mDomain;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">State</a>         mState;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a>  mStateHandler;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">void</span> *        mContext;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    ServiceSubscriptionList mSubscribedServices;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    HostSubscriptionList    mSubscribedHosts;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;};</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;} <span class="comment">// namespace Mdns</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_MDNS_MDNSSD_HPP_</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">void</span>        OnServiceResolved(ServiceSubscription &amp;aService);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> OnServiceResolveFailed(<span class="keyword">const</span> ServiceSubscription &amp;aService, DNSServiceErrorType aErrorCode);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">void</span>        OnHostResolved(HostSubscription &amp;aHost);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">void</span>        OnHostResolveFailed(<span class="keyword">const</span> HostSubscription &amp;aHost, DNSServiceErrorType aErrorCode);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    Services      mServices;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    Hosts         mHosts;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    DNSServiceRef mHostsRef;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *  mDomain;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">State</a>         mState;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">StateHandler</a>  mStateHandler;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">void</span> *        mContext;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    ServiceSubscriptionList mSubscribedServices;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    HostSubscriptionList    mSubscribedHosts;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;};</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;} <span class="comment">// namespace Mdns</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_MDNS_MDNSSD_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo_html"><div class="ttname"><a href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">otbr::Mdns::Publisher::DiscoveredInstanceInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:98</div></div>
+<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo_html"><div class="ttname"><a href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">otbr::Mdns::Publisher::DiscoveredInstanceInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:99</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_aac65edb03f195098dd9c628d27735a64"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aac65edb03f195098dd9c628d27735a64">otbr::Mdns::PublisherMDnsSd::Start</a></div><div class="ttdeci">otbrError Start(void) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:226</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a5f76fb605b72de07301fa08817e423b8"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a5f76fb605b72de07301fa08817e423b8">otbr::Mdns::PublisherMDnsSd::PublishService</a></div><div class="ttdeci">otbrError PublishService(const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const TxtList &amp;aTxtList) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:481</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a80cf77c567d3128f8bb92156c382eb9b"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a80cf77c567d3128f8bb92156c382eb9b">otbr::Mdns::PublisherMDnsSd::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:313</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_ab52daeadfc58cb1f9220fef797524c92"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#ab52daeadfc58cb1f9220fef797524c92">otbr::Mdns::PublisherMDnsSd::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:262</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a94c7cbf31e9f1518edcb96869a96fa92"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a94c7cbf31e9f1518edcb96869a96fa92">otbr::Mdns::PublisherMDnsSd::UnsubscribeService</a></div><div class="ttdeci">void UnsubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:774</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a94c7cbf31e9f1518edcb96869a96fa92"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a94c7cbf31e9f1518edcb96869a96fa92">otbr::Mdns::PublisherMDnsSd::UnsubscribeService</a></div><div class="ttdeci">void UnsubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:798</div></div>
 <div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_aa3460cf1e8c8be6eed2f4c728545cd1d"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d">otbr::Mdns::PublisherMDnsSd::SubscribeHost</a></div><div class="ttdeci">void SubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:825</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:160</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_aa3460cf1e8c8be6eed2f4c728545cd1d"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d">otbr::Mdns::PublisherMDnsSd::SubscribeHost</a></div><div class="ttdeci">void SubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:849</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:161</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a4415a4f7d927ddbf82f17daba70475b4"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a4415a4f7d927ddbf82f17daba70475b4">otbr::Mdns::PublisherMDnsSd::IsStarted</a></div><div class="ttdeci">bool IsStarted(void) const override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:233</div></div>
-<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo_html"><div class="ttname"><a href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">otbr::Mdns::Publisher::DiscoveredHostInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:126</div></div>
+<div class="ttc" id="astructotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo_html"><div class="ttname"><a href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">otbr::Mdns::Publisher::DiscoveredHostInfo</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:127</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a8e994c6a3e82bda87653e123fb67b8eb"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a8e994c6a3e82bda87653e123fb67b8eb">otbr::Mdns::PublisherMDnsSd::Stop</a></div><div class="ttdeci">void Stop(void) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:238</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a674e32710b426829ca0602929cfe9088"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a674e32710b426829ca0602929cfe9088">otbr::Mdns::PublisherMDnsSd::UnpublishHost</a></div><div class="ttdeci">otbrError UnpublishHost(const char *aName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:660</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a674e32710b426829ca0602929cfe9088"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a674e32710b426829ca0602929cfe9088">otbr::Mdns::PublisherMDnsSd::UnpublishHost</a></div><div class="ttdeci">otbrError UnpublishHost(const char *aName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:670</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a344e8877b8a2602592fb4c206f12fd5c"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a344e8877b8a2602592fb4c206f12fd5c">otbr::Mdns::PublisherMDnsSd::PublisherMDnsSd</a></div><div class="ttdeci">PublisherMDnsSd(int aProtocol, const char *aDomain, StateHandler aHandler, void *aContext)</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:211</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:63</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:69</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a606c109ff3092857eae8a7db0a199d11"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">otbr::Mdns::Publisher::StateHandler</a></div><div class="ttdeci">void(* StateHandler)(void *aContext, State aState)</div><div class="ttdef"><b>Definition:</b> mdns.hpp:173</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a543d998febc5af4840b41f4c7b800e1b"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a543d998febc5af4840b41f4c7b800e1b">otbr::Mdns::PublisherMDnsSd::UnpublishService</a></div><div class="ttdeci">otbrError UnpublishService(const char *aName, const char *aType) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:535</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a606c109ff3092857eae8a7db0a199d11"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a606c109ff3092857eae8a7db0a199d11">otbr::Mdns::Publisher::StateHandler</a></div><div class="ttdeci">void(* StateHandler)(void *aContext, State aState)</div><div class="ttdef"><b>Definition:</b> mdns.hpp:174</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a543d998febc5af4840b41f4c7b800e1b"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a543d998febc5af4840b41f4c7b800e1b">otbr::Mdns::PublisherMDnsSd::UnpublishService</a></div><div class="ttdeci">otbrError UnpublishService(const char *aName, const char *aType) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:545</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html">otbr::Mdns::PublisherMDnsSd</a></div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.hpp:57</div></div>
 <div class="ttc" id="amdns_8hpp_html"><div class="ttname"><a href="../../de/d7c/mdns_8hpp.html">mdns.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a294e5e02fb32367c3aef2032c11a1515"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a294e5e02fb32367c3aef2032c11a1515">otbr::Mdns::PublisherMDnsSd::UnsubscribeHost</a></div><div class="ttdeci">void UnsubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:834</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a294e5e02fb32367c3aef2032c11a1515"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a294e5e02fb32367c3aef2032c11a1515">otbr::Mdns::PublisherMDnsSd::UnsubscribeHost</a></div><div class="ttdeci">void UnsubscribeHost(const std::string &amp;aHostName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:858</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a64f236bf7ca4222a6c71d127afb3a94d"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a64f236bf7ca4222a6c71d127afb3a94d">otbr::Mdns::PublisherMDnsSd::PublishService</a></div><div class="ttdeci">otbrError PublishService(const char *aHostName, uint16_t aPort, const char *aName, const char *aType, const SubTypeList &amp;aSubTypeList, const TxtList &amp;aTxtList) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:483</div></div>
 <div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a9cf41b571b5700a4daa34e6a8e813414"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a9cf41b571b5700a4daa34e6a8e813414">otbr::Mdns::PublisherMDnsSd::PublishHost</a></div><div class="ttdeci">otbrError PublishHost(const char *aName, const uint8_t *aAddress, uint8_t aAddressLength) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:604</div></div>
-<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a95ecb9cceb50773c907042a5fce76c24"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24">otbr::Mdns::PublisherMDnsSd::SubscribeService</a></div><div class="ttdeci">void SubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:756</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a9cf41b571b5700a4daa34e6a8e813414"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a9cf41b571b5700a4daa34e6a8e813414">otbr::Mdns::PublisherMDnsSd::PublishHost</a></div><div class="ttdeci">otbrError PublishHost(const char *aName, const uint8_t *aAddress, uint8_t aAddressLength) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:614</div></div>
+<div class="ttc" id="aclassotbr_1_1Mdns_1_1PublisherMDnsSd_html_a95ecb9cceb50773c907042a5fce76c24"><div class="ttname"><a href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24">otbr::Mdns::PublisherMDnsSd::SubscribeService</a></div><div class="ttdeci">void SubscribeService(const std::string &amp;aType, const std::string &amp;aInstanceName) override</div><div class="ttdef"><b>Definition:</b> mdns_mdnssd.cpp:780</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
