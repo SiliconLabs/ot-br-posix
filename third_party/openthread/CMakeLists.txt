@@ -69,7 +69,6 @@ if (OTBR_BACKBONE_ROUTER)
 endif()
 
 if (OT_THREAD_VERSION STREQUAL "1.2")
-    set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA by default")
     set(OT_MLR ON CACHE BOOL "Enable Thread 1.2 MLR by default")
 endif()
 
@@ -77,6 +76,11 @@ set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread")
 set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread")
 
 # SiLabs OpenThread Border Router only
+if (OT_THREAD_VERSION STREQUAL "1.2")
+    # DUA is disabled by default (as an optional feature) for GitHub OTBR, override it here
+    set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA by default")
+endif()
+
 set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
 set(OT_FULL_LOGS ON CACHE BOOL "Enable debug level logging" FORCE)
 set(OT_LOG_LEVEL "NONE" CACHE STRING "Set OpenThread log level to NONE by default" FORCE)
