@@ -28,7 +28,7 @@
 
 /**
  * @file
- *   This file includes definition for MDNS service based on avahi.
+ *   This file includes definition for mDNS service based on avahi.
  */
 
 #ifndef OTBR_AGENT_MDNS_AVAHI_HPP_
@@ -50,7 +50,7 @@
  * @addtogroup border-router-mdns
  *
  * @brief
- *   This module includes definition for avahi-based MDNS service.
+ *   This module includes definition for avahi-based mDNS service.
  *
  * @{
  */
@@ -181,7 +181,7 @@ private:
 };
 
 /**
- * This class implements MDNS service with avahi.
+ * This class implements mDNS service with avahi.
  *
  */
 class PublisherAvahi : public Publisher
@@ -207,20 +207,22 @@ public:
      *                                  this service resides on local host and it is the implementation to provide
      *                                  specific host name. Otherwise, the caller MUST publish the host with method
      *                                  PublishHost.
+     * @param[in]   aPort               The port number of this service.
      * @param[in]   aName               The name of this service.
      * @param[in]   aType               The type of this service.
-     * @param[in]   aPort               The port number of this service.
+     * @param[in]   aSubTypeList        A list of service subtypes.
      * @param[in]   aTxtList            A list of TXT name/value pairs.
      *
      * @retval  OTBR_ERROR_NONE     Successfully published or updated the service.
      * @retval  OTBR_ERROR_ERRNO    Failed to publish or update the service.
      *
      */
-    otbrError PublishService(const char *   aHostName,
-                             uint16_t       aPort,
-                             const char *   aName,
-                             const char *   aType,
-                             const TxtList &aTxtList) override;
+    otbrError PublishService(const char *       aHostName,
+                             uint16_t           aPort,
+                             const char *       aName,
+                             const char *       aType,
+                             const SubTypeList &aSubTypeList,
+                             const TxtList &    aTxtList) override;
 
     /**
      * This method un-publishes a service.
@@ -314,10 +316,10 @@ public:
     void UnsubscribeHost(const std::string &aHostName) override;
 
     /**
-     * This method starts the MDNS service.
+     * This method starts the mDNS service.
      *
-     * @retval OTBR_ERROR_NONE  Successfully started MDNS service;
-     * @retval OTBR_ERROR_MDNS  Failed to start MDNS service.
+     * @retval OTBR_ERROR_NONE  Successfully started mDNS service;
+     * @retval OTBR_ERROR_MDNS  Failed to start mDNS service.
      *
      */
     otbrError Start(void) override;
@@ -332,7 +334,7 @@ public:
     bool IsStarted(void) const override;
 
     /**
-     * This method stops the MDNS service.
+     * This method stops the mDNS service.
      *
      */
     void Stop(void) override;
@@ -368,9 +370,11 @@ private:
     {
         std::string      mName;
         std::string      mType;
+        SubTypeList      mSubTypeList;
         std::string      mHostName;
         uint16_t         mPort  = 0;
         AvahiEntryGroup *mGroup = nullptr;
+        TxtList          mTxtList;
     };
 
     typedef std::vector<Service> Services;
@@ -405,7 +409,11 @@ private:
 
         void Release(void);
         void Browse(void);
-        void Resolve(uint32_t aInterfaceIndex, const char *aInstanceName, const char *aType, const char *aDomain);
+        void Resolve(uint32_t      aInterfaceIndex,
+                     AvahiProtocol aProtocol,
+                     const char *  aInstanceName,
+                     const char *  aType,
+                     const char *  aDomain);
         void GetAddrInfo(uint32_t aInterfaceIndex);
 
         static void HandleBrowseResult(AvahiServiceBrowser *  aServiceBrowser,
@@ -511,10 +519,15 @@ private:
     otbrError       CreateHost(AvahiClient &aClient, const char *aHostName, Hosts::iterator &aOutHostIt);
 
     Services::iterator FindService(const char *aName, const char *aType);
+    Services::iterator FindService(AvahiEntryGroup *aGroup);
     otbrError          CreateService(AvahiClient &       aClient,
                                      const char *        aName,
                                      const char *        aType,
                                      Services::iterator &aOutServiceIt);
+    static bool        IsServiceOutdated(const Service &    aService,
+                                         const char *       aNewHostName,
+                                         uint16_t           aNewPort,
+                                         const SubTypeList &aNewSubTypeList);
 
     otbrError        CreateGroup(AvahiClient &aClient, AvahiEntryGroup *&aOutGroup);
     static otbrError ResetGroup(AvahiEntryGroup *aGroup);
@@ -523,6 +536,12 @@ private:
     static void      HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState, void *aContext);
     void             HandleGroupState(AvahiEntryGroup *aGroup, AvahiEntryGroupState aState);
     void             CallHostOrServiceCallback(AvahiEntryGroup *aGroup, otbrError aError) const;
+    otbrError        RetryPublishService(const Services::iterator &aServiceIt);
+
+    static otbrError TxtListToAvahiStringList(const TxtList &   aTxtList,
+                                              AvahiStringList * aBuffer,
+                                              size_t            aBufferSize,
+                                              AvahiStringList *&aHead);
 
     std::string MakeFullName(const char *aName);
 
