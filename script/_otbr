@@ -70,8 +70,6 @@ otbr_install()
         "-DOTBR_SRP_ADVERTISING_PROXY=ON"
         "-DOTBR_INFRA_IF_NAME=${INFRA_IF_NAME}"
         "-DOTBR_MDNS=${OTBR_MDNS:=mDNSResponder}"
-        # Applicable to SiLabs Border Router
-        "-DOTBR_DUA_ROUTING=ON"
         "${otbr_options[@]}"
     )
 
@@ -92,6 +90,8 @@ otbr_install()
     if with BACKBONE_ROUTER; then
         otbr_options+=(
             "-DOTBR_BACKBONE_ROUTER=ON"
+            # Applicable to SiLabs Border Router
+            "-DOTBR_DUA_ROUTING=ON"
         )
     fi
 
