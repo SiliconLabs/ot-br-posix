@@ -100,7 +100,6 @@ if (OT_MULTIPAN_RCP)
     set(OT_POSIX_MAX_POWER_TABLE OFF CACHE BOOL "enable max power table" FORCE)
     set(OT_CHANNEL_MANAGER OFF CACHE BOOL "enable channel manager support" FORCE)
     set(OT_CHANNEL_MONITOR OFF CACHE BOOL "enable channel monitor support" FORCE)
-    set(OT_THREAD_VERSION 1.1 CACHE STRING "" FORCE)
 endif()
 
 add_subdirectory(repo EXCLUDE_FROM_ALL)
