@@ -41,10 +41,8 @@
 #include <openthread/instance.h>
 #include <openthread/srp_server.h>
 
-#include "agent/ncp_openthread.hpp"
-#include "common/mainloop.hpp"
-#include "common/task_runner.hpp"
 #include "mdns/mdns.hpp"
+#include "ncp/ncp_openthread.hpp"
 
 namespace otbr {
 
@@ -52,7 +50,7 @@ namespace otbr {
  * This class implements the Advertising Proxy.
  *
  */
-class AdvertisingProxy : public MainloopProcessor
+class AdvertisingProxy
 {
 public:
     /**
@@ -84,22 +82,6 @@ public:
      *
      */
     void PublishAllHostsAndServices(void);
-
-    /**
-     * This method updates the mainloop context.
-     *
-     * @param[inout]  aMainloop  A reference to the mainloop to be updated.
-     *
-     */
-    void Update(MainloopContext &aMainloop) override;
-
-    /**
-     * This method processes mainloop events.
-     *
-     * @param[in]  aMainloop  A reference to the mainloop context.
-     *
-     */
-    void Process(const MainloopContext &aMainloop) override;
 
 private:
     struct OutstandingUpdate

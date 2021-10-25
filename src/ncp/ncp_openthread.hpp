@@ -42,10 +42,10 @@
 #include <openthread/instance.h>
 #include <openthread/openthread-system.h>
 
-#include "agent/thread_helper.hpp"
 #include "common/mainloop.hpp"
 #include "common/task_runner.hpp"
 #include "common/types.hpp"
+#include "utils/thread_helper.hpp"
 
 namespace otbr {
 namespace Ncp {
@@ -149,6 +149,14 @@ public:
      *
      */
     static const char *GetThreadVersion(void);
+
+    /**
+     * This method returns the Thread network interface name.
+     *
+     * @returns  A pointer to the Thread network interface name string.
+     *
+     */
+    const char *GetInterfaceName(void) const { return mConfig.mInterfaceName; }
 
     ~ControllerOpenThread(void) override;
 

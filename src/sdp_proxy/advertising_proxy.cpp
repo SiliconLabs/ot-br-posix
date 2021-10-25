@@ -33,7 +33,7 @@
 
 #define OTBR_LOG_TAG "ADPROXY"
 
-#include "agent/advertising_proxy.hpp"
+#include "sdp_proxy/advertising_proxy.hpp"
 
 #if OTBR_ENABLE_SRP_ADVERTISING_PROXY
 
@@ -267,16 +267,6 @@ void AdvertisingProxy::PublishAllHostsAndServices(void)
 
 exit:
     return;
-}
-
-void AdvertisingProxy::Update(MainloopContext &aMainloop)
-{
-    mTaskRunner.Update(aMainloop);
-}
-
-void AdvertisingProxy::Process(const MainloopContext &aMainloop)
-{
-    mTaskRunner.Process(aMainloop);
 }
 
 otbrError AdvertisingProxy::PublishHostAndItsServices(const otSrpServerHost *aHost, OutstandingUpdate *aUpdate)

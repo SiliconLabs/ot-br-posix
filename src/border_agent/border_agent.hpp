@@ -38,12 +38,12 @@
 
 #include <stdint.h>
 
-#include "agent/advertising_proxy.hpp"
-#include "agent/discovery_proxy.hpp"
 #include "agent/instance_params.hpp"
-#include "agent/ncp_openthread.hpp"
 #include "common/mainloop.hpp"
 #include "mdns/mdns.hpp"
+#include "ncp/ncp_openthread.hpp"
+#include "sdp_proxy/advertising_proxy.hpp"
+#include "sdp_proxy/discovery_proxy.hpp"
 
 #if OTBR_ENABLE_BACKBONE_ROUTER
 #include "backbone_router/backbone_agent.hpp"
@@ -76,7 +76,7 @@ namespace otbr {
  * This class implements Thread border agent functionality.
  *
  */
-class BorderAgent : public MainloopProcessor
+class BorderAgent
 {
 public:
     /**
@@ -87,29 +87,13 @@ public:
      */
     BorderAgent(otbr::Ncp::ControllerOpenThread &aNcp);
 
-    ~BorderAgent(void) override;
+    ~BorderAgent(void);
 
     /**
      * This method initialize border agent service.
      *
      */
     void Init(void);
-
-    /**
-     * This method updates the mainloop context.
-     *
-     * @param[inout]  aMainloop  A reference to the mainloop to be updated.
-     *
-     */
-    void Update(MainloopContext &aMainloop) override;
-
-    /**
-     * This method processes mainloop events.
-     *
-     * @param[in]  aMainloop  A reference to the mainloop context.
-     *
-     */
-    void Process(const MainloopContext &aMainloop) override;
 
 private:
     enum : uint8_t
