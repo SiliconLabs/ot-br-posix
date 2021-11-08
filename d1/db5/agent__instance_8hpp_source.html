@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9303c31</span>
+   &#160;<span id="projectnumber">0.3.0-c94d423</span>
    </div>
   </td>
  </tr>
@@ -108,50 +108,40 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;sys/select.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/df0/border__agent_8hpp.html">agent/border_agent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/db1/instance__params_8hpp.html">agent/instance_params.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">agent/ncp_openthread.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d3/d79/classotbr_1_1AgentInstance.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html">AgentInstance</a> : <span class="keyword">public</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#adfe697a229edf75048f800410e37d408">AgentInstance</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#a75464287278840f12ad5e4acb0149f0c">Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#ad1520e2a5f1a24bef8b8e0da5cf8c88f">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#ad0dc542c3097961292199cc5dc038239">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">   97</a></span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;<a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">GetNcp</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mNcp; }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a>                      mBorderAgent;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_AGENT_INSTANCE_HPP_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/db1/instance__params_8hpp.html">agent/instance_params.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/df0/border__agent_8hpp.html">border_agent/border_agent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d3/d79/classotbr_1_1AgentInstance.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html">AgentInstance</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#adfe697a229edf75048f800410e37d408">AgentInstance</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#a75464287278840f12ad5e4acb0149f0c">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">   80</a></span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;<a class="code" href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">GetNcp</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mNcp; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a>                      mBorderAgent;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_AGENT_INSTANCE_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
 <div class="ttc" id="aclassotbr_1_1AgentInstance_html_a75464287278840f12ad5e4acb0149f0c"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#a75464287278840f12ad5e4acb0149f0c">otbr::AgentInstance::Init</a></div><div class="ttdeci">otbrError Init(void)</div><div class="ttdef"><b>Definition:</b> agent_instance.cpp:51</div></div>
 <div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:55</div></div>
-<div class="ttc" id="aclassotbr_1_1AgentInstance_html_ad1520e2a5f1a24bef8b8e0da5cf8c88f"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#ad1520e2a5f1a24bef8b8e0da5cf8c88f">otbr::AgentInstance::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> agent_instance.cpp:64</div></div>
-<div class="ttc" id="aclassotbr_1_1AgentInstance_html_a76265115d8aef60314d531a78aac0c5d"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">otbr::AgentInstance::GetNcp</a></div><div class="ttdeci">otbr::Ncp::ControllerOpenThread &amp; GetNcp(void)</div><div class="ttdef"><b>Definition:</b> agent_instance.hpp:97</div></div>
+<div class="ttc" id="aclassotbr_1_1AgentInstance_html_a76265115d8aef60314d531a78aac0c5d"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#a76265115d8aef60314d531a78aac0c5d">otbr::AgentInstance::GetNcp</a></div><div class="ttdeci">otbr::Ncp::ControllerOpenThread &amp; GetNcp(void)</div><div class="ttdef"><b>Definition:</b> agent_instance.hpp:80</div></div>
 <div class="ttc" id="aborder__agent_8hpp_html"><div class="ttname"><a href="../../de/df0/border__agent_8hpp.html">border_agent.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:67</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:79</div></div>
 <div class="ttc" id="ainstance__params_8hpp_html"><div class="ttname"><a href="../../dd/db1/instance__params_8hpp.html">instance_params.hpp</a></div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:69</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
-<div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:57</div></div>
-<div class="ttc" id="aclassotbr_1_1AgentInstance_html_ad0dc542c3097961292199cc5dc038239"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#ad0dc542c3097961292199cc5dc038239">otbr::AgentInstance::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> agent_instance.cpp:70</div></div>
-<div class="ttc" id="aclassotbr_1_1AgentInstance_html"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html">otbr::AgentInstance</a></div><div class="ttdef"><b>Definition:</b> agent_instance.hpp:55</div></div>
+<div class="ttc" id="aclassotbr_1_1AgentInstance_html"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html">otbr::AgentInstance</a></div><div class="ttdef"><b>Definition:</b> agent_instance.hpp:54</div></div>
 <div class="ttc" id="aclassotbr_1_1AgentInstance_html_adfe697a229edf75048f800410e37d408"><div class="ttname"><a href="../../d3/d79/classotbr_1_1AgentInstance.html#adfe697a229edf75048f800410e37d408">otbr::AgentInstance::AgentInstance</a></div><div class="ttdeci">AgentInstance(Ncp::ControllerOpenThread &amp;aNcp)</div><div class="ttdef"><b>Definition:</b> agent_instance.cpp:45</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

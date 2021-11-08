@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9303c31</span>
+   &#160;<span id="projectnumber">0.3.0-c94d423</span>
    </div>
   </td>
  </tr>
@@ -120,13 +120,7 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d6/d8f/classotbr_1_1Crc16.html#a3e078a50d673a91b1ff0484e8b682164">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/d8f/classotbr_1_1Crc16.html#a3e078a50d673a91b1ff0484e8b682164">Init</a>(<span class="keywordtype">void</span>) { mCrc = 0; }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/*c*</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     * This method feeds a byte value into the CRC16 computation.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * @param[in]  aByte  The byte value.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> Update(uint8_t aByte);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/d8f/classotbr_1_1Crc16.html#a3756f029292d4bd661c2b93e55981fb0">Update</a>(uint8_t aByte);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d6/d8f/classotbr_1_1Crc16.html#ac4f699b3cdca9c2cdac55f44ca4c5d2b">   84</a></span>&#160;    uint16_t <a class="code" href="../../d6/d8f/classotbr_1_1Crc16.html#ac4f699b3cdca9c2cdac55f44ca4c5d2b">Get</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mCrc; }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -142,6 +136,7 @@ $(function() {
 <div class="ttc" id="aclassotbr_1_1Crc16_html_ac4f699b3cdca9c2cdac55f44ca4c5d2b"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#ac4f699b3cdca9c2cdac55f44ca4c5d2b">otbr::Crc16::Get</a></div><div class="ttdeci">uint16_t Get(void) const</div><div class="ttdef"><b>Definition:</b> crc16.hpp:84</div></div>
 <div class="ttc" id="aclassotbr_1_1Crc16_html_accec4421a45ab5f0146aff11a660a085a8924834f8a8d08cac5ee3cd426f5febd"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#accec4421a45ab5f0146aff11a660a085a8924834f8a8d08cac5ee3cd426f5febd">otbr::Crc16::kCcitt</a></div><div class="ttdeci">@ kCcitt</div><div class="ttdoc">CRC16_CCITT.</div><div class="ttdef"><b>Definition:</b> crc16.hpp:52</div></div>
 <div class="ttc" id="aclassotbr_1_1Crc16_html_a5660386f9d83d77b3376d4dc4360a48d"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#a5660386f9d83d77b3376d4dc4360a48d">otbr::Crc16::Crc16</a></div><div class="ttdeci">Crc16(Polynomial aPolynomial)</div><div class="ttdef"><b>Definition:</b> crc16.cpp:38</div></div>
+<div class="ttc" id="aclassotbr_1_1Crc16_html_a3756f029292d4bd661c2b93e55981fb0"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#a3756f029292d4bd661c2b93e55981fb0">otbr::Crc16::Update</a></div><div class="ttdeci">void Update(uint8_t aByte)</div><div class="ttdef"><b>Definition:</b> crc16.cpp:44</div></div>
 <div class="ttc" id="aclassotbr_1_1Crc16_html"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html">otbr::Crc16</a></div><div class="ttdef"><b>Definition:</b> crc16.hpp:47</div></div>
 <div class="ttc" id="aclassotbr_1_1Crc16_html_accec4421a45ab5f0146aff11a660a085ac4a7349f6685db36df2b1ec0a90b1515"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#accec4421a45ab5f0146aff11a660a085ac4a7349f6685db36df2b1ec0a90b1515">otbr::Crc16::kAnsi</a></div><div class="ttdeci">@ kAnsi</div><div class="ttdoc">CRC16-ANSI.</div><div class="ttdef"><b>Definition:</b> crc16.hpp:53</div></div>
 <div class="ttc" id="aclassotbr_1_1Crc16_html_accec4421a45ab5f0146aff11a660a085"><div class="ttname"><a href="../../d6/d8f/classotbr_1_1Crc16.html#accec4421a45ab5f0146aff11a660a085">otbr::Crc16::Polynomial</a></div><div class="ttdeci">Polynomial</div><div class="ttdef"><b>Definition:</b> crc16.hpp:50</div></div>

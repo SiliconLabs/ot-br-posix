@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9303c31</span>
+   &#160;<span id="projectnumber">0.3.0-c94d423</span>
    </div>
   </td>
  </tr>
@@ -185,8 +185,15 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyHandlerType<
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This method initializes the dbus thread object.</p>
-<dl class="section return"><dt>Returns</dt><dd>The initialization error. </dd></dl>
+<p>This method initializes the d-bus object.</p>
+<p>This method will register the object to the d-bus library.</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">OTBR_ERROR_NONE</td><td>Successfully registered the object. </td></tr>
+    <tr><td class="paramname">OTBR_ERROR_DBUS</td><td>Failed to ragister an object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#a06c05092b94dada5df9be97f0801ec5c">otbr::DBus::DBusObject</a>.</p>
 

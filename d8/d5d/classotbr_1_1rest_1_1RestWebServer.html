@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9303c31</span>
+   &#160;<span id="projectnumber">0.3.0-c94d423</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d0/d3a/classotbr_1_1rest_1_1RestWebServer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">otbr::rest::RestWebServer Class Reference</div>  </div>
@@ -88,6 +87,8 @@ Inheritance diagram for otbr::rest::RestWebServer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:abfc398f34dad0b33bafab32f9f1c5ee7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#abfc398f34dad0b33bafab32f9f1c5ee7">RestWebServer</a> (<a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> &amp;aNcp)</td></tr>
+<tr class="separator:abfc398f34dad0b33bafab32f9f1c5ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d7619b749d7ad20efc8dc9700ff643e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a4d7619b749d7ad20efc8dc9700ff643e">~RestWebServer</a> (void) override</td></tr>
 <tr class="separator:a4d7619b749d7ad20efc8dc9700ff643e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f9eb47832b6a214cf7090918162d111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a7f9eb47832b6a214cf7090918162d111">Init</a> (void)</td></tr>
@@ -96,15 +97,35 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a66d0434b4d34d3248be9372a7ef40578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af82f8046e6ecb73e78f739296c73255c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#af82f8046e6ecb73e78f739296c73255c">Process</a> (const <a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) override</td></tr>
 <tr class="separator:af82f8046e6ecb73e78f739296c73255c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3be8d154b91802eed5add67f0a04ca09"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html">RestWebServer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a3be8d154b91802eed5add67f0a04ca09">GetRestWebServer</a> (<a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *aNcp)</td></tr>
-<tr class="separator:a3be8d154b91802eed5add67f0a04ca09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements a REST server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abfc398f34dad0b33bafab32f9f1c5ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc398f34dad0b33bafab32f9f1c5ee7">&#9670;&nbsp;</a></span>RestWebServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">otbr::rest::RestWebServer::RestWebServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> &amp;&#160;</td>
+          <td class="paramname"><em>aNcp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The constructor to initialize a REST server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aNcp</td><td>A reference to the NCP controller. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4d7619b749d7ad20efc8dc9700ff643e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d7619b749d7ad20efc8dc9700ff643e">&#9670;&nbsp;</a></span>~RestWebServer()</h2>
 
@@ -133,40 +154,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3be8d154b91802eed5add67f0a04ca09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3be8d154b91802eed5add67f0a04ca09">&#9670;&nbsp;</a></span>GetRestWebServer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html">RestWebServer</a> * otbr::rest::RestWebServer::GetRestWebServer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *&#160;</td>
-          <td class="paramname"><em>aNcp</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>a static function which call the constructor of REST server and return a pointer to the server instance.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aNcp</td><td>A pointer to the NCP controller.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer pointing to the static rest server instance. </dd></dl>
-
-</div>
-</div>
 <a id="a7f9eb47832b6a214cf7090918162d111"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f9eb47832b6a214cf7090918162d111">&#9670;&nbsp;</a></span>Init()</h2>
 
