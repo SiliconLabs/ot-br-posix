@@ -60,12 +60,17 @@ DiscoveryProxy::DiscoveryProxy(Ncp::ControllerOpenThread &aNcp, Mdns::Publisher 
 
 void DiscoveryProxy::Start(void)
 {
+    assert(mSubscriberId == 0);
+
     otDnssdQuerySetCallbacks(mNcp.GetInstance(), &DiscoveryProxy::OnDiscoveryProxySubscribe,
                              &DiscoveryProxy::OnDiscoveryProxyUnsubscribe, this);
 
-    mMdnsPublisher.SetSubscriptionCallbacks(
+    mSubscriberId = mMdnsPublisher.AddSubscriptionCallbacks(
         [this](const std::string &aType, const Mdns::Publisher::DiscoveredInstanceInfo &aInstanceInfo) {
-            OnServiceDiscovered(aType, aInstanceInfo);
+            if (!aInstanceInfo.mRemoved)
+            {
+                OnServiceDiscovered(aType, aInstanceInfo);
+            }
         },
 
         [this](const std::string &aHostName, const Mdns::Publisher::DiscoveredHostInfo &aHostInfo) {
@@ -78,7 +83,12 @@ void DiscoveryProxy::Start(void)
 void DiscoveryProxy::Stop(void)
 {
     otDnssdQuerySetCallbacks(mNcp.GetInstance(), nullptr, nullptr, nullptr);
-    mMdnsPublisher.SetSubscriptionCallbacks(nullptr, nullptr);
+
+    if (mSubscriberId > 0)
+    {
+        mMdnsPublisher.RemoveSubscriptionCallbacks(mSubscriberId);
+        mSubscriberId = 0;
+    }
 
     otbrLogInfo("stopped");
 }
@@ -91,7 +101,6 @@ void DiscoveryProxy::OnDiscoveryProxySubscribe(void *aContext, const char *aFull
 void DiscoveryProxy::OnDiscoveryProxySubscribe(const char *aFullName)
 {
     std::string fullName(aFullName);
-    otbrError   error    = OTBR_ERROR_NONE;
     DnsNameInfo nameInfo = SplitFullDnsName(fullName);
 
     otbrLogInfo("subscribe: %s", fullName.c_str());
@@ -107,11 +116,6 @@ void DiscoveryProxy::OnDiscoveryProxySubscribe(const char *aFullName)
             mMdnsPublisher.SubscribeHost(nameInfo.mHostName);
         }
     }
-
-    if (error != OTBR_ERROR_NONE)
-    {
-        otbrLogWarning("failed to subscribe %s: %s", fullName.c_str(), otbrErrorString(error));
-    }
 }
 
 void DiscoveryProxy::OnDiscoveryProxyUnsubscribe(void *aContext, const char *aFullName)
@@ -122,7 +126,6 @@ void DiscoveryProxy::OnDiscoveryProxyUnsubscribe(void *aContext, const char *aFu
 void DiscoveryProxy::OnDiscoveryProxyUnsubscribe(const char *aFullName)
 {
     std::string fullName(aFullName);
-    otbrError   error    = OTBR_ERROR_NONE;
     DnsNameInfo nameInfo = SplitFullDnsName(fullName);
 
     otbrLogInfo("unsubscribe: %s", fullName.c_str());
@@ -137,10 +140,6 @@ void DiscoveryProxy::OnDiscoveryProxyUnsubscribe(const char *aFullName)
         {
             mMdnsPublisher.UnsubscribeHost(nameInfo.mHostName);
         }
-    }
-    if (error != OTBR_ERROR_NONE)
-    {
-        otbrLogWarning("failed to unsubscribe %s: %s", fullName.c_str(), otbrErrorString(error));
     }
 }
 
@@ -208,12 +207,12 @@ void DiscoveryProxy::OnServiceDiscovered(const std::string &                    
 
         if (serviceName == aType && (instanceName.empty() || instanceName == unescapedInstanceName))
         {
-            std::string serviceFullName  = aType + "." + domain;
-            std::string hostName         = TranslateDomain(aInstanceInfo.mHostName, domain);
-            std::string instanceFullName = unescapedInstanceName + "." + serviceFullName;
+            std::string serviceFullName    = aType + "." + domain;
+            std::string translatedHostName = TranslateDomain(aInstanceInfo.mHostName, domain);
+            std::string instanceFullName   = unescapedInstanceName + "." + serviceFullName;
 
             instanceInfo.mFullName = instanceFullName.c_str();
-            instanceInfo.mHostName = hostName.c_str();
+            instanceInfo.mHostName = translatedHostName.c_str();
 
             otDnssdQueryHandleDiscoveredServiceInstance(mNcp.GetInstance(), serviceFullName.c_str(), &instanceInfo);
         }
