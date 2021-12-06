@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -72,6 +72,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../de/de8/classotbr_1_1Mdns_1_1Publisher-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -151,8 +152,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a454e7ed9403a336941633b1610251567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78f355fa9bac6f1c92d34c2dc984c149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a78f355fa9bac6f1c92d34c2dc984c149">UnsubscribeHost</a> (const std::string &amp;aHostName)=0</td></tr>
 <tr class="separator:a78f355fa9bac6f1c92d34c2dc984c149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c2b8868a5db165c6d27730e6d42f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#af7c2b8868a5db165c6d27730e6d42f6f">SetSubscriptionCallbacks</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> aInstanceCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> aHostCallback)</td></tr>
-<tr class="separator:af7c2b8868a5db165c6d27730e6d42f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d15649205370cd1b67002c8d88511e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a54d15649205370cd1b67002c8d88511e">AddSubscriptionCallbacks</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> aInstanceCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> aHostCallback)</td></tr>
+<tr class="separator:a54d15649205370cd1b67002c8d88511e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e012095ac2592ec6fb3a314039bdf1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a5e012095ac2592ec6fb3a314039bdf1e">RemoveSubscriptionCallbacks</a> (uint64_t aSubscriberId)</td></tr>
+<tr class="separator:a5e012095ac2592ec6fb3a314039bdf1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -171,6 +174,18 @@ Protected Types</h2></td></tr>
  }</td></tr>
 <tr class="separator:a8d576bcf7d6b2aa324357bf31c7912af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a1608bd7367e7782fe0d63e366f3d5864"><td class="memItemLeft" align="right" valign="top"><a id="a1608bd7367e7782fe0d63e366f3d5864"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolved</b> (const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)</td></tr>
+<tr class="separator:a1608bd7367e7782fe0d63e366f3d5864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3772d5a91c139a561fa2282111b91093"><td class="memItemLeft" align="right" valign="top"><a id="a3772d5a91c139a561fa2282111b91093"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceRemoved</b> (const std::string &amp;aType, const std::string &amp;aInstanceName)</td></tr>
+<tr class="separator:a3772d5a91c139a561fa2282111b91093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1b85f3a05e9b9e1894e2f87bf238db"><td class="memItemLeft" align="right" valign="top"><a id="a4d1b85f3a05e9b9e1894e2f87bf238db"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolved</b> (const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)</td></tr>
+<tr class="separator:a4d1b85f3a05e9b9e1894e2f87bf238db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a4e77fa6e235690452eaec0057e4de2ef"><td class="memItemLeft" align="right" valign="top"><a id="a4e77fa6e235690452eaec0057e4de2ef"></a>
@@ -185,12 +200,12 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mServiceHandlerCont
 <tr class="memitem:a35f75f22ca2bbb5af3ae5a129ac7706c"><td class="memItemLeft" align="right" valign="top"><a id="a35f75f22ca2bbb5af3ae5a129ac7706c"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext</b> = nullptr</td></tr>
 <tr class="separator:a35f75f22ca2bbb5af3ae5a129ac7706c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09c0ca1d9c12de55767a9e52ae4be4a0"><td class="memItemLeft" align="right" valign="top"><a id="a09c0ca1d9c12de55767a9e52ae4be4a0"></a>
-<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredServiceInstanceCallback</b> = nullptr</td></tr>
-<tr class="separator:a09c0ca1d9c12de55767a9e52ae4be4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038f0ae3dccc7e9e701e7b647b8d19ca"><td class="memItemLeft" align="right" valign="top"><a id="a038f0ae3dccc7e9e701e7b647b8d19ca"></a>
-<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredHostCallback</b> = nullptr</td></tr>
-<tr class="separator:a038f0ae3dccc7e9e701e7b647b8d19ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb74cd41a2f01681db65bdaaa20b16f2"><td class="memItemLeft" align="right" valign="top"><a id="afb74cd41a2f01681db65bdaaa20b16f2"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>mNextSubscriberId</b> = 1</td></tr>
+<tr class="separator:afb74cd41a2f01681db65bdaaa20b16f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fd75dce8bc6f8b2ba6bd6f6fa74469"><td class="memItemLeft" align="right" valign="top"><a id="a70fd75dce8bc6f8b2ba6bd6f6fa74469"></a>
+std::map&lt; uint64_t, std::pair&lt; <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredCallbacks</b></td></tr>
+<tr class="separator:a70fd75dce8bc6f8b2ba6bd6f6fa74469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This interface defines the functionality of mDNS publisher. </p>
@@ -325,6 +340,43 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a54d15649205370cd1b67002c8d88511e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d15649205370cd1b67002c8d88511e">&#9670;&nbsp;</a></span>AddSubscriptionCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t otbr::Mdns::Publisher::AddSubscriptionCallbacks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">Publisher::DiscoveredServiceInstanceCallback</a>&#160;</td>
+          <td class="paramname"><em>aInstanceCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">Publisher::DiscoveredHostCallback</a>&#160;</td>
+          <td class="paramname"><em>aHostCallback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method sets the callbacks for subscriptions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aInstanceCallback</td><td>The callback function to receive discovered service instances. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHostCallback</td><td>The callback function to receive discovered hosts.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Subscriber ID for the callbacks. </dd></dl>
+
+</div>
+</div>
 <a id="a2933b5e49de60cd590a0bef5fc5e0aa2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2933b5e49de60cd590a0bef5fc5e0aa2">&#9670;&nbsp;</a></span>Create()</h2>
 
@@ -654,7 +706,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The name of the host which this service resides on. If an empty string is provided, this service resides on local host and it is the implementation to provide specific host name. Otherwise, the caller MUST publish the host with method PublishHost. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aPort</td><td>The port number of this service. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. Note that the published service name may be different from the original name due to renaming. You should always pass in the original name here to make sure you are referring to the intended service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The type of this service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aSubTypeList</td><td>A list of service subtypes. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aTxtList</td><td>A list of TXT name/value pairs.</td></tr>
@@ -670,6 +722,31 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 </dl>
 
 <p>Implemented in <a class="el" href="../../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a671e8c68017ab3a9a488f9cb9a6bf818">otbr::Mdns::PublisherAvahi</a>, and <a class="el" href="../../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#af97dc07fc5fdb1da029bbdd9ac3f6569">otbr::Mdns::PublisherMDnsSd</a>.</p>
+
+</div>
+</div>
+<a id="a5e012095ac2592ec6fb3a314039bdf1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e012095ac2592ec6fb3a314039bdf1e">&#9670;&nbsp;</a></span>RemoveSubscriptionCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Mdns::Publisher::RemoveSubscriptionCallbacks </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>aSubscriberId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method cancels callbacks for subscriptions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aSubscriberId</td><td>The Subscriber ID previously returned by <code>AddSubscriptionCallbacks</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -755,50 +832,6 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aHandler</td><td>A handler which will be called when a service publication is finished. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A user context which is associated to <code>aHandler</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af7c2b8868a5db165c6d27730e6d42f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7c2b8868a5db165c6d27730e6d42f6f">&#9670;&nbsp;</a></span>SetSubscriptionCallbacks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void otbr::Mdns::Publisher::SetSubscriptionCallbacks </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>&#160;</td>
-          <td class="paramname"><em>aInstanceCallback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a>&#160;</td>
-          <td class="paramname"><em>aHostCallback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method sets the callbacks for subscriptions.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aInstanceCallback</td><td>The callback function to receive discovered service instances. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aHostCallback</td><td>The callback function to receive discovered hosts. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1033,7 +1066,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 <p>This method un-publishes a service.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. Note that the published service name may be different from the original name due to renaming. You should always pass in the original name here to make sure you are referring to the intended service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The type of this service.</td></tr>
   </table>
   </dd>

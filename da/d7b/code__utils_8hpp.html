@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -67,12 +67,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">code_utils.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/da9/logging_8hpp_source.html">common/logging.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../da/d7b/code__utils_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -109,6 +111,13 @@ Macros</h2></td></tr>
 <tr class="memitem:a43aa262576d1eccf3a1b95fe0d7645c7"><td class="memItemLeft" align="right" valign="top"><a id="a43aa262576d1eccf3a1b95fe0d7645c7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>OTBR_UNUSED_VARIABLE</b>(variable)&#160;&#160;&#160;((void)(variable))</td></tr>
 <tr class="separator:a43aa262576d1eccf3a1b95fe0d7645c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a745e9413ab61925e6534aefdbb97efb8"><td class="memTemplParams" colspan="2"><a id="a745e9413ab61925e6534aefdbb97efb8"></a>
+template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a745e9413ab61925e6534aefdbb97efb8"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MakeUnique</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a745e9413ab61925e6534aefdbb97efb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes utility macros for coding. </p>

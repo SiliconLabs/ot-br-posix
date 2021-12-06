@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openthread-br: src/utils/strcpy_utils.hpp File Reference</title>
+<title>openthread-br: src/utils/dns_utils.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -69,63 +69,46 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">strcpy_utils.hpp File Reference</div>  </div>
+<div class="title">dns_utils.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">openthread-br/config.h</a>&quot;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div>
-<p><a href="../../d4/deb/strcpy__utils_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../d6/d66/utils_2dns__utils_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a50730d55221ad008064cfc4e78374c7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/strcpy__utils_8hpp.html#a50730d55221ad008064cfc4e78374c7e">strcpy_safe</a> (char *aDest, size_t aDestSize, const char *aSrc)</td></tr>
-<tr class="separator:a50730d55221ad008064cfc4e78374c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cda9ab9571ff448d9259bfca7857cec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::DnsUtils::UnescapeInstanceName</b> (const std::string &amp;aName)</td></tr>
+<tr class="separator:a1cda9ab9571ff448d9259bfca7857cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file includes definition for <a class="el" href="../../d4/deb/strcpy__utils_8hpp.html#a50730d55221ad008064cfc4e78374c7e">strcpy_safe()</a>. </p>
+<div class="textblock"><p>This file includes definition for DNS utilities. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a50730d55221ad008064cfc4e78374c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50730d55221ad008064cfc4e78374c7e">&#9670;&nbsp;</a></span>strcpy_safe()</h2>
+<a id="a1cda9ab9571ff448d9259bfca7857cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cda9ab9571ff448d9259bfca7857cec">&#9670;&nbsp;</a></span>UnescapeInstanceName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int strcpy_safe </td>
+          <td class="memname">std::string otbr::DnsUtils::UnescapeInstanceName </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>aDest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aName</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>aDestSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>aSrc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is a safe version of strcpy always ensuring last byte to be 0 If strlen(aSrc) &gt;= n, the string will be truncated</p>
+<p>This function unescapes a DNS Service Instance name according to "DNS Name Escaping".</p>
+<dl class="section see"><dt>See also</dt><dd>"Notes on DNS Name Escaping" at <a href="https://opensource.apple.com/source/mDNSResponder/mDNSResponder-1310.140.1/mDNSShared/dns_sd.h.auto.html">https://opensource.apple.com/source/mDNSResponder/mDNSResponder-1310.140.1/mDNSShared/dns_sd.h.auto.html</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">aDest</td><td>dest string </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aDestSize</td><td>size of dest string buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aSrc</td><td>src string</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The DNS Service Instance name to unescape.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The unescaped DNS Service Instance name. </dd></dl>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -86,9 +86,15 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b
 <tr class="memitem:a9b9bb890d82d529c31dbe918500af1df"><td class="memItemLeft" align="right" valign="top"><a id="a9b9bb890d82d529c31dbe918500af1df"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ScanHandler</b> = std::function&lt; void(otError, const std::vector&lt; otActiveScanResult &gt; &amp;)&gt;</td></tr>
 <tr class="separator:a9b9bb890d82d529c31dbe918500af1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecd3cdc46ddb7bef3fb7fd4c430a4d2"><td class="memItemLeft" align="right" valign="top"><a id="a7ecd3cdc46ddb7bef3fb7fd4c430a4d2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>EnergyScanHandler</b> = std::function&lt; void(otError, const std::vector&lt; otEnergyScanResult &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a7ecd3cdc46ddb7bef3fb7fd4c430a4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c62bace485d083d228ba9c3a107f393"><td class="memItemLeft" align="right" valign="top"><a id="a5c62bace485d083d228ba9c3a107f393"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ResultHandler</b> = std::function&lt; void(otError)&gt;</td></tr>
 <tr class="separator:a5c62bace485d083d228ba9c3a107f393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738c1c857997eb852305976d45cc617d"><td class="memItemLeft" align="right" valign="top"><a id="a738c1c857997eb852305976d45cc617d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateMeshCopTxtHandler</b> = std::function&lt; void(std::map&lt; std::string, std::vector&lt; uint8_t &gt; &gt;)&gt;</td></tr>
+<tr class="separator:a738c1c857997eb852305976d45cc617d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -100,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af23ed2f42134e7082169258b52e8e782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf50cd6dd6f97142f51b093275ae3a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aaf50cd6dd6f97142f51b093275ae3a08">Scan</a> (ScanHandler aHandler)</td></tr>
 <tr class="separator:aaf50cd6dd6f97142f51b093275ae3a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e8dc0b68aeb57aebd67f60097b661b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#af7e8dc0b68aeb57aebd67f60097b661b">EnergyScan</a> (uint32_t aScanDuration, EnergyScanHandler aHandler)</td></tr>
+<tr class="separator:af7e8dc0b68aeb57aebd67f60097b661b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b5e9e749c262c40391a29ae84beb80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aa1b5e9e749c262c40391a29ae84beb80">Attach</a> (const std::string &amp;aNetworkName, uint16_t aPanId, uint64_t aExtPanId, const std::vector&lt; uint8_t &gt; &amp;aNetworkKey, const std::vector&lt; uint8_t &gt; &amp;aPSKc, uint32_t aChannelMask, ResultHandler aHandler)</td></tr>
 <tr class="separator:aa1b5e9e749c262c40391a29ae84beb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b818790e83d9ad3a330a80f96bc938f"><td class="memItemLeft" align="right" valign="top">otError&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a7b818790e83d9ad3a330a80f96bc938f">Detach</a> (void)</td></tr>
@@ -340,6 +348,42 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This method detaches the device from the Thread network.</p>
 <dl class="section return"><dt>Returns</dt><dd>The error value of underlying OpenThread API calls. </dd></dl>
+
+</div>
+</div>
+<a id="af7e8dc0b68aeb57aebd67f60097b661b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e8dc0b68aeb57aebd67f60097b661b">&#9670;&nbsp;</a></span>EnergyScan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::agent::ThreadHelper::EnergyScan </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>aScanDuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EnergyScanHandler&#160;</td>
+          <td class="paramname"><em>aHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method performs an IEEE 802.15.4 Energy Scan.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aScanDuration</td><td>The duration for the scan, in milliseconds. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHandler</td><td>The scan result handler. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

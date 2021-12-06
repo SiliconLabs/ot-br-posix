@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -95,8 +95,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadStateChangedCa
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a07b5a202dcb1c7b41a1ac246dcdf7085"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a07b5a202dcb1c7b41a1ac246dcdf7085">ControllerOpenThread</a> (const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName)</td></tr>
-<tr class="separator:a07b5a202dcb1c7b41a1ac246dcdf7085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5094d2ad175e132f55de7091cbbf48a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#af5094d2ad175e132f55de7091cbbf48a">ControllerOpenThread</a> (const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun)</td></tr>
+<tr class="separator:af5094d2ad175e132f55de7091cbbf48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf8d8104ab1f841297e0ba46e4ed986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9cf8d8104ab1f841297e0ba46e4ed986">Init</a> (void)</td></tr>
 <tr class="separator:a9cf8d8104ab1f841297e0ba46e4ed986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2047cded3e4273a4d1209dc5e1ac5f61"><td class="memItemLeft" align="right" valign="top">otInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">GetInstance</a> (void)</td></tr>
@@ -126,8 +126,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This interface defines NCP Controller functionality. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a07b5a202dcb1c7b41a1ac246dcdf7085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07b5a202dcb1c7b41a1ac246dcdf7085">&#9670;&nbsp;</a></span>ControllerOpenThread()</h2>
+<a id="af5094d2ad175e132f55de7091cbbf48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5094d2ad175e132f55de7091cbbf48a">&#9670;&nbsp;</a></span>ControllerOpenThread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +148,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>aBackboneInterfaceName</em>&#160;</td>
+          <td class="paramname"><em>aBackboneInterfaceName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aDryRun</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -163,6 +169,7 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aInterfaceName</td><td>A string of the NCP interface name. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aRadioUrls</td><td>The radio URLs (can be IEEE802.15.4 or TREL radio). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aBackboneInterfaceName</td><td>The Backbone network interface name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDryRun</td><td>TRUE to indicate dry-run mode. FALSE otherwise. </td></tr>
   </table>
   </dd>
 </dl>

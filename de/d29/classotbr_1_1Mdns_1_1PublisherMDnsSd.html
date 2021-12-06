@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-c94d423</span>
+   &#160;<span id="projectnumber">0.3.0-fc85418</span>
    </div>
   </td>
  </tr>
@@ -122,8 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9837d2cc6a4f8201d0fe69f00bbe72e6 inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93201b8e7507597a0110cc5315112d5d inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a93201b8e7507597a0110cc5315112d5d">SetPublishHostHandler</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aaad852ef1bb69380d2537feafa0e7337">PublishHostHandler</a> aHandler, void *aContext)</td></tr>
 <tr class="separator:a93201b8e7507597a0110cc5315112d5d inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c2b8868a5db165c6d27730e6d42f6f inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#af7c2b8868a5db165c6d27730e6d42f6f">SetSubscriptionCallbacks</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> aInstanceCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> aHostCallback)</td></tr>
-<tr class="separator:af7c2b8868a5db165c6d27730e6d42f6f inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d15649205370cd1b67002c8d88511e inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a54d15649205370cd1b67002c8d88511e">AddSubscriptionCallbacks</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a> aInstanceCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> aHostCallback)</td></tr>
+<tr class="separator:a54d15649205370cd1b67002c8d88511e inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e012095ac2592ec6fb3a314039bdf1e inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a5e012095ac2592ec6fb3a314039bdf1e">RemoveSubscriptionCallbacks</a> (uint64_t aSubscriberId)</td></tr>
+<tr class="separator:a5e012095ac2592ec6fb3a314039bdf1e inherit pub_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -161,6 +163,16 @@ typedef std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" vali
 <tr class="memitem:a8d576bcf7d6b2aa324357bf31c7912af inherit pro_types_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a8d576bcf7d6b2aa324357bf31c7912af"></a>enum &#160;</td><td class="memItemRight" valign="bottom">: uint8_t { <b>kMaxTextEntrySize</b> = 255
  }</td></tr>
 <tr class="separator:a8d576bcf7d6b2aa324357bf31c7912af inherit pro_types_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classotbr_1_1Mdns_1_1Publisher"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classotbr_1_1Mdns_1_1Publisher')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></td></tr>
+<tr class="memitem:a1608bd7367e7782fe0d63e366f3d5864 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a1608bd7367e7782fe0d63e366f3d5864"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolved</b> (const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)</td></tr>
+<tr class="separator:a1608bd7367e7782fe0d63e366f3d5864 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3772d5a91c139a561fa2282111b91093 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a3772d5a91c139a561fa2282111b91093"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceRemoved</b> (const std::string &amp;aType, const std::string &amp;aInstanceName)</td></tr>
+<tr class="separator:a3772d5a91c139a561fa2282111b91093 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1b85f3a05e9b9e1894e2f87bf238db inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a4d1b85f3a05e9b9e1894e2f87bf238db"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolved</b> (const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)</td></tr>
+<tr class="separator:a4d1b85f3a05e9b9e1894e2f87bf238db inherit pro_methods_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classotbr_1_1Mdns_1_1Publisher')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></td></tr>
 <tr class="memitem:a4e77fa6e235690452eaec0057e4de2ef inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a4e77fa6e235690452eaec0057e4de2ef"></a>
 <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aab5a6f11910e8761461807be17ea181a">PublishServiceHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mServiceHandler</b> = nullptr</td></tr>
@@ -174,12 +186,12 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mServiceHandlerCont
 <tr class="memitem:a35f75f22ca2bbb5af3ae5a129ac7706c inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a35f75f22ca2bbb5af3ae5a129ac7706c"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext</b> = nullptr</td></tr>
 <tr class="separator:a35f75f22ca2bbb5af3ae5a129ac7706c inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09c0ca1d9c12de55767a9e52ae4be4a0 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a09c0ca1d9c12de55767a9e52ae4be4a0"></a>
-<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredServiceInstanceCallback</b> = nullptr</td></tr>
-<tr class="separator:a09c0ca1d9c12de55767a9e52ae4be4a0 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038f0ae3dccc7e9e701e7b647b8d19ca inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a038f0ae3dccc7e9e701e7b647b8d19ca"></a>
-<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredHostCallback</b> = nullptr</td></tr>
-<tr class="separator:a038f0ae3dccc7e9e701e7b647b8d19ca inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb74cd41a2f01681db65bdaaa20b16f2 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="afb74cd41a2f01681db65bdaaa20b16f2"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>mNextSubscriberId</b> = 1</td></tr>
+<tr class="separator:afb74cd41a2f01681db65bdaaa20b16f2 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fd75dce8bc6f8b2ba6bd6f6fa74469 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memItemLeft" align="right" valign="top"><a id="a70fd75dce8bc6f8b2ba6bd6f6fa74469"></a>
+std::map&lt; uint64_t, std::pair&lt; <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#ae28cea59926db61523595d4e6967afd7">DiscoveredServiceInstanceCallback</a>, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#aea1cfd72140d8d469b149ee279b44766">DiscoveredHostCallback</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mDiscoveredCallbacks</b></td></tr>
+<tr class="separator:a70fd75dce8bc6f8b2ba6bd6f6fa74469 inherit pro_attribs_classotbr_1_1Mdns_1_1Publisher"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements mDNS publisher with mDNSResponder. </p>
@@ -409,7 +421,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The name of the host which this service resides on. If an empty string is provided, this service resides on local host and it is the implementation to provide specific host name. Otherwise, the caller MUST publish the host with method PublishHost. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aPort</td><td>The port number of this service. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. Note that the published service name may be different from the original name due to renaming. You should always pass in the original name here to make sure you are referring to the intended service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The type of this service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aSubTypeList</td><td>A list of service subtypes. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aTxtList</td><td>A list of TXT name/value pairs.</td></tr>
@@ -656,7 +668,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>mHostHandlerContext
 <p>This method un-publishes a service.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aName</td><td>The name of this service. Note that the published service name may be different from the original name due to renaming. You should always pass in the original name here to make sure you are referring to the intended service. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>The type of this service.</td></tr>
   </table>
   </dd>

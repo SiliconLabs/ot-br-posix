@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['elementtype_703',['ElementType',['../d1/d8f/structotbr_1_1DBus_1_1ElementType.html',1,'otbr::DBus']]],
-  ['externalroute_704',['ExternalRoute',['../de/d00/structotbr_1_1DBus_1_1ExternalRoute.html',1,'otbr::DBus']]]
+  ['elementtype_708',['ElementType',['../d1/d8f/structotbr_1_1DBus_1_1ElementType.html',1,'otbr::DBus']]],
+  ['energyscanresult_709',['EnergyScanResult',['../d4/dd3/structotbr_1_1DBus_1_1EnergyScanResult.html',1,'otbr::DBus']]],
+  ['externalroute_710',['ExternalRoute',['../de/d00/structotbr_1_1DBus_1_1ExternalRoute.html',1,'otbr::DBus']]]
 ];

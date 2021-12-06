@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['activescanresult_655',['ActiveScanResult',['../d2/da8/structotbr_1_1DBus_1_1ActiveScanResult.html',1,'otbr::DBus']]],
-  ['agentinstance_656',['AgentInstance',['../d3/d79/classotbr_1_1AgentInstance.html',1,'otbr']]],
-  ['avahitimeout_657',['AvahiTimeout',['../db/dfa/structAvahiTimeout.html',1,'']]],
-  ['avahiwatch_658',['AvahiWatch',['../de/d3f/structAvahiWatch.html',1,'']]]
+  ['activescanresult_658',['ActiveScanResult',['../d2/da8/structotbr_1_1DBus_1_1ActiveScanResult.html',1,'otbr::DBus']]],
+  ['avahitimeout_659',['AvahiTimeout',['../db/dfa/structAvahiTimeout.html',1,'']]],
+  ['avahiwatch_660',['AvahiWatch',['../de/d3f/structAvahiWatch.html',1,'']]]
 ];
