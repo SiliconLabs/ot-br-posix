@@ -94,6 +94,8 @@ public:
     void Process(const MainloopContext &aMainloop) override;
 
 private:
+    static constexpr uint32_t kDefaultTtl = 10;
+
     struct Service
     {
         std::string   mName;
@@ -225,12 +227,12 @@ private:
         DiscoveredHostInfo mHostInfo;
     };
 
-    typedef std::vector<Service>             Services;
-    typedef std::vector<Host>                Hosts;
-    typedef std::vector<Service>::iterator   ServiceIterator;
-    typedef std::vector<Host>::iterator      HostIterator;
-    typedef std::vector<ServiceSubscription> ServiceSubscriptionList;
-    typedef std::vector<HostSubscription>    HostSubscriptionList;
+    typedef std::vector<Service>                              Services;
+    typedef std::vector<Host>                                 Hosts;
+    typedef std::vector<Service>::iterator                    ServiceIterator;
+    typedef std::vector<Host>::iterator                       HostIterator;
+    typedef std::vector<std::unique_ptr<ServiceSubscription>> ServiceSubscriptionList;
+    typedef std::vector<std::unique_ptr<HostSubscription>>    HostSubscriptionList;
 
     void        DiscardService(const std::string &aName, const std::string &aType, DNSServiceRef aServiceRef = nullptr);
     void        RecordService(const std::string &aName,
@@ -274,9 +276,7 @@ private:
     HostIterator    FindPublishedHost(const DNSRecordRef &aRecordRef);
     HostIterator    FindPublishedHost(const std::string &aHostName);
 
-    void        OnServiceResolved(ServiceSubscription &aService);
     static void OnServiceResolveFailed(const ServiceSubscription &aService, DNSServiceErrorType aErrorCode);
-    void        OnHostResolved(HostSubscription &aHost);
     void        OnHostResolveFailed(const HostSubscription &aHost, DNSServiceErrorType aErrorCode);
 
     Services      mServices;
