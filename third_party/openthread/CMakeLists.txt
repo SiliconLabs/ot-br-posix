@@ -75,6 +75,8 @@ if (OT_THREAD_VERSION STREQUAL "1.2")
     set(OT_MLR ON CACHE BOOL "Enable Thread 1.2 MLR by default")
 endif()
 
+set(OT_RCP_RESTORATION_MAX_COUNT "100" CACHE STRING "set max RCP restoration count" FORCE)
+
 set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread")
 set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread")
 
