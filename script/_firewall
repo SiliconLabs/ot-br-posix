@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  Copyright (c) 2017, The OpenThread Authors.
+#  Copyright (c) 2021, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -26,50 +26,47 @@
 #  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 #  POSSIBILITY OF SUCH DAMAGE.
 #
-#  Purpose:
-#       Some platforms automatically run various services that interfere with the
-#       OpenThread web service, this script disables those services
-#
 
-bbb_disable_services()
+FIREWALL_SERVICE=/etc/init.d/otbr-firewall
+
+sudo modprobe ip6table_filter || true
+
+firewall_uninstall()
 {
-    SERVICE_LIST=""
-    SERVICE_LIST="${SERVICE_LIST} apache2 " # Debian jessie
-    SERVICE_LIST="${SERVICE_LIST} nginx "   # Debian stretch
-    SERVICE_LIST="${SERVICE_LIST} bonescript-autorun.service"
-    SERVICE_LIST="${SERVICE_LIST} bonescript.socket"
-    SERVICE_LIST="${SERVICE_LIST} bonescript.service"
-    SERVICE_LIST="${SERVICE_LIST} cloud9.socket"
-    SERVICE_LIST="${SERVICE_LIST} cloud9.service"
-    SERVICE_LIST="${SERVICE_LIST} nodered.service"
-    SERVICE_LIST="${SERVICE_LIST} dnsmasq.service" # Disable well before bind9
-
-    for service in $SERVICE_LIST; do
-        if [ "$(sudo systemctl is-active "$service")" != "inactive" ]; then
-            for action in stop disable; do
-                sudo systemctl "$action" "$service"
-            done
-        fi
-    done
-
-    # stop avahi from advertising for cloud9 and nodered
-    sudo rm -rf /etc/avahi/services
-    # default dnsmasq configuration for connman tether conflicts with bind9
-    # removing the directory stops the startup script from creating
-    # /etc/dnsmasq.d/SoftAp0
-    sudo rm -rf /etc/dnsmasq.d
+    if have systemctl; then
+        sudo systemctl disable otbr-firewall || true
+    fi
+    # systemctl disable doesn't remove sym-links
+    if have update-rc.d; then
+        sudo update-rc.d otbr-firewall remove || true
+    fi
+    test ! -f $FIREWALL_SERVICE || sudo rm $FIREWALL_SERVICE
 }
 
-disable_services()
+firewall_install()
 {
-    case $PLATFORM in
+    sudo cp script/otbr-firewall $FIREWALL_SERVICE
+    sudo chmod a+x $FIREWALL_SERVICE
+    if have systemctl; then
+        sudo systemctl enable otbr-firewall || die 'Failed to enable firewall service!'
+        sudo systemctl start otbr-firewall || die 'Failed to start firewall service!'
+    fi
+}
 
-        beagleboneblack)
-            bbb_disable_services
-            ;;
+firewall_start()
+{
+    if with DOCKER; then
+        service otbr-firewall start || die 'Failed to start firewall service'
+    elif have systemctl; then
+        sudo systemctl start otbr-firewall || die 'Failed to start firewall service'
+    fi
+}
 
-        *)
-            echo "Nothing to disable" >/dev/null
-            ;;
-    esac
+firewall_stop()
+{
+    if with DOCKER; then
+        service otbr-firewall stop || true
+    elif have systemctl; then
+        sudo systemctl stop otbr-firewall || true
+    fi
 }
