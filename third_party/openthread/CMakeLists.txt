@@ -84,10 +84,14 @@ if (OT_THREAD_VERSION STREQUAL "1.2")
     set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA by default")
 endif()
 
+# Diagnostics / Logging
 set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
 set(OT_FULL_LOGS ON CACHE BOOL "Enable debug level logging" FORCE)
 set(OT_LOG_LEVEL "NONE" CACHE STRING "Set OpenThread log level to NONE by default" FORCE)
 set(OT_COPROCESSOR_RPC ON CACHE BOOL "Enable co-processor RPC support" FORCE)
+
+# RCP recovery
+set(OT_RCP_RESTORATION_MAX_COUNT "100" CACHE STRING "set max RCP restoration count" FORCE)
 
 if (OTBR_DNSSD_DISCOVERY_PROXY)
     set(OT_DNSSD_SERVER ON CACHE BOOL "enable DNS-SD server support" FORCE)
