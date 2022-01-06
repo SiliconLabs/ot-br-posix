@@ -99,6 +99,7 @@ LOCAL_CFLAGS += -Wall -Wextra -Wno-unused-parameter
 LOCAL_CFLAGS += \
     -DOTBR_PACKAGE_VERSION=\"0.2.0\" \
     -DOTBR_ENABLE_DBUS_SERVER=1 \
+    -DOTBR_ENABLE_BORDER_AGENT=1 \
     -DOTBR_DBUS_INTROSPECT_FILE=\"\" \
     $(OTBR_PROJECT_CFLAGS) \
 
@@ -107,6 +108,7 @@ LOCAL_CPPFLAGS += -std=c++14
 LOCAL_GENERATED_SOURCES = $(OTBR_GEN_DBUS_INTROSPECT_HEADER)
 
 LOCAL_SRC_FILES := \
+    src/agent/application.cpp \
     src/agent/instance_params.cpp \
     src/agent/main.cpp \
     src/backbone_router/backbone_agent.cpp \
