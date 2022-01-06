@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-fc85418</span>
+   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
    </div>
   </td>
  </tr>
@@ -106,57 +106,60 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;sys/select.h&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dea/dbus__message__helper_8hpp.html">dbus/common/dbus_message_helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d54/dbus__resources_8hpp.html">dbus/common/dbus_resources.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dd4/dbus__object_8hpp.html">dbus/server/dbus_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d2d/dbus__thread__object_8hpp.html">dbus/server/dbus_thread_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>DBus {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">class </span>DBusAgent : <span class="keyword">public</span> MainloopProcessor</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab654c4eb9b17568df80399712878cb24">DBusAgent</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ae133dce38b6550550c25c8b8d1112ab2">Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> Update(MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> Process(<span class="keyword">const</span> MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> dbus_bool_t AddDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>        RemoveDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">struct </span>timeval kPollTimeout;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string                       mInterfaceName;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::unique_ptr&lt;DBusThreadObject&gt; mThreadObject;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">using</span> UniqueDBusConnection = std::unique_ptr&lt;DBusConnection, std::function&lt;void(DBusConnection *)&gt;&gt;;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    UniqueDBusConnection             mConnection;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::set&lt;DBusWatch *&gt; mWatches;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace DBus</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif // OTBR_DBUS_AGENT_HPP_</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d7b/code__utils_8hpp.html">common/code_utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dea/dbus__message__helper_8hpp.html">dbus/common/dbus_message_helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d54/dbus__resources_8hpp.html">dbus/common/dbus_resources.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dd4/dbus__object_8hpp.html">dbus/server/dbus_object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d2d/dbus__thread__object_8hpp.html">dbus/server/dbus_thread_object.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">namespace </span>DBus {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span>DBusAgent : <span class="keyword">public</span> MainloopProcessor, <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab654c4eb9b17568df80399712878cb24">DBusAgent</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ae133dce38b6550550c25c8b8d1112ab2">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> Update(MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> Process(<span class="keyword">const</span> MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> dbus_bool_t AddDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>        RemoveDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">struct </span>timeval kPollTimeout;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::string                       mInterfaceName;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::unique_ptr&lt;DBusThreadObject&gt; mThreadObject;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">using</span> UniqueDBusConnection = std::unique_ptr&lt;DBusConnection, std::function&lt;void(DBusConnection *)&gt;&gt;;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    UniqueDBusConnection             mConnection;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;mNcp;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::set&lt;DBusWatch *&gt; mWatches;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace DBus</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif // OTBR_DBUS_AGENT_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="adbus__message__helper_8hpp_html"><div class="ttname"><a href="../../d0/dea/dbus__message__helper_8hpp.html">dbus_message_helper.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
 <div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_ae133dce38b6550550c25c8b8d1112ab2"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ae133dce38b6550550c25c8b8d1112ab2">otbr::DBus::DBusAgent::Init</a></div><div class="ttdeci">otbrError Init(void)</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:47</div></div>
 <div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
 <div class="ttc" id="adbus__resources_8hpp_html"><div class="ttname"><a href="../../d5/d54/dbus__resources_8hpp.html">dbus_resources.hpp</a></div></div>
+<div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
 <div class="ttc" id="adbus__object_8hpp_html"><div class="ttname"><a href="../../d3/dd4/dbus__object_8hpp.html">dbus_object.hpp</a></div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:69</div></div>
 <div class="ttc" id="adbus__thread__object_8hpp_html"><div class="ttname"><a href="../../de/d2d/dbus__thread__object_8hpp.html">dbus_thread_object.hpp</a></div></div>
 <div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_ab654c4eb9b17568df80399712878cb24"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab654c4eb9b17568df80399712878cb24">otbr::DBus::DBusAgent::DBusAgent</a></div><div class="ttdeci">DBusAgent(otbr::Ncp::ControllerOpenThread &amp;aNcp)</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:41</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:57</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:59</div></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:168</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

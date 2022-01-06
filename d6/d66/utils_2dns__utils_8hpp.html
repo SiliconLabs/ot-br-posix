@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-fc85418</span>
+   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
    </div>
   </td>
  </tr>
@@ -81,10 +81,66 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a1cda9ab9571ff448d9259bfca7857cec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::DnsUtils::UnescapeInstanceName</b> (const std::string &amp;aName)</td></tr>
 <tr class="separator:a1cda9ab9571ff448d9259bfca7857cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c02d4efc8269071ea87605aa73709a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::DnsUtils::CheckHostnameSanity</b> (const std::string &amp;aHostName)</td></tr>
+<tr class="separator:a7c02d4efc8269071ea87605aa73709a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede64ae03dd77206a4e169391fbc66ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::DnsUtils::CheckServiceNameSanity</b> (const std::string &amp;aServiceName)</td></tr>
+<tr class="separator:aede64ae03dd77206a4e169391fbc66ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes definition for DNS utilities. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a7c02d4efc8269071ea87605aa73709a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c02d4efc8269071ea87605aa73709a0">&#9670;&nbsp;</a></span>CheckHostnameSanity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::DnsUtils::CheckHostnameSanity </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aHostName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function checks a given host name for sanity.</p>
+<p>Check criteria: The host name must ends with dot.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHostName</td><td>The host name to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aede64ae03dd77206a4e169391fbc66ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede64ae03dd77206a4e169391fbc66ca">&#9670;&nbsp;</a></span>CheckServiceNameSanity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::DnsUtils::CheckServiceNameSanity </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aServiceName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function checks a given service name for sanity.</p>
+<p>Check criteria: The service name must contain exactly one dot. The service name must not end with dot.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aServiceName</td><td>The service name to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1cda9ab9571ff448d9259bfca7857cec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cda9ab9571ff448d9259bfca7857cec">&#9670;&nbsp;</a></span>UnescapeInstanceName()</h2>
 

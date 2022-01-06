@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-fc85418</span>
+   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
    </div>
   </td>
  </tr>
@@ -107,48 +107,51 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d7/dcc/classotbr_1_1MainloopManager.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a7a3cc50e7ec7733356c37b466b43309b">MainloopManager</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">   65</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a> &amp;<a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">GetInstance</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a> sMainloopManager;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> sMainloopManager;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#aef0bb60c805a40f43a93944813822e6c">AddMainloopProcessor</a>(<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a> *aMainloopProcessor);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#ae8e2682cc2ccd75b93a4606003848e1d">RemoveMainloopProcessor</a>(<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a> *aMainloopProcessor);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a8a3d1d8963022d29ee38ee275927c58b">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#afd3ba90567b3b4c7b81d54f8cb8c580a">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::list&lt;MainloopProcessor *&gt; mMainloopProcessorList;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif // OTBR_COMMON_MAINLOOP_MANAGER_HPP_</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d7b/code__utils_8hpp.html">common/code_utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d7/dcc/classotbr_1_1MainloopManager.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a> : <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a7a3cc50e7ec7733356c37b466b43309b">MainloopManager</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">   66</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a> &amp;<a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">GetInstance</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html">MainloopManager</a> sMainloopManager;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> sMainloopManager;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#aef0bb60c805a40f43a93944813822e6c">AddMainloopProcessor</a>(<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a> *aMainloopProcessor);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#ae8e2682cc2ccd75b93a4606003848e1d">RemoveMainloopProcessor</a>(<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a> *aMainloopProcessor);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#a8a3d1d8963022d29ee38ee275927c58b">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/dcc/classotbr_1_1MainloopManager.html#afd3ba90567b3b4c7b81d54f8cb8c580a">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::list&lt;MainloopProcessor *&gt; mMainloopProcessorList;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // OTBR_COMMON_MAINLOOP_MANAGER_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassotbr_1_1MainloopManager_html"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html">otbr::MainloopManager</a></div><div class="ttdef"><b>Definition:</b> mainloop_manager.hpp:52</div></div>
+<div class="ttc" id="aclassotbr_1_1MainloopManager_html"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html">otbr::MainloopManager</a></div><div class="ttdef"><b>Definition:</b> mainloop_manager.hpp:53</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopManager_html_afd3ba90567b3b4c7b81d54f8cb8c580a"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#afd3ba90567b3b4c7b81d54f8cb8c580a">otbr::MainloopManager::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.cpp:53</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopManager_html_a7a3cc50e7ec7733356c37b466b43309b"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#a7a3cc50e7ec7733356c37b466b43309b">otbr::MainloopManager::MainloopManager</a></div><div class="ttdeci">MainloopManager()=default</div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1MainloopManager_html_a29cb87a11d336d8acd44175456aad629"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">otbr::MainloopManager::GetInstance</a></div><div class="ttdeci">static MainloopManager &amp; GetInstance(void)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.hpp:65</div></div>
+<div class="ttc" id="aclassotbr_1_1MainloopManager_html_a29cb87a11d336d8acd44175456aad629"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">otbr::MainloopManager::GetInstance</a></div><div class="ttdeci">static MainloopManager &amp; GetInstance(void)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.hpp:66</div></div>
 <div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:54</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopManager_html_a8a3d1d8963022d29ee38ee275927c58b"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#a8a3d1d8963022d29ee38ee275927c58b">otbr::MainloopManager::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.cpp:45</div></div>
+<div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopManager_html_aef0bb60c805a40f43a93944813822e6c"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#aef0bb60c805a40f43a93944813822e6c">otbr::MainloopManager::AddMainloopProcessor</a></div><div class="ttdeci">void AddMainloopProcessor(MainloopProcessor *aMainloopProcessor)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.cpp:34</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopManager_html_ae8e2682cc2ccd75b93a4606003848e1d"><div class="ttname"><a href="../../d7/dcc/classotbr_1_1MainloopManager.html#ae8e2682cc2ccd75b93a4606003848e1d">otbr::MainloopManager::RemoveMainloopProcessor</a></div><div class="ttdeci">void RemoveMainloopProcessor(MainloopProcessor *aMainloopProcessor)</div><div class="ttdef"><b>Definition:</b> mainloop_manager.cpp:40</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:47</div></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:168</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

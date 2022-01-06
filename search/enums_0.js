@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clienterror_1218',['ClientError',['../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95',1,'otbr::DBus']]]
+  ['clienterror_1238',['ClientError',['../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95',1,'otbr::DBus']]]
 ];

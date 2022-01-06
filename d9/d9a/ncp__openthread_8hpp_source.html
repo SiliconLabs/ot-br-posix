@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-fc85418</span>
+   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
    </div>
   </td>
  </tr>
@@ -104,108 +104,117 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;openthread/backbone_router_ftd.h&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;openthread/cli.h&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;openthread/instance.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;openthread/openthread-system.h&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/db8/task__runner_8hpp.html">common/task_runner.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;common/types.hpp&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d3c/thread__helper_8hpp.html">utils/thread_helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>Ncp {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> : <span class="keyword">public</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">using</span> ThreadStateChangedCallback = std::function&lt;void(otChangedFlags aFlags)&gt;;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#af5094d2ad175e132f55de7091cbbf48a">ControllerOpenThread</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *                     aInterfaceName,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                         <span class="keyword">const</span> std::vector&lt;const char *&gt; &amp;aRadioUrls,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span> *                     aBackboneInterfaceName,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                         <span class="keywordtype">bool</span>                             aDryRun);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9cf8d8104ab1f841297e0ba46e4ed986">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;openthread/backbone_router_ftd.h&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;openthread/cli.h&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;openthread/instance.h&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;openthread/openthread-system.h&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/db8/task__runner_8hpp.html">common/task_runner.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;common/types.hpp&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d3c/thread__helper_8hpp.html">utils/thread_helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>Ncp {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> : <span class="keyword">public</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">using</span> ThreadStateChangedCallback = std::function&lt;void(otChangedFlags aFlags)&gt;;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#af5094d2ad175e132f55de7091cbbf48a">ControllerOpenThread</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *                     aInterfaceName,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                         <span class="keyword">const</span> std::vector&lt;const char *&gt; &amp;aRadioUrls,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span> *                     aBackboneInterfaceName,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                         <span class="keywordtype">bool</span>                             aDryRun);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa914c67ae0f2c54e2c447d18ef3a3bf9">Init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">   90</a></span>&#160;    otInstance *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">GetInstance</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mInstance; }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">   98</a></span>&#160;    <a class="code" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html">otbr::agent::ThreadHelper</a> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">GetThreadHelper</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> mThreadHelper.get(); }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa4ea6eb8a2330e93de4316c9cf417b61">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2c13e3e88ae48c5b1e4d6a5296e65011">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa562509d3fd1db58b6e1157ae058efd4">PostTimerTask</a>(Milliseconds aDelay, <a class="code" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">TaskRunner::Task&lt;void&gt;</a> aTask);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ac48d8ebc69b8654edc2c071648d3e7a8">RegisterResetHandler</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">void</span>)&gt; aHandler);</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">   90</a></span>&#160;    otInstance *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">GetInstance</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        assert(mInstance != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> mInstance;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">  102</a></span>&#160;    <a class="code" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html">otbr::agent::ThreadHelper</a> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">GetThreadHelper</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        assert(mThreadHelper != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> mThreadHelper.get();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa4ea6eb8a2330e93de4316c9cf417b61">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2c13e3e88ae48c5b1e4d6a5296e65011">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa562509d3fd1db58b6e1157ae058efd4">PostTimerTask</a>(Milliseconds aDelay, <a class="code" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">TaskRunner::Task&lt;void&gt;</a> aTask);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9466da58e6de70102fb58aa18231f4e2">AddThreadStateChangedCallback</a>(ThreadStateChangedCallback aCallback);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ac48d8ebc69b8654edc2c071648d3e7a8">RegisterResetHandler</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">void</span>)&gt; aHandler);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a577d07f4286b045dae82fd012b045549">Reset</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#acdbc62607181e9c999e211fc9a181617">GetThreadVersion</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9466da58e6de70102fb58aa18231f4e2">AddThreadStateChangedCallback</a>(ThreadStateChangedCallback aCallback);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a577d07f4286b045dae82fd012b045549">Reset</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">  148</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">GetInterfaceName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mConfig.mInterfaceName; }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#acdbc62607181e9c999e211fc9a181617">GetThreadVersion</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ~<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleStateChanged(otChangedFlags aFlags, <span class="keywordtype">void</span> *aContext)</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *<span class="keyword">&gt;</span>(aContext)-&gt;HandleStateChanged(aFlags);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> HandleStateChanged(otChangedFlags aFlags);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterDomainPrefixEvent(<span class="keywordtype">void</span> *                            aContext,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                                      otBackboneRouterDomainPrefixEvent aEvent,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterDomainPrefixEvent(otBackboneRouterDomainPrefixEvent aEvent,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DUA_ROUTING</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterNdProxyEvent(<span class="keywordtype">void</span> *                       aContext,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                 otBackboneRouterNdProxyEvent aEvent,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                 <span class="keyword">const</span> otIp6Address *         aAddress);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterNdProxyEvent(otBackboneRouterNdProxyEvent aEvent, <span class="keyword">const</span> otIp6Address *aAddress);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    otInstance *mInstance;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    otPlatformConfig                           mConfig;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    std::unique_ptr&lt;otbr::agent::ThreadHelper&gt; mThreadHelper;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    std::vector&lt;std::function&lt;void(<span class="keywordtype">void</span>)&gt;&gt;     mResetHandlers;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="../../dd/d62/classotbr_1_1TaskRunner.html">TaskRunner</a>                                 mTaskRunner;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::vector&lt;ThreadStateChangedCallback&gt;    mThreadStateChangedCallbacks;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;} <span class="comment">// namespace Ncp</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_NCP_OPENTHREAD_HPP_</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">  156</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">GetInterfaceName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mConfig.mInterfaceName; }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ~<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleStateChanged(otChangedFlags aFlags, <span class="keywordtype">void</span> *aContext)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">static_cast&lt;</span><a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *<span class="keyword">&gt;</span>(aContext)-&gt;HandleStateChanged(aFlags);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> HandleStateChanged(otChangedFlags aFlags);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterDomainPrefixEvent(<span class="keywordtype">void</span> *                            aContext,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                      otBackboneRouterDomainPrefixEvent aEvent,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterDomainPrefixEvent(otBackboneRouterDomainPrefixEvent aEvent,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                      <span class="keyword">const</span> otIp6Prefix *               aDomainPrefix);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DUA_ROUTING</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleBackboneRouterNdProxyEvent(<span class="keywordtype">void</span> *                       aContext,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                                 otBackboneRouterNdProxyEvent aEvent,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                                 <span class="keyword">const</span> otIp6Address *         aAddress);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span>        HandleBackboneRouterNdProxyEvent(otBackboneRouterNdProxyEvent aEvent, <span class="keyword">const</span> otIp6Address *aAddress);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    otInstance *mInstance;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    otPlatformConfig                           mConfig;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    std::unique_ptr&lt;otbr::agent::ThreadHelper&gt; mThreadHelper;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::vector&lt;std::function&lt;void(<span class="keywordtype">void</span>)&gt;&gt;     mResetHandlers;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../dd/d62/classotbr_1_1TaskRunner.html">TaskRunner</a>                                 mTaskRunner;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    std::vector&lt;ThreadStateChangedCallback&gt;    mThreadStateChangedCallbacks;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;};</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;} <span class="comment">// namespace Ncp</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_NCP_OPENTHREAD_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_aa4ea6eb8a2330e93de4316c9cf417b61"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa4ea6eb8a2330e93de4316c9cf417b61">otbr::Ncp::ControllerOpenThread::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:175</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_aa562509d3fd1db58b6e1157ae058efd4"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa562509d3fd1db58b6e1157ae058efd4">otbr::Ncp::ControllerOpenThread::PostTimerTask</a></div><div class="ttdeci">void PostTimerTask(Milliseconds aDelay, TaskRunner::Task&lt; void &gt; aTask)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:197</div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_aa914c67ae0f2c54e2c447d18ef3a3bf9"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#aa914c67ae0f2c54e2c447d18ef3a3bf9">otbr::Ncp::ControllerOpenThread::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:89</div></div>
 <div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html">otbr::agent::ThreadHelper</a></div><div class="ttdef"><b>Definition:</b> thread_helper.hpp:63</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_ab53e53ecfd87e3bcdf3d4fcddba906bf"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">otbr::Ncp::ControllerOpenThread::GetThreadHelper</a></div><div class="ttdeci">otbr::agent::ThreadHelper * GetThreadHelper(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:98</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_ab53e53ecfd87e3bcdf3d4fcddba906bf"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">otbr::Ncp::ControllerOpenThread::GetThreadHelper</a></div><div class="ttdeci">otbr::agent::ThreadHelper * GetThreadHelper(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:102</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a2047cded3e4273a4d1209dc5e1ac5f61"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">otbr::Ncp::ControllerOpenThread::GetInstance</a></div><div class="ttdeci">otInstance * GetInstance(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:90</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a9466da58e6de70102fb58aa18231f4e2"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9466da58e6de70102fb58aa18231f4e2">otbr::Ncp::ControllerOpenThread::AddThreadStateChangedCallback</a></div><div class="ttdeci">void AddThreadStateChangedCallback(ThreadStateChangedCallback aCallback)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:207</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a2c13e3e88ae48c5b1e4d6a5296e65011"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2c13e3e88ae48c5b1e4d6a5296e65011">otbr::Ncp::ControllerOpenThread::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:185</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:54</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a8f33ac5f75be25e707453827b710ad12"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">otbr::Ncp::ControllerOpenThread::GetInterfaceName</a></div><div class="ttdeci">const char * GetInterfaceName(void) const</div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:148</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a8f33ac5f75be25e707453827b710ad12"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">otbr::Ncp::ControllerOpenThread::GetInterfaceName</a></div><div class="ttdeci">const char * GetInterfaceName(void) const</div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:156</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_af5094d2ad175e132f55de7091cbbf48a"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#af5094d2ad175e132f55de7091cbbf48a">otbr::Ncp::ControllerOpenThread::ControllerOpenThread</a></div><div class="ttdeci">ControllerOpenThread(const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:63</div></div>
-<div class="ttc" id="aclassotbr_1_1TaskRunner_html_a470cbb92816291e11e4b902edc28baef"><div class="ttname"><a href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">otbr::TaskRunner::Task</a></div><div class="ttdeci">std::function&lt; T(void)&gt; Task</div><div class="ttdef"><b>Definition:</b> task_runner.hpp:62</div></div>
+<div class="ttc" id="aclassotbr_1_1TaskRunner_html_a470cbb92816291e11e4b902edc28baef"><div class="ttname"><a href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">otbr::TaskRunner::Task</a></div><div class="ttdeci">std::function&lt; T(void)&gt; Task</div><div class="ttdef"><b>Definition:</b> task_runner.hpp:63</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_ac48d8ebc69b8654edc2c071648d3e7a8"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ac48d8ebc69b8654edc2c071648d3e7a8">otbr::Ncp::ControllerOpenThread::RegisterResetHandler</a></div><div class="ttdeci">void RegisterResetHandler(std::function&lt; void(void)&gt; aHandler)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:202</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a9cf8d8104ab1f841297e0ba46e4ed986"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9cf8d8104ab1f841297e0ba46e4ed986">otbr::Ncp::ControllerOpenThread::Init</a></div><div class="ttdeci">otbrError Init(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:89</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_a577d07f4286b045dae82fd012b045549"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a577d07f4286b045dae82fd012b045549">otbr::Ncp::ControllerOpenThread::Reset</a></div><div class="ttdeci">void Reset(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:212</div></div>
 <div class="ttc" id="atask__runner_8hpp_html"><div class="ttname"><a href="../../df/db8/task__runner_8hpp.html">task_runner.hpp</a></div></div>
-<div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:69</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html_acdbc62607181e9c999e211fc9a181617"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#acdbc62607181e9c999e211fc9a181617">otbr::Ncp::ControllerOpenThread::GetThreadVersion</a></div><div class="ttdeci">static const char * GetThreadVersion(void)</div><div class="ttdef"><b>Definition:</b> ncp_openthread.cpp:227</div></div>
-<div class="ttc" id="aclassotbr_1_1TaskRunner_html"><div class="ttname"><a href="../../dd/d62/classotbr_1_1TaskRunner.html">otbr::TaskRunner</a></div><div class="ttdef"><b>Definition:</b> task_runner.hpp:55</div></div>
+<div class="ttc" id="aclassotbr_1_1TaskRunner_html"><div class="ttname"><a href="../../dd/d62/classotbr_1_1TaskRunner.html">otbr::TaskRunner</a></div><div class="ttdef"><b>Definition:</b> task_runner.hpp:56</div></div>
 <div class="ttc" id="athread__helper_8hpp_html"><div class="ttname"><a href="../../dc/d3c/thread__helper_8hpp.html">thread_helper.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:47</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:57</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:59</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

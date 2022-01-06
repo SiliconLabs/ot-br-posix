@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-fc85418</span>
+   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
    </div>
   </td>
  </tr>
@@ -101,42 +101,46 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_AGENT_INSATNCE_PARAMS_HPP_</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_AGENT_INSATNCE_PARAMS_HPP_</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d7b/code__utils_8hpp.html">common/code_utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a> &amp;<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a25f242442787cbc7eb7b0ed23f2a1d58">Get</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">SetThreadIfName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) { mThreadIfName = aName; }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">   68</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">GetThreadIfName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mThreadIfName; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">   76</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">SetBackboneIfName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) { mBackboneIfName = aName; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">   84</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">GetBackboneIfName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mBackboneIfName; }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a>()</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        : mThreadIfName(nullptr)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        , mBackboneIfName(nullptr)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *mThreadIfName;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *mBackboneIfName;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a> : <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a> &amp;<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a25f242442787cbc7eb7b0ed23f2a1d58">Get</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">SetThreadIfName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) { mThreadIfName = aName; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">   70</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">GetThreadIfName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mThreadIfName; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">SetBackboneIfName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aName) { mBackboneIfName = aName; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">   86</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">GetBackboneIfName</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mBackboneIfName; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../d2/dd0/classotbr_1_1InstanceParams.html">InstanceParams</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        : mThreadIfName(nullptr)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        , mBackboneIfName(nullptr)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *mThreadIfName;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *mBackboneIfName;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_INSATNCE_PARAMS_HPP_</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // OTBR_AGENT_INSATNCE_PARAMS_HPP_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassotbr_1_1InstanceParams_html_add5646c234fbb35cb317dbaa35e0c082"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">otbr::InstanceParams::GetBackboneIfName</a></div><div class="ttdeci">const char * GetBackboneIfName(void) const</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:84</div></div>
+<div class="ttc" id="aclassotbr_1_1InstanceParams_html_add5646c234fbb35cb317dbaa35e0c082"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#add5646c234fbb35cb317dbaa35e0c082">otbr::InstanceParams::GetBackboneIfName</a></div><div class="ttdeci">const char * GetBackboneIfName(void) const</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:86</div></div>
 <div class="ttc" id="aclassotbr_1_1InstanceParams_html_a25f242442787cbc7eb7b0ed23f2a1d58"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#a25f242442787cbc7eb7b0ed23f2a1d58">otbr::InstanceParams::Get</a></div><div class="ttdeci">static InstanceParams &amp; Get(void)</div><div class="ttdef"><b>Definition:</b> instance_params.cpp:38</div></div>
-<div class="ttc" id="aclassotbr_1_1InstanceParams_html"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html">otbr::InstanceParams</a></div><div class="ttdef"><b>Definition:</b> instance_params.hpp:43</div></div>
-<div class="ttc" id="aclassotbr_1_1InstanceParams_html_ad176e960b0fad8fec6a33c260609789e"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">otbr::InstanceParams::SetThreadIfName</a></div><div class="ttdeci">void SetThreadIfName(const char *aName)</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:60</div></div>
-<div class="ttc" id="aclassotbr_1_1InstanceParams_html_a9b45a05b5d9e258fb340b50dd99c296a"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">otbr::InstanceParams::GetThreadIfName</a></div><div class="ttdeci">const char * GetThreadIfName(void) const</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:68</div></div>
-<div class="ttc" id="aclassotbr_1_1InstanceParams_html_acf3a3492d4a85c763ea63c2565262927"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">otbr::InstanceParams::SetBackboneIfName</a></div><div class="ttdeci">void SetBackboneIfName(const char *aName)</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:76</div></div>
+<div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
+<div class="ttc" id="aclassotbr_1_1InstanceParams_html"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html">otbr::InstanceParams</a></div><div class="ttdef"><b>Definition:</b> instance_params.hpp:45</div></div>
+<div class="ttc" id="aclassotbr_1_1InstanceParams_html_ad176e960b0fad8fec6a33c260609789e"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#ad176e960b0fad8fec6a33c260609789e">otbr::InstanceParams::SetThreadIfName</a></div><div class="ttdeci">void SetThreadIfName(const char *aName)</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:62</div></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:168</div></div>
+<div class="ttc" id="aclassotbr_1_1InstanceParams_html_a9b45a05b5d9e258fb340b50dd99c296a"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#a9b45a05b5d9e258fb340b50dd99c296a">otbr::InstanceParams::GetThreadIfName</a></div><div class="ttdeci">const char * GetThreadIfName(void) const</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:70</div></div>
+<div class="ttc" id="aclassotbr_1_1InstanceParams_html_acf3a3492d4a85c763ea63c2565262927"><div class="ttname"><a href="../../d2/dd0/classotbr_1_1InstanceParams.html#acf3a3492d4a85c763ea63c2565262927">otbr::InstanceParams::SetBackboneIfName</a></div><div class="ttdeci">void SetBackboneIfName(const char *aName)</div><div class="ttdef"><b>Definition:</b> instance_params.hpp:78</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
