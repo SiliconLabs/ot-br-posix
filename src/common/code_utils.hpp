@@ -86,14 +86,14 @@
  * @param[in] aMessage  A message (text string) to print on failure.
  *
  */
-#define SuccessOrDie(aStatus, aMessage)                                          \
-    do                                                                           \
-    {                                                                            \
-        if ((aStatus) != 0)                                                      \
-        {                                                                        \
-            otbrLogEmerg("FAILED %s:%d - %s", __FUNCTION__, __LINE__, aMessage); \
-            exit(-1);                                                            \
-        }                                                                        \
+#define SuccessOrDie(aStatus, aMessage)                                      \
+    do                                                                       \
+    {                                                                        \
+        if ((aStatus) != 0)                                                  \
+        {                                                                    \
+            otbrLogEmerg("FAILED %s:%d - %s", __FILE__, __LINE__, aMessage); \
+            exit(-1);                                                        \
+        }                                                                    \
     } while (false)
 
 /**
@@ -124,14 +124,14 @@
  * @param[in] aMessage    A message (text string) to print on failure.
  *
  */
-#define VerifyOrDie(aCondition, aMessage)                                        \
-    do                                                                           \
-    {                                                                            \
-        if (!(aCondition))                                                       \
-        {                                                                        \
-            otbrLogEmerg("FAILED %s:%d - %s", __FUNCTION__, __LINE__, aMessage); \
-            exit(-1);                                                            \
-        }                                                                        \
+#define VerifyOrDie(aCondition, aMessage)                                    \
+    do                                                                       \
+    {                                                                        \
+        if (!(aCondition))                                                   \
+        {                                                                    \
+            otbrLogEmerg("FAILED %s:%d - %s", __FILE__, __LINE__, aMessage); \
+            exit(-1);                                                        \
+        }                                                                    \
     } while (false)
 
 /**
@@ -160,5 +160,19 @@ template <typename T, typename... Args> std::unique_ptr<T> MakeUnique(Args &&...
 {
     return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
 }
+
+/**
+ * This class makes any class that derives from it non-copyable. It is intended to be used as a private base class.
+ *
+ */
+class NonCopyable
+{
+public:
+    NonCopyable(const NonCopyable &) = delete;
+    NonCopyable &operator=(const NonCopyable &) = delete;
+
+protected:
+    NonCopyable(void) = default;
+};
 
 #endif // OTBR_COMMON_CODE_UTILS_HPP_
