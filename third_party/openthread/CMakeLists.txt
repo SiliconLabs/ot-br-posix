@@ -108,6 +108,9 @@ if (OT_MULTIPAN_RCP)
     set(OT_POSIX_MAX_POWER_TABLE OFF CACHE BOOL "enable max power table" FORCE)
     set(OT_CHANNEL_MANAGER OFF CACHE BOOL "enable channel manager support" FORCE)
     set(OT_CHANNEL_MONITOR OFF CACHE BOOL "enable channel monitor support" FORCE)
+    # Turn on the platform log type by default
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_LOG_PLATFORM=1")
+    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_LOG_LEVEL=OT_LOG_LEVEL_DEBG")
 endif()
 
 add_subdirectory(repo EXCLUDE_FROM_ALL)
