@@ -46,7 +46,7 @@ if (NOT OT_LOG_LEVEL)
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(OT_LOG_LEVEL "DEBG" CACHE STRING "set OpenThread log level to DEBG" FORCE)
     else()
-        set(OT_LOG_LEVEL "CRIT" CACHE STRING "set OpenThread log level to CRIT" FORCE)
+        set(OT_LOG_LEVEL "INFO" CACHE STRING "set OpenThread log level to INFO" FORCE)
     endif()
 endif()
 
