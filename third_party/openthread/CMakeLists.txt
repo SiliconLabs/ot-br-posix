@@ -46,7 +46,7 @@ if (NOT OT_LOG_LEVEL)
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(OT_LOG_LEVEL "DEBG" CACHE STRING "set OpenThread log level to DEBG" FORCE)
     else()
-        set(OT_LOG_LEVEL "INFO" CACHE STRING "set OpenThread log level to INFO" FORCE)
+        set(OT_LOG_LEVEL "CRIT" CACHE STRING "set OpenThread log level to CRIT" FORCE)
     endif()
 endif()
 
@@ -88,7 +88,7 @@ endif()
 # Diagnostics / Logging
 set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
 set(OT_FULL_LOGS ON CACHE BOOL "Enable debug level logging" FORCE)
-set(OT_LOG_LEVEL "NONE" CACHE STRING "Set OpenThread log level to NONE by default" FORCE)
+set(OT_LOG_LEVEL "DEBG" CACHE STRING "Set max OpenThread log level to DEBG (dynamic logging turned on)" FORCE)
 set(OT_COPROCESSOR_RPC ON CACHE BOOL "Enable co-processor RPC support" FORCE)
 
 # RCP recovery
@@ -108,9 +108,6 @@ if (OT_MULTIPAN_RCP)
     set(OT_POSIX_MAX_POWER_TABLE OFF CACHE BOOL "enable max power table" FORCE)
     set(OT_CHANNEL_MANAGER OFF CACHE BOOL "enable channel manager support" FORCE)
     set(OT_CHANNEL_MONITOR OFF CACHE BOOL "enable channel monitor support" FORCE)
-    # Turn on the platform log type by default
-    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_LOG_PLATFORM=1")
-    target_compile_definitions(ot-config INTERFACE "OPENTHREAD_CONFIG_LOG_LEVEL=OT_LOG_LEVEL_DEBG")
 endif()
 
 add_subdirectory(repo EXCLUDE_FROM_ALL)
@@ -123,7 +120,6 @@ if (OT_COPROCESSOR_RPC)
 endif()
 
 target_compile_definitions(ot-config INTERFACE
-    "-DOPENTHREAD_CONFIG_LOG_CLI=1"
     "-DOPENTHREAD_CONFIG_MAX_STATECHANGE_HANDLERS=3"
     "-DOPENTHREAD_CONFIG_MLE_STEERING_DATA_SET_OOB_ENABLE=1"
     "-DOPENTHREAD_CONFIG_TMF_PROXY_DUA_ENABLE=$<BOOL:${OTBR_DUA_ROUTING}>"
