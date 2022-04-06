@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openthread-br: otbr::Mdns::Poller Class Reference</title>
+<title>openthread-br: otbr::Mdns::AvahiPoller Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-e95bd9f</span>
+   &#160;<span id="projectnumber">0.3.0-eabd186</span>
    </div>
   </td>
  </tr>
@@ -62,65 +62,40 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>otbr</b></li><li class="navelem"><b>Mdns</b></li><li class="navelem"><a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html">Poller</a></li>  </ul>
+<li class="navelem"><b>otbr</b></li><li class="navelem"><b>Mdns</b></li><li class="navelem"><a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../db/ddf/classotbr_1_1Mdns_1_1Poller-members.html">List of all members</a>  </div>
+<a href="../../d1/d8d/classotbr_1_1Mdns_1_1AvahiPoller-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">otbr::Mdns::Poller Class Reference</div>  </div>
+<div class="title">otbr::Mdns::AvahiPoller Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="../../d1/dde/mdns__avahi_8hpp_source.html">src/mdns/mdns_avahi.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for otbr::Mdns::Poller:</div>
+Inheritance diagram for otbr::Mdns::AvahiPoller:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="../../d5/d23/classotbr_1_1Mdns_1_1Poller.png" usemap="#otbr::Mdns::Poller_map" alt=""/>
-  <map id="otbr::Mdns::Poller_map" name="otbr::Mdns::Poller_map">
+  <img src="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.png" usemap="#otbr::Mdns::AvahiPoller_map" alt=""/>
+  <map id="otbr::Mdns::AvahiPoller_map" name="otbr::Mdns::AvahiPoller_map">
 <area href="../../db/d03/classotbr_1_1MainloopProcessor.html" alt="otbr::MainloopProcessor" shape="rect" coords="0,0,150,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a12af7a3b0c9e4bc06a543a3218c584ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a12af7a3b0c9e4bc06a543a3218c584ff">Poller</a> (void)</td></tr>
-<tr class="separator:a12af7a3b0c9e4bc06a543a3218c584ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adad04726cfa33a21939bc1f7415aedfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#adad04726cfa33a21939bc1f7415aedfb">Update</a> (<a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) override</td></tr>
-<tr class="separator:adad04726cfa33a21939bc1f7415aedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3905ff38028fc207a90016a4a8ca3cd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a3905ff38028fc207a90016a4a8ca3cd7">Process</a> (const <a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) override</td></tr>
-<tr class="separator:a3905ff38028fc207a90016a4a8ca3cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c7711328d9cb94ccb562931b6eacfc"><td class="memItemLeft" align="right" valign="top">const AvahiPoll *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html#a12c7711328d9cb94ccb562931b6eacfc">GetAvahiPoll</a> (void) const</td></tr>
-<tr class="separator:a12c7711328d9cb94ccb562931b6eacfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc0a5ea16b44ed13e8799ddf8446e839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html#abc0a5ea16b44ed13e8799ddf8446e839">Update</a> (<a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) override</td></tr>
+<tr class="separator:abc0a5ea16b44ed13e8799ddf8446e839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20d50a645fe250f03648c5a47795c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html#af20d50a645fe250f03648c5a47795c09">Process</a> (const <a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) override</td></tr>
+<tr class="separator:af20d50a645fe250f03648c5a47795c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf6bbf6b54ddbf9f658115ba6993dda"><td class="memItemLeft" align="right" valign="top"><a id="acaf6bbf6b54ddbf9f658115ba6993dda"></a>
+const AvahiPoll *&#160;</td><td class="memItemRight" valign="bottom"><b>GetAvahiPoll</b> (void) const</td></tr>
+<tr class="separator:acaf6bbf6b54ddbf9f658115ba6993dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class implements the AvahiPoll. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a12af7a3b0c9e4bc06a543a3218c584ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12af7a3b0c9e4bc06a543a3218c584ff">&#9670;&nbsp;</a></span>Poller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">otbr::Mdns::Poller::Poller </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The constructor to initialize a <a class="el" href="../../d5/d23/classotbr_1_1Mdns_1_1Poller.html">Poller</a>. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a12c7711328d9cb94ccb562931b6eacfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c7711328d9cb94ccb562931b6eacfc">&#9670;&nbsp;</a></span>GetAvahiPoll()</h2>
+<a id="af20d50a645fe250f03648c5a47795c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20d50a645fe250f03648c5a47795c09">&#9670;&nbsp;</a></span>Process()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,35 +104,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const AvahiPoll* otbr::Mdns::Poller::GetAvahiPoll </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method returns the AvahiPoll.</p>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the AvahiPoll. </dd></dl>
-
-</div>
-</div>
-<a id="a3905ff38028fc207a90016a4a8ca3cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3905ff38028fc207a90016a4a8ca3cd7">&#9670;&nbsp;</a></span>Process()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void otbr::Mdns::Poller::Process </td>
+          <td class="memname">void otbr::Mdns::AvahiPoller::Process </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;&#160;</td>
           <td class="paramname"><em>aMainloop</em></td><td>)</td>
@@ -182,8 +129,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adad04726cfa33a21939bc1f7415aedfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adad04726cfa33a21939bc1f7415aedfb">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="abc0a5ea16b44ed13e8799ddf8446e839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0a5ea16b44ed13e8799ddf8446e839">&#9670;&nbsp;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +139,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void otbr::Mdns::Poller::Update </td>
+          <td class="memname">void otbr::Mdns::AvahiPoller::Update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;&#160;</td>
           <td class="paramname"><em>aMainloop</em></td><td>)</td>
@@ -217,8 +164,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/mdns/<a class="el" href="../../d1/dde/mdns__avahi_8hpp_source.html">mdns_avahi.hpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/mdns/<a class="el" href="../../d6/daf/mdns__avahi_8cpp.html">mdns_avahi.cpp</a></li>
 </ul>
 </div><!-- contents -->
