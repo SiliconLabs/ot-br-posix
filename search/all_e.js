@@ -115,9 +115,10 @@ var searchData=
   ['otbrloglevel_490',['otbrLogLevel',['../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10',1,'logging.hpp']]],
   ['otbrlognotice_491',['otbrLogNotice',['../d0/da9/logging_8hpp.html#aae7a8b8c381d3664d9fe53ed145d9a86',1,'logging.hpp']]],
   ['otbrlogresult_492',['otbrLogResult',['../d0/da9/logging_8hpp.html#a8de3dbe15c57a9fb48c735835b20d939',1,'logging.hpp']]],
-  ['otbrlogv_493',['otbrLogv',['../d0/da9/logging_8hpp.html#aaf2c504d00faeea0f5e4a8e45ed7a871',1,'logging.cpp']]],
-  ['otbrlogvnofilter_494',['otbrLogvNoFilter',['../d0/da9/logging_8hpp.html#a13b760a72ea9fe45589aa46998847373',1,'logging.cpp']]],
-  ['otbrlogwarning_495',['otbrLogWarning',['../d0/da9/logging_8hpp.html#ab49c142f1e0b2ff0f42f3d99c6826af7',1,'logging.hpp']]],
-  ['otubus_2ehpp_496',['otubus.hpp',['../d8/d66/otubus_8hpp.html',1,'']]],
-  ['ubus_497',['ubus',['../de/d9a/namespaceotbr_1_1ubus.html',1,'otbr']]]
+  ['otbrlogsetlevel_493',['otbrLogSetLevel',['../d0/da9/logging_8hpp.html#aa4b0bf2713442aa78a8c2ecf5c5f8c5d',1,'logging.cpp']]],
+  ['otbrlogv_494',['otbrLogv',['../d0/da9/logging_8hpp.html#aaf2c504d00faeea0f5e4a8e45ed7a871',1,'logging.cpp']]],
+  ['otbrlogvnofilter_495',['otbrLogvNoFilter',['../d0/da9/logging_8hpp.html#a13b760a72ea9fe45589aa46998847373',1,'logging.cpp']]],
+  ['otbrlogwarning_496',['otbrLogWarning',['../d0/da9/logging_8hpp.html#ab49c142f1e0b2ff0f42f3d99c6826af7',1,'logging.hpp']]],
+  ['otubus_2ehpp_497',['otubus.hpp',['../d8/d66/otubus_8hpp.html',1,'']]],
+  ['ubus_498',['ubus',['../de/d9a/namespaceotbr_1_1ubus.html',1,'otbr']]]
 ];

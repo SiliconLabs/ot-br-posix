@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-eabd186</span>
+   &#160;<span id="projectnumber">0.3.0-b4c44f6</span>
    </div>
   </td>
  </tr>
@@ -188,6 +188,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8b3da95b7623cfcfd5babdb94b9d507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cd622271d796fe0689e627edc878d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#ac1cd622271d796fe0689e627edc878d1">GetExternalRoutes</a> (std::vector&lt; <a class="el" href="../../de/d00/structotbr_1_1DBus_1_1ExternalRoute.html">ExternalRoute</a> &gt; &amp;aExternalRoutes)</td></tr>
 <tr class="separator:ac1cd622271d796fe0689e627edc878d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca8760a0941651afaf417f0df8f7f088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#aca8760a0941651afaf417f0df8f7f088">GetOnMeshPrefixes</a> (std::vector&lt; <a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html">OnMeshPrefix</a> &gt; &amp;aOnMeshPrefixes)</td></tr>
+<tr class="separator:aca8760a0941651afaf417f0df8f7f088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299f816e4b61fb5b08494e4481be7ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a299f816e4b61fb5b08494e4481be7ece">GetActiveDatasetTlvs</a> (std::vector&lt; uint8_t &gt; &amp;aDataset)</td></tr>
 <tr class="separator:a299f816e4b61fb5b08494e4481be7ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13011428d3f24c2090fb374f210d8c04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a13011428d3f24c2090fb374f210d8c04">GetRadioRegion</a> (std::string &amp;aRadioRegion)</td></tr>
@@ -1245,6 +1247,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aName</td><td>The network name.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca8760a0941651afaf417f0df8f7f088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca8760a0941651afaf417f0df8f7f088">&#9670;&nbsp;</a></span>GetOnMeshPrefixes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetOnMeshPrefixes </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html">OnMeshPrefix</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aOnMeshPrefixes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the on-mesh prefixes</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aOnMeshPrefixes</td><td>The on-mesh prefixes</td></tr>
   </table>
   </dd>
 </dl>

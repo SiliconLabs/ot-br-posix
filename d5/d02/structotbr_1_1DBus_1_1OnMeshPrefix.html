@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-eabd186</span>
+   &#160;<span id="projectnumber">0.3.0-b4c44f6</span>
    </div>
   </td>
  </tr>
@@ -78,6 +78,8 @@ $(function() {
 Public Attributes</h2></td></tr>
 <tr class="memitem:abe4576982a45c421ac8ea70a249ca872"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d56/structotbr_1_1DBus_1_1Ip6Prefix.html">Ip6Prefix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#abe4576982a45c421ac8ea70a249ca872">mPrefix</a></td></tr>
 <tr class="separator:abe4576982a45c421ac8ea70a249ca872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c283ee4ba05082fa4fac5076b6035d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#ac1c283ee4ba05082fa4fac5076b6035d">mRloc16</a></td></tr>
+<tr class="separator:ac1c283ee4ba05082fa4fac5076b6035d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a878d1eb89862b9a72b2075cf54c17c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#a3a878d1eb89862b9a72b2075cf54c17c">mPreference</a></td></tr>
 <tr class="separator:a3a878d1eb89862b9a72b2075cf54c17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1870553d9c12fecf14dbf09a70d86967"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#a1870553d9c12fecf14dbf09a70d86967">mPreferred</a></td></tr>
@@ -94,6 +96,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a60d9d77cac2ac82cfcaef08bc0329429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23a484fac196cbc728a92078c99189b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#a23a484fac196cbc728a92078c99189b5">mStable</a></td></tr>
 <tr class="separator:a23a484fac196cbc728a92078c99189b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c9f28f9eb3e2d725ddf9532b3208ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#a11c9f28f9eb3e2d725ddf9532b3208ef">mNdDns</a></td></tr>
+<tr class="separator:a11c9f28f9eb3e2d725ddf9532b3208ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7db4bff1f8b30e2a890e2fe5e7f7c16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d02/structotbr_1_1DBus_1_1OnMeshPrefix.html#ad7db4bff1f8b30e2a890e2fe5e7f7c16">mDp</a></td></tr>
+<tr class="separator:ad7db4bff1f8b30e2a890e2fe5e7f7c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="afb0ef86b8319faa9bfcf1de633e0adf4"></a>
@@ -141,6 +147,36 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7db4bff1f8b30e2a890e2fe5e7f7c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7db4bff1f8b30e2a890e2fe5e7f7c16">&#9670;&nbsp;</a></span>mDp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::DBus::OnMeshPrefix::mDp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TRUE if this prefix is a Thread Domain Prefix. FALSE otherwise. </p>
+
+</div>
+</div>
+<a id="a11c9f28f9eb3e2d725ddf9532b3208ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c9f28f9eb3e2d725ddf9532b3208ef">&#9670;&nbsp;</a></span>mNdDns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::DBus::OnMeshPrefix::mNdDns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TRUE if this border router can supply DNS information via ND. FALSE otherwise. </p>
+
+</div>
+</div>
 <a id="a60d9d77cac2ac82cfcaef08bc0329429"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60d9d77cac2ac82cfcaef08bc0329429">&#9670;&nbsp;</a></span>mOnMesh</h2>
 
@@ -152,7 +188,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>TRUE, if this prefix is considered on-mesh. FALSE, otherwise. </p>
+<p>TRUE if this prefix is considered on-mesh. FALSE otherwise. </p>
 
 </div>
 </div>
@@ -201,6 +237,21 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac1c283ee4ba05082fa4fac5076b6035d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c283ee4ba05082fa4fac5076b6035d">&#9670;&nbsp;</a></span>mRloc16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t otbr::DBus::OnMeshPrefix::mRloc16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The Rloc associated with the Border Router prefix. </p>
+
+</div>
+</div>
 <a id="a1a8eae154d7053fe50550c6a99cd0f0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a8eae154d7053fe50550c6a99cd0f0e">&#9670;&nbsp;</a></span>mSlaac</h2>
 
@@ -227,7 +278,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>TRUE, if this configuration is considered Stable Network Data. FALSE, otherwise. </p>
+<p>TRUE if this configuration is considered Stable Network Data. FALSE otherwise. </p>
 
 </div>
 </div>

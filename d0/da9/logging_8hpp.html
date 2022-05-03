@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-eabd186</span>
+   &#160;<span id="projectnumber">0.3.0-b4c44f6</span>
    </div>
   </td>
  </tr>
@@ -122,6 +122,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:afc9ce29e790e067ca79760c96f794d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#afc9ce29e790e067ca79760c96f794d43">otbrLogGetLevel</a> (void)</td></tr>
 <tr class="separator:afc9ce29e790e067ca79760c96f794d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b0bf2713442aa78a8c2ecf5c5f8c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#aa4b0bf2713442aa78a8c2ecf5c5f8c5d">otbrLogSetLevel</a> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel)</td></tr>
+<tr class="separator:aa4b0bf2713442aa78a8c2ecf5c5f8c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a762b4410fc095825139d18166e8a64e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#a762b4410fc095825139d18166e8a64e6">otbrLogEnableSyslog</a> (bool aEnabled)</td></tr>
 <tr class="separator:a762b4410fc095825139d18166e8a64e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ab1c49e91aaaac6da657a9e323f5212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#a2ab1c49e91aaaac6da657a9e323f5212">otbrLogInit</a> (const char *aIdent, <a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, bool aPrintStderr)</td></tr>
@@ -669,6 +671,25 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa4b0bf2713442aa78a8c2ecf5c5f8c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b0bf2713442aa78a8c2ecf5c5f8c5d">&#9670;&nbsp;</a></span>otbrLogSetLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbrLogSetLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a>&#160;</td>
+          <td class="paramname"><em>aLevel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set current log level. </p>
+
+</div>
+</div>
 <a id="aaf2c504d00faeea0f5e4a8e45ed7a871"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaf2c504d00faeea0f5e4a8e45ed7a871">&#9670;&nbsp;</a></span>otbrLogv()</h2>
 
@@ -760,7 +781,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10aeb0321d42905748f2bb55dbd11827065"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10aeb0321d42905748f2bb55dbd11827065">OTBR_LOG_INFO</a></div><div class="ttdeci">@ OTBR_LOG_INFO</div><div class="ttdoc">Informational.</div><div class="ttdef"><b>Definition:</b> logging.hpp:59</div></div>
 <div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10a83e0d72526c4ad89d262a4e2235ab05e"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10a83e0d72526c4ad89d262a4e2235ab05e">OTBR_LOG_WARNING</a></div><div class="ttdeci">@ OTBR_LOG_WARNING</div><div class="ttdoc">Warning conditions.</div><div class="ttdef"><b>Definition:</b> logging.hpp:57</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432">OTBR_ERROR_NONE</a></div><div class="ttdeci">@ OTBR_ERROR_NONE</div><div class="ttdoc">No error.</div><div class="ttdef"><b>Definition:</b> types.hpp:72</div></div>
-<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:184</div></div>
+<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:193</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

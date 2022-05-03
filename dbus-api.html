@@ -54,9 +54,10 @@
 <a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.InstantRssi" title='The "InstantRssi" property'>InstantRssi</a>                      readable   y
 <a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.RadioTxPower" title='The "RadioTxPower" property'>RadioTxPower</a>                     readable   y
 <a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.ExternalRoutes" title='The "ExternalRoutes" property'>ExternalRoutes</a>                   readable   ((ayy)qybb)
+<a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.OnMeshPrefixes" title='The "OnMeshPrefixes" property'>OnMeshPrefixes</a>                   readable   a((ayy)qybbbbbbbbb)
 <a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.ActiveDatasetTlvs" title='The "ActiveDatasetTlvs" property'>ActiveDatasetTlvs</a>                readwrite  ay
 <a class="link" href="index.html#gdbus-property-io-openthread-BorderRouter.RadioRegion" title='The "RadioRegion" property'>RadioRegion</a>                      readwrite  s
-</pre></div><div class="refsect1"><a name="gdbus-interface-io-openthread-BorderRouter"></a><h2>Description</h2><p></p></div><div class="refsect1"><a name="gdbus-methods-io.openthread.BorderRouter"></a><h2>Method Details</h2><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Scan"></a><h3>The Scan() method</h3><a class="indexterm" name="idm66"></a><pre class="programlisting">
+</pre></div><div class="refsect1"><a name="gdbus-interface-io-openthread-BorderRouter"></a><h2>Description</h2><p></p></div><div class="refsect1"><a name="gdbus-methods-io.openthread.BorderRouter"></a><h2>Method Details</h2><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Scan"></a><h3>The Scan() method</h3><a class="indexterm" name="idm67"></a><pre class="programlisting">
 Scan (OUT a(tqqqy) scan_result);
 </pre><p>Perform a Thread network scan.</p><p>      The result struture definition is:
       </p><div class="literallayout"><p><br>
@@ -68,10 +69,10 @@ Scan (OUT a(tqqqy) scan_result);
           uint8 lqi<br>
         }<br>
       </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">OUT a(tqqqy) <em class="parameter"><code>scan_result</code></em></code>:</span></dt><dd><p>array of scan results.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.EnergyScan"></a><h3>The EnergyScan() method</h3><a class="indexterm" name="idm81"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">OUT a(tqqqy) <em class="parameter"><code>scan_result</code></em></code>:</span></dt><dd><p>array of scan results.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.EnergyScan"></a><h3>The EnergyScan() method</h3><a class="indexterm" name="idm82"></a><pre class="programlisting">
 EnergyScan (IN  u     scanduration,
             OUT a(yy) result);
-</pre><p></p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>scanduration</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">OUT a(yy) <em class="parameter"><code>result</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Attach"></a><h3>The Attach() method</h3><a class="indexterm" name="idm100"></a><pre class="programlisting">
+</pre><p></p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>scanduration</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">OUT a(yy) <em class="parameter"><code>result</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Attach"></a><h3>The Attach() method</h3><a class="indexterm" name="idm101"></a><pre class="programlisting">
 Attach (IN  ay networkkey,
         IN  q  panid,
         IN  s  networkname,
@@ -79,28 +80,28 @@ Attach (IN  ay networkkey,
         IN  ay pskc,
         IN  u  channel_mask);
 </pre><p>Attach the current device to the Thread network.</p><p>      You can also call this method with no arugment to use the current active network dataset.
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>networkkey</code></em></code>:</span></dt><dd><p>The 128-bit network network key, empty for random.</p></dd><dt><span class="term"><code class="literal">IN q <em class="parameter"><code>panid</code></em></code>:</span></dt><dd><p>The 16-bit panid, UINT16_MAX for any.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>networkname</code></em></code>:</span></dt><dd><p>The Thread network name.</p></dd><dt><span class="term"><code class="literal">IN t <em class="parameter"><code>extpanid</code></em></code>:</span></dt><dd><p>The 64-bit extended panid, UINT64_MAX for random.</p></dd><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>pskc</code></em></code>:</span></dt><dd><p>The 128-bit pre-shared key for commissione, empty for random.</p></dd><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>channel_mask</code></em></code>:</span></dt><dd><p>The bitwise channel mask, will randomly select a valid channel.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AttachAllNodesTo"></a><h3>The AttachAllNodesTo() method</h3><a class="indexterm" name="idm144"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>networkkey</code></em></code>:</span></dt><dd><p>The 128-bit network network key, empty for random.</p></dd><dt><span class="term"><code class="literal">IN q <em class="parameter"><code>panid</code></em></code>:</span></dt><dd><p>The 16-bit panid, UINT16_MAX for any.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>networkname</code></em></code>:</span></dt><dd><p>The Thread network name.</p></dd><dt><span class="term"><code class="literal">IN t <em class="parameter"><code>extpanid</code></em></code>:</span></dt><dd><p>The 64-bit extended panid, UINT64_MAX for random.</p></dd><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>pskc</code></em></code>:</span></dt><dd><p>The 128-bit pre-shared key for commissione, empty for random.</p></dd><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>channel_mask</code></em></code>:</span></dt><dd><p>The bitwise channel mask, will randomly select a valid channel.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AttachAllNodesTo"></a><h3>The AttachAllNodesTo() method</h3><a class="indexterm" name="idm145"></a><pre class="programlisting">
 AttachAllNodesTo (IN  ay dataset);
 </pre><p>Request to attach all nodes to the specified Thread network.</p><p>                to attach to. It must be a full dataset.
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>dataset</code></em></code>:</span></dt><dd><p>The Operational Dataset that contains parameter values of the Thread network</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Detach"></a><h3>The Detach() method</h3><a class="indexterm" name="idm158"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ay <em class="parameter"><code>dataset</code></em></code>:</span></dt><dd><p>The Operational Dataset that contains parameter values of the Thread network</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Detach"></a><h3>The Detach() method</h3><a class="indexterm" name="idm159"></a><pre class="programlisting">
 Detach ();
-</pre><p>Detach the current device from the Thread network.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.PermitUnsecureJoin"></a><h3>The PermitUnsecureJoin() method</h3><a class="indexterm" name="idm164"></a><pre class="programlisting">
+</pre><p>Detach the current device from the Thread network.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.PermitUnsecureJoin"></a><h3>The PermitUnsecureJoin() method</h3><a class="indexterm" name="idm165"></a><pre class="programlisting">
 PermitUnsecureJoin (IN  q port,
                     IN  u timeout);
-</pre><p>Allow joining the network via unsecure traffic temporarily.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN q <em class="parameter"><code>port</code></em></code>:</span></dt><dd><p>The port of the unsecure traffic.</p></dd><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>timeout</code></em></code>:</span></dt><dd><p>The timeout for the permission.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.JoinerStart"></a><h3>The JoinerStart() method</h3><a class="indexterm" name="idm183"></a><pre class="programlisting">
+</pre><p>Allow joining the network via unsecure traffic temporarily.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN q <em class="parameter"><code>port</code></em></code>:</span></dt><dd><p>The port of the unsecure traffic.</p></dd><dt><span class="term"><code class="literal">IN u <em class="parameter"><code>timeout</code></em></code>:</span></dt><dd><p>The timeout for the permission.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.JoinerStart"></a><h3>The JoinerStart() method</h3><a class="indexterm" name="idm184"></a><pre class="programlisting">
 JoinerStart (IN  s pskd,
              IN  s provision_url,
              IN  s vendor_name,
              IN  s vendor_model,
              IN  s vendor_sw_version,
              IN  s vendor_data);
-</pre><p>Start Thread joining.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>pskd</code></em></code>:</span></dt><dd><p>The pre-shared key for the device.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>provision_url</code></em></code>:</span></dt><dd><p>The url for further provision.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_name</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_model</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_sw_version</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_data</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.JoinerStop"></a><h3>The JoinerStop() method</h3><a class="indexterm" name="idm226"></a><pre class="programlisting">
+</pre><p>Start Thread joining.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>pskd</code></em></code>:</span></dt><dd><p>The pre-shared key for the device.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>provision_url</code></em></code>:</span></dt><dd><p>The url for further provision.</p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_name</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_model</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_sw_version</code></em></code>:</span></dt><dd><p></p></dd><dt><span class="term"><code class="literal">IN s <em class="parameter"><code>vendor_data</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.JoinerStop"></a><h3>The JoinerStop() method</h3><a class="indexterm" name="idm227"></a><pre class="programlisting">
 JoinerStop ();
-</pre><p>Stop Thread joining.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.FactoryReset"></a><h3>The FactoryReset() method</h3><a class="indexterm" name="idm232"></a><pre class="programlisting">
+</pre><p>Stop Thread joining.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.FactoryReset"></a><h3>The FactoryReset() method</h3><a class="indexterm" name="idm233"></a><pre class="programlisting">
 FactoryReset ();
-</pre><p>Perform a factory reset, will wipe all Thread persistent data.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Reset"></a><h3>The Reset() method</h3><a class="indexterm" name="idm238"></a><pre class="programlisting">
+</pre><p>Perform a factory reset, will wipe all Thread persistent data.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.Reset"></a><h3>The Reset() method</h3><a class="indexterm" name="idm239"></a><pre class="programlisting">
 Reset ();
-</pre><p>Perform a reset, will try to resume the network after reset.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AddExternalRoute"></a><h3>The AddExternalRoute() method</h3><a class="indexterm" name="idm244"></a><pre class="programlisting">
+</pre><p>Perform a reset, will try to resume the network after reset.</p></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AddExternalRoute"></a><h3>The AddExternalRoute() method</h3><a class="indexterm" name="idm245"></a><pre class="programlisting">
 AddExternalRoute (IN  ((ayy)qybb) prefix);
 </pre><p>Add an external border routing rule to the network.</p><p>      This will make the current device act as the border router for the prefix.
       The prefix structure is:
@@ -116,7 +117,7 @@ AddExternalRoute (IN  ((ayy)qybb) prefix);
           bool next_hop_is_self // Not used<br>
         }<br>
       </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)qybb) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The prefix for border routing.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.RemoveExternalRoute"></a><h3>The RemoveExternalRoute() method</h3><a class="indexterm" name="idm259"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)qybb) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The prefix for border routing.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.RemoveExternalRoute"></a><h3>The RemoveExternalRoute() method</h3><a class="indexterm" name="idm260"></a><pre class="programlisting">
 RemoveExternalRoute (IN  (ayy) prefix);
 </pre><p>Remove an external border routing rule from the network.</p><p>      The prefix structure is:
       </p><div class="literallayout"><p><br>
@@ -125,7 +126,7 @@ RemoveExternalRoute (IN  (ayy) prefix);
           uint8 prefix_length<br>
         }<br>
       </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN (ayy) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The prefix for border routing.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AddOnMeshPrefix"></a><h3>The AddOnMeshPrefix() method</h3><a class="indexterm" name="idm274"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN (ayy) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The prefix for border routing.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AddOnMeshPrefix"></a><h3>The AddOnMeshPrefix() method</h3><a class="indexterm" name="idm275"></a><pre class="programlisting">
 AddOnMeshPrefix (IN  ((ayy)y(bbbbbbb)) prefix);
 </pre><p>Add an on-mesh prefix to the network.</p><p>      The on-mesh prefix structure is:
       </p><div class="literallayout"><p><br>
@@ -146,7 +147,7 @@ AddOnMeshPrefix (IN  ((ayy)y(bbbbbbb)) prefix);
           }<br>
         }<br>
       </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)y(bbbbbbb)) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The on-mesh prefix.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.RemoveOnMeshPrefix"></a><h3>The RemoveOnMeshPrefix() method</h3><a class="indexterm" name="idm289"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)y(bbbbbbb)) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The on-mesh prefix.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.RemoveOnMeshPrefix"></a><h3>The RemoveOnMeshPrefix() method</h3><a class="indexterm" name="idm290"></a><pre class="programlisting">
 RemoveOnMeshPrefix (IN  (ayy) prefix);
 </pre><p>Remove an on-mesh prefix from the network.</p><p>      The prefix structure is:
       </p><div class="literallayout"><p><br>
@@ -155,13 +156,13 @@ RemoveOnMeshPrefix (IN  (ayy) prefix);
           uint8 prefix_length<br>
         }<br>
       </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN (ayy) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The on-mesh prefix.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.UpdateVendorMeshCopTxtEntries"></a><h3>The UpdateVendorMeshCopTxtEntries() method</h3><a class="indexterm" name="idm304"></a><pre class="programlisting">
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN (ayy) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>The on-mesh prefix.</p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.UpdateVendorMeshCopTxtEntries"></a><h3>The UpdateVendorMeshCopTxtEntries() method</h3><a class="indexterm" name="idm305"></a><pre class="programlisting">
 UpdateVendorMeshCopTxtEntries (IN  a(say) update);
-</pre><p></p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN a(say) <em class="parameter"><code>update</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div></div><div class="refsect1"><a name="gdbus-properties-io.openthread.BorderRouter"></a><h2>Property Details</h2><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.MeshLocalPrefix"></a><h3>The "MeshLocalPrefix" property</h3><a class="indexterm" name="idm319"></a><pre class="programlisting">
+</pre><p></p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN a(say) <em class="parameter"><code>update</code></em></code>:</span></dt><dd><p></p></dd></dl></div></div></div><div class="refsect1"><a name="gdbus-properties-io.openthread.BorderRouter"></a><h2>Property Details</h2><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.MeshLocalPrefix"></a><h3>The "MeshLocalPrefix" property</h3><a class="indexterm" name="idm320"></a><pre class="programlisting">
 MeshLocalPrefix  readwrite  ay
-</pre><p>The /64 mesh-local prefix.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LegacyULAPrefix"></a><h3>The "LegacyULAPrefix" property</h3><a class="indexterm" name="idm325"></a><pre class="programlisting">
+</pre><p>The /64 mesh-local prefix.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LegacyULAPrefix"></a><h3>The "LegacyULAPrefix" property</h3><a class="indexterm" name="idm326"></a><pre class="programlisting">
 LegacyULAPrefix  readwrite  ay
-</pre><p>The /64 legacy prefix.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkMode"></a><h3>The "LinkMode" property</h3><a class="indexterm" name="idm331"></a><pre class="programlisting">
+</pre><p>The /64 legacy prefix.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkMode"></a><h3>The "LinkMode" property</h3><a class="indexterm" name="idm332"></a><pre class="programlisting">
 LinkMode  readwrite  (bbb)
 </pre><p>The current link mode.</p><p>      </p><div class="literallayout"><p><br>
       struct {<br>
@@ -170,7 +171,7 @@ LinkMode  readwrite  (bbb)
         bool network_data       //full or stable<br>
       }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.DeviceRole"></a><h3>The "DeviceRole" property</h3><a class="indexterm" name="idm339"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.DeviceRole"></a><h3>The "DeviceRole" property</h3><a class="indexterm" name="idm340"></a><pre class="programlisting">
 DeviceRole  readable   s
 </pre><p>The current device role.</p><p>      Possible values are:
       </p><div class="literallayout"><p><br>
@@ -180,17 +181,17 @@ DeviceRole  readable   s
         3: Router<br>
         4: Leader<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NetworkName"></a><h3>The "NetworkName" property</h3><a class="indexterm" name="idm347"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NetworkName"></a><h3>The "NetworkName" property</h3><a class="indexterm" name="idm348"></a><pre class="programlisting">
 NetworkName  readable   s
-</pre><p>The network name.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.PanId"></a><h3>The "PanId" property</h3><a class="indexterm" name="idm353"></a><pre class="programlisting">
+</pre><p>The network name.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.PanId"></a><h3>The "PanId" property</h3><a class="indexterm" name="idm354"></a><pre class="programlisting">
 PanId  readable   q
-</pre><p>The pan ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExtPanId"></a><h3>The "ExtPanId" property</h3><a class="indexterm" name="idm359"></a><pre class="programlisting">
+</pre><p>The pan ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExtPanId"></a><h3>The "ExtPanId" property</h3><a class="indexterm" name="idm360"></a><pre class="programlisting">
 ExtPanId  readable   t
-</pre><p>The extended pan ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.Channel"></a><h3>The "Channel" property</h3><a class="indexterm" name="idm365"></a><pre class="programlisting">
+</pre><p>The extended pan ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.Channel"></a><h3>The "Channel" property</h3><a class="indexterm" name="idm366"></a><pre class="programlisting">
 Channel  readable   q
-</pre><p>The current network channel, from 11 to 26</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.CcaFailureRate"></a><h3>The "CcaFailureRate" property</h3><a class="indexterm" name="idm371"></a><pre class="programlisting">
+</pre><p>The current network channel, from 11 to 26</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.CcaFailureRate"></a><h3>The "CcaFailureRate" property</h3><a class="indexterm" name="idm372"></a><pre class="programlisting">
 CcaFailureRate  readable   q
-</pre><p>The Clear Channel Assessment failure rate.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.MacCounters"></a><h3>The "MacCounters" property</h3><a class="indexterm" name="idm377"></a><pre class="programlisting">
+</pre><p>The Clear Channel Assessment failure rate.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.MacCounters"></a><h3>The "MacCounters" property</h3><a class="indexterm" name="idm378"></a><pre class="programlisting">
 MacCounters  readable   (uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu)
 </pre><p>The mac layer statistic counters.</p><p>      The counter structure definition:
       </p><div class="literallayout"><p><br>
@@ -229,7 +230,7 @@ MacCounters  readable   (uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu)
           uint32 rx_err_other;<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkCounters"></a><h3>The "LinkCounters" property</h3><a class="indexterm" name="idm385"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkCounters"></a><h3>The "LinkCounters" property</h3><a class="indexterm" name="idm386"></a><pre class="programlisting">
 LinkCounters  readable   (uuuu)
 </pre><p>The link statistic counters.</p><p>      The counter structure definition:
       </p><div class="literallayout"><p><br>
@@ -240,15 +241,15 @@ LinkCounters  readable   (uuuu)
           uint32 ip_rx_failure;<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkSupportedChannelMask"></a><h3>The "LinkSupportedChannelMask" property</h3><a class="indexterm" name="idm393"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LinkSupportedChannelMask"></a><h3>The "LinkSupportedChannelMask" property</h3><a class="indexterm" name="idm394"></a><pre class="programlisting">
 LinkSupportedChannelMask  readable   u
-</pre><p>The bitwise link supported channel mask</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.Rloc16"></a><h3>The "Rloc16" property</h3><a class="indexterm" name="idm399"></a><pre class="programlisting">
+</pre><p>The bitwise link supported channel mask</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.Rloc16"></a><h3>The "Rloc16" property</h3><a class="indexterm" name="idm400"></a><pre class="programlisting">
 Rloc16  readable   q
-</pre><p>The 16-bit routing locator</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExtendedAddress"></a><h3>The "ExtendedAddress" property</h3><a class="indexterm" name="idm405"></a><pre class="programlisting">
+</pre><p>The 16-bit routing locator</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExtendedAddress"></a><h3>The "ExtendedAddress" property</h3><a class="indexterm" name="idm406"></a><pre class="programlisting">
 ExtendedAddress  readable   t
-</pre><p>The 64-bit extended address</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RouterID"></a><h3>The "RouterID" property</h3><a class="indexterm" name="idm411"></a><pre class="programlisting">
+</pre><p>The 64-bit extended address</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RouterID"></a><h3>The "RouterID" property</h3><a class="indexterm" name="idm412"></a><pre class="programlisting">
 RouterID  readable   y
-</pre><p>The current router ID</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LeaderData"></a><h3>The "LeaderData" property</h3><a class="indexterm" name="idm417"></a><pre class="programlisting">
+</pre><p>The current router ID</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LeaderData"></a><h3>The "LeaderData" property</h3><a class="indexterm" name="idm418"></a><pre class="programlisting">
 LeaderData  readable   (uyyyy)
 </pre><p>The network leader data.</p><p>      The structure definition:
       </p><div class="literallayout"><p><br>
@@ -260,15 +261,15 @@ LeaderData  readable   (uyyyy)
           uint8_t  mLeaderRouterId;    // Leader Router ID<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NetworkData"></a><h3>The "NetworkData" property</h3><a class="indexterm" name="idm425"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NetworkData"></a><h3>The "NetworkData" property</h3><a class="indexterm" name="idm426"></a><pre class="programlisting">
 NetworkData  readable   ay
-</pre><p>The network data.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.StableNetworkData"></a><h3>The "StableNetworkData" property</h3><a class="indexterm" name="idm431"></a><pre class="programlisting">
+</pre><p>The network data.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.StableNetworkData"></a><h3>The "StableNetworkData" property</h3><a class="indexterm" name="idm432"></a><pre class="programlisting">
 StableNetworkData  readable   ay
-</pre><p>The stable network data.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LocalLeaderWeight"></a><h3>The "LocalLeaderWeight" property</h3><a class="indexterm" name="idm437"></a><pre class="programlisting">
+</pre><p>The stable network data.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.LocalLeaderWeight"></a><h3>The "LocalLeaderWeight" property</h3><a class="indexterm" name="idm438"></a><pre class="programlisting">
 LocalLeaderWeight  readable   y
-</pre><p>The leader weight of the current node.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChannelMonitorSampleCount"></a><h3>The "ChannelMonitorSampleCount" property</h3><a class="indexterm" name="idm443"></a><pre class="programlisting">
+</pre><p>The leader weight of the current node.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChannelMonitorSampleCount"></a><h3>The "ChannelMonitorSampleCount" property</h3><a class="indexterm" name="idm444"></a><pre class="programlisting">
 ChannelMonitorSampleCount  readable   u
-</pre><p>The number of the collected samples from the channel monitor</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChannelMonitorChannelQualityMap"></a><h3>The "ChannelMonitorChannelQualityMap" property</h3><a class="indexterm" name="idm449"></a><pre class="programlisting">
+</pre><p>The number of the collected samples from the channel monitor</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChannelMonitorChannelQualityMap"></a><h3>The "ChannelMonitorChannelQualityMap" property</h3><a class="indexterm" name="idm450"></a><pre class="programlisting">
 ChannelMonitorChannelQualityMap  readable   a(yq)
 </pre><p>The channel monitor statistics data.</p><p>      The structure definition:
       </p><div class="literallayout"><p><br>
@@ -277,7 +278,7 @@ ChannelMonitorChannelQualityMap  readable   a(yq)
           uint16_t mOccupancy;<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChildTable"></a><h3>The "ChildTable" property</h3><a class="indexterm" name="idm457"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ChildTable"></a><h3>The "ChildTable" property</h3><a class="indexterm" name="idm458"></a><pre class="programlisting">
 ChildTable  readable   a(tuuqqyyyyqqbbbb)
 </pre><p>The node's child table as an array of child entry structure.</p><p>      The child entry structure definition:
       </p><div class="literallayout"><p><br>
@@ -299,7 +300,7 @@ ChildTable  readable   a(tuuqqyyyyqqbbbb)
           bool     mIsStateRestoring;   // Is in restoring state<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NeighborTable"></a><h3>The "NeighborTable" property</h3><a class="indexterm" name="idm467"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.NeighborTable"></a><h3>The "NeighborTable" property</h3><a class="indexterm" name="idm468"></a><pre class="programlisting">
 NeighborTable  readable   a(tuquuyyyqqbbbb)
 </pre><p>The node's neighbor table as an array of neighbor entry structure.</p><p>      The neighbor entry structure definition:
       </p><div class="literallayout"><p><br>
@@ -320,13 +321,13 @@ NeighborTable  readable   a(tuquuyyyqqbbbb)
           bool     mIsChild;           // Is the neighbor a child<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.PartitionId"></a><h3>The "PartitionId" property</h3><a class="indexterm" name="idm477"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.PartitionId"></a><h3>The "PartitionId" property</h3><a class="indexterm" name="idm478"></a><pre class="programlisting">
 PartitionId  readable   u
-</pre><p>The network partition ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.InstantRssi"></a><h3>The "InstantRssi" property</h3><a class="indexterm" name="idm483"></a><pre class="programlisting">
+</pre><p>The network partition ID.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.InstantRssi"></a><h3>The "InstantRssi" property</h3><a class="indexterm" name="idm484"></a><pre class="programlisting">
 InstantRssi  readable   y
-</pre><p>The RSSI of the last received packet.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RadioTxPower"></a><h3>The "RadioTxPower" property</h3><a class="indexterm" name="idm489"></a><pre class="programlisting">
+</pre><p>The RSSI of the last received packet.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RadioTxPower"></a><h3>The "RadioTxPower" property</h3><a class="indexterm" name="idm490"></a><pre class="programlisting">
 RadioTxPower  readable   y
-</pre><p>The radio transmit power.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExternalRoutes"></a><h3>The "ExternalRoutes" property</h3><a class="indexterm" name="idm495"></a><pre class="programlisting">
+</pre><p>The radio transmit power.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ExternalRoutes"></a><h3>The "ExternalRoutes" property</h3><a class="indexterm" name="idm496"></a><pre class="programlisting">
 ExternalRoutes  readable   ((ayy)qybb)
 </pre><p>The list of current external route rules.</p><p>      External route rule structure definition:
       </p><div class="literallayout"><p><br>
@@ -341,8 +342,30 @@ ExternalRoutes  readable   ((ayy)qybb)
           bool next_hop_is_self<br>
         }<br>
       </p></div><p>
-</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ActiveDatasetTlvs"></a><h3>The "ActiveDatasetTlvs" property</h3><a class="indexterm" name="idm503"></a><pre class="programlisting">
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.OnMeshPrefixes"></a><h3>The "OnMeshPrefixes" property</h3><a class="indexterm" name="idm504"></a><pre class="programlisting">
+OnMeshPrefixes  readable   a((ayy)qybbbbbbbbb)
+</pre><p>The list of current on-mesh prefixes.</p><p>      on-mesh prefix structure definition:
+      </p><div class="literallayout"><p><br>
+        struct {<br>
+          struct {<br>
+            uint8[] prefix_bytes<br>
+            uint8 prefix_length<br>
+          }<br>
+          uint16 rloc<br>
+          uint8 preference<br>
+          bool is_preferred<br>
+          bool is_slaac<br>
+          bool is_dhcp<br>
+          bool is_configure<br>
+          bool is_default_route<br>
+          bool is_on_mesh<br>
+          bool is_stable<br>
+          bool is_nd_dns<br>
+          bool is_dp<br>
+        }<br>
+      </p></div><p>
+</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.ActiveDatasetTlvs"></a><h3>The "ActiveDatasetTlvs" property</h3><a class="indexterm" name="idm512"></a><pre class="programlisting">
 ActiveDatasetTlvs  readwrite  ay
-</pre><p>The Thread active dataset tlv in binary form.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RadioRegion"></a><h3>The "RadioRegion" property</h3><a class="indexterm" name="idm509"></a><pre class="programlisting">
+</pre><p>The Thread active dataset tlv in binary form.</p></div><div class="refsect2"><a name="gdbus-property-io-openthread-BorderRouter.RadioRegion"></a><h3>The "RadioRegion" property</h3><a class="indexterm" name="idm518"></a><pre class="programlisting">
 RadioRegion  readwrite  s
 </pre><p>The radio region code in ISO 3166-1.</p></div></div></div><div class="navfooter"><hr></div></body></html>
