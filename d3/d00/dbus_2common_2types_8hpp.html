@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-b4c44f6</span>
+   &#160;<span id="projectnumber">0.3.0-bb3c1ea</span>
    </div>
   </td>
  </tr>
@@ -78,6 +78,7 @@ $(function() {
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;openthread/srp_server.h&gt;</code><br />
 </div>
 <p><a href="../../d3/d00/dbus_2common_2types_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -109,6 +110,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d60/structotbr_1_1DBus_1_1TxtEntry.html">otbr::DBus::TxtEntry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc0/structotbr_1_1DBus_1_1SrpServerInfo.html">otbr::DBus::SrpServerInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/structotbr_1_1DBus_1_1SrpServerInfo_1_1Registration.html">otbr::DBus::SrpServerInfo::Registration</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/structotbr_1_1DBus_1_1SrpServerInfo_1_1ResponseCounters.html">otbr::DBus::SrpServerInfo::ResponseCounters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -128,6 +135,15 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:acb57dd4e7cd551a2cf8203b19fd72731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0528e7698cc95ae93686ecbdcae61e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a3d0528e7698cc95ae93686ecbdcae61e">otbr::DBus::SrpServerState</a> : uint8_t { <a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a3d0528e7698cc95ae93686ecbdcae61ea50fb6762ee69e4a59e07e04827b81dca">otbr::DBus::OTBR_SRP_SERVER_STATE_DISABLED</a> = 0, 
+<a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a3d0528e7698cc95ae93686ecbdcae61ea361451aa3ff2422293236469c4a41640">otbr::DBus::OTBR_SRP_SERVER_STATE_RUNNING</a> = 1, 
+<a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a3d0528e7698cc95ae93686ecbdcae61ea14115f8bb1f5e59d94a0dea028d67a58">otbr::DBus::OTBR_SRP_SERVER_STATE_STOPPED</a> = 2
+ }</td></tr>
+<tr class="separator:a3d0528e7698cc95ae93686ecbdcae61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5870030cef31ef13b9d88dd715243dae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a5870030cef31ef13b9d88dd715243dae">otbr::DBus::SrpServerAddressMode</a> : uint8_t { <a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a5870030cef31ef13b9d88dd715243daead4f50f7ae7241d03a5a79640a51cf31c">otbr::DBus::OTBR_SRP_SERVER_ADDRESS_MODE_UNICAST</a> = 0, 
+<a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a5870030cef31ef13b9d88dd715243daeae86a717f9a20c51b97d8a2984f76d380">otbr::DBus::OTBR_SRP_SERVER_ADDRESS_MODE_ANYCAST</a> = 1
+ }</td></tr>
+<tr class="separator:a5870030cef31ef13b9d88dd715243dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes definitions for types used by d-bus API. </p>
