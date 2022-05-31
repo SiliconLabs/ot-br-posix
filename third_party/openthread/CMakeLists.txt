@@ -67,23 +67,19 @@ if (OTBR_SRP_ADVERTISING_PROXY)
 endif()
 
 if (OTBR_BACKBONE_ROUTER)
-    set(OT_THREAD_VERSION 1.2 CACHE STRING "Backbone Router requires Thread 1.2 or higher" FORCE)
     set(OT_BACKBONE_ROUTER ON CACHE BOOL "Enable Backbone Router feature in OpenThread" FORCE)
     set(OT_SERVICE ON CACHE BOOL "Backbone Router requires Thread network service" FORCE)
 endif()
 
-if (OT_THREAD_VERSION STREQUAL "1.2")
+if (NOT OT_THREAD_VERSION STREQUAL "1.1")
+    if (OT_REFERENCE_DEVICE)
+        set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA for reference devices")
+    endif()
     set(OT_MLR ON CACHE BOOL "Enable Thread 1.2 MLR by default")
 endif()
 
 set(OT_COAP ON CACHE BOOL "Enable CoAP in OpenThread")
 set(OT_COAPS ON CACHE BOOL "Enable secure CoAP in OpenThread")
-
-# SiLabs OpenThread Border Router only
-if (OT_THREAD_VERSION STREQUAL "1.2")
-    # DUA is disabled by default (as an optional feature) for GitHub OTBR, override it here
-    set(OT_DUA ON CACHE BOOL "Enable Thread 1.2 DUA by default")
-endif()
 
 # Diagnostics / Logging
 set(OT_DIAGNOSTIC ON CACHE BOOL "Enable diagnostics module" FORCE)
@@ -123,9 +119,14 @@ target_compile_definitions(ot-config INTERFACE
     "-DOPENTHREAD_CONFIG_MAX_STATECHANGE_HANDLERS=3"
     "-DOPENTHREAD_CONFIG_MLE_STEERING_DATA_SET_OOB_ENABLE=1"
     "-DOPENTHREAD_CONFIG_TCP_ENABLE=0"
-    "-DOPENTHREAD_CONFIG_TMF_PROXY_DUA_ENABLE=1"
-    "-DOPENTHREAD_CONFIG_TMF_PROXY_MLR_ENABLE=1"
 )
+
+if (NOT OT_THREAD_VERSION STREQUAL "1.1")
+    target_compile_definitions(ot-config INTERFACE
+        "-DOPENTHREAD_CONFIG_TMF_PROXY_DUA_ENABLE=1"
+        "-DOPENTHREAD_CONFIG_TMF_PROXY_MLR_ENABLE=1"
+    )
+endif()
 
 # SubGhz support
 if (OTBR_PROPRIETARY_RADIO_SUPPORT)
