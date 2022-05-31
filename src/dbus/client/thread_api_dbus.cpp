@@ -633,6 +633,18 @@ ClientError ThreadApiDBus::GetRadioRegion(std::string &aRadioRegion)
     return GetProperty(OTBR_DBUS_PROPERTY_RADIO_REGION, aRadioRegion);
 }
 
+ClientError ThreadApiDBus::GetSrpServerInfo(SrpServerInfo &aSrpServerInfo)
+{
+    return GetProperty(OTBR_DBUS_PROPERTY_SRP_SERVER_INFO, aSrpServerInfo);
+}
+
+#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY
+ClientError ThreadApiDBus::GetDnssdCounters(DnssdCounters &aDnssdCounters)
+{
+    return GetProperty(OTBR_DBUS_PROPERTY_DNSSD_COUNTERS, aDnssdCounters);
+}
+#endif
+
 std::string ThreadApiDBus::GetInterfaceName(void)
 {
     return mInterfaceName;

@@ -132,6 +132,8 @@ private:
     otError GetOnMeshPrefixesHandler(DBusMessageIter &aIter);
     otError GetActiveDatasetTlvsHandler(DBusMessageIter &aIter);
     otError GetRadioRegionHandler(DBusMessageIter &aIter);
+    otError GetSrpServerInfoHandler(DBusMessageIter &aIter);
+    otError GetDnssdCountersHandler(DBusMessageIter &aIter);
 
     void ReplyScanResult(DBusRequest &aRequest, otError aError, const std::vector<otActiveScanResult> &aResult);
     void ReplyEnergyScanResult(DBusRequest &aRequest, otError aError, const std::vector<otEnergyScanResult> &aResult);
