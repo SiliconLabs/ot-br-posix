@@ -706,6 +706,32 @@ public:
     ClientError GetRadioRegion(std::string &aRadioRegion);
 
     /**
+     * This method gets the SRP server information.
+     *
+     * @param[out] aSrpServerInfo  The SRP server information.
+     *
+     * @retval ERROR_NONE  Successfully performed the dbus function call
+     * @retval ERROR_DBUS  dbus encode/decode error
+     * @retval ...         OpenThread defined error value otherwise
+     *
+     */
+    ClientError GetSrpServerInfo(SrpServerInfo &aSrpServerInfo);
+
+#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY
+    /**
+     * This method gets the DNS-SD counters.
+     *
+     * @param[out] aDnssdCounters  The DNS-SD counters.
+     *
+     * @retval ERROR_NONE  Successfully performed the dbus function call
+     * @retval ERROR_DBUS  dbus encode/decode error
+     * @retval ...         OpenThread defined error value otherwise
+     *
+     */
+    ClientError GetDnssdCounters(DnssdCounters &aDnssdCounters);
+#endif
+
+    /**
      * This method returns the network interface name the client is bound to.
      *
      * @returns The network interface name.
