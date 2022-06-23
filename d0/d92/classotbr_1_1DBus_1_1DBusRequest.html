@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-eee9d76</span>
+   &#160;<span id="projectnumber">0.3.0-8334c44</span>
    </div>
   </td>
  </tr>
@@ -91,8 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5948a3c18efa1352df77adac74347e6f"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a5948a3c18efa1352df77adac74347e6f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a5948a3c18efa1352df77adac74347e6f">Reply</a> (const std::tuple&lt; Args... &gt; &amp;aReply)</td></tr>
 <tr class="separator:a5948a3c18efa1352df77adac74347e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2068483960b718d7a3eb7b12ac4cea94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a2068483960b718d7a3eb7b12ac4cea94">ReplyOtResult</a> (otError aError)</td></tr>
-<tr class="separator:a2068483960b718d7a3eb7b12ac4cea94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c08321c5a04ef2464b3b673fef0218"><td class="memTemplParams" colspan="2">template&lt;typename ResultType  = int&gt; </td></tr>
+<tr class="memitem:a15c08321c5a04ef2464b3b673fef0218"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a15c08321c5a04ef2464b3b673fef0218">ReplyOtResult</a> (otError aError, <a class="el" href="../../de/dac/classOptional.html">Optional</a>&lt; ResultType &gt; aResult=<a class="el" href="../../de/dac/classOptional.html">Optional</a>&lt; ResultType &gt;())</td></tr>
+<tr class="separator:a15c08321c5a04ef2464b3b673fef0218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52d0ecd65c43d2c19a7463f89d8b8a69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a52d0ecd65c43d2c19a7463f89d8b8a69">~DBusRequest</a> (void)</td></tr>
 <tr class="separator:a52d0ecd65c43d2c19a7463f89d8b8a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -328,11 +329,13 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a2068483960b718d7a3eb7b12ac4cea94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2068483960b718d7a3eb7b12ac4cea94">&#9670;&nbsp;</a></span>ReplyOtResult()</h2>
+<a id="a15c08321c5a04ef2464b3b673fef0218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c08321c5a04ef2464b3b673fef0218">&#9670;&nbsp;</a></span>ReplyOtResult()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType  = int&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -341,8 +344,18 @@ template&lt;typename... Args&gt; </div>
           <td class="memname">void otbr::DBus::DBusRequest::ReplyOtResult </td>
           <td>(</td>
           <td class="paramtype">otError&#160;</td>
-          <td class="paramname"><em>aError</em></td><td>)</td>
+          <td class="paramname"><em>aError</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dac/classOptional.html">Optional</a>&lt; ResultType &gt;&#160;</td>
+          <td class="paramname"><em>aResult</em> = <code><a class="el" href="../../de/dac/classOptional.html">Optional</a>&lt;ResultType&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -355,6 +368,7 @@ template&lt;typename... Args&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aError</td><td>The error to be sent. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aResult</td><td>The return value of the method call, if any. </td></tr>
   </table>
   </dd>
 </dl>

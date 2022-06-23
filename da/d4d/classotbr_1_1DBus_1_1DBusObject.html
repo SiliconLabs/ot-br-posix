@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-eee9d76</span>
+   &#160;<span id="projectnumber">0.3.0-8334c44</span>
    </div>
   </td>
  </tr>
@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a06c05092b94dada5df9be97f0801ec5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a260123f74ab6d1781ad12966c774ba53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#a260123f74ab6d1781ad12966c774ba53">RegisterMethod</a> (const std::string &amp;aInterfaceName, const std::string &amp;aMethodName, const MethodHandlerType &amp;aHandler)</td></tr>
 <tr class="separator:a260123f74ab6d1781ad12966c774ba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa97d32189556dbfd02f84d46817b18e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#aa97d32189556dbfd02f84d46817b18e7">RegisterGetPropertyHandler</a> (const std::string &amp;aInterfaceName, const std::string &amp;aMethodName, const PropertyHandlerType &amp;aHandler)</td></tr>
-<tr class="separator:aa97d32189556dbfd02f84d46817b18e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada021d44f72a311d39d114f4b424b1a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#ada021d44f72a311d39d114f4b424b1a7">RegisterSetPropertyHandler</a> (const std::string &amp;aInterfaceName, const std::string &amp;aPropertyName, const PropertyHandlerType &amp;aHandler)</td></tr>
+<tr class="memitem:a4e58bc06a49c62c4db7119b58c794296"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#a4e58bc06a49c62c4db7119b58c794296">RegisterGetPropertyHandler</a> (const std::string &amp;aInterfaceName, const std::string &amp;aPropertyName, const PropertyHandlerType &amp;aHandler)</td></tr>
+<tr class="separator:a4e58bc06a49c62c4db7119b58c794296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada021d44f72a311d39d114f4b424b1a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#ada021d44f72a311d39d114f4b424b1a7">RegisterSetPropertyHandler</a> (const std::string &amp;aInterfaceName, const std::string &amp;aPropertyName, const PropertyHandlerType &amp;aHandler)</td></tr>
 <tr class="separator:ada021d44f72a311d39d114f4b424b1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed4dcc59ee0d37354b6cfc59f50bbf9"><td class="memTemplParams" colspan="2">template&lt;typename... FieldTypes&gt; </td></tr>
 <tr class="memitem:a7ed4dcc59ee0d37354b6cfc59f50bbf9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html#a7ed4dcc59ee0d37354b6cfc59f50bbf9">Signal</a> (const std::string &amp;aInterfaceName, const std::string &amp;aSignalName, const std::tuple&lt; FieldTypes... &gt; &amp;aArgs)</td></tr>
@@ -221,11 +221,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa97d32189556dbfd02f84d46817b18e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa97d32189556dbfd02f84d46817b18e7">&#9670;&nbsp;</a></span>RegisterGetPropertyHandler()</h2>
+<a id="a4e58bc06a49c62c4db7119b58c794296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e58bc06a49c62c4db7119b58c794296">&#9670;&nbsp;</a></span>RegisterGetPropertyHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void otbr::DBus::DBusObject::RegisterGetPropertyHandler </td>
@@ -237,7 +240,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>aMethodName</em>, </td>
+          <td class="paramname"><em>aPropertyName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -251,16 +254,23 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>This method registers the get handler for a property.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aInterfaceName</td><td>The interface name. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMethodName</td><td>The method name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPropertyName</td><td>The property name. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aHandler</td><td>The method handler. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#abbb1aaa710d4e6a69b69484a6bdd623c">otbr::DBus::DBusThreadObject</a>.</p>
 
 </div>
 </div>
@@ -312,6 +322,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void otbr::DBus::DBusObject::RegisterSetPropertyHandler </td>
@@ -337,12 +350,17 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>This method registers the set handler for a property.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aInterfaceName</td><td>The interface name. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aMethodName</td><td>The method name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPropertyName</td><td>The property name. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aHandler</td><td>The method handler. </td></tr>
   </table>
   </dd>
