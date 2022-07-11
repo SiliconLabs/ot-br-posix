@@ -83,6 +83,10 @@ otbrError DBusMessageEncode(DBusMessageIter *aIter, const SrpServerInfo::Respons
 otbrError DBusMessageExtract(DBusMessageIter *aIter, SrpServerInfo::ResponseCounters &aResponseCounters);
 otbrError DBusMessageEncode(DBusMessageIter *aIter, const SrpServerInfo &aSrpServerInfo);
 otbrError DBusMessageExtract(DBusMessageIter *aIter, SrpServerInfo &aSrpServerInfo);
+otbrError DBusMessageEncode(DBusMessageIter *aIter, const MdnsResponseCounters &aMdnsResponseCounters);
+otbrError DBusMessageExtract(DBusMessageIter *aIter, MdnsResponseCounters &aMdnsResponseCounters);
+otbrError DBusMessageEncode(DBusMessageIter *aIter, const MdnsTelemetryInfo &aMdnsTelemetryInfo);
+otbrError DBusMessageExtract(DBusMessageIter *aIter, MdnsTelemetryInfo &aMdnsTelemetryInfo);
 otbrError DBusMessageEncode(DBusMessageIter *aIter, const DnssdCounters &aDnssdCounters);
 otbrError DBusMessageExtract(DBusMessageIter *aIter, DnssdCounters &aDnssdCounters);
 
@@ -238,6 +242,16 @@ template <> struct DBusTypeTrait<SrpServerInfo>
     //              struct of { uint32, uint32, uint64, uint64, uint64, uint64 },
     //              struct of { uint32, uint32, uint32, uint32, uint32, uint32} }
     static constexpr const char *TYPE_AS_STRING = "(yqy(uutttt)(uutttt)(uuuuuu))";
+};
+
+template <> struct DBusTypeTrait<MdnsTelemetryInfo>
+{
+    // struct of { struct of { uint32, uint32, uint32, uint32, uint32, uint32 },
+    //              struct of { uint32, uint32, uint32, uint32, uint32, uint32 },
+    //              struct of { uint32, uint32, uint32, uint32, uint32, uint32 },
+    //              struct of { uint32, uint32, uint32, uint32, uint32, uint32 },
+    //              uint32, uint32, uint32, uint32 }
+    static constexpr const char *TYPE_AS_STRING = "((uuuuuu)(uuuuuu)(uuuuuu)(uuuuuu)uuuu)";
 };
 
 template <> struct DBusTypeTrait<DnssdCounters>
@@ -515,6 +529,24 @@ public:
 
     exit:
         return error;
+    }
+};
+
+template <> class DBusMessageIterFor<0, 0>
+{
+public:
+    static otbrError ConvertToTuple(DBusMessageIter *aIter, std::tuple<> &aValues)
+    {
+        OTBR_UNUSED_VARIABLE(aIter);
+        OTBR_UNUSED_VARIABLE(aValues);
+        return OTBR_ERROR_NONE;
+    }
+
+    static otbrError ConvertToDBusMessage(DBusMessageIter *aIter, const std::tuple<> &aValues)
+    {
+        OTBR_UNUSED_VARIABLE(aIter);
+        OTBR_UNUSED_VARIABLE(aValues);
+        return OTBR_ERROR_NONE;
     }
 };
 
