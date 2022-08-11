@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -86,8 +86,8 @@ Inheritance diagram for otbr::DBus::DBusThreadObject:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a97ccd4ce785f1f22af122e01615868e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a97ccd4ce785f1f22af122e01615868e2">DBusThreadObject</a> (DBusConnection *aConnection, const std::string &amp;aInterfaceName, <a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> *aNcp)</td></tr>
-<tr class="separator:a97ccd4ce785f1f22af122e01615868e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66f2299ef83715143ffe6e4aa8db1f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#ad66f2299ef83715143ffe6e4aa8db1f8">DBusThreadObject</a> (DBusConnection *aConnection, const std::string &amp;aInterfaceName, <a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> *aNcp, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> *aPublisher)</td></tr>
+<tr class="separator:ad66f2299ef83715143ffe6e4aa8db1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56365e35e991a3d5c2462d3c224b27b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a56365e35e991a3d5c2462d3c224b27b7">Init</a> (void) override</td></tr>
 <tr class="separator:a56365e35e991a3d5c2462d3c224b27b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb1aaa710d4e6a69b69484a6bdd623c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#abbb1aaa710d4e6a69b69484a6bdd623c">RegisterGetPropertyHandler</a> (const std::string &amp;aInterfaceName, const std::string &amp;aPropertyName, const PropertyHandlerType &amp;aHandler) override</td></tr>
@@ -119,8 +119,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyHandlerType<
 <tr class="separator:a14d6f8b049884020cecf173ba4e4e852 inherit pub_types_classotbr_1_1DBus_1_1DBusObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a97ccd4ce785f1f22af122e01615868e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ccd4ce785f1f22af122e01615868e2">&#9670;&nbsp;</a></span>DBusThreadObject()</h2>
+<a id="ad66f2299ef83715143ffe6e4aa8db1f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66f2299ef83715143ffe6e4aa8db1f8">&#9670;&nbsp;</a></span>DBusThreadObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +141,13 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyHandlerType<
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> *&#160;</td>
-          <td class="paramname"><em>aNcp</em>&#160;</td>
+          <td class="paramname"><em>aNcp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> *&#160;</td>
+          <td class="paramname"><em>aPublisher</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -156,6 +162,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyHandlerType<
     <tr><td class="paramdir">[in]</td><td class="paramname">aConnection</td><td>The dbus connection. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aInterfaceName</td><td>The dbus interface name. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aNcp</td><td>The ncp controller </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPublisher</td><td>The <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> </td></tr>
   </table>
   </dd>
 </dl>

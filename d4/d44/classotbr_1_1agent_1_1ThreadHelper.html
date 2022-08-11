@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>AttachHandler</b> = 
 <tr class="memitem:a738c1c857997eb852305976d45cc617d"><td class="memItemLeft" align="right" valign="top"><a id="a738c1c857997eb852305976d45cc617d"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateMeshCopTxtHandler</b> = std::function&lt; void(std::map&lt; std::string, std::vector&lt; uint8_t &gt; &gt;)&gt;</td></tr>
 <tr class="separator:a738c1c857997eb852305976d45cc617d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837d001cfc1b69f1de7ccb9d3cbf63da"><td class="memItemLeft" align="right" valign="top"><a id="a837d001cfc1b69f1de7ccb9d3cbf63da"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DatasetChangeHandler</b> = std::function&lt; void(const otOperationalDatasetTlvs &amp;)&gt;</td></tr>
+<tr class="separator:a837d001cfc1b69f1de7ccb9d3cbf63da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a52b4fbae1c0d94e3c3bd8afdca6eeaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f1f56479b09df49786f76f1aecccda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a75f1f56479b09df49786f76f1aecccda">AddDeviceRoleHandler</a> (DeviceRoleHandler aHandler)</td></tr>
 <tr class="separator:a75f1f56479b09df49786f76f1aecccda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454c32eb0d227ffc23a65a58e2c410e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a454c32eb0d227ffc23a65a58e2c410e4">AddActiveDatasetChangeHandler</a> (DatasetChangeHandler aHandler)</td></tr>
+<tr class="separator:a454c32eb0d227ffc23a65a58e2c410e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af23ed2f42134e7082169258b52e8e782"><td class="memItemLeft" align="right" valign="top">otError&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#af23ed2f42134e7082169258b52e8e782">PermitUnsecureJoin</a> (uint16_t aPort, uint32_t aSeconds)</td></tr>
 <tr class="separator:af23ed2f42134e7082169258b52e8e782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf50cd6dd6f97142f51b093275ae3a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aaf50cd6dd6f97142f51b093275ae3a08">Scan</a> (ScanHandler aHandler)</td></tr>
@@ -175,6 +180,31 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a454c32eb0d227ffc23a65a58e2c410e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454c32eb0d227ffc23a65a58e2c410e4">&#9670;&nbsp;</a></span>AddActiveDatasetChangeHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::agent::ThreadHelper::AddActiveDatasetChangeHandler </td>
+          <td>(</td>
+          <td class="paramtype">DatasetChangeHandler&#160;</td>
+          <td class="paramname"><em>aHandler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method adds a callback for active dataset change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aHandler</td><td>The active dataset change handler. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a75f1f56479b09df49786f76f1aecccda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75f1f56479b09df49786f76f1aecccda">&#9670;&nbsp;</a></span>AddDeviceRoleHandler()</h2>
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -93,6 +93,8 @@ Public Types</h2></td></tr>
 <tr class="memitem:a470cbb92816291e11e4b902edc28baef"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a470cbb92816291e11e4b902edc28baef"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a> = std::function&lt; T(void)&gt;</td></tr>
 <tr class="separator:a470cbb92816291e11e4b902edc28baef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c17a0cb61ab3be7180c7ba6b872a4dd"><td class="memItemLeft" align="right" valign="top">typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">TaskId</a></td></tr>
+<tr class="separator:a0c17a0cb61ab3be7180c7ba6b872a4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -100,10 +102,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a87019d8e1f65bd804c4ff27ad5a4e301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dedd7137f7bcb25cd8b2ae3dce1fad2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a7dedd7137f7bcb25cd8b2ae3dce1fad2">~TaskRunner</a> (void) override</td></tr>
 <tr class="separator:a7dedd7137f7bcb25cd8b2ae3dce1fad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa26145e87b20bd4e565ca4c81e7e387d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#aa26145e87b20bd4e565ca4c81e7e387d">Post</a> (const <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt; aTask)</td></tr>
-<tr class="separator:aa26145e87b20bd4e565ca4c81e7e387d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1ac696bf266114b2231b6a851d1d809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#aa1ac696bf266114b2231b6a851d1d809">Post</a> (Milliseconds aDelay, const <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt; aTask)</td></tr>
-<tr class="separator:aa1ac696bf266114b2231b6a851d1d809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855d8b8d7d566a51c5e3ed72d0243b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a855d8b8d7d566a51c5e3ed72d0243b69">Post</a> (<a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt; aTask)</td></tr>
+<tr class="separator:a855d8b8d7d566a51c5e3ed72d0243b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b2c2d1fb0f09fbd8c741a7dc9c4c57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">TaskId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a55b2c2d1fb0f09fbd8c741a7dc9c4c57">Post</a> (Milliseconds aDelay, <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt; aTask)</td></tr>
+<tr class="separator:a55b2c2d1fb0f09fbd8c741a7dc9c4c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0a06c0204cf0095a62868157843002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#ace0a06c0204cf0095a62868157843002">Cancel</a> (<a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">TaskId</a> aTaskId)</td></tr>
+<tr class="separator:ace0a06c0204cf0095a62868157843002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c4ad8ba3c651236047b111e3e7ecb9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a84c4ad8ba3c651236047b111e3e7ecb9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a84c4ad8ba3c651236047b111e3e7ecb9">PostAndWait</a> (const <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; T &gt; &amp;aTask)</td></tr>
 <tr class="separator:a84c4ad8ba3c651236047b111e3e7ecb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,6 +133,22 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>This type represents the generic executable task. </p>
+
+</div>
+</div>
+<a id="a0c17a0cb61ab3be7180c7ba6b872a4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c17a0cb61ab3be7180c7ba6b872a4dd">&#9670;&nbsp;</a></span>TaskId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint64_t <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">otbr::TaskRunner::TaskId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This type represents a unique task ID to an delayed task.</p>
+<p>Note: A valid task ID is never zero. </p>
 
 </div>
 </div>
@@ -180,40 +200,39 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa26145e87b20bd4e565ca4c81e7e387d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa26145e87b20bd4e565ca4c81e7e387d">&#9670;&nbsp;</a></span>Post() <span class="overload">[1/2]</span></h2>
+<a id="ace0a06c0204cf0095a62868157843002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0a06c0204cf0095a62868157843002">&#9670;&nbsp;</a></span>Cancel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void otbr::TaskRunner::Post </td>
+          <td class="memname">void otbr::TaskRunner::Cancel </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt;&#160;</td>
-          <td class="paramname"><em>aTask</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">TaskRunner::TaskId</a>&#160;</td>
+          <td class="paramname"><em>aTaskId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method posts a task to the task runner and returns immediately.</p>
-<p>Tasks are executed sequentially and follow the First-Come-First-Serve rule. It is safe to call this method in different threads concurrently.</p>
+<p>This method cancels a delayed task from the task runner. It is safe to call this method in different threads concurrently.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aTask</td><td>The task to be executed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTaskId</td><td>The unique task ID of the delayed task to cancel. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa1ac696bf266114b2231b6a851d1d809"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1ac696bf266114b2231b6a851d1d809">&#9670;&nbsp;</a></span>Post() <span class="overload">[2/2]</span></h2>
+<a id="a55b2c2d1fb0f09fbd8c741a7dc9c4c57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b2c2d1fb0f09fbd8c741a7dc9c4c57">&#9670;&nbsp;</a></span>Post() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void otbr::TaskRunner::Post </td>
+          <td class="memname"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a0c17a0cb61ab3be7180c7ba6b872a4dd">TaskRunner::TaskId</a> otbr::TaskRunner::Post </td>
           <td>(</td>
           <td class="paramtype">Milliseconds&#160;</td>
           <td class="paramname"><em>aDelay</em>, </td>
@@ -221,7 +240,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt;&#160;</td>
           <td class="paramname"><em>aTask</em>&#160;</td>
         </tr>
         <tr>
@@ -232,10 +251,37 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>This method posts a task to the task runner and returns immediately.</p>
-<p>The task will be executed on the mainloop after <code>aDelay</code> milliseconds from now.</p>
+<p>The task will be executed on the mainloop after <code>aDelay</code> milliseconds from now. It is safe to call this method in different threads concurrently.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aDelay</td><td>The delay before executing the task (in milliseconds). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTask</td><td>The task to be executed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The unique task ID of the delayed task. </dd></dl>
+
+</div>
+</div>
+<a id="a855d8b8d7d566a51c5e3ed72d0243b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855d8b8d7d566a51c5e3ed72d0243b69">&#9670;&nbsp;</a></span>Post() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::TaskRunner::Post </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d62/classotbr_1_1TaskRunner.html#a470cbb92816291e11e4b902edc28baef">Task</a>&lt; void &gt;&#160;</td>
+          <td class="paramname"><em>aTask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method posts a task to the task runner and returns immediately.</p>
+<p>Tasks are executed sequentially and follow the First-Come-First-Serve rule. It is safe to call this method in different threads concurrently.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTask</td><td>The task to be executed. </td></tr>
   </table>
   </dd>

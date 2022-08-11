@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -86,19 +86,22 @@ Inheritance diagram for otbr::Mdns::Publisher::ServiceRegistration:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac08d060ab4c80be5b15a2406ce55193f"><td class="memItemLeft" align="right" valign="top"><a id="ac08d060ab4c80be5b15a2406ce55193f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ServiceRegistration</b> (std::string aHostName, std::string aName, std::string aType, SubTypeList aSubTypeList, uint16_t aPort, TxtList aTxtList, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback)</td></tr>
-<tr class="separator:ac08d060ab4c80be5b15a2406ce55193f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a4ef805ea32f2d26892a70835a57cb"><td class="memItemLeft" align="right" valign="top"><a id="a82a4ef805ea32f2d26892a70835a57cb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ServiceRegistration</b> (std::string aHostName, std::string aName, std::string aType, SubTypeList aSubTypeList, uint16_t aPort, TxtList aTxtList, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Publisher</a> *aPublisher)</td></tr>
+<tr class="separator:a82a4ef805ea32f2d26892a70835a57cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b053c7577216018840b0653edc1074"><td class="memItemLeft" align="right" valign="top"><a id="aa6b053c7577216018840b0653edc1074"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Complete</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
+<tr class="separator:aa6b053c7577216018840b0653edc1074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0833d0db5c8688af3bd6a95b59f02bd5"><td class="memItemLeft" align="right" valign="top"><a id="a0833d0db5c8688af3bd6a95b59f02bd5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnComplete</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
+<tr class="separator:a0833d0db5c8688af3bd6a95b59f02bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad27f9a349187ac1a4edcf3e171d9d2"><td class="memItemLeft" align="right" valign="top"><a id="acad27f9a349187ac1a4edcf3e171d9d2"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsOutdated</b> (const std::string &amp;aHostName, const std::string &amp;aName, const std::string &amp;aType, const SubTypeList &amp;aSubTypeList, uint16_t aPort, const TxtList &amp;aTxtList) const</td></tr>
 <tr class="separator:acad27f9a349187ac1a4edcf3e171d9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d3/dcf/classotbr_1_1Mdns_1_1Publisher_1_1Registration.html">otbr::Mdns::Publisher::Registration</a></td></tr>
-<tr class="memitem:a5950551c7c0a07f7bcb9a2a8811d56cb inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a5950551c7c0a07f7bcb9a2a8811d56cb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Registration</b> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback)</td></tr>
-<tr class="separator:a5950551c7c0a07f7bcb9a2a8811d56cb inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36d4ed6e94962eee1526ad0efe560443 inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a36d4ed6e94962eee1526ad0efe560443"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Complete</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
-<tr class="separator:a36d4ed6e94962eee1526ad0efe560443 inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37632aeae5a7f6c52b8baa5e001cbe0a inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a37632aeae5a7f6c52b8baa5e001cbe0a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Registration</b> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Publisher</a> *aPublisher)</td></tr>
+<tr class="separator:a37632aeae5a7f6c52b8baa5e001cbe0a inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19b0c4da4a65594dde2075711acdaa48 inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a19b0c4da4a65594dde2075711acdaa48"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCompleted</b> () const</td></tr>
 <tr class="separator:a19b0c4da4a65594dde2075711acdaa48 inherit pub_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +130,16 @@ TxtList&#160;</td><td class="memItemRight" valign="bottom"><b>mTxtList</b></td><
 <tr class="memitem:a6a7aa3a1b4e5167a3aa94f55ca955cd8 inherit pub_attribs_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a6a7aa3a1b4e5167a3aa94f55ca955cd8"></a>
 <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mCallback</b></td></tr>
 <tr class="separator:a6a7aa3a1b4e5167a3aa94f55ca955cd8 inherit pub_attribs_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c7b8605b30615410a85b5e505c2492 inherit pub_attribs_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a55c7b8605b30615410a85b5e505c2492"></a>
+<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Publisher</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mPublisher</b></td></tr>
+<tr class="separator:a55c7b8605b30615410a85b5e505c2492 inherit pub_attribs_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d3/dcf/classotbr_1_1Mdns_1_1Publisher_1_1Registration.html">otbr::Mdns::Publisher::Registration</a></td></tr>
+<tr class="memitem:a366f140d31a30ffbd05be347fba601c7 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memItemLeft" align="right" valign="top"><a id="a366f140d31a30ffbd05be347fba601c7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TriggerCompleteCallback</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
+<tr class="separator:a366f140d31a30ffbd05be347fba601c7 inherit pro_methods_classotbr_1_1Mdns_1_1Publisher_1_1Registration"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/mdns/<a class="el" href="../../de/d7c/mdns_8hpp_source.html">mdns.hpp</a></li>

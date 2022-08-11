@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="../../d2/d17/classotbr_1_1Mdns_1_1Publisher_1_1Registration-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">otbr::Mdns::Publisher::Registration Class Reference</div>  </div>
@@ -87,12 +88,9 @@ Inheritance diagram for otbr::Mdns::Publisher::Registration:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5950551c7c0a07f7bcb9a2a8811d56cb"><td class="memItemLeft" align="right" valign="top"><a id="a5950551c7c0a07f7bcb9a2a8811d56cb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Registration</b> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback)</td></tr>
-<tr class="separator:a5950551c7c0a07f7bcb9a2a8811d56cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36d4ed6e94962eee1526ad0efe560443"><td class="memItemLeft" align="right" valign="top"><a id="a36d4ed6e94962eee1526ad0efe560443"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Complete</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
-<tr class="separator:a36d4ed6e94962eee1526ad0efe560443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37632aeae5a7f6c52b8baa5e001cbe0a"><td class="memItemLeft" align="right" valign="top"><a id="a37632aeae5a7f6c52b8baa5e001cbe0a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Registration</b> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Publisher</a> *aPublisher)</td></tr>
+<tr class="separator:a37632aeae5a7f6c52b8baa5e001cbe0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19b0c4da4a65594dde2075711acdaa48"><td class="memItemLeft" align="right" valign="top"><a id="a19b0c4da4a65594dde2075711acdaa48"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCompleted</b> () const</td></tr>
 <tr class="separator:a19b0c4da4a65594dde2075711acdaa48"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,6 +100,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a6a7aa3a1b4e5167a3aa94f55ca955cd8"><td class="memItemLeft" align="right" valign="top"><a id="a6a7aa3a1b4e5167a3aa94f55ca955cd8"></a>
 <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mCallback</b></td></tr>
 <tr class="separator:a6a7aa3a1b4e5167a3aa94f55ca955cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c7b8605b30615410a85b5e505c2492"><td class="memItemLeft" align="right" valign="top"><a id="a55c7b8605b30615410a85b5e505c2492"></a>
+<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Publisher</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mPublisher</b></td></tr>
+<tr class="separator:a55c7b8605b30615410a85b5e505c2492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a366f140d31a30ffbd05be347fba601c7"><td class="memItemLeft" align="right" valign="top"><a id="a366f140d31a30ffbd05be347fba601c7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TriggerCompleteCallback</b> (<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> aError)</td></tr>
+<tr class="separator:a366f140d31a30ffbd05be347fba601c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/mdns/<a class="el" href="../../de/d7c/mdns_8hpp_source.html">mdns.hpp</a></li>

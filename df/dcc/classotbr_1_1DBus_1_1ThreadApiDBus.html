@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-8334c44</span>
+   &#160;<span id="projectnumber">0.3.0-31d6b7b</span>
    </div>
   </td>
  </tr>
@@ -198,6 +198,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a13011428d3f24c2090fb374f210d8c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a8b11280879e8a99a9e1487596564d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a1a8b11280879e8a99a9e1487596564d8">GetSrpServerInfo</a> (<a class="el" href="../../d9/dc0/structotbr_1_1DBus_1_1SrpServerInfo.html">SrpServerInfo</a> &amp;aSrpServerInfo)</td></tr>
 <tr class="separator:a1a8b11280879e8a99a9e1487596564d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87426e9881c604505d9650abb34ef454"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a87426e9881c604505d9650abb34ef454">GetMdnsTelemetryInfo</a> (<a class="el" href="../../df/d8c/structotbr_1_1MdnsTelemetryInfo.html">MdnsTelemetryInfo</a> &amp;aMdnsTelemetryInfo)</td></tr>
+<tr class="separator:a87426e9881c604505d9650abb34ef454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a96770d0b1852845666799b3cf6aaa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#aa1a96770d0b1852845666799b3cf6aaa">GetInterfaceName</a> (void)</td></tr>
 <tr class="separator:aa1a96770d0b1852845666799b3cf6aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42306282ca7bdf96ffdc6693267071a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a42306282ca7bdf96ffdc6693267071a4">UpdateVendorMeshCopTxtEntries</a> (std::vector&lt; <a class="el" href="../../d2/d60/structotbr_1_1DBus_1_1TxtEntry.html">TxtEntry</a> &gt; &amp;aUpdate)</td></tr>
@@ -1146,6 +1148,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aWeight</td><td>The local leader weight.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87426e9881c604505d9650abb34ef454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87426e9881c604505d9650abb34ef454">&#9670;&nbsp;</a></span>GetMdnsTelemetryInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetMdnsTelemetryInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d8c/structotbr_1_1MdnsTelemetryInfo.html">MdnsTelemetryInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>aMdnsTelemetryInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the MDNS telemetry information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aMdnsTelemetryInfo</td><td>The MDNS telemetry information.</td></tr>
   </table>
   </dd>
 </dl>
