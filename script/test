@@ -128,7 +128,7 @@ do_clean()
 do_check()
 {
     (cd "${OTBR_TOP_BUILDDIR}" \
-        && sudo ninja install \
+        && ninja && sudo ninja install \
         && CTEST_OUTPUT_ON_FAILURE=1 ninja test)
 }
 
@@ -182,6 +182,7 @@ do_simulation()
     export top_builddir="${OTBR_TOP_BUILDDIR}"
 
     print_result tests/scripts/auto-attach
+    print_result tests/scripts/infra-link-selector
 }
 
 main()

@@ -42,6 +42,8 @@ endif()
 
 option(OTBR_BORDER_ROUTING "Enable Border Routing Manager" OFF)
 
+option(OTBR_BORDER_ROUTING_NAT64 "Enable NAT64 support in Border Routing Manager" OFF)
+
 option(OTBR_DBUS "Enable DBus support" OFF)
 if(OTBR_DBUS)
     pkg_check_modules(DBUS REQUIRED dbus-1)
@@ -90,4 +92,11 @@ option(OTBR_WEB "Enable Web GUI" OFF)
 option(OTBR_NOTIFY_UPSTART "Notify upstart when ready." ON)
 if(OTBR_NOTIFY_UPSTART)
     target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_NOTIFY_UPSTART=1)
+endif()
+
+option(OTBR_VENDOR_INFRA_LINK_SELECT "Enable Vendor-specific infrastructure link selection rules" OFF)
+if(OTBR_VENDOR_INFRA_LINK_SELECT)
+    target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_VENDOR_INFRA_LINK_SELECT=1)
+else()
+    target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_VENDOR_INFRA_LINK_SELECT=0)
 endif()

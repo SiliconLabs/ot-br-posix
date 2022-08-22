@@ -576,6 +576,49 @@ struct DnssdCounters
     uint32_t mResolvedBySrp; ///< The number of queries completely resolved by the local SRP server
 };
 
+struct RadioSpinelMetrics
+{
+    uint32_t mRcpTimeoutCount;         ///< The number of RCP timeouts.
+    uint32_t mRcpUnexpectedResetCount; ///< The number of RCP unexcepted resets.
+    uint32_t mRcpRestorationCount;     ///< The number of RCP restorations.
+    uint32_t mSpinelParseErrorCount;   ///< The number of spinel frame parse errors.
+};
+
+struct RcpInterfaceMetrics
+{
+    uint8_t  mRcpInterfaceType;             ///< The RCP interface type.
+    uint64_t mTransferredFrameCount;        ///< The number of transferred frames.
+    uint64_t mTransferredValidFrameCount;   ///< The number of transferred valid frames.
+    uint64_t mTransferredGarbageFrameCount; ///< The number of transferred garbage frames.
+    uint64_t mRxFrameCount;                 ///< The number of received frames.
+    uint64_t mRxFrameByteCount;             ///< The number of received bytes.
+    uint64_t mTxFrameCount;                 ///< The number of transmitted frames.
+    uint64_t mTxFrameByteCount;             ///< The number of transmitted bytes.
+};
+
+struct RadioCoexMetrics
+{
+    uint32_t mNumGrantGlitch;          ///< Number of grant glitches.
+    uint32_t mNumTxRequest;            ///< Number of tx requests.
+    uint32_t mNumTxGrantImmediate;     ///< Number of tx requests while grant was active.
+    uint32_t mNumTxGrantWait;          ///< Number of tx requests while grant was inactive.
+    uint32_t mNumTxGrantWaitActivated; ///< Number of tx requests while grant was inactive that were ultimately granted.
+    uint32_t mNumTxGrantWaitTimeout;   ///< Number of tx requests while grant was inactive that timed out.
+    uint32_t mNumTxGrantDeactivatedDuringRequest; ///< Number of tx that were in progress when grant was deactivated.
+    uint32_t mNumTxDelayedGrant;                  ///< Number of tx requests that were not granted within 50us.
+    uint32_t mAvgTxRequestToGrantTime;            ///< Average time in usec from tx request to grant.
+    uint32_t mNumRxRequest;                       ///< Number of rx requests.
+    uint32_t mNumRxGrantImmediate;                ///< Number of rx requests while grant was active.
+    uint32_t mNumRxGrantWait;                     ///< Number of rx requests while grant was inactive.
+    uint32_t mNumRxGrantWaitActivated; ///< Number of rx requests while grant was inactive that were ultimately granted.
+    uint32_t mNumRxGrantWaitTimeout;   ///< Number of rx requests while grant was inactive that timed out.
+    uint32_t mNumRxGrantDeactivatedDuringRequest; ///< Number of rx that were in progress when grant was deactivated.
+    uint32_t mNumRxDelayedGrant;                  ///< Number of rx requests that were not granted within 50us.
+    uint32_t mAvgRxRequestToGrantTime;            ///< Average time in usec from rx request to grant.
+    uint32_t mNumRxGrantNone;                     ///< Number of rx requests that completed without receiving grant.
+    bool     mStopped;                            ///< Stats collection stopped due to saturation.
+};
+
 } // namespace DBus
 } // namespace otbr
 
