@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hostregistration_837',['HostRegistration',['../d4/d91/classotbr_1_1Mdns_1_1Publisher_1_1HostRegistration.html',1,'otbr::Mdns::Publisher']]]
+  ['hostregistration_838',['HostRegistration',['../d4/d91/classotbr_1_1Mdns_1_1Publisher_1_1HostRegistration.html',1,'otbr::Mdns::Publisher']]]
 ];
