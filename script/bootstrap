@@ -33,7 +33,7 @@
 # shellcheck source=script/_initrc
 . "$(dirname "$0")"/_initrc
 
-NAT64_SERVICE="${NAT64_SERVICE:-tayga}"
+NAT64_SERVICE="${NAT64_SERVICE:-openthread}"
 
 install_packages_apt()
 {
@@ -58,8 +58,9 @@ install_packages_apt()
     sudo apt-get install --no-install-recommends -y libavahi-client3 libavahi-common-dev libavahi-client-dev avahi-daemon
     (MDNS_RESPONDER_SOURCE_NAME=mDNSResponder-1310.80.1 \
         && cd /tmp \
-        && wget -4 --no-check-certificate https://opensource.apple.com/tarballs/mDNSResponder/$MDNS_RESPONDER_SOURCE_NAME.tar.gz \
-        && tar xvf $MDNS_RESPONDER_SOURCE_NAME.tar.gz \
+        && wget -4 --no-check-certificate https://github.com/apple-oss-distributions/mDNSResponder/archive/refs/tags/$MDNS_RESPONDER_SOURCE_NAME.tar.gz \
+        && mkdir -p $MDNS_RESPONDER_SOURCE_NAME \
+        && tar xvf $MDNS_RESPONDER_SOURCE_NAME.tar.gz -C $MDNS_RESPONDER_SOURCE_NAME --strip-components=1 \
         && cd /tmp/$MDNS_RESPONDER_SOURCE_NAME/Clients \
         && sed -i '/#include <ctype.h>/a #include <stdarg.h>' dns-sd.c \
         && sed -i '/#include <ctype.h>/a #include <sys/param.h>' dns-sd.c \
@@ -109,6 +110,9 @@ install_packages_apt()
 
     # firewall
     sudo apt-get install -y iptables ipset
+
+    # protobuf compiler
+    sudo apt-get install -y libprotobuf-dev protobuf-compiler
 }
 
 install_packages_opkg()
@@ -132,6 +136,7 @@ install_packages_rpm()
     sudo $PM install -y iptables
     sudo $PM install -y jsoncpp-devel
     sudo $PM install -y wget
+    sudo $PM install -y protobuf protobuf-devel
 }
 
 install_packages_brew()

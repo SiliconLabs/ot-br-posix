@@ -1,5 +1,6 @@
+#!/bin/bash
 #
-#  Copyright (c) 2021, The OpenThread Authors.
+#  Copyright (c) 2022, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -26,32 +27,6 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-name: macOS
+set -euxo pipefail
 
-on:
-  push:
-    branches-ignore:
-      - 'dependabot/**'
-  pull_request:
-    branches:
-      - 'main'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || (github.repository == 'openthread/ot-br-posix' && github.run_id) || github.ref }}
-  cancel-in-progress: true
-
-jobs:
-  build-check:
-    runs-on: macos-12
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: true
-    - name: Bootstrap
-      run: |
-        rm -f '/usr/local/bin/2to3'
-        brew update
-        brew reinstall boost cmake cpputest dbus jsoncpp ninja protobuf
-    - name: Build
-      run: |
-        OTBR_OPTIONS='-DOTBR_BORDER_AGENT=OFF -DOTBR_MDNS=OFF -DOT_FIREWALL=OFF -DOTBR_DBUS=OFF' ./script/test build
+while "$@"; do :; done
