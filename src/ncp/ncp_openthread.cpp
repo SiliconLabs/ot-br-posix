@@ -37,6 +37,7 @@
 #include <openthread/backbone_router_ftd.h>
 #include <openthread/dataset.h>
 #include <openthread/logging.h>
+#include <openthread/nat64.h>
 #include <openthread/srp_server.h>
 #include <openthread/tasklet.h>
 #include <openthread/thread.h>
@@ -49,6 +50,9 @@
 #include "common/code_utils.hpp"
 #include "common/logging.hpp"
 #include "common/types.hpp"
+#if OTBR_ENABLE_FEATURE_FLAGS
+#include "proto/feature_flag.pb.h"
+#endif
 
 #if OTBR_ENABLE_LEGACY
 #include <ot-legacy-pairing-ext.h>
@@ -174,12 +178,28 @@ void ControllerOpenThread::Init(void)
 #if OTBR_ENABLE_SRP_ADVERTISING_PROXY
     otSrpServerSetEnabled(mInstance, /* aEnabled */ true);
 #endif
+#if OTBR_ENABLE_NAT64
+    otNat64SetEnabled(mInstance, /* aEnabled */ true);
+#endif
 
     mThreadHelper = std::unique_ptr<otbr::agent::ThreadHelper>(new otbr::agent::ThreadHelper(mInstance, this));
 
 exit:
     SuccessOrDie(error, "Failed to initialize NCP!");
 }
+
+#if OTBR_ENABLE_FEATURE_FLAGS
+otError ControllerOpenThread::ApplyFeatureFlagList(const FeatureFlagList &aFeatureFlagList)
+{
+    otError error = OT_ERROR_NONE;
+    // Save a cached copy of feature flags for debugging purpose.
+    mAppliedFeatureFlagListBytes = aFeatureFlagList.SerializeAsString();
+
+    // TODO: apply the feature flags through API.
+
+    return error;
+}
+#endif
 
 void ControllerOpenThread::Deinit(void)
 {

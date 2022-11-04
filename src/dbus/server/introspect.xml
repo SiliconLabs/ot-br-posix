@@ -215,6 +215,10 @@
       <arg name="properties" type="as" direction="in"/>
     </method>
 
+    <!-- LeaveNetwork: Detach from the network and forget the credentials. -->
+    <method name="LeaveNetwork">
+    </method>
+
     <!-- MeshLocalPrefix: The /64 mesh-local prefix.  -->
     <property name="MeshLocalPrefix" type="ay" access="readwrite">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
@@ -517,6 +521,12 @@
 
     <!-- ActiveDatasetTlvs: The Thread active dataset tlv in binary form. -->
     <property name="ActiveDatasetTlvs" type="ay" access="readwrite">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+     <!-- FeatureFlagListData: The Thread feature flags (defined as proto/feature_flag.proto)
+      in binary form. -->
+    <property name="FeatureFlagListData" type="ay" access="readwrite">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 

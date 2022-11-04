@@ -49,6 +49,11 @@ if(OTBR_DBUS)
     target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_DBUS_SERVER=1)
 endif()
 
+option(OTBR_FEATURE_FLAGS "Enable feature flags support" OFF)
+if (OTBR_FEATURE_FLAGS)
+    target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_FEATURE_FLAGS=1)
+endif()
+
 option(OTBR_DUA_ROUTING "Enable Backbone Router DUA Routing" OFF)
 if (OTBR_DUA_ROUTING)
     target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_DUA_ROUTING=1)
@@ -90,6 +95,11 @@ option(OTBR_WEB "Enable Web GUI" OFF)
 option(OTBR_NOTIFY_UPSTART "Notify upstart when ready." ON)
 if(OTBR_NOTIFY_UPSTART)
     target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_NOTIFY_UPSTART=1)
+endif()
+
+option(OTBR_NAT64 "Enable NAT64 support" OFF)
+if(OTBR_NAT64)
+    target_compile_definitions(otbr-config INTERFACE OTBR_ENABLE_NAT64=1)
 endif()
 
 option(OTBR_VENDOR_INFRA_LINK_SELECT "Enable Vendor-specific infrastructure link selection rules" OFF)
