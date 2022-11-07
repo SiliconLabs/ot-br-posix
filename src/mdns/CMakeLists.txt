@@ -26,6 +26,7 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
+
 if(OTBR_MDNS STREQUAL "avahi")
     add_library(otbr-mdns
         mdns.cpp
@@ -45,6 +46,8 @@ if(OTBR_MDNS STREQUAL "avahi")
 endif()
 
 if(OTBR_MDNS STREQUAL "mDNSResponder")
+    include(mDNSResponder.cmake)
+
     add_library(otbr-mdns
         mdns.cpp
         mdns_mdnssd.cpp
@@ -57,6 +60,6 @@ if(OTBR_MDNS STREQUAL "mDNSResponder")
             otbr-common
         PRIVATE
             otbr-utils
-            dns_sd
+            mdnssd
     )
 endif()
