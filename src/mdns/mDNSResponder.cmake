@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2022, The OpenThread Authors.
+#  Copyright (c) 2023, The OpenThread Authors.
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -30,29 +30,38 @@ cmake_minimum_required(VERSION 3.11.4)
 set(MDNS_RESPONDER_SOURCE_NAME mDNSResponder-1310.80.1)
 include(FetchContent)
 
-# set(my_LIBRARY ${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}my${CMAKE_STATIC_LIBRARY_SUFFIX})
-find_program(SED NAMES gsed sed)
-execute_process(
-    COMMAND ${SED} --version
-    RESULT_VARIABLE ret
-    OUTPUT_VARIABLE out
-)
+function(check_gnu_sed is_gnu_sed candidate_executable)
 
-if (NOT (ret EQUAL "0" AND out MATCHES ".*(GNU sed).*"))
-    message(FATAL_ERROR
-        "GNU sed is required\n"
-        "Try installing using `brew`:\n"
-        "    brew install gnu-sed\n\n")
-endif()
+    # Check if the candidate can return a version string that contains "GNU"
+    execute_process(
+        COMMAND ${candidate_executable} --version | grep GNU
+        RESULT_VARIABLE result
+        OUTPUT_VARIABLE FOO)
+    if(NOT result EQUAL 0)
+        # Candidate is not GNU sed
+        set(${is_gnu_sed} FALSE PARENT_SCOPE)
+        message("${candidate_executable} is NOT GNU sed ")
+    else()
+        set(${is_gnu_sed} TRUE PARENT_SCOPE)
+    endif()
+endfunction()
+
+message(STATUS "Detecting GNU sed")
+find_program(GNU_SED_EXE
+    NAMES gsed sed
+    VALIDATOR check_gnu_sed
+    REQUIRED TRUE
+)
+message(STATUS "Detecting GNU sed - done")
+message(STATUS "Using GNU sed: ${GNU_SED_EXE}")
 
 FetchContent_Declare(mDNSResponder
     DOWNLOAD_DIR        ${PROJECT_BINARY_DIR}/mDNSResponder
     TLS_VERIFY          OFF
     URL                 https://github.com/apple-oss-distributions/mDNSResponder/archive/refs/tags/${MDNS_RESPONDER_SOURCE_NAME}.tar.gz
     PATCH_COMMAND       cd Clients
-    COMMAND             ${SED} -i "/#include <ctype.h>/a #include <stdarg.h>" dns-sd.c
-    COMMAND             ${SED} -i "/#include <ctype.h>/a #include <sys/param.h>" dns-sd.c
-    COMMAND             mkdir -p ${CMAKE_SYSROOT}/lib ${CMAKE_SYSROOT}/include
+    COMMAND             ${GNU_SED_EXE} -i "/#include <ctype.h>/a #include <stdarg.h>" dns-sd.c
+    COMMAND             ${GNU_SED_EXE} -i "/#include <ctype.h>/a #include <sys/param.h>" dns-sd.c
     LOG_DOWNLOAD 1
     LOG_UPDATE 1
     LOG_CONFIGURE 1
