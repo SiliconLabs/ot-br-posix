@@ -65,11 +65,15 @@ readonly OTBR_TOP_BUILD_DIR="${BUILD_DIR}/otbr"
 
 OTBR_TARGET=${OTBR_TARGET:-}
 
+
 main()
 {
     # build configuration
     OTBR_TARGET="ot-ctl otbr-agent ot-daemon"
     OTBR_MDNS=mDNSResponder
+
+
+    OTBR_OPTIONS="-DOT_MULTIPAN_RCP=ON -DOT_POSIX_CONFIG_RCP_BUS=CPC"
 
     # Create builddir
     builddir="${OTBR_BUILD_DIR:-${OTBR_TOP_BUILD_DIR}}"
@@ -80,20 +84,22 @@ main()
     (
         cd "${builddir}" || die "Failed to enter ${builddir}"
 
-        cmake \
-            -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
-            -DANDROID_ABI=arm64-v8a \
-            -DANDROID_PLATFORM=android-26 \
-            -DOT_ANDROID_NDK=1 \
-            -DOTBR_DBUS=OFF \
-            -DOTBR_MDNS=mDNSResponder \
-            -DBUILD_TESTING=OFF \
-            -DOT_DAEMON=ON \
-            -DOT_APP_CLI=ON \
-            -DOT_PLATFORM=posix \
-            -GNinja \
-            "${OTBR_TOP_SRCDIR}" \
-            "$@"
+        REFERENCE_DEVICE=1 BACKBONE_ROUTER=1 OT_BACKBONE_CI=1 \
+            cmake \
+                -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
+                -DANDROID_ABI=arm64-v8a \
+                -DANDROID_PLATFORM=android-26 \
+                -DOT_ANDROID_NDK=1 \
+                -DOTBR_DBUS=OFF \
+                -DOTBR_MDNS=mDNSResponder \
+                -DBUILD_TESTING=OFF \
+                -DOT_DAEMON=ON \
+                -DOT_APP_CLI=ON \
+                -DOT_PLATFORM=posix \
+                ${OTBR_OPTIONS[@]} \
+                -GNinja \
+                "${OTBR_TOP_SRCDIR}" \
+                "$@"
 
         if [[ -n ${OTBR_TARGET[*]} ]]; then
             ninja ${OTBR_TARGET[@]}
