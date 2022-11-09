@@ -1,0 +1,123 @@
+#!/bin/bash
+#
+#  Copyright (c) 2022, The OpenThread Authors.
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#  3. Neither the name of the copyright holder nor the
+#     names of its contributors may be used to endorse or promote products
+#     derived from this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+#  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+#  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+#  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+#  POSSIBILITY OF SUCH DAMAGE.
+#
+
+#
+#  This script calls cmake and ninja to compile otbr-agent.
+#
+#  Compile with default build options:
+#
+#      script/cmake-build-android
+#
+#  Compile with the specified build option enabled:
+#
+#      script/cmake-build-android -D${option}=ON
+#
+#  Compile with the specified ninja build target:
+#
+#      OTBR_TARGET="${target}" script/cmake-build-android
+#
+#  Compile with the specified build directory:
+#
+#      OTBR_BUILD_DIR="./build/temp" script/cmake-build-android
+#
+#  Examples:
+#
+#      script/cmake-build-android
+#
+#      script/cmake-build-android -DOTBR_DBUS=ON
+#
+#      OTBR_BUILD_DIR="./build/temp" OTBR_TARGET="otbr-agent" script/cmake-build-android -DOTBR_DBUS=ON
+#
+
+set -euxo pipefail
+
+# shellcheck source=script/_initrc
+. "$(dirname "$0")"/_initrc
+
+readonly OTBR_TOP_SRCDIR="$PWD"
+readonly OTBR_TOP_BUILD_DIR="${BUILD_DIR}/otbr"
+
+OTBR_TARGET=${OTBR_TARGET:-}
+
+
+main()
+{
+    # build configuration
+    OTBR_TARGET="ot-ctl otbr-agent"
+    OTBR_MDNS=mDNSResponder
+
+    CMAKE_FLAGS=""
+    CMAKE_FLAGS+=" -DOTBR_DBUS=OFF"
+    CMAKE_FLAGS+=" -DOTBR_MDNS=$OTBR_MDNS"
+    CMAKE_FLAGS+=" -DBUILD_TESTING=OFF"
+    CMAKE_FLAGS+=" -DOT_PLATFORM=posix"
+
+    # Create builddir
+    builddir="${OTBR_BUILD_DIR:-${OTBR_TOP_BUILD_DIR}}"
+    mkdir -p "${builddir}"
+
+    if [ ! -z "${NDK+x}" ]; then
+        CMAKE_FLAGS+=" -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake"
+        CMAKE_FLAGS+=" -DANDROID_ABI=arm64-v8a"
+        CMAKE_FLAGS+=" -DANDROID_PLATFORM=android-26"
+        CMAKE_FLAGS+=" -DOT_ANDROID_NDK=1"
+    fi
+
+    (
+        cd "${builddir}" || die "Failed to enter ${builddir}"
+
+        cmake \
+            ${CMAKE_FLAGS} \
+            -GNinja \
+            "${OTBR_TOP_SRCDIR}" \
+            "$@"
+
+        if [[ -n ${OTBR_TARGET[*]} ]]; then
+            ninja ${OTBR_TARGET[@]}
+        else
+            ninja
+        fi
+    )
+}
+
+main "$@"
+
+# rm -rf build && NDK=/opt/android-ndk/android-ndk-r25b  ./script/cmake-build-android -DOTBR_DBUS=OFF -DOT_ANDROID_NDK=1
+
+
+# docker run --rm --env OTBR_MDNS=mDNSResponder \
+#     -v $PWD:/build/ot-br-posix \
+#     -v $PWD/third_party/openthread/repo:/build/external/openthread \
+#     openthread/android-trusty \
+#     bash -c "BUILD_TARGET=android-check ot-br-posix/tests/scripts/bootstrap.sh && ot-br-posix/tests/scripts/check-android-build"
+
+
+
+
+
