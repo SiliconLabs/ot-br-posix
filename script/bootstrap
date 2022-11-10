@@ -35,6 +35,27 @@
 
 NAT64_SERVICE="${NAT64_SERVICE:-openthread}"
 
+install_cmake()
+{
+    local export CMAKE_VERSION=3.24.3
+
+    case "${OSTYPE}" in
+        darwin*)
+            brew install cmake@"${CMAKE_VERSION}"
+            ;;
+        linux*)
+            pushd /tmp/
+            wget https://github.com/Kitware/CMake/releases/download/v"${CMAKE_VERSION}"/cmake-"${CMAKE_VERSION}"-linux-x86_64.sh \
+                && chmod +x cmake-"${CMAKE_VERSION}"-linux-x86_64.sh \
+                && sudo ./cmake-"${CMAKE_VERSION}"-linux-x86_64.sh --skip-license --prefix=/
+            popd
+            ;;
+    esac
+
+    # Check that the cmake command matches the desired version
+    cmake --version | grep "${CMAKE_VERSION}"
+}
+
 install_packages_apt()
 {
     sudo apt-get update
@@ -45,7 +66,7 @@ install_packages_apt()
         libreadline-dev \
         libncurses-dev
 
-    sudo apt-get install --no-install-recommends -y build-essential ninja-build cmake
+    sudo apt-get install --no-install-recommends -y build-essential ninja-build
 
     with RELEASE || sudo apt-get install --no-install-recommends -y libcpputest-dev
 
@@ -128,7 +149,7 @@ install_packages_rpm()
         PM=yum
     fi
     sudo $PM install -y gcc gcc-c++
-    with RELEASE || sudo $PM install -y cmake ninja-build
+    with RELEASE || sudo $PM install -y ninja-build
     sudo $PM install -y dbus-devel
     sudo $PM install -y avahi avahi-devel
     sudo $PM install -y boost-devel boost-filesystem boost-system
@@ -141,7 +162,7 @@ install_packages_rpm()
 
 install_packages_brew()
 {
-    brew install boost cmake cpputest dbus jsoncpp ninja gnu-sed
+    brew install boost cpputest dbus jsoncpp ninja gnu-sed
 }
 
 install_packages_source()
@@ -170,6 +191,7 @@ main()
     # TODO remove `|| true` after docker hub builder gets its git upgraded
     git submodule update --init --recursive --depth 1 || true
     install_packages
+    install_cmake
     . "$AFTER_HOOK"
 }
 
