@@ -134,8 +134,9 @@ case "$(uname)" in
 
         if [ "${OTBR_MDNS-}" == 'mDNSResponder' ]; then
             SOURCE_NAME=mDNSResponder-878.30.4
-            wget https://opensource.apple.com/tarballs/mDNSResponder/$SOURCE_NAME.tar.gz \
-                && tar xvf $SOURCE_NAME.tar.gz \
+            wget https://github.com/apple-oss-distributions/mDNSResponder/archive/refs/tags/$SOURCE_NAME.tar.gz \
+                && mkdir -p $SOURCE_NAME \
+                && tar xvf $SOURCE_NAME.tar.gz -C $SOURCE_NAME --strip-components=1 \
                 && cd $SOURCE_NAME/mDNSPosix \
                 && make os=linux && sudo make install os=linux
         fi
