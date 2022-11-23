@@ -26,8 +26,7 @@
 #
 
 ARG BASE_IMAGE=ubuntu:bionic
-ARG OTBR_FLAVOR="vanilla"
-FROM ${BASE_IMAGE} AS ot-br-posix-base
+FROM ${BASE_IMAGE}
 
 ARG INFRA_IF_NAME
 ARG BORDER_ROUTING
@@ -94,15 +93,6 @@ RUN apt-get update \
 # ot-br-posix bootstrap
 COPY ./ot-br-posix/script /app/script
 RUN ./script/bootstrap
-
-FROM ot-br-posix-base AS build_cpc
-ONBUILD ENV CPCD_SOURCE_DIR /cpc/daemon
-ONBUILD ENV OTBR_OPTIONS="${OTBR_OPTIONS} -DCPCD_SOURCE_DIR=${CPCD_SOURCE_DIR}"
-ONBUILD COPY cpc-daemon ${CPCD_SOURCE_DIR}
-
-FROM ot-br-posix-base AS build_vanilla
-
-FROM build_${OTBR_FLAVOR}
 
 # Copy the full repos after successful bootstrap.
 COPY ./ot-br-posix /app
