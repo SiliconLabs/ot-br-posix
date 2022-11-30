@@ -63,8 +63,6 @@ ENV DOCKER 1
 
 RUN env
 
-COPY ./ot-br-posix /app
-COPY ./openthread /openthread
 WORKDIR /app
 
 # Required during build or run
@@ -86,25 +84,37 @@ ENV OTBR_OT_BACKBONE_CI_DEPS curl lcov wget build-essential
 ENV OTBR_NORELEASE_DEPS \
   cpputest-dev
 
+# Install deps specified by ENV vars
 RUN apt-get update \
   && apt-get install --no-install-recommends -y $OTBR_DOCKER_REQS $OTBR_DOCKER_DEPS \
   && ([ "${OT_BACKBONE_CI}" != "1" ] || apt-get install --no-install-recommends -y $OTBR_OT_BACKBONE_CI_DEPS) \
-  && ln -fs /usr/share/zoneinfo/UTC /etc/localtime \
-  && ./script/bootstrap \
-  && ./script/setup \
+  && ln -fs /usr/share/zoneinfo/UTC /etc/localtime
+
+# ot-br-posix bootstrap
+COPY ./ot-br-posix/script /app/script
+RUN ./script/bootstrap
+
+# Copy the full repos after successful bootstrap.
+COPY ./ot-br-posix /app
+RUN rm -rf /app/third_party/openthread/repo
+COPY ./openthread /app/third_party/openthread/repo
+
+# OTBR setup
+# - NOTE: Doing this separately from the bootstrap above allows iterating way faster when developing
+RUN ./script/setup \
   && ([ "${DNS64}" = "0" ] || chmod 644 /etc/bind/named.conf.options) \
   && ([ "${OT_BACKBONE_CI}" = "1" ] || ( \
-    mv ./script /tmp \
-    && mv ./etc /tmp \
-    && find . -delete \
-    && rm -rf /usr/include \
-    && mv /tmp/script . \
-    && mv /tmp/etc . \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $OTBR_DOCKER_DEPS \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $OTBR_BUILD_DEPS  \
-    && ([ "${RELEASE}" = 1 ] ||  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false "$OTBR_NORELEASE_DEPS";) \
-    && rm -rf /var/lib/apt/lists/* \
-  ))
+  mv ./script /tmp \
+  && mv ./etc /tmp \
+  && find . -delete \
+  && rm -rf /usr/include \
+  && mv /tmp/script . \
+  && mv /tmp/etc . \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $OTBR_DOCKER_DEPS \
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $OTBR_BUILD_DEPS  \
+  && ([ "${RELEASE}" = 1 ] ||  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false "$OTBR_NORELEASE_DEPS";) \
+  && rm -rf /var/lib/apt/lists/* \
+))
 
 ENTRYPOINT ["/app/etc/docker/docker_entrypoint.sh"]
 
