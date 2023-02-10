@@ -219,13 +219,12 @@
     <method name="LeaveNetwork">
     </method>
 
+    <method name="SetNat64Enabled">
+      <arg name="enable" type="b" direction="in"/>
+    </method>
+
     <!-- MeshLocalPrefix: The /64 mesh-local prefix.  -->
     <property name="MeshLocalPrefix" type="ay" access="readwrite">
-      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
-    </property>
-
-    <!-- LegacyULAPrefix: The /64 legacy prefix.  -->
-    <property name="LegacyULAPrefix" type="ay" access="readwrite">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 
@@ -344,6 +343,11 @@
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 
+    <!-- LinkPreferredChannelMask: The bitwise link preferred channel mask -->
+    <property name="LinkPreferredChannelMask" type="u" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
     <!-- Rloc16: The 16-bit routing locator -->
     <property name="Rloc16" type="q" access="read">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
@@ -448,6 +452,7 @@
           int8_t   mLastRssi;          // Last observed RSSI
           uint16_t mFrameErrorRate;    // Frame error rate (0xffff->100%). Requires error tracking feature.
           uint16_t mMessageErrorRate;  // (IPv6) msg error rate (0xffff->100%). Requires error tracking feature.
+          uint16_t mVersion;           // Thread version of the neighbor
           bool     mRxOnWhenIdle;      // rx-on-when-idle
           bool     mFullThreadDevice;  // Full Thread Device
           bool     mFullNetworkData;   // Full Network Data
@@ -455,7 +460,7 @@
         }
       </literallayout>
     -->
-    <property name="NeighborTable" type="a(tuquuyyyqqbbbb)" access="read">
+    <property name="NeighborTable" type="a(tuquuyyyqqqbbbb)" access="read">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 
@@ -598,6 +603,8 @@
             uint32 duplicated
             uint32 not_implemented
             uint32 unknown_error
+            uint32 aborted
+            uint32 invalid_state
           }
           struct {  // service registration responses
             uint32 success
@@ -606,6 +613,8 @@
             uint32 duplicated
             uint32 not_implemented
             uint32 unknown_error
+            uint32 aborted
+            uint32 invalid_state
           }
           struct {  // host resolution responses
             uint32 success
@@ -614,6 +623,8 @@
             uint32 duplicated
             uint32 not_implemented
             uint32 unknown_error
+            uint32 aborted
+            uint32 invalid_state
           }
           struct {  // service resolution responses
             uint32 success
@@ -622,6 +633,8 @@
             uint32 duplicated
             uint32 not_implemented
             uint32 unknown_error
+            uint32 aborted
+            uint32 invalid_state
           }
           uint32 host_registration_ema_latency
           uint32 service_registration_ema_latency
@@ -630,7 +643,7 @@
         }
       </literallayout>
     -->
-    <property name="MdnsTelemetryInfo" type="(uuuuuu)(uuuuuu)(uuuuuu)(uuuuuu)uuuu" access="read">
+    <property name="MdnsTelemetryInfo" type="(uuuuuuuu)(uuuuuuuu)(uuuuuuuu)(uuuuuuuu)uuuu" access="read">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 
@@ -717,6 +730,183 @@
       </literallayout>
     -->
     <property name="RadioCoexMetrics" type="(uuuuuuuuuuuuuuuuuub)" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- Nat64State: The state of NAT64
+    <literallayout>
+        struct {
+            string mPrefixManagerState;
+            string mTranslatorState;
+        }
+    </literallayout>
+    -->
+    <property name="Nat64State" type="(ss)" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- Nat64Mappings: The state of NAT64
+    <literallayout>
+        struct
+        {
+          uint64_t  mId;              // The unique id for a mapping session.
+          uint8_t[] mIp4;             // The IPv4 address of the mapping.
+          uint8_t[] mIp6;             // The IPv6 address of the mapping.
+          uint32_t  mRemainingTimeMs; // Remaining time before expiry in milliseconds.
+          struct
+          {
+            struct
+            {
+              uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+              uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+              uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+              uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+            } mTotal;                // Counters for sum of all protocols.
+            struct
+            {
+              uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+              uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+              uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+              uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+            } mIcmp;                 // Counters for ICMP and ICMPv6.
+            struct
+            {
+              uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+              uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+              uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+              uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+            } mUdp;                  // Counters for UDP.
+            struct
+            {
+              uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+              uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+              uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+              uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+            } mTcp;                  // Counters for TCP.
+          } mCounters;
+        }[]
+    </literallayout>
+    -->
+    <property name="Nat64Mappings" type="a(tayayu((tttt)(tttt)(tttt)(tttt)))" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- Nat64ProtocolCounters: The state of NAT64
+    <literallayout>
+        struct
+        {
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+            uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+          } mTotal;                // Counters for sum of all protocols.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+            uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+          } mIcmp;                 // Counters for ICMP and ICMPv6.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+            uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+          } mUdp;                  // Counters for UDP.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m4To6Bytes;   // Sum of size of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+            uint64_t m6To4Bytes;   // Sum of size of packets translated from IPv6 to IPv4.
+          } mTcp;                  // Counters for TCP.
+        }
+    </literallayout>
+    -->
+    <property name="Nat64ProtocolCounters" type="((tttt)(tttt)(tttt)(tttt))" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- Nat64ErrorCounters: The state of NAT64
+    <literallayout>
+        struct
+        {
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+          } mUnknown;              // Packet drop for unknown reasons.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+          } mIllegalPacket;        // Packet drop due to failed to parse the datagram.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+          } mUnsupportedProto;     // Packet drop due to unsupported IP protocol.
+          struct
+          {
+            uint64_t m4To6Packets; // Number of packets translated from IPv4 to IPv6.
+            uint64_t m6To4Packets; // Number of packets translated from IPv6 to IPv4.
+          } mNoMapping;            // Packet drop due to no mappings found or mapping pool exhausted.
+        }
+    </literallayout>
+    -->
+    <property name="Nat64ErrorCounters" type="((tt)(tt)(tt)(tt))" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- BorderRoutingCounters: The counters for inbound/outbound packets
+    <literallayout>
+        struct {
+          struct {  // inbound unicast
+            uint64 packets
+            uint64 bytes
+          }
+          struct {  // inbound multicast
+            uint64 packets
+            uint64 bytes
+          }
+          struct {  // outbound unicast
+            uint64 packets
+            uint64 bytes
+          }
+          struct {  // outbound multicast
+            uint64 packets
+            uint64 bytes
+          }
+          uint32  ra_rx;              // The number of received RA packets.
+          uint32  ra_tx_success;      // The number of RA packets successfully transmitted.
+          uint32  ra_tx_failure;      // The number of RA packets failed to transmit.
+          uint32  rs_rx;              // The number of received RS packets.
+          uint32  rs_tx_success;      // The number of RS packets successfully transmitted.
+          uint32  rs_tx_failure;      // The number of RS packets failed to transmit.
+        }
+    </literallayout>
+    -->
+    <property name="BorderRoutingCounters" type="((tt)(tt)(tt)(tt)uuuuuu)" access="read">
+      <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+    </property>
+
+    <!-- InfraLinkInfo: Information of infrastructure network interface.
+    <literallayout>
+        struct {
+          string name;                     // The name of the infrastructure network interface.
+          bool   is_up;                    // Whether the infrastructure network interface is up.
+          bool   is_running;               // Whether the infrastructure network interface is running.
+          bool   is_multicast;             // Whether the infrastructure network interface is multicast.
+          uint32 link_local_addresses      // The number of link-local addresses on the infra network interface.
+          uint32 unique_local_addresses    // The number of unique local addresses on the infra network interface.
+          uint32 global_unicast_addresses  // The number of global unicast addresses on the infra network interface.
+        }
+    </literallayout>
+    -->
+    <property name="InfraLinkInfo" type="(sbbbuuu)" access="read">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
     </property>
 

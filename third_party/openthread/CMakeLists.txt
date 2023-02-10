@@ -29,13 +29,13 @@
 set(OT_BORDER_AGENT ON CACHE BOOL "enable border agent" FORCE)
 set(OT_BORDER_ROUTER ON CACHE BOOL "enable border router feature" FORCE)
 set(OT_BORDER_ROUTING ${OTBR_BORDER_ROUTING} CACHE BOOL "enable border routing feature" FORCE)
+set(OT_BORDER_ROUTING_COUNTERS ${OTBR_BORDER_ROUTING_COUNTERS} CACHE BOOL "enable border routing counters feature" FORCE)
 set(OT_BUILD_EXECUTABLES OFF CACHE BOOL "disable building executables" FORCE)
 set(OT_BUILTIN_MBEDTLS_MANAGEMENT OFF CACHE BOOL "diable mbedTLS management" FORCE)
 set(OT_COMMISSIONER ON CACHE BOOL "enable commissioner")
 set(OT_DAEMON ON CACHE BOOL "enable daemon mode" FORCE)
 set(OT_FIREWALL ON CACHE BOOL "enable firewall feature")
 set(OT_JOINER ON CACHE BOOL "enable joiner" FORCE)
-set(OT_LEGACY ON CACHE STRING "enable legacy network support" FORCE)
 if (NOT OT_THREAD_VERSION EQUAL "1.1")
     set(OT_LINK_METRICS_SUBJECT ON CACHE BOOL "enable link metrics subject" FORCE)
 endif()
@@ -100,6 +100,7 @@ target_compile_definitions(ot-config INTERFACE
     "-DOPENTHREAD_CONFIG_MAX_STATECHANGE_HANDLERS=3"
     "-DOPENTHREAD_CONFIG_MLE_STEERING_DATA_SET_OOB_ENABLE=1"
     "-DOPENTHREAD_CONFIG_TCP_ENABLE=0"
+    "-DOPENTHREAD_POSIX_CONFIG_FILE=\"${PROJECT_SOURCE_DIR}/src/agent/openthread-otbr-posix-config.h\""
 )
 
 if (NOT OT_THREAD_VERSION STREQUAL "1.1")
