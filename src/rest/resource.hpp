@@ -113,6 +113,7 @@ private:
     void Rloc16(const Request &aRequest, Response &aResponse) const;
     void ExtendedPanId(const Request &aRequest, Response &aResponse) const;
     void Rloc(const Request &aRequest, Response &aResponse) const;
+    void ActiveDatasetTlvs(const Request &aRequest, Response &aResponse) const;
     void Diagnostic(const Request &aRequest, Response &aResponse) const;
     void HandleDiagnosticCallback(const Request &aRequest, Response &aResponse);
 
@@ -125,17 +126,19 @@ private:
     void GetDataRloc16(Response &aResponse) const;
     void GetDataExtendedPanId(Response &aResponse) const;
     void GetDataRloc(Response &aResponse) const;
+    void GetActiveDatasetTlvs(Response &aResponse) const;
+    void SetActiveDatasetTlvs(const Request &aRequest, Response &aResponse) const;
 
     void DeleteOutDatedDiagnostic(void);
     void UpdateDiag(std::string aKey, std::vector<otNetworkDiagTlv> &aDiag);
 
     static void DiagnosticResponseHandler(otError              aError,
-                                          otMessage *          aMessage,
+                                          otMessage           *aMessage,
                                           const otMessageInfo *aMessageInfo,
-                                          void *               aContext);
+                                          void                *aContext);
     void        DiagnosticResponseHandler(otError aError, const otMessage *aMessage, const otMessageInfo *aMessageInfo);
 
-    otInstance *          mInstance;
+    otInstance           *mInstance;
     ControllerOpenThread *mNcp;
 
     std::unordered_map<std::string, ResourceHandler>         mResourceMap;

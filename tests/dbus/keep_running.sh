@@ -29,4 +29,12 @@
 
 set -euxo pipefail
 
-while "$@"; do :; done
+EXIT_CODE_SHOULD_RESTART=7
+readonly EXIT_CODE_SHOULD_RESTART
+
+while
+    "$@"
+    (($? == EXIT_CODE_SHOULD_RESTART))
+do
+    :
+done

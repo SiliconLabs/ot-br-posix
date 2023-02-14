@@ -49,6 +49,7 @@
 #include <sstream>
 
 #include <openthread/border_agent.h>
+#include <openthread/border_routing.h>
 #include <openthread/thread_ftd.h>
 #include <openthread/platform/toolchain.h>
 
@@ -83,18 +84,58 @@ enum
     kInvalidLocator = 0xffff, ///< invalid locator.
 };
 
-uint32_t BorderAgent::StateBitmap::ToUint32(void) const
+enum : uint8_t
 {
-    uint32_t bitmap = 0;
+    kConnectionModeDisabled = 0,
+    kConnectionModePskc     = 1,
+    kConnectionModePskd     = 2,
+    kConnectionModeVendor   = 3,
+    kConnectionModeX509     = 4,
+};
 
-    bitmap |= mConnectionMode << 0;
-    bitmap |= mThreadIfStatus << 3;
-    bitmap |= mAvailability << 5;
-    bitmap |= mBbrIsActive << 7;
-    bitmap |= mBbrIsPrimary << 8;
+enum : uint8_t
+{
+    kThreadIfStatusNotInitialized = 0,
+    kThreadIfStatusInitialized    = 1,
+    kThreadIfStatusActive         = 2,
+};
 
-    return bitmap;
-}
+enum : uint8_t
+{
+    kAvailabilityInfrequent = 0,
+    kAvailabilityHigh       = 1,
+};
+
+struct StateBitmap
+{
+    uint32_t mConnectionMode : 3;
+    uint32_t mThreadIfStatus : 2;
+    uint32_t mAvailability : 2;
+    uint32_t mBbrIsActive : 1;
+    uint32_t mBbrIsPrimary : 1;
+
+    StateBitmap(void)
+        : mConnectionMode(0)
+        , mThreadIfStatus(0)
+        , mAvailability(0)
+        , mBbrIsActive(0)
+        , mBbrIsPrimary(0)
+    {
+    }
+
+    uint32_t ToUint32(void) const
+    {
+        uint32_t bitmap = 0;
+
+        bitmap |= mConnectionMode << 0;
+        bitmap |= mThreadIfStatus << 3;
+        bitmap |= mAvailability << 5;
+        bitmap |= mBbrIsActive << 7;
+        bitmap |= mBbrIsPrimary << 8;
+
+        return bitmap;
+    }
+};
 
 BorderAgent::BorderAgent(otbr::Ncp::ControllerOpenThread &aNcp)
     : mNcp(aNcp)
@@ -205,14 +246,124 @@ static uint64_t ConvertTimestampToUint64(const otTimestamp &aTimestamp)
            static_cast<uint64_t>(aTimestamp.mAuthoritative);
 }
 
+#if OTBR_ENABLE_BORDER_ROUTING
+void AppendOmrTxtEntry(otInstance &aInstance, Mdns::Publisher::TxtList &aTxtList)
+{
+    otIp6Prefix       omrPrefix;
+    otRoutePreference preference;
+
+    if (OT_ERROR_NONE == otBorderRoutingGetFavoredOmrPrefix(&aInstance, &omrPrefix, &preference))
+    {
+        std::vector<uint8_t> omrData;
+
+        omrData.reserve(1 + OT_IP6_PREFIX_SIZE);
+        omrData.push_back(omrPrefix.mLength);
+        std::copy(omrPrefix.mPrefix.mFields.m8, omrPrefix.mPrefix.mFields.m8 + (omrPrefix.mLength + 7) / 8,
+                  std::back_inserter(omrData));
+        aTxtList.emplace_back("omr", omrData.data(), omrData.size());
+    }
+}
+#endif
+
+StateBitmap GetStateBitmap(otInstance &aInstance)
+{
+    StateBitmap state;
+
+    state.mConnectionMode = kConnectionModePskc;
+    state.mAvailability   = kAvailabilityHigh;
+
+    switch (otThreadGetDeviceRole(&aInstance))
+    {
+    case OT_DEVICE_ROLE_DISABLED:
+        state.mThreadIfStatus = kThreadIfStatusNotInitialized;
+        break;
+    case OT_DEVICE_ROLE_DETACHED:
+        state.mThreadIfStatus = kThreadIfStatusInitialized;
+        break;
+    default:
+        state.mThreadIfStatus = kThreadIfStatusActive;
+    }
+
+#if OTBR_ENABLE_BACKBONE_ROUTER
+    state.mBbrIsActive = state.mThreadIfStatus == kThreadIfStatusActive &&
+                         otBackboneRouterGetState(&aInstance) != OT_BACKBONE_ROUTER_STATE_DISABLED;
+    state.mBbrIsPrimary = state.mThreadIfStatus == kThreadIfStatusActive &&
+                          otBackboneRouterGetState(&aInstance) == OT_BACKBONE_ROUTER_STATE_PRIMARY;
+#endif
+
+    return state;
+}
+
+#if OTBR_ENABLE_BACKBONE_ROUTER
+void AppendBbrTxtEntries(otInstance &aInstance, StateBitmap aState, Mdns::Publisher::TxtList &aTxtList)
+{
+    if (aState.mBbrIsActive)
+    {
+        otBackboneRouterConfig bbrConfig;
+        uint16_t               bbrPort = htobe16(BackboneRouter::BackboneAgent::kBackboneUdpPort);
+
+        otBackboneRouterGetConfig(&aInstance, &bbrConfig);
+        aTxtList.emplace_back("sq", &bbrConfig.mSequenceNumber, sizeof(bbrConfig.mSequenceNumber));
+        aTxtList.emplace_back("bb", reinterpret_cast<const uint8_t *>(&bbrPort), sizeof(bbrPort));
+    }
+
+    aTxtList.emplace_back("dn", otThreadGetDomainName(&aInstance));
+}
+#endif
+
+void AppendActiveTimestampTxtEntry(otInstance &aInstance, Mdns::Publisher::TxtList &aTxtList)
+{
+    otError              error;
+    otOperationalDataset activeDataset;
+
+    if ((error = otDatasetGetActive(&aInstance, &activeDataset)) != OT_ERROR_NONE)
+    {
+        otbrLogWarning("Failed to get active dataset: %s", otThreadErrorToString(error));
+    }
+    else
+    {
+        uint64_t activeTimestampValue = ConvertTimestampToUint64(activeDataset.mActiveTimestamp);
+
+        activeTimestampValue = htobe64(activeTimestampValue);
+        aTxtList.emplace_back("at", reinterpret_cast<uint8_t *>(&activeTimestampValue), sizeof(activeTimestampValue));
+    }
+}
+
+#if OTBR_ENABLE_DBUS_SERVER
+void AppendVendorTxtEntries(const std::map<std::string, std::vector<uint8_t>> &aVendorEntries,
+                            Mdns::Publisher::TxtList                          &aTxtList)
+{
+    for (const auto &entry : aVendorEntries)
+    {
+        const std::string          &key   = entry.first;
+        const std::vector<uint8_t> &value = entry.second;
+        bool                        found = false;
+
+        for (auto &addedEntry : aTxtList)
+        {
+            if (addedEntry.mName == key)
+            {
+                addedEntry.mValue = value;
+                found             = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            aTxtList.emplace_back(key.c_str(), value.data(), value.size());
+        }
+    }
+}
+#endif
+
 void BorderAgent::PublishMeshCopService(void)
 {
     StateBitmap              state;
     uint32_t                 stateUint32;
-    otInstance *             instance    = mNcp.GetInstance();
-    const otExtendedPanId *  extPanId    = otThreadGetExtendedPanId(instance);
-    const otExtAddress *     extAddr     = otLinkGetExtendedAddress(instance);
-    const char *             networkName = otThreadGetNetworkName(instance);
+    otInstance              *instance    = mNcp.GetInstance();
+    const otExtendedPanId   *extPanId    = otThreadGetExtendedPanId(instance);
+    const otExtAddress      *extAddr     = otLinkGetExtendedAddress(instance);
+    const char              *networkName = otThreadGetNetworkName(instance);
     Mdns::Publisher::TxtList txtList{{"rv", "1"}};
     int                      port;
 
@@ -227,66 +378,29 @@ void BorderAgent::PublishMeshCopService(void)
     // "xa" stands for Extended MAC Address (64-bit) of the Thread Interface of the Border Agent.
     txtList.emplace_back("xa", extAddr->m8, sizeof(extAddr->m8));
 
-    state.mConnectionMode = kConnectionModePskc;
-    state.mAvailability   = kAvailabilityHigh;
-
-    switch (otThreadGetDeviceRole(instance))
-    {
-    case OT_DEVICE_ROLE_DISABLED:
-        state.mThreadIfStatus = kThreadIfStatusNotInitialized;
-        break;
-    case OT_DEVICE_ROLE_DETACHED:
-        state.mThreadIfStatus = kThreadIfStatusInitialized;
-        break;
-    default:
-        state.mThreadIfStatus = kThreadIfStatusActive;
-    }
-#if OTBR_ENABLE_BACKBONE_ROUTER
-    state.mBbrIsActive = state.mThreadIfStatus == kThreadIfStatusActive &&
-                         otBackboneRouterGetState(instance) != OT_BACKBONE_ROUTER_STATE_DISABLED;
-    state.mBbrIsPrimary = state.mThreadIfStatus == kThreadIfStatusActive &&
-                          otBackboneRouterGetState(instance) == OT_BACKBONE_ROUTER_STATE_PRIMARY;
-#endif
-
+    state       = GetStateBitmap(*instance);
     stateUint32 = htobe32(state.ToUint32());
     txtList.emplace_back("sb", reinterpret_cast<uint8_t *>(&stateUint32), sizeof(stateUint32));
 
     if (state.mThreadIfStatus == kThreadIfStatusActive)
     {
-        otError              error;
-        otOperationalDataset activeDataset;
-        uint32_t             partitionId;
+        uint32_t partitionId;
 
-        if ((error = otDatasetGetActive(instance, &activeDataset)) != OT_ERROR_NONE)
-        {
-            otbrLogWarning("Failed to get active dataset: %s", otThreadErrorToString(error));
-        }
-        else
-        {
-            uint64_t activeTimestampValue = ConvertTimestampToUint64(activeDataset.mActiveTimestamp);
-
-            activeTimestampValue = htobe64(activeTimestampValue);
-            txtList.emplace_back("at", reinterpret_cast<uint8_t *>(&activeTimestampValue),
-                                 sizeof(activeTimestampValue));
-        }
-
+        AppendActiveTimestampTxtEntry(*instance, txtList);
         partitionId = otThreadGetPartitionId(instance);
         txtList.emplace_back("pt", reinterpret_cast<uint8_t *>(&partitionId), sizeof(partitionId));
     }
 
 #if OTBR_ENABLE_BACKBONE_ROUTER
-    if (state.mBbrIsActive)
-    {
-        otBackboneRouterConfig bbrConfig;
-        uint16_t               bbrPort = htobe16(BackboneRouter::BackboneAgent::kBackboneUdpPort);
-
-        otBackboneRouterGetConfig(instance, &bbrConfig);
-        txtList.emplace_back("sq", &bbrConfig.mSequenceNumber, sizeof(bbrConfig.mSequenceNumber));
-        txtList.emplace_back("bb", reinterpret_cast<const uint8_t *>(&bbrPort), sizeof(bbrPort));
-    }
-
-    txtList.emplace_back("dn", otThreadGetDomainName(instance));
+    AppendBbrTxtEntries(*instance, state, txtList);
 #endif
+#if OTBR_ENABLE_BORDER_ROUTING
+    AppendOmrTxtEntry(*instance, txtList);
+#endif
+#if OTBR_ENABLE_DBUS_SERVER
+    AppendVendorTxtEntries(mMeshCopTxtUpdate, txtList);
+#endif
+
     if (otBorderAgentGetState(instance) != OT_BORDER_AGENT_STATE_STOPPED)
     {
         port = otBorderAgentGetUdpPort(instance);
@@ -299,29 +413,6 @@ void BorderAgent::PublishMeshCopService(void)
         // doesn't have to send requests to the dummy port when border agent is not running.
         port = kBorderAgentServiceDummyPort;
     }
-
-#if OTBR_ENABLE_DBUS_SERVER
-    for (const auto &entry : mMeshCopTxtUpdate)
-    {
-        const std::string &         key   = entry.first;
-        const std::vector<uint8_t> &value = entry.second;
-        bool                        found = false;
-
-        for (auto &addedEntry : txtList)
-        {
-            if (addedEntry.mName == key)
-            {
-                addedEntry.mValue = value;
-                found             = true;
-                break;
-            }
-        }
-        if (!found)
-        {
-            txtList.emplace_back(key.c_str(), value.data(), value.size());
-        }
-    }
-#endif
 
     mPublisher->PublishService(/* aHostName */ "", mServiceInstanceName, kBorderAgentServiceType,
                                Mdns::Publisher::SubTypeList{}, port, txtList, [this](otbrError aError) {
@@ -379,9 +470,6 @@ void BorderAgent::HandleUpdateVendorMeshCoPTxtEntries(std::map<std::string, std:
 void BorderAgent::HandleThreadStateChanged(otChangedFlags aFlags)
 {
     VerifyOrExit(mPublisher != nullptr);
-    VerifyOrExit(aFlags & (OT_CHANGED_THREAD_ROLE | OT_CHANGED_THREAD_EXT_PANID | OT_CHANGED_THREAD_NETWORK_NAME |
-                           OT_CHANGED_ACTIVE_DATASET | OT_CHANGED_THREAD_PARTITION_ID |
-                           OT_CHANGED_THREAD_BACKBONE_ROUTER_STATE | OT_CHANGED_PSKC));
 
     if (aFlags & OT_CHANGED_THREAD_ROLE)
     {
@@ -389,7 +477,7 @@ void BorderAgent::HandleThreadStateChanged(otChangedFlags aFlags)
     }
 
     if (aFlags & (OT_CHANGED_THREAD_ROLE | OT_CHANGED_THREAD_EXT_PANID | OT_CHANGED_THREAD_NETWORK_NAME |
-                  OT_CHANGED_THREAD_BACKBONE_ROUTER_STATE))
+                  OT_CHANGED_THREAD_BACKBONE_ROUTER_STATE | OT_CHANGED_THREAD_NETDATA))
     {
         UpdateMeshCopService();
     }
