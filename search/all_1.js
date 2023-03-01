@@ -9,7 +9,8 @@ var searchData=
   ['border_2drouter_2dmdns_24',['Border-router-mdns',['../d5/d1f/group__border-router-mdns.html',1,'']]],
   ['border_5fagent_2ecpp_25',['border_agent.cpp',['../d1/dbe/border__agent_8cpp.html',1,'']]],
   ['border_5fagent_2ehpp_26',['border_agent.hpp',['../de/df0/border__agent_8hpp.html',1,'']]],
-  ['borderagent_27',['BorderAgent',['../d4/dfd/classotbr_1_1BorderAgent.html',1,'otbr::BorderAgent'],['../d4/dfd/classotbr_1_1BorderAgent.html#af18aa1190096e70a2777642bd0a6fc69',1,'otbr::BorderAgent::BorderAgent()']]],
-  ['bytes2hexjsonstring_28',['Bytes2HexJsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#aac76d4069315c53a873f53a2044903fd',1,'otbr::rest::Json']]],
-  ['byteswap_2ehpp_29',['byteswap.hpp',['../db/d58/byteswap_8hpp.html',1,'']]]
+  ['borderagent_27',['BorderAgent',['../d4/dfd/classotbr_1_1BorderAgent.html#af18aa1190096e70a2777642bd0a6fc69',1,'otbr::BorderAgent::BorderAgent()'],['../d4/dfd/classotbr_1_1BorderAgent.html',1,'otbr::BorderAgent']]],
+  ['borderroutingcounters_28',['BorderRoutingCounters',['../d4/d1c/structotbr_1_1DBus_1_1BorderRoutingCounters.html',1,'otbr::DBus']]],
+  ['bytes2hexjsonstring_29',['Bytes2HexJsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#aac76d4069315c53a873f53a2044903fd',1,'otbr::rest::Json']]],
+  ['byteswap_2ehpp_30',['byteswap.hpp',['../db/d58/byteswap_8hpp.html',1,'']]]
 ];
