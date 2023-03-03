@@ -63,8 +63,7 @@ set -euxo pipefail
 readonly OTBR_TOP_SRCDIR="$PWD"
 readonly OTBR_TOP_BUILD_DIR="${BUILD_DIR}/otbr"
 
-OTBR_TARGET=${OTBR_TARGET:-}
-
+OTBR_TARGET=${OTBR_TARGET-}
 
 main()
 {
@@ -110,14 +109,8 @@ main "$@"
 
 # rm -rf build && NDK=/opt/android-ndk/android-ndk-r25b  ./script/cmake-build-android -DOTBR_DBUS=OFF -DOT_ANDROID_NDK=1
 
-
 # docker run --rm --env OTBR_MDNS=mDNSResponder \
 #     -v $PWD:/build/ot-br-posix \
 #     -v $PWD/third_party/openthread/repo:/build/external/openthread \
 #     openthread/android-trusty \
 #     bash -c "BUILD_TARGET=android-check ot-br-posix/tests/scripts/bootstrap.sh && ot-br-posix/tests/scripts/check-android-build"
-
-
-
-
-
