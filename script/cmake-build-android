@@ -73,8 +73,7 @@ gsdk_dir="$(realpath "$repo_dir/../../../")"
 readonly OTBR_TOP_SRCDIR="$PWD"
 readonly OTBR_TOP_BUILD_DIR="${BUILD_DIR}/otbr"
 
-OTBR_TARGET=${OTBR_TARGET:-}
-
+OTBR_TARGET=${OTBR_TARGET-}
 
 main()
 {
@@ -108,11 +107,11 @@ main()
 
         REFERENCE_DEVICE=1 BACKBONE_ROUTER=1 OT_BACKBONE_CI=1 \
             cmake \
-                ${OTBR_OPTIONS[@]} \
-                ${CMAKE_FLAGS[@]} \
-                -GNinja \
-                "${OTBR_TOP_SRCDIR}" \
-                "$@"
+            ${OTBR_OPTIONS[@]} \
+            ${CMAKE_FLAGS[@]} \
+            -GNinja \
+            "${OTBR_TOP_SRCDIR}" \
+            "$@"
 
         if [[ -n ${OTBR_TARGET[*]} ]]; then
             ninja ${OTBR_TARGET[@]}
