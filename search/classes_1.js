@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['borderagent_861',['BorderAgent',['../d4/dfd/classotbr_1_1BorderAgent.html',1,'otbr']]],
-  ['borderroutingcounters_862',['BorderRoutingCounters',['../d4/d1c/structotbr_1_1DBus_1_1BorderRoutingCounters.html',1,'otbr::DBus']]]
+  ['borderagent_862',['BorderAgent',['../d4/dfd/classotbr_1_1BorderAgent.html',1,'otbr']]],
+  ['borderroutingcounters_863',['BorderRoutingCounters',['../d4/d1c/structotbr_1_1DBus_1_1BorderRoutingCounters.html',1,'otbr::DBus']]]
 ];
