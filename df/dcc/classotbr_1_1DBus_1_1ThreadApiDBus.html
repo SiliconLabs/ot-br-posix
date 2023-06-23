@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -218,6 +218,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d728d3ae596b4cbadee7a72a099fd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7deae8ddfb188ae5a10f7c9f3eaad9f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a7deae8ddfb188ae5a10f7c9f3eaad9f4">GetNat64ErrorCounters</a> (<a class="el" href="../../d2/d36/structotbr_1_1DBus_1_1Nat64ErrorCounters.html">Nat64ErrorCounters</a> &amp;aCounters)</td></tr>
 <tr class="separator:a7deae8ddfb188ae5a10f7c9f3eaad9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdf06e4cc022dfc116594299d9d4204"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#accdf06e4cc022dfc116594299d9d4204">GetTelemetryData</a> (std::vector&lt; uint8_t &gt; &amp;aTelemetryData)</td></tr>
+<tr class="separator:accdf06e4cc022dfc116594299d9d4204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ce9c8c8be8733e7b0e73ff010f45c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a28ce9c8c8be8733e7b0e73ff010f45c4">GetCapabilities</a> (std::vector&lt; uint8_t &gt; &amp;aCapabilities)</td></tr>
+<tr class="separator:a28ce9c8c8be8733e7b0e73ff010f45c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ada9e759317e64df44013d84af8507936"></a>
@@ -647,6 +651,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aDataset</td><td>The active operational dataset</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28ce9c8c8be8733e7b0e73ff010f45c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28ce9c8c8be8733e7b0e73ff010f45c4">&#9670;&nbsp;</a></span>GetCapabilities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetCapabilities </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aCapabilities</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the capabilities data proto serialized byte data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aCapabilities</td><td>The capabilities proto serialized byte data (see proto/capabilities.proto)</td></tr>
   </table>
   </dd>
 </dl>
@@ -1856,6 +1893,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aChannelMask</td><td>The channel mask.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="accdf06e4cc022dfc116594299d9d4204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accdf06e4cc022dfc116594299d9d4204">&#9670;&nbsp;</a></span>GetTelemetryData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetTelemetryData </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aTelemetryData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the telemetry data proto serialized byte data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aTelemetryData</td><td>The telemetry data proto serialized byte data (see proto/thread_telemetry.proto)</td></tr>
   </table>
   </dd>
 </dl>

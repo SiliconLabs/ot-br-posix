@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -87,8 +87,8 @@ Inheritance diagram for otbr::Application:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c20b6afad9a42f1d6e7fd36ea49149b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d01/structotbr_1_1Application.html#a9c20b6afad9a42f1d6e7fd36ea49149b">Application</a> (const std::string &amp;aInterfaceName, const std::vector&lt; const char * &gt; &amp;aBackboneInterfaceNames, const std::vector&lt; const char * &gt; &amp;aRadioUrls, bool aEnableAutoAttach, const std::string &amp;aRestListenAddress)</td></tr>
-<tr class="separator:a9c20b6afad9a42f1d6e7fd36ea49149b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf836b333d04277ca9fc1240411c4b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d01/structotbr_1_1Application.html#a2cf836b333d04277ca9fc1240411c4b1">Application</a> (const std::string &amp;aInterfaceName, const std::vector&lt; const char * &gt; &amp;aBackboneInterfaceNames, const std::vector&lt; const char * &gt; &amp;aRadioUrls, bool aEnableAutoAttach, const std::string &amp;aRestListenAddress, int aRestListenPort)</td></tr>
+<tr class="separator:a2cf836b333d04277ca9fc1240411c4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ff7f453566d8b877efe74bce7b58c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d01/structotbr_1_1Application.html#a0ff7f453566d8b877efe74bce7b58c79">Init</a> (void)</td></tr>
 <tr class="separator:a0ff7f453566d8b877efe74bce7b58c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5dda38fabceb5ad6f81fbdca30a6f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d01/structotbr_1_1Application.html#adf5dda38fabceb5ad6f81fbdca30a6f8">Deinit</a> (void)</td></tr>
@@ -99,8 +99,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements OTBR application management. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9c20b6afad9a42f1d6e7fd36ea49149b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c20b6afad9a42f1d6e7fd36ea49149b">&#9670;&nbsp;</a></span>Application()</h2>
+<a id="a2cf836b333d04277ca9fc1240411c4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf836b333d04277ca9fc1240411c4b1">&#9670;&nbsp;</a></span>Application()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +136,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>aRestListenAddress</em>&#160;</td>
+          <td class="paramname"><em>aRestListenAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>aRestListenPort</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,6 +163,8 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aBackboneInterfaceName</td><td>Name of the backbone network interface. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aRadioUrls</td><td>The radio URLs (can be IEEE802.15.4 or TREL radio). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aEnableAutoAttach</td><td>Whether or not to automatically attach to the saved network. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRestListenAddress</td><td>Network address to listen on. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRestListenPort</td><td>Network port to listen on. </td></tr>
   </table>
   </dd>
 </dl>

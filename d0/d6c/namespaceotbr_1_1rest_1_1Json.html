@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -77,9 +77,20 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a9825acdf9bc3300aa48852d9a193a619"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a9825acdf9bc3300aa48852d9a193a619">String2JsonString</a> (const std::string &amp;aString)</td></tr>
 <tr class="separator:a9825acdf9bc3300aa48852d9a193a619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28acb5942cb2b2cf7577e8d25359bf34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a28acb5942cb2b2cf7577e8d25359bf34">JsonString2String</a> (const std::string &amp;aJsonString, std::string &amp;aString)</td></tr>
+<tr class="separator:a28acb5942cb2b2cf7577e8d25359bf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8093c5906874e8736fe53d988e2978"><td class="memItemLeft" align="right" valign="top"><a id="ada8093c5906874e8736fe53d988e2978"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Json2String</b> (const cJSON *aJson)</td></tr>
 <tr class="separator:ada8093c5906874e8736fe53d988e2978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39964997f3e4c0636b830a565c7e6f15"><td class="memItemLeft" align="right" valign="top"><a id="a39964997f3e4c0636b830a565c7e6f15"></a>
+<a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Json2IpPrefix</b> (const cJSON *aJson, otIp6NetworkPrefix &amp;aIpPrefix)</td></tr>
+<tr class="separator:a39964997f3e4c0636b830a565c7e6f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef648f06edc7590f9f59a2362432ca4c"><td class="memItemLeft" align="right" valign="top"><a id="aef648f06edc7590f9f59a2362432ca4c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Json2Timestamp</b> (const cJSON *jsonTimestamp, otTimestamp &amp;aTimestamp)</td></tr>
+<tr class="separator:aef648f06edc7590f9f59a2362432ca4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eeda9f7f323fcf2276368c4b4c71bc8"><td class="memItemLeft" align="right" valign="top"><a id="a2eeda9f7f323fcf2276368c4b4c71bc8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Json2SecurityPolicy</b> (const cJSON *jsonSecurityPolicy, otSecurityPolicy &amp;aSecurityPolicy)</td></tr>
+<tr class="separator:a2eeda9f7f323fcf2276368c4b4c71bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61c45dc674c415e558760b59604f53d6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a61c45dc674c415e558760b59604f53d6">IpAddr2JsonString</a> (const otIp6Address &amp;aAddress)</td></tr>
 <tr class="separator:a61c45dc674c415e558760b59604f53d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6804dde5c7c67da91efeec9fba9c905f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a6804dde5c7c67da91efeec9fba9c905f">Node2JsonString</a> (const <a class="el" href="../../d6/dbf/structotbr_1_1rest_1_1NodeInfo.html">NodeInfo</a> &amp;aNode)</td></tr>
@@ -110,10 +121,50 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Json2String</b
 <tr class="separator:a720cab2892abff5045282cf7bcc9592a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7838593530ed7935a0a370ff62ed9f6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#ac7838593530ed7935a0a370ff62ed9f6">Error2JsonString</a> (HttpStatusCode aErrorCode, std::string aErrorMessage)</td></tr>
 <tr class="separator:ac7838593530ed7935a0a370ff62ed9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1afbf4a901455e4bb9f4babb0ed50ef"><td class="memItemLeft" align="right" valign="top"><a id="ae1afbf4a901455e4bb9f4babb0ed50ef"></a>
+cJSON *&#160;</td><td class="memItemRight" valign="bottom"><b>ActiveDataset2Json</b> (const otOperationalDataset &amp;aActiveDataset)</td></tr>
+<tr class="separator:ae1afbf4a901455e4bb9f4babb0ed50ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a174f4ee5f5175436efc0420dd118c1ab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a174f4ee5f5175436efc0420dd118c1ab">ActiveDataset2JsonString</a> (const otOperationalDataset &amp;aActiveDataset)</td></tr>
+<tr class="separator:a174f4ee5f5175436efc0420dd118c1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2571cb3d2d6ea6e92b6e70d15846960"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#af2571cb3d2d6ea6e92b6e70d15846960">PendingDataset2JsonString</a> (const otOperationalDataset &amp;aPendingDataset)</td></tr>
+<tr class="separator:af2571cb3d2d6ea6e92b6e70d15846960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41e3546b17973e4d07c524b90b124fe"><td class="memItemLeft" align="right" valign="top"><a id="ae41e3546b17973e4d07c524b90b124fe"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>JsonActiveDataset2Dataset</b> (const cJSON *jsonActiveDataset, otOperationalDataset &amp;aDataset)</td></tr>
+<tr class="separator:ae41e3546b17973e4d07c524b90b124fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79ca16b109e01d07117cf1ef260e0757"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a79ca16b109e01d07117cf1ef260e0757">JsonActiveDatasetString2Dataset</a> (const std::string &amp;aJsonActiveDataset, otOperationalDataset &amp;aDataset)</td></tr>
+<tr class="separator:a79ca16b109e01d07117cf1ef260e0757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba9747cce3e7351f049c754a8570bc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a9ba9747cce3e7351f049c754a8570bc9">JsonPendingDatasetString2Dataset</a> (const std::string &amp;aJsonPendingDataset, otOperationalDataset &amp;aDataset)</td></tr>
+<tr class="separator:a9ba9747cce3e7351f049c754a8570bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The functions within this namespace provides a tranformation from an object/string/number to a serialized <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a174f4ee5f5175436efc0420dd118c1ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a174f4ee5f5175436efc0420dd118c1ab">&#9670;&nbsp;</a></span>ActiveDataset2JsonString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string otbr::rest::Json::ActiveDataset2JsonString </td>
+          <td>(</td>
+          <td class="paramtype">const otOperationalDataset &amp;&#160;</td>
+          <td class="paramname"><em>aDataset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method formats a <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> object from an active dataset.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDataset</td><td>A dataset struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string of serialized <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> object. </dd></dl>
+
+</div>
+</div>
 <a id="aac76d4069315c53a873f53a2044903fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac76d4069315c53a873f53a2044903fd">&#9670;&nbsp;</a></span>Bytes2HexJsonString()</h2>
 
@@ -361,6 +412,117 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Json2String</b
 
 </div>
 </div>
+<a id="a79ca16b109e01d07117cf1ef260e0757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79ca16b109e01d07117cf1ef260e0757">&#9670;&nbsp;</a></span>JsonActiveDatasetString2Dataset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::rest::Json::JsonActiveDatasetString2Dataset </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aJsonActiveDataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">otOperationalDataset &amp;&#160;</td>
+          <td class="paramname"><em>aDataset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method parses a <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string and fills the provided dataset. Fields set to null are cleared (set to not present). Non-present fields are left as is.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aJsonActiveDataset</td><td>The <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string to be parsed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDataset</td><td>The dataset struct to be filled.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If the <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string has been successfully parsed. </dd></dl>
+
+</div>
+</div>
+<a id="a9ba9747cce3e7351f049c754a8570bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba9747cce3e7351f049c754a8570bc9">&#9670;&nbsp;</a></span>JsonPendingDatasetString2Dataset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::rest::Json::JsonPendingDatasetString2Dataset </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aJsonPendingDataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">otOperationalDataset &amp;&#160;</td>
+          <td class="paramname"><em>aDataset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method parses a <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string and fills the provided dataset. Fields set to null are cleared (set to not present). Non-present fields are left as is.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aJsonActiveDataset</td><td>The <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string to be parsed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDataset</td><td>The dataset struct to be filled.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If the <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string has been successfully parsed. </dd></dl>
+
+</div>
+</div>
+<a id="a28acb5942cb2b2cf7577e8d25359bf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28acb5942cb2b2cf7577e8d25359bf34">&#9670;&nbsp;</a></span>JsonString2String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::rest::Json::JsonString2String </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aJsonString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>aString</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method parses a <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string and checks its datatype and returns a string if it is a string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aJsonString</td><td>A <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">aString</td><td>The string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A boolean indicating whether the <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> string was indeed a string. </dd></dl>
+
+</div>
+</div>
 <a id="a88e97b6320737839ae1eb73895ff7550"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88e97b6320737839ae1eb73895ff7550">&#9670;&nbsp;</a></span>LeaderData2JsonString()</h2>
 
@@ -488,6 +650,32 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Json2String</b
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string of serialized <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> number. </dd></dl>
+
+</div>
+</div>
+<a id="af2571cb3d2d6ea6e92b6e70d15846960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2571cb3d2d6ea6e92b6e70d15846960">&#9670;&nbsp;</a></span>PendingDataset2JsonString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string otbr::rest::Json::PendingDataset2JsonString </td>
+          <td>(</td>
+          <td class="paramtype">const otOperationalDataset &amp;&#160;</td>
+          <td class="paramname"><em>aPendingDataset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method formats a <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> object from a pending dataset.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDataset</td><td>A dataset struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string of serialized <a class="el" href="../../d0/d6c/namespaceotbr_1_1rest_1_1Json.html">Json</a> object. </dd></dl>
 
 </div>
 </div>

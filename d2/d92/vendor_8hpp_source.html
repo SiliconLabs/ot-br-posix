@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -101,25 +101,28 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_AGENT_VENDOR_HPP_</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_AGENT_VENDOR_HPP_</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">openthread-br/config.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>vendor {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">VendorServer</a></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c">   51</a></span>&#160;    <a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c">VendorServer</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a540f6e39acd821c576d5b86e58434c8c">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a540f6e39acd821c576d5b86e58434c8c">Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace vendor</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_VENDOR_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:65</div></div>
-<div class="ttc" id="aclassotbr_1_1vendor_1_1VendorServer_html"><div class="ttname"><a href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">otbr::vendor::VendorServer</a></div><div class="ttdef"><b>Definition:</b> vendor.hpp:43</div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>vendor {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">VendorServer</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c">   53</a></span>&#160;    <a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c">VendorServer</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a540f6e39acd821c576d5b86e58434c8c">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a540f6e39acd821c576d5b86e58434c8c">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace vendor</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_VENDOR_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:67</div></div>
+<div class="ttc" id="aclassotbr_1_1vendor_1_1VendorServer_html"><div class="ttname"><a href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html">otbr::vendor::VendorServer</a></div><div class="ttdef"><b>Definition:</b> vendor.hpp:45</div></div>
 <div class="ttc" id="aclassotbr_1_1vendor_1_1VendorServer_html_a1dbba6ac5ab4bd91d949f8c92138db6c"><div class="ttname"><a href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c">otbr::vendor::VendorServer::VendorServer</a></div><div class="ttdeci">VendorServer(otbr::Ncp::ControllerOpenThread &amp;aNcp)</div></div>
 <div class="ttc" id="aclassotbr_1_1vendor_1_1VendorServer_html_a540f6e39acd821c576d5b86e58434c8c"><div class="ttname"><a href="../../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a540f6e39acd821c576d5b86e58434c8c">otbr::vendor::VendorServer::Init</a></div><div class="ttdeci">void Init(void)</div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['advertising_5fproxy_2ecpp_997',['advertising_proxy.cpp',['../d7/d33/advertising__proxy_8cpp.html',1,'']]],
-  ['advertising_5fproxy_2ehpp_998',['advertising_proxy.hpp',['../dd/d20/advertising__proxy_8hpp.html',1,'']]],
-  ['application_2ecpp_999',['application.cpp',['../df/d7b/application_8cpp.html',1,'']]],
-  ['application_2ehpp_1000',['application.hpp',['../d4/d01/application_8hpp.html',1,'']]]
+  ['advertising_5fproxy_2ecpp_1012',['advertising_proxy.cpp',['../d7/d33/advertising__proxy_8cpp.html',1,'']]],
+  ['advertising_5fproxy_2ehpp_1013',['advertising_proxy.hpp',['../dd/d20/advertising__proxy_8hpp.html',1,'']]],
+  ['api_5fstrings_2ehpp_1014',['api_strings.hpp',['../d4/d20/api__strings_8hpp.html',1,'']]],
+  ['application_2ecpp_1015',['application.cpp',['../df/d7b/application_8cpp.html',1,'']]],
+  ['application_2ehpp_1016',['application.hpp',['../d4/d01/application_8hpp.html',1,'']]]
 ];

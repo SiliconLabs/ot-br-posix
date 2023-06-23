@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -217,21 +217,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveServiceRegistra
 <tr class="memitem:aeacdafa92395e43d9481cc310e76b331"><td class="memItemLeft" align="right" valign="top"><a id="aeacdafa92395e43d9481cc310e76b331"></a>
 <a class="el" href="../../da/da8/classotbr_1_1Mdns_1_1Publisher_1_1ServiceRegistration.html">ServiceRegistration</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindServiceRegistration</b> (const std::string &amp;aName, const std::string &amp;aType)</td></tr>
 <tr class="separator:aeacdafa92395e43d9481cc310e76b331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1608bd7367e7782fe0d63e366f3d5864"><td class="memItemLeft" align="right" valign="top"><a id="a1608bd7367e7782fe0d63e366f3d5864"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolved</b> (const std::string &amp;aType, const <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> &amp;aInstanceInfo)</td></tr>
-<tr class="separator:a1608bd7367e7782fe0d63e366f3d5864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8765ce5278c78380c79ad2eab371284"><td class="memItemLeft" align="right" valign="top"><a id="ad8765ce5278c78380c79ad2eab371284"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolveFailed</b> (const std::string &amp;aType, const std::string &amp;aInstanceName, int32_t aErrorCode)</td></tr>
-<tr class="separator:ad8765ce5278c78380c79ad2eab371284"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cf5f89c84ddb572a7d00faf738ecf32"><td class="memItemLeft" align="right" valign="top"><a id="a2cf5f89c84ddb572a7d00faf738ecf32"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceRemoved</b> (uint32_t aNetifIndex, const std::string &amp;aType, const std::string &amp;aInstanceName)</td></tr>
-<tr class="separator:a2cf5f89c84ddb572a7d00faf738ecf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1b85f3a05e9b9e1894e2f87bf238db"><td class="memItemLeft" align="right" valign="top"><a id="a4d1b85f3a05e9b9e1894e2f87bf238db"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolved</b> (const std::string &amp;aHostName, const <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> &amp;aHostInfo)</td></tr>
-<tr class="separator:a4d1b85f3a05e9b9e1894e2f87bf238db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767e9f4641a60a752b9b97efd893b4c3"><td class="memItemLeft" align="right" valign="top"><a id="a767e9f4641a60a752b9b97efd893b4c3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolveFailed</b> (const std::string &amp;aHostName, int32_t aErrorCode)</td></tr>
-<tr class="separator:a767e9f4641a60a752b9b97efd893b4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1166e5d398307cdce3e2292da6fbc367"><td class="memItemLeft" align="right" valign="top"><a id="a1166e5d398307cdce3e2292da6fbc367"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolved</b> (std::string aType, <a class="el" href="../../d9/d60/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredInstanceInfo.html">DiscoveredInstanceInfo</a> aInstanceInfo)</td></tr>
+<tr class="separator:a1166e5d398307cdce3e2292da6fbc367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55a28499d2cf70ab4f84dee19ce9423"><td class="memItemLeft" align="right" valign="top"><a id="ae55a28499d2cf70ab4f84dee19ce9423"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceResolveFailed</b> (std::string aType, std::string aInstanceName, int32_t aErrorCode)</td></tr>
+<tr class="separator:ae55a28499d2cf70ab4f84dee19ce9423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7fb8f9aabf8b35dde6f053750c2370"><td class="memItemLeft" align="right" valign="top"><a id="a5e7fb8f9aabf8b35dde6f053750c2370"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnServiceRemoved</b> (uint32_t aNetifIndex, std::string aType, std::string aInstanceName)</td></tr>
+<tr class="separator:a5e7fb8f9aabf8b35dde6f053750c2370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f698c5446c4a02b7acd51515b7a465"><td class="memItemLeft" align="right" valign="top"><a id="a09f698c5446c4a02b7acd51515b7a465"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolved</b> (std::string aHostName, <a class="el" href="../../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html">DiscoveredHostInfo</a> aHostInfo)</td></tr>
+<tr class="separator:a09f698c5446c4a02b7acd51515b7a465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d93286819ebc2e7cb84c8fdeef156c4"><td class="memItemLeft" align="right" valign="top"><a id="a7d93286819ebc2e7cb84c8fdeef156c4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHostResolveFailed</b> (std::string aHostName, int32_t aErrorCode)</td></tr>
+<tr class="separator:a7d93286819ebc2e7cb84c8fdeef156c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad30ecbec302ef780c3214084ff8bbc20"><td class="memItemLeft" align="right" valign="top"><a id="ad30ecbec302ef780c3214084ff8bbc20"></a>
 <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HandleDuplicateServiceRegistration</b> (const std::string &amp;aHostName, const std::string &amp;aName, const std::string &amp;aType, const SubTypeList &amp;aSubTypeList, uint16_t aPort, const TxtList &amp;aTxtList, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2">ResultCallback</a> &amp;&amp;aCallback)</td></tr>
 <tr class="separator:ad30ecbec302ef780c3214084ff8bbc20"><td class="memSeparator" colspan="2">&#160;</td></tr>

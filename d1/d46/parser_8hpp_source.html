@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-3076c1a</span>
+   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
    </div>
   </td>
  </tr>
@@ -101,42 +101,45 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_REST_PARSER_HPP_</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_REST_PARSER_HPP_</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">openthread-br/config.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/daa/rest_2types_8hpp.html">rest/types.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;http_parser.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d6f/request_8hpp.html">rest/request.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/daa/rest_2types_8hpp.html">rest/types.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;http_parser.h&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>rest {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d7/def/classotbr_1_1rest_1_1Parser.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html">Parser</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a678903746af868a138c9d6c4cf938944">Parser</a>(<a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html">Request</a> *aRequest);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a5902787870eb5bb767fd0bdd66bf126c">Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#aa930729dcfecff02cf96d8b326fbecc5">Process</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aBuf, <span class="keywordtype">size_t</span> aLength);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    http_parser          mParser;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    http_parser_settings mSettings;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace rest</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_PARSER_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html">otbr::rest::Parser</a></div><div class="ttdef"><b>Definition:</b> parser.hpp:55</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_a5902787870eb5bb767fd0bdd66bf126c"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a5902787870eb5bb767fd0bdd66bf126c">otbr::rest::Parser::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> parser.cpp:95</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_a678903746af868a138c9d6c4cf938944"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a678903746af868a138c9d6c4cf938944">otbr::rest::Parser::Parser</a></div><div class="ttdeci">Parser(Request *aRequest)</div><div class="ttdef"><b>Definition:</b> parser.cpp:90</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_aa930729dcfecff02cf96d8b326fbecc5"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#aa930729dcfecff02cf96d8b326fbecc5">otbr::rest::Parser::Process</a></div><div class="ttdeci">void Process(const char *aBuf, size_t aLength)</div><div class="ttdef"><b>Definition:</b> parser.cpp:108</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Request_html"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html">otbr::rest::Request</a></div><div class="ttdef"><b>Definition:</b> request.hpp:51</div></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d6f/request_8hpp.html">rest/request.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span>rest {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d7/def/classotbr_1_1rest_1_1Parser.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html">Parser</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a678903746af868a138c9d6c4cf938944">Parser</a>(<a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html">Request</a> *aRequest);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a5902787870eb5bb767fd0bdd66bf126c">Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/def/classotbr_1_1rest_1_1Parser.html#aa930729dcfecff02cf96d8b326fbecc5">Process</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aBuf, <span class="keywordtype">size_t</span> aLength);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    http_parser          mParser;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    http_parser_settings mSettings;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace rest</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_PARSER_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html">otbr::rest::Parser</a></div><div class="ttdef"><b>Definition:</b> parser.hpp:57</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_a5902787870eb5bb767fd0bdd66bf126c"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a5902787870eb5bb767fd0bdd66bf126c">otbr::rest::Parser::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> parser.cpp:119</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_a678903746af868a138c9d6c4cf938944"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#a678903746af868a138c9d6c4cf938944">otbr::rest::Parser::Parser</a></div><div class="ttdeci">Parser(Request *aRequest)</div><div class="ttdef"><b>Definition:</b> parser.cpp:114</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Parser_html_aa930729dcfecff02cf96d8b326fbecc5"><div class="ttname"><a href="../../d7/def/classotbr_1_1rest_1_1Parser.html#aa930729dcfecff02cf96d8b326fbecc5">otbr::rest::Parser::Process</a></div><div class="ttdeci">void Process(const char *aBuf, size_t aLength)</div><div class="ttdef"><b>Definition:</b> parser.cpp:132</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Request_html"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html">otbr::rest::Request</a></div><div class="ttdef"><b>Definition:</b> request.hpp:53</div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="arequest_8hpp_html"><div class="ttname"><a href="../../d6/d6f/request_8hpp.html">request.hpp</a></div></div>
 <div class="ttc" id="arest_2types_8hpp_html"><div class="ttname"><a href="../../de/daa/rest_2types_8hpp.html">types.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
