@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-1a84a17</span>
+   &#160;<span id="projectnumber">0.3.0-2a11b14</span>
    </div>
   </td>
  </tr>
@@ -105,8 +105,8 @@ Macros</h2></td></tr>
 <tr class="memitem:adec42d53dc3b3e16ab7a1cd98af1c5fc"><td class="memItemLeft" align="right" valign="top"><a id="adec42d53dc3b3e16ab7a1cd98af1c5fc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONTAINING_RECORD</b>(address,  type,  field)&#160;&#160;&#160;((type *)((uint8_t *)(address)-myoffsetof(type, field)))</td></tr>
 <tr class="separator:adec42d53dc3b3e16ab7a1cd98af1c5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0d90ad12fb508f30107b1931f970ab1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#ae0d90ad12fb508f30107b1931f970ab1">SuccessOrExit</a>(aStatus)</td></tr>
-<tr class="separator:ae0d90ad12fb508f30107b1931f970ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65869e9d31d24f02dd798556f6f483c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a65869e9d31d24f02dd798556f6f483c1">SuccessOrExit</a>(aStatus, ...)</td></tr>
+<tr class="separator:a65869e9d31d24f02dd798556f6f483c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38b11ab2e5093086804add4a45f274a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#af38b11ab2e5093086804add4a45f274a">SuccessOrDie</a>(aStatus,  aMessage)</td></tr>
 <tr class="separator:af38b11ab2e5093086804add4a45f274a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42e32454ca5e456d5ce5a260c735abed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a>(aCondition, ...)</td></tr>
@@ -227,13 +227,13 @@ template&lt;typename T , typename... Args&gt; </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                       \</div>
-<div class="line">    {                                                                        \</div>
-<div class="line">        if ((aStatus) != 0)                                                  \</div>
-<div class="line">        {                                                                    \</div>
-<div class="line">            otbrLogEmerg(<span class="stringliteral">&quot;FAILED %s:%d - %s&quot;</span>, __FILE__, __LINE__, aMessage); \</div>
-<div class="line">            exit(-1);                                                        \</div>
-<div class="line">        }                                                                    \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                                    \</div>
+<div class="line">    {                                                                                     \</div>
+<div class="line">        if ((aStatus) != 0)                                                               \</div>
+<div class="line">        {                                                                                 \</div>
+<div class="line">            otbrLogEmerg(<span class="stringliteral">&quot;FAILED %s:%d - %d: %s&quot;</span>, __FILE__, __LINE__, aStatus, aMessage); \</div>
+<div class="line">            exit(-1);                                                                     \</div>
+<div class="line">        }                                                                                 \</div>
 <div class="line">    } <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment --><p>This macro verifies a given error status to be successful (compared against value zero (0)), otherwise, it emits a given error messages and exits the program.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -246,8 +246,8 @@ template&lt;typename T , typename... Args&gt; </td></tr>
 
 </div>
 </div>
-<a id="ae0d90ad12fb508f30107b1931f970ab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0d90ad12fb508f30107b1931f970ab1">&#9670;&nbsp;</a></span>SuccessOrExit</h2>
+<a id="a65869e9d31d24f02dd798556f6f483c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65869e9d31d24f02dd798556f6f483c1">&#9670;&nbsp;</a></span>SuccessOrExit</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,17 +256,28 @@ template&lt;typename T , typename... Args&gt; </td></tr>
           <td class="memname">#define SuccessOrExit</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">aStatus</td><td>)</td>
+          <td class="paramname">aStatus, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                         \</div>
-<div class="line">    {                          \</div>
-<div class="line">        if ((aStatus) != 0)    \</div>
-<div class="line">        {                      \</div>
-<div class="line">            goto exit;         \</div>
-<div class="line">        }                      \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                              \</div>
+<div class="line">    {                               \</div>
+<div class="line">        if ((aStatus) != 0)         \</div>
+<div class="line">        {                           \</div>
+<div class="line">            __VA_ARGS__;            \</div>
+<div class="line">            goto exit;              \</div>
+<div class="line">        }                           \</div>
 <div class="line">    } <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment --><p>This checks for the specified status, which is expected to commonly be successful, and branches to the local label 'exit' if the status is unsuccessful.</p>
 <dl class="params"><dt>Parameters</dt><dd>

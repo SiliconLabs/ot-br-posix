@@ -53,7 +53,7 @@ var searchData=
   ['subscribehost_781',['SubscribeHost',['../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#aa3460cf1e8c8be6eed2f4c728545cd1d',1,'otbr::Mdns::PublisherMDnsSd::SubscribeHost()'],['../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#a5380ae44ef5f58e1751a888aae90b8ee',1,'otbr::Mdns::PublisherAvahi::SubscribeHost()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a454e7ed9403a336941633b1610251567',1,'otbr::Mdns::Publisher::SubscribeHost()']]],
   ['subscribeservice_782',['SubscribeService',['../db/dc6/classotbr_1_1Mdns_1_1PublisherAvahi.html#ac96dc07653c50aab9c15ff1ac178a6e6',1,'otbr::Mdns::PublisherAvahi::SubscribeService()'],['../de/d29/classotbr_1_1Mdns_1_1PublisherMDnsSd.html#a95ecb9cceb50773c907042a5fce76c24',1,'otbr::Mdns::PublisherMDnsSd::SubscribeService()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a9e445114c02d9fd53f962c464f4f8e02',1,'otbr::Mdns::Publisher::SubscribeService()']]],
   ['successordie_783',['SuccessOrDie',['../da/d7b/code__utils_8hpp.html#af38b11ab2e5093086804add4a45f274a',1,'code_utils.hpp']]],
-  ['successorexit_784',['SuccessOrExit',['../da/d7b/code__utils_8hpp.html#ae0d90ad12fb508f30107b1931f970ab1',1,'code_utils.hpp']]],
+  ['successorexit_784',['SuccessOrExit',['../da/d7b/code__utils_8hpp.html#a65869e9d31d24f02dd798556f6f483c1',1,'code_utils.hpp']]],
   ['system_5futils_2ecpp_785',['system_utils.cpp',['../d1/da2/system__utils_8cpp.html',1,'']]],
   ['system_5futils_2ehpp_786',['system_utils.hpp',['../d4/d44/system__utils_8hpp.html',1,'']]]
 ];
