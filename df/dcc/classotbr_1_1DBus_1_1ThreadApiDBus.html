@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2a11b14</span>
+   &#160;<span id="projectnumber">0.3.0-b0bbad3</span>
    </div>
   </td>
  </tr>
@@ -198,6 +198,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aca8760a0941651afaf417f0df8f7f088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299f816e4b61fb5b08494e4481be7ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a299f816e4b61fb5b08494e4481be7ece">GetActiveDatasetTlvs</a> (std::vector&lt; uint8_t &gt; &amp;aDataset)</td></tr>
 <tr class="separator:a299f816e4b61fb5b08494e4481be7ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2d7a467305e6464d42f269d212ab9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#adb2d7a467305e6464d42f269d212ab9d">GetPendingDatasetTlvs</a> (std::vector&lt; uint8_t &gt; &amp;aDataset)</td></tr>
+<tr class="separator:adb2d7a467305e6464d42f269d212ab9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668d0d7700ed91de6c181005270c9b17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a668d0d7700ed91de6c181005270c9b17">GetFeatureFlagListData</a> (std::vector&lt; uint8_t &gt; &amp;aFeatureFlagListData)</td></tr>
 <tr class="separator:a668d0d7700ed91de6c181005270c9b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13011428d3f24c2090fb374f210d8c04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a13011428d3f24c2090fb374f210d8c04">GetRadioRegion</a> (std::string &amp;aRadioRegion)</td></tr>
@@ -1628,6 +1630,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aPartitionId</td><td>The partition id.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb2d7a467305e6464d42f269d212ab9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2d7a467305e6464d42f269d212ab9d">&#9670;&nbsp;</a></span>GetPendingDatasetTlvs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetPendingDatasetTlvs </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aDataset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the pending operational dataset</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aDataset</td><td>The pending operational dataset</td></tr>
   </table>
   </dd>
 </dl>
