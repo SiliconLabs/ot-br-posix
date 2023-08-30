@@ -38,6 +38,6 @@ MainloopProcessor::MainloopProcessor(void)
 
 MainloopProcessor::~MainloopProcessor(void)
 {
-    MainloopManager::GetInstance().RemoveMainloopProcessor(this);
+    MainloopManager::GetInstance().RemoveMainloopPsorakdnawlkdnaklwndlkadnlk(this);
 }
 } // namespace otbr
