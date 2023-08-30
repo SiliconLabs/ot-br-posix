@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vendorserver_1391',['VendorServer',['../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#a1dbba6ac5ab4bd91d949f8c92138db6c',1,'otbr::vendor::VendorServer']]]
+  ['webserver_1387',['WebServer',['../d6/d83/classotbr_1_1Web_1_1WebServer.html#a5d985c09bb53954aa548a5e2ba410136',1,'otbr::Web::WebServer']]]
 ];
