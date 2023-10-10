@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-22f72f8</span>
+   &#160;<span id="projectnumber">0.3.0-1fd52b0</span>
    </div>
   </td>
  </tr>
@@ -63,6 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d1/d47/structAvahiWatch-members.html">List of all members</a>  </div>
@@ -71,10 +72,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0b466ff10692c073e3ff8223a9607fbe"><td class="memItemLeft" align="right" valign="top"><a id="a0b466ff10692c073e3ff8223a9607fbe"></a>
+typedef <a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">otbr::Mdns::AvahiPoller</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AvahiPoller</b></td></tr>
+<tr class="separator:a0b466ff10692c073e3ff8223a9607fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae34ec326119f93541228ac8f76423e1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#ae34ec326119f93541228ac8f76423e1a">AvahiWatch</a> (int aFd, AvahiWatchEvent aEvents, AvahiWatchCallback aCallback, void *aContext, void *aPoller)</td></tr>
-<tr class="separator:ae34ec326119f93541228ac8f76423e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae030129f27b3211e3b5ad1d8570e66f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#ae030129f27b3211e3b5ad1d8570e66f4">AvahiWatch</a> (int aFd, AvahiWatchEvent aEvents, AvahiWatchCallback aCallback, void *aContext, <a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;aPoller)</td></tr>
+<tr class="separator:ae030129f27b3211e3b5ad1d8570e66f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -92,20 +99,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 <tr class="separator:acf804a45521accaa15685e1bd36ac292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fc963ea1064fadf30c8f3116661e896"><td class="memItemLeft" align="right" valign="top"><a id="a0fc963ea1064fadf30c8f3116661e896"></a>
 AvahiWatchCallback&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#a0fc963ea1064fadf30c8f3116661e896">mCallback</a></td></tr>
-<tr class="memdesc:a0fc963ea1064fadf30c8f3116661e896"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to be called when interested events happened on mFd. <br /></td></tr>
+<tr class="memdesc:a0fc963ea1064fadf30c8f3116661e896"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function to be called to report events happened on <code>mFd</code>. <br /></td></tr>
 <tr class="separator:a0fc963ea1064fadf30c8f3116661e896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a383444fdc93cf9b1ff0dda2b4eb13caf"><td class="memItemLeft" align="right" valign="top"><a id="a383444fdc93cf9b1ff0dda2b4eb13caf"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#a383444fdc93cf9b1ff0dda2b4eb13caf">mContext</a></td></tr>
-<tr class="memdesc:a383444fdc93cf9b1ff0dda2b4eb13caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to application-specific context. <br /></td></tr>
+<tr class="memdesc:a383444fdc93cf9b1ff0dda2b4eb13caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to application-specific context to use with <code>mCallback</code>. <br /></td></tr>
 <tr class="separator:a383444fdc93cf9b1ff0dda2b4eb13caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a718bf695e9d354d7f9cd0f9278f4c9"><td class="memItemLeft" align="right" valign="top"><a id="a2a718bf695e9d354d7f9cd0f9278f4c9"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#a2a718bf695e9d354d7f9cd0f9278f4c9">mPoller</a></td></tr>
-<tr class="memdesc:a2a718bf695e9d354d7f9cd0f9278f4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The poller created this watch. <br /></td></tr>
-<tr class="separator:a2a718bf695e9d354d7f9cd0f9278f4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2ce757d1c4a769c9d7500bf363bc5b"><td class="memItemLeft" align="right" valign="top"><a id="afb2ce757d1c4a769c9d7500bf363bc5b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#afb2ce757d1c4a769c9d7500bf363bc5b">mShouldReport</a></td></tr>
+<tr class="memdesc:afb2ce757d1c4a769c9d7500bf363bc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not we need to report events (invoking callback). <br /></td></tr>
+<tr class="separator:afb2ce757d1c4a769c9d7500bf363bc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d06a389657f67b90697deeea3edda6"><td class="memItemLeft" align="right" valign="top"><a id="a70d06a389657f67b90697deeea3edda6"></a>
+<a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3f/structAvahiWatch.html#a70d06a389657f67b90697deeea3edda6">mPoller</a></td></tr>
+<tr class="memdesc:a70d06a389657f67b90697deeea3edda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The poller owning this watch. <br /></td></tr>
+<tr class="separator:a70d06a389657f67b90697deeea3edda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae34ec326119f93541228ac8f76423e1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae34ec326119f93541228ac8f76423e1a">&#9670;&nbsp;</a></span>AvahiWatch()</h2>
+<a id="ae030129f27b3211e3b5ad1d8570e66f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae030129f27b3211e3b5ad1d8570e66f4">&#9670;&nbsp;</a></span>AvahiWatch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +151,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="..
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;&#160;</td>
           <td class="paramname"><em>aPoller</em>&#160;</td>
         </tr>
         <tr>
@@ -160,7 +171,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="..
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFd</td><td>The file descriptor to watch. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aEvents</td><td>The events to watch. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The function to be called when events happend on this file descriptor. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The function to be called when events happened on this file descriptor. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aContext</td><td>A pointer to application-specific context. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoller</td><td>The AvahiPoller this watcher belongs to. </td></tr>
   </table>

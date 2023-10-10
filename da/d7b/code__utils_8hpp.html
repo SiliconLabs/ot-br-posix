@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-22f72f8</span>
+   &#160;<span id="projectnumber">0.3.0-1fd52b0</span>
    </div>
   </td>
  </tr>
@@ -96,6 +96,9 @@ Macros</h2></td></tr>
 <tr class="separator:abd93e762dbf58b7d5c91966ee1c3412a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c4a82c0020317f9f2ffcfebcb6a3712"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a3c4a82c0020317f9f2ffcfebcb6a3712">OTBR_ALIGNED</a>(aMem,  aAlignType)</td></tr>
 <tr class="separator:a3c4a82c0020317f9f2ffcfebcb6a3712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b3387bf72f3f025bdbb4f56a82244c"><td class="memItemLeft" align="right" valign="top"><a id="ad2b3387bf72f3f025bdbb4f56a82244c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OT_DEFINE_ALIGNED_VAR</b>(name,  size,  align_type)&#160;&#160;&#160;    align_type name[(((size) + (sizeof(align_type) - 1)) / sizeof(align_type))]</td></tr>
+<tr class="separator:ad2b3387bf72f3f025bdbb4f56a82244c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79bcfb6bde984f42d1124b068a509af7"><td class="memItemLeft" align="right" valign="top"><a id="a79bcfb6bde984f42d1124b068a509af7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BASE</b>&#160;&#160;&#160;0x1</td></tr>
 <tr class="separator:a79bcfb6bde984f42d1124b068a509af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +131,8 @@ Functions</h2></td></tr>
 template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a316185d1cc1e992d3474ebda2fb4537c"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MakeUnique</b> (Args &amp;&amp;...args)</td></tr>
 <tr class="separator:a316185d1cc1e992d3474ebda2fb4537c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc8a3743601b080355bfbaad9760b9d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a2fc8a3743601b080355bfbaad9760b9d">ConvertOpenThreadUint64</a> (const uint8_t *aValue)</td></tr>
+<tr class="separator:a2fc8a3743601b080355bfbaad9760b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes utility macros for coding. </p>
@@ -374,6 +379,33 @@ template&lt;typename T , typename... Args&gt; </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a2fc8a3743601b080355bfbaad9760b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc8a3743601b080355bfbaad9760b9d">&#9670;&nbsp;</a></span>ConvertOpenThreadUint64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ConvertOpenThreadUint64 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>aValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method converts 8 uint8_t bytes into uint64_t using big-endian.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aValue</td><td>The input 8 uint8_t bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted uint64_t. </dd></dl>
 
 </div>
 </div>

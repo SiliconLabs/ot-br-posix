@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-22f72f8</span>
+   &#160;<span id="projectnumber">0.3.0-1fd52b0</span>
    </div>
   </td>
  </tr>
@@ -63,6 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d5/d39/structAvahiTimeout-members.html">List of all members</a>  </div>
@@ -71,10 +72,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae4e4e74cb9d1b6ef476c654c329dcb68"><td class="memItemLeft" align="right" valign="top"><a id="ae4e4e74cb9d1b6ef476c654c329dcb68"></a>
+typedef <a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">otbr::Mdns::AvahiPoller</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AvahiPoller</b></td></tr>
+<tr class="separator:ae4e4e74cb9d1b6ef476c654c329dcb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ef35a3e6549ddf6745f4e5b7549a39c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#a2ef35a3e6549ddf6745f4e5b7549a39c">AvahiTimeout</a> (const struct timeval *aTimeout, AvahiTimeoutCallback aCallback, void *aContext, void *aPoller)</td></tr>
-<tr class="separator:a2ef35a3e6549ddf6745f4e5b7549a39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab972c6ada732844bfb725909cbff45c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#ab972c6ada732844bfb725909cbff45c2">AvahiTimeout</a> (const struct timeval *aTimeout, AvahiTimeoutCallback aCallback, void *aContext, <a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;aPoller)</td></tr>
+<tr class="separator:ab972c6ada732844bfb725909cbff45c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -90,16 +97,20 @@ AvahiTimeoutCallback&#160;</td><td class="memItemRight" valign="bottom"><a class
 void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#afc4eeab8341016771d0d43d83f5df199">mContext</a></td></tr>
 <tr class="memdesc:afc4eeab8341016771d0d43d83f5df199"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pointer to application-specific context. <br /></td></tr>
 <tr class="separator:afc4eeab8341016771d0d43d83f5df199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cc8a98d3f52ef029374cdb09c811be1"><td class="memItemLeft" align="right" valign="top"><a id="a7cc8a98d3f52ef029374cdb09c811be1"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#a7cc8a98d3f52ef029374cdb09c811be1">mPoller</a></td></tr>
-<tr class="memdesc:a7cc8a98d3f52ef029374cdb09c811be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The poller created this timer. <br /></td></tr>
-<tr class="separator:a7cc8a98d3f52ef029374cdb09c811be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b79bd19d3893d8e6dd87b6ee725273"><td class="memItemLeft" align="right" valign="top"><a id="ab4b79bd19d3893d8e6dd87b6ee725273"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#ab4b79bd19d3893d8e6dd87b6ee725273">mShouldReport</a></td></tr>
+<tr class="memdesc:ab4b79bd19d3893d8e6dd87b6ee725273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not timeout occurred and need to reported (invoking callback). <br /></td></tr>
+<tr class="separator:ab4b79bd19d3893d8e6dd87b6ee725273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8652f9cd2bdd7d6114a096a004171930"><td class="memItemLeft" align="right" valign="top"><a id="a8652f9cd2bdd7d6114a096a004171930"></a>
+<a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/structAvahiTimeout.html#a8652f9cd2bdd7d6114a096a004171930">mPoller</a></td></tr>
+<tr class="memdesc:a8652f9cd2bdd7d6114a096a004171930"><td class="mdescLeft">&#160;</td><td class="mdescRight">The poller created this timer. <br /></td></tr>
+<tr class="separator:a8652f9cd2bdd7d6114a096a004171930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This structure implements the <a class="el" href="../../db/dfa/structAvahiTimeout.html">AvahiTimeout</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2ef35a3e6549ddf6745f4e5b7549a39c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ef35a3e6549ddf6745f4e5b7549a39c">&#9670;&nbsp;</a></span>AvahiTimeout()</h2>
+<a id="ab972c6ada732844bfb725909cbff45c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab972c6ada732844bfb725909cbff45c2">&#9670;&nbsp;</a></span>AvahiTimeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +139,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="..
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dd2/classotbr_1_1Mdns_1_1AvahiPoller.html">AvahiPoller</a> &amp;&#160;</td>
           <td class="paramname"><em>aPoller</em>&#160;</td>
         </tr>
         <tr>
