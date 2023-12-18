@@ -1,35 +1,35 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>io.openthread.BorderRouter</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><link rel="home" href="index.html" title="io.openthread.BorderRouter"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">io.openthread.BorderRouter</th></tr></table><hr></div><div class="refentry"><a name="gdbus-io.openthread.BorderRouter"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>io.openthread.BorderRouter</p></div><div class="refsynopsisdiv"><h2>Methods</h2><pre class="synopsis">
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Scan" title="The Scan() method">Scan</a>                          (OUT a(tstayqqynyybb)  scan_result);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.EnergyScan" title="The EnergyScan() method">EnergyScan</a>                    (IN  u                 scanduration,
-                               OUT a(yy)             result);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Attach" title="The Attach() method">Attach</a>                        (IN  ay                networkkey,
-                               IN  q                 panid,
-                               IN  s                 networkname,
-                               IN  t                 extpanid,
-                               IN  ay                pskc,
-                               IN  u                 channel_mask);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AttachAllNodesTo" title="The AttachAllNodesTo() method">AttachAllNodesTo</a>              (IN  ay                dataset,
-                               OUT x                 delay_ms);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Scan" title="The Scan() method">Scan</a>                          (OUT a(tstayqqynyybb)   scan_result);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.EnergyScan" title="The EnergyScan() method">EnergyScan</a>                    (IN  u                  scanduration,
+                               OUT a(yy)              result);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Attach" title="The Attach() method">Attach</a>                        (IN  ay                 networkkey,
+                               IN  q                  panid,
+                               IN  s                  networkname,
+                               IN  t                  extpanid,
+                               IN  ay                 pskc,
+                               IN  u                  channel_mask);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AttachAllNodesTo" title="The AttachAllNodesTo() method">AttachAllNodesTo</a>              (IN  ay                 dataset,
+                               OUT x                  delay_ms);
 <a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Detach" title="The Detach() method">Detach</a>                        ();
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.PermitUnsecureJoin" title="The PermitUnsecureJoin() method">PermitUnsecureJoin</a>            (IN  q                 port,
-                               IN  u                 timeout);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.JoinerStart" title="The JoinerStart() method">JoinerStart</a>                   (IN  s                 pskd,
-                               IN  s                 provision_url,
-                               IN  s                 vendor_name,
-                               IN  s                 vendor_model,
-                               IN  s                 vendor_sw_version,
-                               IN  s                 vendor_data);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.PermitUnsecureJoin" title="The PermitUnsecureJoin() method">PermitUnsecureJoin</a>            (IN  q                  port,
+                               IN  u                  timeout);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.JoinerStart" title="The JoinerStart() method">JoinerStart</a>                   (IN  s                  pskd,
+                               IN  s                  provision_url,
+                               IN  s                  vendor_name,
+                               IN  s                  vendor_model,
+                               IN  s                  vendor_sw_version,
+                               IN  s                  vendor_data);
 <a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.JoinerStop" title="The JoinerStop() method">JoinerStop</a>                    ();
 <a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.FactoryReset" title="The FactoryReset() method">FactoryReset</a>                  ();
 <a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.Reset" title="The Reset() method">Reset</a>                         ();
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AddExternalRoute" title="The AddExternalRoute() method">AddExternalRoute</a>              (IN  ((ayy)qybb)       prefix);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.RemoveExternalRoute" title="The RemoveExternalRoute() method">RemoveExternalRoute</a>           (IN  (ayy)             prefix);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AddOnMeshPrefix" title="The AddOnMeshPrefix() method">AddOnMeshPrefix</a>               (IN  ((ayy)y(bbbbbbb)) prefix);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.RemoveOnMeshPrefix" title="The RemoveOnMeshPrefix() method">RemoveOnMeshPrefix</a>            (IN  (ayy)             prefix);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.UpdateVendorMeshCopTxtEntries" title="The UpdateVendorMeshCopTxtEntries() method">UpdateVendorMeshCopTxtEntries</a> (IN  a(say)            update);
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.GetProperties" title="The GetProperties() method">GetProperties</a>                 (IN  as                properties);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AddExternalRoute" title="The AddExternalRoute() method">AddExternalRoute</a>              (IN  ((ayy)qybb)        prefix);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.RemoveExternalRoute" title="The RemoveExternalRoute() method">RemoveExternalRoute</a>           (IN  (ayy)              prefix);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.AddOnMeshPrefix" title="The AddOnMeshPrefix() method">AddOnMeshPrefix</a>               (IN  ((ayy)qybbbbbbbbb) prefix);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.RemoveOnMeshPrefix" title="The RemoveOnMeshPrefix() method">RemoveOnMeshPrefix</a>            (IN  (ayy)              prefix);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.UpdateVendorMeshCopTxtEntries" title="The UpdateVendorMeshCopTxtEntries() method">UpdateVendorMeshCopTxtEntries</a> (IN  a(say)             update);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.GetProperties" title="The GetProperties() method">GetProperties</a>                 (IN  as                 properties);
 <a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.LeaveNetwork" title="The LeaveNetwork() method">LeaveNetwork</a>                  ();
-<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.SetNat64Enabled" title="The SetNat64Enabled() method">SetNat64Enabled</a>               (IN  b                 enable);
+<a class="link" href="index.html#gdbus-method-io-openthread-BorderRouter.SetNat64Enabled" title="The SetNat64Enabled() method">SetNat64Enabled</a>               (IN  b                  enable);
 </pre></div><div class="refsect1"><a name="idm30"></a><h2>Signals</h2><pre class="synopsis">
 <a class="link" href="index.html#gdbus-signal-io-openthread-BorderRouter.Ready" title='The "Ready" signal'>Ready</a> ();
 </pre></div><div class="refsect1"><a name="idm34"></a><h2>Properties</h2><pre class="synopsis">
@@ -238,7 +238,7 @@ uint8 prefix_length<br>
 </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN (ayy) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>
 The prefix for border routing.
 </p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.AddOnMeshPrefix"></a><h3>The AddOnMeshPrefix() method</h3><a class="indexterm" name="idm317"></a><pre class="programlisting">
-AddOnMeshPrefix (IN  ((ayy)y(bbbbbbb)) prefix);
+AddOnMeshPrefix (IN  ((ayy)qybbbbbbbbb) prefix);
 </pre><p>
 Add an on-mesh prefix to the network.
 The on-mesh prefix structure is:
@@ -248,19 +248,20 @@ struct {<br>
 uint8[] prefix_bytes<br>
 uint8 prefix_length<br>
 }<br>
+uint16 rloc16<br>
 byte preference<br>
-struct {<br>
-boolean preferred<br>
-boolean slaac<br>
-boolean dhcp<br>
-boolean configure<br>
-boolean default_route<br>
-boolean on_mesh<br>
-boolean stable<br>
-}<br>
+bool preferred<br>
+bool slaac<br>
+bool dhcp<br>
+bool configure<br>
+bool default_route<br>
+bool on_mesh<br>
+bool stable<br>
+bool nd_dns<br>
+bool dp<br>
 }<br>
 </p></div><p>
-</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)y(bbbbbbb)) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">IN ((ayy)qybbbbbbbbb) <em class="parameter"><code>prefix</code></em></code>:</span></dt><dd><p>
 The on-mesh prefix.
 </p></dd></dl></div></div><div class="refsect2"><a name="gdbus-method-io-openthread-BorderRouter.RemoveOnMeshPrefix"></a><h3>The RemoveOnMeshPrefix() method</h3><a class="indexterm" name="idm331"></a><pre class="programlisting">
 RemoveOnMeshPrefix (IN  (ayy) prefix);
