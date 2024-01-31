@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['leaderdata_974',['LeaderData',['../dd/d1d/structotbr_1_1DBus_1_1LeaderData.html',1,'otbr::DBus']]],
-  ['linkmodeconfig_975',['LinkModeConfig',['../d1/d82/structotbr_1_1DBus_1_1LinkModeConfig.html',1,'otbr::DBus']]]
+  ['keyregistration_991',['KeyRegistration',['../d5/d0c/classotbr_1_1Mdns_1_1Publisher_1_1KeyRegistration.html',1,'otbr::Mdns::Publisher']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['webserver_1026',['WebServer',['../d6/d83/classotbr_1_1Web_1_1WebServer.html',1,'otbr::Web']]],
-  ['wpannetworkinfo_1027',['WpanNetworkInfo',['../d9/dc3/structotbr_1_1Web_1_1WpanNetworkInfo.html',1,'otbr::Web']]],
-  ['wpanservice_1028',['WpanService',['../d3/d46/classotbr_1_1Web_1_1WpanService.html',1,'otbr::Web']]]
+  ['vendorserver_1045',['VendorServer',['../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html',1,'otbr::vendor']]]
 ];
