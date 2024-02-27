@@ -10,7 +10,8 @@ var searchData=
   ['handleformnetworkrequest_1263',['HandleFormNetworkRequest',['../d3/d46/classotbr_1_1Web_1_1WpanService.html#ad2ce93b6cbfa8411d656e90d3d84e868',1,'otbr::Web::WpanService']]],
   ['handlegetqrcoderequest_1264',['HandleGetQRCodeRequest',['../d3/d46/classotbr_1_1Web_1_1WpanService.html#a6c1c1a1ea5f4235dbecabfe6bc79ceab',1,'otbr::Web::WpanService']]],
   ['handlejoinnetworkrequest_1265',['HandleJoinNetworkRequest',['../d3/d46/classotbr_1_1Web_1_1WpanService.html#a3e1c5febcdf61b3ccd155ca8bd1fa3cd',1,'otbr::Web::WpanService']]],
-  ['handlestatusrequest_1266',['HandleStatusRequest',['../d3/d46/classotbr_1_1Web_1_1WpanService.html#a988847b3ca6b43e85212d6fba9079869',1,'otbr::Web::WpanService']]],
-  ['hex2bytes_1267',['Hex2Bytes',['../d4/dfd/hex_8cpp.html#aa6fa4ae5165cac30e57991a694644eea',1,'otbr::Utils']]],
-  ['hex2bytesjsonstring_1268',['Hex2BytesJsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a0daa253ecdecc06caa846fc2a0a7d375',1,'otbr::rest::Json']]]
+  ['handlemdnsstate_1266',['HandleMdnsState',['../d5/d01/structotbr_1_1Application.html#a1ee832c37dc33ffcef9bb4c20b5cc6f3',1,'otbr::Application::HandleMdnsState()'],['../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61',1,'otbr::BorderAgent::HandleMdnsState()']]],
+  ['handlestatusrequest_1267',['HandleStatusRequest',['../d3/d46/classotbr_1_1Web_1_1WpanService.html#a988847b3ca6b43e85212d6fba9079869',1,'otbr::Web::WpanService']]],
+  ['hex2bytes_1268',['Hex2Bytes',['../d4/dfd/hex_8cpp.html#aa6fa4ae5165cac30e57991a694644eea',1,'otbr::Utils']]],
+  ['hex2bytesjsonstring_1269',['Hex2BytesJsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a0daa253ecdecc06caa846fc2a0a7d375',1,'otbr::rest::Json']]]
 ];

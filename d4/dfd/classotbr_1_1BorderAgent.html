@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9326cc3</span>
+   &#160;<span id="projectnumber">0.3.0-ed1efff</span>
    </div>
   </td>
  </tr>
@@ -87,20 +87,18 @@ Inheritance diagram for otbr::BorderAgent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af18aa1190096e70a2777642bd0a6fc69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#af18aa1190096e70a2777642bd0a6fc69">BorderAgent</a> (<a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp)</td></tr>
-<tr class="separator:af18aa1190096e70a2777642bd0a6fc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ef8e1f0df8fbebdc38bce1dffd955b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#ab1ef8e1f0df8fbebdc38bce1dffd955b">Init</a> (void)</td></tr>
-<tr class="separator:ab1ef8e1f0df8fbebdc38bce1dffd955b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87d7411d961528f439d3e4115e40efc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a87d7411d961528f439d3e4115e40efc2">Deinit</a> (void)</td></tr>
-<tr class="separator:a87d7411d961528f439d3e4115e40efc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a335244fab9013514d43f43d8074a2138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a335244fab9013514d43f43d8074a2138">GetPublisher</a> ()</td></tr>
-<tr class="separator:a335244fab9013514d43f43d8074a2138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c0e9888ba00bc96476ae2a4545e105"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a06c0e9888ba00bc96476ae2a4545e105">BorderAgent</a> (<a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;aPublisher)</td></tr>
+<tr class="separator:a06c0e9888ba00bc96476ae2a4545e105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">SetEnabled</a> (bool aIsEnabled)</td></tr>
+<tr class="separator:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efea6841bdd6c1d9544d92641e45e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">HandleMdnsState</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a> aState)</td></tr>
+<tr class="separator:a6efea6841bdd6c1d9544d92641e45e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements Thread border agent functionality. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af18aa1190096e70a2777642bd0a6fc69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af18aa1190096e70a2777642bd0a6fc69">&#9670;&nbsp;</a></span>BorderAgent()</h2>
+<a id="a06c0e9888ba00bc96476ae2a4545e105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c0e9888ba00bc96476ae2a4545e105">&#9670;&nbsp;</a></span>BorderAgent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,8 +107,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">otbr::BorderAgent::BorderAgent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;&#160;</td>
-          <td class="paramname"><em>aNcp</em></td><td>)</td>
+          <td class="paramname"><em>aNcp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPublisher</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -118,6 +126,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aNcp</td><td>A reference to the NCP controller. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPublisher</td><td>A reference to the mDNS Publisher. </td></tr>
   </table>
   </dd>
 </dl>
@@ -125,68 +134,53 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a87d7411d961528f439d3e4115e40efc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87d7411d961528f439d3e4115e40efc2">&#9670;&nbsp;</a></span>Deinit()</h2>
+<a id="a6efea6841bdd6c1d9544d92641e45e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efea6841bdd6c1d9544d92641e45e61">&#9670;&nbsp;</a></span>HandleMdnsState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void otbr::BorderAgent::Deinit </td>
+          <td class="memname">void otbr::BorderAgent::HandleMdnsState </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a>&#160;</td>
+          <td class="paramname"><em>aState</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method de-initializes border agent service. </p>
+<p>This method handles mDNS publisher's state changes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aState</td><td>The state of mDNS publisher. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a335244fab9013514d43f43d8074a2138"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a335244fab9013514d43f43d8074a2138">&#9670;&nbsp;</a></span>GetPublisher()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a>&amp; otbr::BorderAgent::GetPublisher </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method returns the Publisher the border agent is using.</p>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the mPublisher. </dd></dl>
-
-</div>
-</div>
-<a id="ab1ef8e1f0df8fbebdc38bce1dffd955b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1ef8e1f0df8fbebdc38bce1dffd955b">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="affc077ed4545cc1348d0c48bb7c84dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc077ed4545cc1348d0c48bb7c84dfb">&#9670;&nbsp;</a></span>SetEnabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void otbr::BorderAgent::Init </td>
+          <td class="memname">void otbr::BorderAgent::SetEnabled </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aIsEnabled</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method initialize border agent service. </p>
+<p>This method enables/disables the Border Agent.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aIsEnabled</td><td>Whether to enable the Border Agent. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
