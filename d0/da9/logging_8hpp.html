@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-ed1efff</span>
+   &#160;<span id="projectnumber">0.3.0-a35cc68</span>
    </div>
   </td>
  </tr>
@@ -126,10 +126,10 @@ Functions</h2></td></tr>
 <tr class="separator:a5b31d571fd35078bf0d4c1fe252f1e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4b0bf2713442aa78a8c2ecf5c5f8c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#aa4b0bf2713442aa78a8c2ecf5c5f8c5d">otbrLogSetLevel</a> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel)</td></tr>
 <tr class="separator:aa4b0bf2713442aa78a8c2ecf5c5f8c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a762b4410fc095825139d18166e8a64e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#a762b4410fc095825139d18166e8a64e6">otbrLogEnableSyslog</a> (bool aEnabled)</td></tr>
-<tr class="separator:a762b4410fc095825139d18166e8a64e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a616821845b17b9d0b9781f7beb7f0716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#a616821845b17b9d0b9781f7beb7f0716">otbrLogInit</a> (const char *aProgramName, <a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, bool aPrintStderr)</td></tr>
-<tr class="separator:a616821845b17b9d0b9781f7beb7f0716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af740e6936276863cd271888f9d24e088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#af740e6936276863cd271888f9d24e088">otbrLogSyslogSetEnabled</a> (bool aEnabled)</td></tr>
+<tr class="separator:af740e6936276863cd271888f9d24e088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf513c85cc7d7cf211d8d9eb696aaf3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#aaf513c85cc7d7cf211d8d9eb696aaf3f">otbrLogInit</a> (const char *aProgramName, <a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, bool aPrintStderr, bool aSyslogDisable)</td></tr>
+<tr class="separator:aaf513c85cc7d7cf211d8d9eb696aaf3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae81f9dc34535f2621fe586172f968e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#aae81f9dc34535f2621fe586172f968e6">otbrLog</a> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, const char *aLogTag, const char *aFormat,...)</td></tr>
 <tr class="separator:aae81f9dc34535f2621fe586172f968e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf2c504d00faeea0f5e4a8e45ed7a871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/logging_8hpp.html#aaf2c504d00faeea0f5e4a8e45ed7a871">otbrLogv</a> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel, const char *aFormat, va_list aArgList)</td></tr>
@@ -359,7 +359,7 @@ Functions</h2></td></tr>
 <div class="line">                ##__VA_ARGS__, <a class="code" href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a>(_err));                                                    \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aaad50a28e34d631b46f6b959681e42a432">OTBR_ERROR_NONE</a></div><div class="ttdeci">@ OTBR_ERROR_NONE</div><div class="ttdoc">No error.</div><div class="ttdef"><b>Definition:</b> types.hpp:72</div></div>
-<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:207</div></div>
+<div class="ttc" id="alogging_8hpp_html_ada4d1801b5705ba2b957fd1802b8a984"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada4d1801b5705ba2b957fd1802b8a984">otbrErrorString</a></div><div class="ttdeci">const char * otbrErrorString(otbrError aError)</div><div class="ttdef"><b>Definition:</b> logging.cpp:235</div></div>
 <div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10a83e0d72526c4ad89d262a4e2235ab05e"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10a83e0d72526c4ad89d262a4e2235ab05e">OTBR_LOG_WARNING</a></div><div class="ttdeci">@ OTBR_LOG_WARNING</div><div class="ttdoc">Warning conditions.</div><div class="ttdef"><b>Definition:</b> logging.hpp:57</div></div>
 <div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10aeb0321d42905748f2bb55dbd11827065"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10aeb0321d42905748f2bb55dbd11827065">OTBR_LOG_INFO</a></div><div class="ttdeci">@ OTBR_LOG_INFO</div><div class="ttdoc">Informational.</div><div class="ttdef"><b>Definition:</b> logging.hpp:59</div></div>
 </div><!-- fragment --><p>This macro log an action result according to <code>aError</code>.</p>
@@ -565,7 +565,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>log to the syslog or log file </p>
+<p>log to the syslog or standard out </p>
 
 </div>
 </div>
@@ -585,31 +585,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This function deinitializes the logging service. </p>
-
-</div>
-</div>
-<a id="a762b4410fc095825139d18166e8a64e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a762b4410fc095825139d18166e8a64e6">&#9670;&nbsp;</a></span>otbrLogEnableSyslog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void otbrLogEnableSyslog </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>aEnabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Control log to syslog.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>True to log to/via syslog. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -653,8 +628,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a616821845b17b9d0b9781f7beb7f0716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a616821845b17b9d0b9781f7beb7f0716">&#9670;&nbsp;</a></span>otbrLogInit()</h2>
+<a id="aaf513c85cc7d7cf211d8d9eb696aaf3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf513c85cc7d7cf211d8d9eb696aaf3f">&#9670;&nbsp;</a></span>otbrLogInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,7 +650,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>aPrintStderr</em>&#160;</td>
+          <td class="paramname"><em>aPrintStderr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aSyslogDisable</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -689,7 +670,8 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aProgramName</td><td>The name of this runnable program. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aLevel</td><td>Log level of the logger. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPrintStderr</td><td>Whether to log to stderr.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPrintStderr</td><td>Whether to log to stderr. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aSyslogDisable</td><td>Whether to disable logging to syslog.</td></tr>
   </table>
   </dd>
 </dl>
@@ -713,6 +695,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set current log level. </p>
+
+</div>
+</div>
+<a id="af740e6936276863cd271888f9d24e088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af740e6936276863cd271888f9d24e088">&#9670;&nbsp;</a></span>otbrLogSyslogSetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbrLogSyslogSetEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Control log to syslog.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEnabled</td><td>True to enable logging to/via syslog.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Enable/disable logging with syslog </p>
 
 </div>
 </div>
@@ -756,7 +764,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>log to the syslog or log file </p>
+<p>log to the syslog or standard out </p>
 
 </div>
 </div>
@@ -796,10 +804,11 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLevel</td><td>Log level of the logger. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>Format string as in printf. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aArgList</td><td>The variable-length arguments list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aArgList</td><td>The variable-length arguments list.</td></tr>
   </table>
   </dd>
 </dl>
+<p>log to the syslog or standard out </p>
 
 </div>
 </div>

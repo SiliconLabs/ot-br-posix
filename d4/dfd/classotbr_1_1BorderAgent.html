@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-ed1efff</span>
+   &#160;<span id="projectnumber">0.3.0-a35cc68</span>
    </div>
   </td>
  </tr>
@@ -89,6 +89,8 @@ Inheritance diagram for otbr::BorderAgent:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a06c0e9888ba00bc96476ae2a4545e105"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a06c0e9888ba00bc96476ae2a4545e105">BorderAgent</a> (<a class="el" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;aPublisher)</td></tr>
 <tr class="separator:a06c0e9888ba00bc96476ae2a4545e105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a2b89fac891c54043874a66c7dc0ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a35a2b89fac891c54043874a66c7dc0ca">SetMeshCopServiceValues</a> (const std::string &amp;aServiceInstanceName, const std::string &amp;aProductName, const std::string &amp;aVendorName, const std::vector&lt; uint8_t &gt; &amp;aVendorOui={})</td></tr>
+<tr class="separator:a35a2b89fac891c54043874a66c7dc0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">SetEnabled</a> (bool aIsEnabled)</td></tr>
 <tr class="separator:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6efea6841bdd6c1d9544d92641e45e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">HandleMdnsState</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a> aState)</td></tr>
@@ -181,6 +183,60 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a35a2b89fac891c54043874a66c7dc0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a2b89fac891c54043874a66c7dc0ca">&#9670;&nbsp;</a></span>SetMeshCopServiceValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> otbr::BorderAgent::SetMeshCopServiceValues </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aServiceInstanceName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aProductName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aVendorName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aVendorOui</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Overrides MeshCoP service (i.e. _meshcop._udp) instance name, product name, vendor name and vendor OUI.</p>
+<p>This method must be called before this <a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a> is enabled by SetEnabled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aServiceInstanceName</td><td>The service instance name; suffix may be appended to this value to avoid name conflicts. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aProductName</td><td>The product name; must not exceed length of kMaxProductNameLength and an empty string will be ignored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aVendorName</td><td>The vendor name; must not exceed length of kMaxVendorNameLength and an empty string will be ignored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aVendorOui</td><td>The vendor OUI; must have length of 3 bytes or be empty and ignored.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OTBR_ERROR_INVALID_ARGS If aVendorName, aProductName or aVendorOui exceeds the allowed ranges. </dd>
+<dd>
+OTBR_ERROR_NONE If successfully set the meshcop service values. </dd></dl>
 
 </div>
 </div>
