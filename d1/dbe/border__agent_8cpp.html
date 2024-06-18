@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(function() {
 <code>#include &lt;openthread/platform/settings.h&gt;</code><br />
 <code>#include &lt;openthread/platform/toolchain.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d8f/uris_8hpp_source.html">agent/uris.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d9a/ncp__openthread_8hpp_source.html">ncp/ncp_openthread.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d89/rcp__host_8hpp_source.html">ncp/rcp_host.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d58/byteswap_8hpp_source.html">common/byteswap.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../da/d7b/code__utils_8hpp_source.html">common/code_utils.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/da9/logging_8hpp_source.html">common/logging.hpp</a>&quot;</code><br />
@@ -147,6 +147,9 @@ StateBitmap&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::GetState
 <tr class="memitem:a46c38e4eb19508dd955c6a53bc139554"><td class="memItemLeft" align="right" valign="top"><a id="a46c38e4eb19508dd955c6a53bc139554"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::AppendActiveTimestampTxtEntry</b> (otInstance &amp;aInstance, Mdns::Publisher::TxtList &amp;aTxtList)</td></tr>
 <tr class="separator:a46c38e4eb19508dd955c6a53bc139554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c746b45055d96f441dc4291dcfeb3e"><td class="memItemLeft" align="right" valign="top"><a id="ae7c746b45055d96f441dc4291dcfeb3e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>otbr::AppendVendorTxtEntries</b> (const std::map&lt; std::string, std::vector&lt; uint8_t &gt;&gt; &amp;aVendorEntries, Mdns::Publisher::TxtList &amp;aTxtList)</td></tr>
+<tr class="separator:ae7c746b45055d96f441dc4291dcfeb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file implements the Thread border agent. </p>

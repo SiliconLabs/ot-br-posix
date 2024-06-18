@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dd4/dbus__object_8hpp.html">dbus/server/dbus_object.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d2d/dbus__thread__object_8hpp.html">dbus/server/dbus_thread_object.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">namespace </span>DBus {</div>
@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>DBusAgent : <span class="keyword">public</span> MainloopProcessor, <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a67074e698c4691da0b6ad5d9d2b30ef3">DBusAgent</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> &amp;aNcp, Mdns::Publisher &amp;aPublisher);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a0deed7f880661cc09c43b24cb11fef7b">DBusAgent</a>(<a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;aHost, Mdns::Publisher &amp;aPublisher);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a1c376585d6dd9395ab4c2c4d8109a662">Init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string                       mInterfaceName;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::unique_ptr&lt;DBusThreadObject&gt; mThreadObject;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    UniqueDBusConnection              mConnection;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a>  &amp;mNcp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a>               &amp;mHost;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Mdns::Publisher                  &amp;mPublisher;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::set&lt;DBusWatch *&gt; mWatches;</div>
@@ -155,8 +155,8 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;} <span class="comment">// namespace otbr</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_AGENT_HPP_</span></div>
-<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:185</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:67</div></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:198</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:68</div></div>
 <div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="adbus__message__helper_8hpp_html"><div class="ttname"><a href="../../d0/dea/dbus__message__helper_8hpp.html">dbus_message_helper.hpp</a></div></div>
@@ -164,9 +164,9 @@ $(function() {
 <div class="ttc" id="adbus__resources_8hpp_html"><div class="ttname"><a href="../../d5/d54/dbus__resources_8hpp.html">dbus_resources.hpp</a></div></div>
 <div class="ttc" id="adbus__thread__object_8hpp_html"><div class="ttname"><a href="../../de/d2d/dbus__thread__object_8hpp.html">dbus_thread_object.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
-<div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
+<div class="ttc" id="arcp__host_8hpp_html"><div class="ttname"><a href="../../d3/d89/rcp__host_8hpp.html">rcp_host.hpp</a></div></div>
+<div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_a0deed7f880661cc09c43b24cb11fef7b"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a0deed7f880661cc09c43b24cb11fef7b">otbr::DBus::DBusAgent::DBusAgent</a></div><div class="ttdeci">DBusAgent(otbr::Ncp::RcpHost &amp;aHost, Mdns::Publisher &amp;aPublisher)</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:47</div></div>
 <div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_a1c376585d6dd9395ab4c2c4d8109a662"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a1c376585d6dd9395ab4c2c4d8109a662">otbr::DBus::DBusAgent::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:54</div></div>
-<div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_a67074e698c4691da0b6ad5d9d2b30ef3"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a67074e698c4691da0b6ad5d9d2b30ef3">otbr::DBus::DBusAgent::DBusAgent</a></div><div class="ttdeci">DBusAgent(otbr::Ncp::ControllerOpenThread &amp;aNcp, Mdns::Publisher &amp;aPublisher)</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:47</div></div>
 <div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_a91ab1eaf73064297811005488762707e"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a91ab1eaf73064297811005488762707e">otbr::DBus::DBusAgent::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:121</div></div>
 <div class="ttc" id="astructotbr_1_1DBus_1_1DBusAgent_html_ab74bf50fd467a833779e69a65df18eed"><div class="ttname"><a href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab74bf50fd467a833779e69a65df18eed">otbr::DBus::DBusAgent::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> dbus_agent.cpp:162</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;openthread/border_router.h&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d20/api__strings_8hpp.html">common/api_strings.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;openthread/dataset.h&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;openthread/dataset_ftd.h&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/db8/json_8hpp.html">rest/json.hpp</a>&quot;</span></div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/da4/response_8hpp.html">rest/response.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d3c/thread__helper_8hpp.html">utils/thread_helper.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">using</span> <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">using</span> <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">using</span> std::chrono::steady_clock;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span>otbr {</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html">Resource</a></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a136f590ac89ced768ca413a45cec3e62">Resource</a>(<a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *aNcp);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#abc6113c55387f1851043cb246a5d51d5">Resource</a>(<a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">RcpHost</a> *aHost);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a13ccb952db19ec5f56108b79ba1812a4">Init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
@@ -185,8 +185,8 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                          <span class="keywordtype">void</span>                *aContext);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span>        DiagnosticResponseHandler(otError aError, <span class="keyword">const</span> otMessage *aMessage, <span class="keyword">const</span> otMessageInfo *aMessageInfo);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    otInstance           *mInstance;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">ControllerOpenThread</a> *mNcp;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    otInstance *mInstance;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">RcpHost</a>    *mHost;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::unordered_map&lt;std::string, ResourceHandler&gt;         mResourceMap;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::unordered_map&lt;std::string, ResourceCallbackHandler&gt; mResourceCallbackMap;</div>
@@ -199,18 +199,18 @@ $(function() {
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_RESOURCE_HPP_</span></div>
 <div class="ttc" id="aapi__strings_8hpp_html"><div class="ttname"><a href="../../d4/d20/api__strings_8hpp.html">api_strings.hpp</a></div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:67</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:68</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Request_html"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html">otbr::rest::Request</a></div><div class="ttdef"><b>Definition:</b> request.hpp:53</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html">otbr::rest::Resource</a></div><div class="ttdef"><b>Definition:</b> resource.hpp:64</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_a003b7ef33aa48f1ec6d4a654c0d400d5"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a003b7ef33aa48f1ec6d4a654c0d400d5">otbr::rest::Resource::Handle</a></div><div class="ttdeci">void Handle(Request &amp;aRequest, Response &amp;aResponse) const</div><div class="ttdef"><b>Definition:</b> resource.cpp:152</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_a136f590ac89ced768ca413a45cec3e62"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a136f590ac89ced768ca413a45cec3e62">otbr::rest::Resource::Resource</a></div><div class="ttdeci">Resource(ControllerOpenThread *aNcp)</div><div class="ttdef"><b>Definition:</b> resource.cpp:124</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_a13ccb952db19ec5f56108b79ba1812a4"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a13ccb952db19ec5f56108b79ba1812a4">otbr::rest::Resource::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> resource.cpp:147</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_a45c2434e3ac6498e6169f77c4800765b"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#a45c2434e3ac6498e6169f77c4800765b">otbr::rest::Resource::ErrorHandler</a></div><div class="ttdeci">void ErrorHandler(Response &amp;aResponse, HttpStatusCode aErrorCode) const</div><div class="ttdef"><b>Definition:</b> resource.cpp:205</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_ab295a777534ec33d12ee2212ddf7bd48"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#ab295a777534ec33d12ee2212ddf7bd48">otbr::rest::Resource::HandleCallback</a></div><div class="ttdeci">void HandleCallback(Request &amp;aRequest, Response &amp;aResponse)</div><div class="ttdef"><b>Definition:</b> resource.cpp:168</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html_abc6113c55387f1851043cb246a5d51d5"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html#abc6113c55387f1851043cb246a5d51d5">otbr::rest::Resource::Resource</a></div><div class="ttdeci">Resource(RcpHost *aHost)</div><div class="ttdef"><b>Definition:</b> resource.cpp:124</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Response_html"><div class="ttname"><a href="../../d2/db0/classotbr_1_1rest_1_1Response.html">otbr::rest::Response</a></div><div class="ttdef"><b>Definition:</b> response.hpp:59</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="../../d5/db8/json_8hpp.html">json.hpp</a></div></div>
-<div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
+<div class="ttc" id="arcp__host_8hpp_html"><div class="ttname"><a href="../../d3/d89/rcp__host_8hpp.html">rcp_host.hpp</a></div></div>
 <div class="ttc" id="arequest_8hpp_html"><div class="ttname"><a href="../../d6/d6f/request_8hpp.html">request.hpp</a></div></div>
 <div class="ttc" id="aresponse_8hpp_html"><div class="ttname"><a href="../../db/da4/response_8hpp.html">response.hpp</a></div></div>
 <div class="ttc" id="astructotbr_1_1rest_1_1NodeInfo_html"><div class="ttname"><a href="../../d6/dbf/structotbr_1_1rest_1_1NodeInfo.html">otbr::rest::NodeInfo</a></div><div class="ttdef"><b>Definition:</b> types.hpp:102</div></div>

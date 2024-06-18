@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -102,8 +102,18 @@ $(function() {
 <li>GetConnection()
 : <a class="el" href="d0/d92/classotbr_1_1DBus_1_1DBusRequest.html#a7a566c4df51e89f5f3522a71da6671f7">otbr::DBus::DBusRequest</a>
 </li>
+<li>GetCoprocessorType()
+: <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a13506183984ded2c39515e0fc3d81b33">otbr::Ncp::RcpHost</a>
+, <a class="el" href="db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a3a510d42e9e7a4a9406e7cceeda980f9">otbr::Ncp::ThreadHost</a>
+</li>
+<li>GetCoprocessorVersion()
+: <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ae02340ac02b7e45f0ba8ddbc18bc3cf7">otbr::Ncp::RcpHost</a>
+, <a class="el" href="db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a10281d6e8fe29851742b98a5eade976d">otbr::Ncp::ThreadHost</a>
+</li>
 <li>GetDeviceRole()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a070545142d99e3c24f72f9de88a07c0c">otbr::DBus::ThreadApiDBus</a>
+, <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#add576346e709a4c56abb4f65075ca81c">otbr::Ncp::RcpHost</a>
+, <a class="el" href="db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a74e0f723fa45d22231f94c91bf12a6d4">otbr::Ncp::ThreadHost</a>
 </li>
 <li>GetExtendedAddress()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#aa76141ec1429b40b36974c590d9119e1">otbr::DBus::ThreadApiDBus</a>
@@ -120,10 +130,13 @@ $(function() {
 <li>GetHeaderValue()
 : <a class="el" href="da/df0/classotbr_1_1rest_1_1Request.html#a8050adf2c0276684625e686e1e3432b0">otbr::rest::Request</a>
 </li>
+<li>GetHost()
+: <a class="el" href="d5/d01/structotbr_1_1Application.html#ae08ec9131b8eaea9304f2e2dff5e5562">otbr::Application</a>
+</li>
 <li>GetInstance()
 : <a class="el" href="d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a420d4d28dc3d80811d428f4dfeddaa5a">otbr::agent::ThreadHelper</a>
 , <a class="el" href="d7/dcc/classotbr_1_1MainloopManager.html#a29cb87a11d336d8acd44175456aad629">otbr::MainloopManager</a>
-, <a class="el" href="db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a2047cded3e4273a4d1209dc5e1ac5f61">otbr::Ncp::ControllerOpenThread</a>
+, <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a6d4f5b7030a258943991e549cac4801c">otbr::Ncp::RcpHost</a>
 , <a class="el" href="d9/dea/classotbr_1_1ubus_1_1UbusServer.html#a869e5a269f8df9231e60b8b23de90362">otbr::ubus::UbusServer</a>
 </li>
 <li>GetInstantRssi()
@@ -131,7 +144,7 @@ $(function() {
 </li>
 <li>GetInterfaceName()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#aa1a96770d0b1852845666799b3cf6aaa">otbr::DBus::ThreadApiDBus</a>
-, <a class="el" href="db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a8f33ac5f75be25e707453827b710ad12">otbr::Ncp::ControllerOpenThread</a>
+, <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a67769830c0f69070bef8bd9129ac6cfa">otbr::Ncp::RcpHost</a>
 </li>
 <li>GetIp6Counters()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#ab5626a142db3964c14ab94a7437e93ef">otbr::DBus::ThreadApiDBus</a>
@@ -176,9 +189,6 @@ $(function() {
 </li>
 <li>GetNat64State()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a42ff6d1652df2f52750afaeee4acbb2f">otbr::DBus::ThreadApiDBus</a>
-</li>
-<li>GetNcp()
-: <a class="el" href="d5/d01/structotbr_1_1Application.html#a0e7393209068d56518be79b14fc3ea09">otbr::Application</a>
 </li>
 <li>GetNeighborTable()
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#addb1123cce70244ff7f0001688ca38ad">otbr::DBus::ThreadApiDBus</a>
@@ -241,10 +251,10 @@ $(function() {
 : <a class="el" href="df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#accdf06e4cc022dfc116594299d9d4204">otbr::DBus::ThreadApiDBus</a>
 </li>
 <li>GetThreadHelper()
-: <a class="el" href="db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#ab53e53ecfd87e3bcdf3d4fcddba906bf">otbr::Ncp::ControllerOpenThread</a>
+: <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a9adc0a2755bbd18f8e988ebd819acc5b">otbr::Ncp::RcpHost</a>
 </li>
 <li>GetThreadVersion()
-: <a class="el" href="db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#acdbc62607181e9c999e211fc9a181617">otbr::Ncp::ControllerOpenThread</a>
+: <a class="el" href="dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#afb846002dfc0b9b406f41cd38381e1d4">otbr::Ncp::RcpHost</a>
 </li>
 <li>GetType()
 : <a class="el" href="d0/d02/classotbr_1_1Tlv.html#a47958382c4c7759b995a3d64c52b28ff">otbr::Tlv</a>

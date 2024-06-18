@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['verifyordie_1831',['VerifyOrDie',['../da/d7b/code__utils_8hpp.html#a2d6272c811fd5e2faa85f574e453d36d',1,'code_utils.hpp']]],
-  ['verifyorexit_1832',['VerifyOrExit',['../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed',1,'code_utils.hpp']]]
+  ['successordie_1845',['SuccessOrDie',['../da/d7b/code__utils_8hpp.html#af38b11ab2e5093086804add4a45f274a',1,'code_utils.hpp']]],
+  ['successorexit_1846',['SuccessOrExit',['../da/d7b/code__utils_8hpp.html#a65869e9d31d24f02dd798556f6f483c1',1,'code_utils.hpp']]]
 ];

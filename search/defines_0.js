@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exitnow_1787',['ExitNow',['../da/d7b/code__utils_8hpp.html#aa5d26b95c8540322013b11b942f3121e',1,'code_utils.hpp']]]
+  ['dienow_1802',['DieNow',['../da/d7b/code__utils_8hpp.html#a05cbb5b745d641b2f59455570f6fddfe',1,'code_utils.hpp']]]
 ];

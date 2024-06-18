@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/da9/common_2dns__utils_8hpp.html">common/dns_utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d7c/mdns_8hpp.html">mdns/mdns.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">namespace </span>Dnssd {</div>
@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">class </span>DiscoveryProxy : <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">explicit</span> DiscoveryProxy(Ncp::ControllerOpenThread &amp;aNcp, Mdns::Publisher &amp;aPublisher);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">explicit</span> DiscoveryProxy(Ncp::RcpHost &amp;aHost, Mdns::Publisher &amp;aPublisher);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> SetEnabled(<span class="keywordtype">bool</span> aIsEnabled);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
@@ -156,10 +156,10 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> Stop(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> IsEnabled(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mIsEnabled; }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Ncp::ControllerOpenThread &amp;mNcp;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Mdns::Publisher           &amp;mMdnsPublisher;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">bool</span>                       mIsEnabled;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uint64_t                   mSubscriberId = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Ncp::RcpHost    &amp;mHost;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Mdns::Publisher &amp;mMdnsPublisher;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">bool</span>             mIsEnabled;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uint64_t         mSubscriberId = 0;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;} <span class="comment">// namespace Dnssd</span></div>
@@ -168,13 +168,13 @@ $(function() {
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_ENABLE_DNSSD_DISCOVERY_PROXY</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_DISCOVERY_PROXY_HPP_</span></div>
-<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:185</div></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:198</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:183</div></div>
 <div class="ttc" id="acode__utils_8hpp_html_a42e32454ca5e456d5ce5a260c735abed"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html#a42e32454ca5e456d5ce5a260c735abed">VerifyOrExit</a></div><div class="ttdeci">#define VerifyOrExit(aCondition,...)</div><div class="ttdef"><b>Definition:</b> code_utils.hpp:117</div></div>
 <div class="ttc" id="acommon_2dns__utils_8hpp_html"><div class="ttname"><a href="../../d9/da9/common_2dns__utils_8hpp.html">dns_utils.hpp</a></div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="amdns_8hpp_html"><div class="ttname"><a href="../../de/d7c/mdns_8hpp.html">mdns.hpp</a></div></div>
-<div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
+<div class="ttc" id="arcp__host_8hpp_html"><div class="ttname"><a href="../../d3/d89/rcp__host_8hpp.html">rcp_host.hpp</a></div></div>
 <div class="ttc" id="astructDnsNameInfo_html"><div class="ttname"><a href="../../d1/de1/structDnsNameInfo.html">DnsNameInfo</a></div><div class="ttdef"><b>Definition:</b> dns_utils.hpp:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

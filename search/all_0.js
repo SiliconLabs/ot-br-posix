@@ -8,7 +8,7 @@ var searchData=
   ['addmainloopprocessor_5',['AddMainloopProcessor',['../d7/dcc/classotbr_1_1MainloopManager.html#aef0bb60c805a40f43a93944813822e6c',1,'otbr::MainloopManager']]],
   ['addonmeshprefix_6',['AddOnMeshPrefix',['../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#ab87331038d68084d03c1ba1a2f140776',1,'otbr::DBus::ThreadApiDBus']]],
   ['addsubscriptioncallbacks_7',['AddSubscriptionCallbacks',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a54d15649205370cd1b67002c8d88511e',1,'otbr::Mdns::Publisher']]],
-  ['addthreadstatechangedcallback_8',['AddThreadStateChangedCallback',['../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html#a9466da58e6de70102fb58aa18231f4e2',1,'otbr::Ncp::ControllerOpenThread']]],
+  ['addthreadstatechangedcallback_8',['AddThreadStateChangedCallback',['../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a0e90b04252d31f512b5f6d7887323a02',1,'otbr::Ncp::RcpHost']]],
   ['advertising_5fproxy_2ecpp_9',['advertising_proxy.cpp',['../d7/d33/advertising__proxy_8cpp.html',1,'']]],
   ['advertising_5fproxy_2ehpp_10',['advertising_proxy.hpp',['../dd/d20/advertising__proxy_8hpp.html',1,'']]],
   ['api_5fstrings_2ehpp_11',['api_strings.hpp',['../d4/d20/api__strings_8hpp.html',1,'']]],

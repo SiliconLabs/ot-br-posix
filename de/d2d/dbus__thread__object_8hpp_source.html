@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dd4/dbus__object_8hpp.html">dbus/server/dbus_object.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d7c/mdns_8hpp.html">mdns/mdns.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d9a/ncp__openthread_8hpp.html">ncp/ncp_openthread.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>DBus {</div>
@@ -119,10 +119,10 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html">DBusThreadObject</a> : <span class="keyword">public</span> <a class="code" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">DBusObject</a></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#ad66f2299ef83715143ffe6e4aa8db1f8">DBusThreadObject</a>(DBusConnection                  *aConnection,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                     <span class="keyword">const</span> std::string               &amp;aInterfaceName,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                     <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a> *aNcp,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                     <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a>                 *aPublisher);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a2e7e0259bfed23fe54af2f6e08c89b71">DBusThreadObject</a>(DBusConnection     *aConnection,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                     <span class="keyword">const</span> std::string  &amp;aInterfaceName,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                     <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> *aHost,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                     <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a>    *aPublisher);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a56365e35e991a3d5c2462d3c224b27b7">Init</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
@@ -225,7 +225,7 @@ $(function() {
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> ReplyScanResult(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest, otError aError, <span class="keyword">const</span> std::vector&lt;otActiveScanResult&gt; &amp;aResult);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> ReplyEnergyScanResult(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest, otError aError, <span class="keyword">const</span> std::vector&lt;otEnergyScanResult&gt; &amp;aResult);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a>                     *mNcp;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a>                                  *mHost;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::unordered_map&lt;std::string, PropertyHandlerType&gt; mGetPropertyHandlers;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a>                               *mPublisher;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
@@ -237,16 +237,16 @@ $(function() {
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusObject_html"><div class="ttname"><a href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">otbr::DBus::DBusObject</a></div><div class="ttdef"><b>Definition:</b> dbus_object.hpp:66</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">otbr::DBus::DBusRequest</a></div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:59</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObject_html"><div class="ttname"><a href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html">otbr::DBus::DBusThreadObject</a></div><div class="ttdef"><b>Definition:</b> dbus_thread_object.hpp:64</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObject_html_a2e7e0259bfed23fe54af2f6e08c89b71"><div class="ttname"><a href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a2e7e0259bfed23fe54af2f6e08c89b71">otbr::DBus::DBusThreadObject::DBusThreadObject</a></div><div class="ttdeci">DBusThreadObject(DBusConnection *aConnection, const std::string &amp;aInterfaceName, otbr::Ncp::RcpHost *aHost, Mdns::Publisher *aPublisher)</div><div class="ttdef"><b>Definition:</b> dbus_thread_object.cpp:93</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObject_html_a56365e35e991a3d5c2462d3c224b27b7"><div class="ttname"><a href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#a56365e35e991a3d5c2462d3c224b27b7">otbr::DBus::DBusThreadObject::Init</a></div><div class="ttdeci">otbrError Init(void) override</div><div class="ttdef"><b>Definition:</b> dbus_thread_object.cpp:103</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObject_html_abbb1aaa710d4e6a69b69484a6bdd623c"><div class="ttname"><a href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#abbb1aaa710d4e6a69b69484a6bdd623c">otbr::DBus::DBusThreadObject::RegisterGetPropertyHandler</a></div><div class="ttdeci">void RegisterGetPropertyHandler(const std::string &amp;aInterfaceName, const std::string &amp;aPropertyName, const PropertyHandlerType &amp;aHandler) override</div><div class="ttdef"><b>Definition:</b> dbus_thread_object.cpp:1527</div></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObject_html_ad66f2299ef83715143ffe6e4aa8db1f8"><div class="ttname"><a href="../../de/d73/classotbr_1_1DBus_1_1DBusThreadObject.html#ad66f2299ef83715143ffe6e4aa8db1f8">otbr::DBus::DBusThreadObject::DBusThreadObject</a></div><div class="ttdeci">DBusThreadObject(DBusConnection *aConnection, const std::string &amp;aInterfaceName, otbr::Ncp::ControllerOpenThread *aNcp, Mdns::Publisher *aPublisher)</div><div class="ttdef"><b>Definition:</b> dbus_thread_object.cpp:93</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:75</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ControllerOpenThread_html"><div class="ttname"><a href="../../db/d17/classotbr_1_1Ncp_1_1ControllerOpenThread.html">otbr::Ncp::ControllerOpenThread</a></div><div class="ttdef"><b>Definition:</b> ncp_openthread.hpp:67</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:68</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:71</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="adbus__object_8hpp_html"><div class="ttname"><a href="../../d3/dd4/dbus__object_8hpp.html">dbus_object.hpp</a></div></div>
 <div class="ttc" id="amdns_8hpp_html"><div class="ttname"><a href="../../de/d7c/mdns_8hpp.html">mdns.hpp</a></div></div>
-<div class="ttc" id="ancp__openthread_8hpp_html"><div class="ttname"><a href="../../d9/d9a/ncp__openthread_8hpp.html">ncp_openthread.hpp</a></div></div>
+<div class="ttc" id="arcp__host_8hpp_html"><div class="ttname"><a href="../../d3/d89/rcp__host_8hpp.html">rcp_host.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

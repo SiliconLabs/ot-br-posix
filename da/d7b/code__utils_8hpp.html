@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-72ae1f1</span>
+   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
    </div>
   </td>
  </tr>
@@ -116,6 +116,8 @@ Macros</h2></td></tr>
 <tr class="separator:a42e32454ca5e456d5ce5a260c735abed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6272c811fd5e2faa85f574e453d36d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a2d6272c811fd5e2faa85f574e453d36d">VerifyOrDie</a>(aCondition,  aMessage)</td></tr>
 <tr class="separator:a2d6272c811fd5e2faa85f574e453d36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cbb5b745d641b2f59455570f6fddfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#a05cbb5b745d641b2f59455570f6fddfe">DieNow</a>(aMessage)</td></tr>
+<tr class="separator:a05cbb5b745d641b2f59455570f6fddfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5d26b95c8540322013b11b942f3121e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7b/code__utils_8hpp.html#aa5d26b95c8540322013b11b942f3121e">ExitNow</a>(...)</td></tr>
 <tr class="separator:aa5d26b95c8540322013b11b942f3121e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87e7d2035db8e29a4573799f468c067"><td class="memItemLeft" align="right" valign="top"><a id="aa87e7d2035db8e29a4573799f468c067"></a>
@@ -137,6 +139,36 @@ template&lt;typename T , typename... Args&gt; </td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file includes utility macros for coding. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a05cbb5b745d641b2f59455570f6fddfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cbb5b745d641b2f59455570f6fddfe">&#9670;&nbsp;</a></span>DieNow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DieNow</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">aMessage</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                   \</div>
+<div class="line">    {                                                                    \</div>
+<div class="line">        otbrLogEmerg(<span class="stringliteral">&quot;FAILED %s:%d - %s&quot;</span>, __FILE__, __LINE__, aMessage); \</div>
+<div class="line">        exit(-1);                                                        \</div>
+<div class="line">    } <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
+</div><!-- fragment --><p>This macro prints the message and terminates the program.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMessage</td><td>A message (text string) to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa5d26b95c8540322013b11b942f3121e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5d26b95c8540322013b11b942f3121e">&#9670;&nbsp;</a></span>ExitNow</h2>
 
