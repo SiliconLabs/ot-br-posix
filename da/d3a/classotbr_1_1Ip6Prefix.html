@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
+   &#160;<span id="projectnumber">0.3.0-31da23b</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab63711227141424c2420338ac43a6c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cdff72ad2921fcd215230b78bb77452"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html#a5cdff72ad2921fcd215230b78bb77452">operator==</a> (const <a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a> &amp;aOther) const</td></tr>
 <tr class="separator:a5cdff72ad2921fcd215230b78bb77452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab9c84f84c8616e9d0704fe50c1af56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html#a1ab9c84f84c8616e9d0704fe50c1af56">operator!=</a> (const <a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a> &amp;aOther) const</td></tr>
+<tr class="separator:a1ab9c84f84c8616e9d0704fe50c1af56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3802424523318fad1c52abad932ee20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html#ab3802424523318fad1c52abad932ee20">Set</a> (const otIp6Prefix &amp;aPrefix)</td></tr>
 <tr class="separator:ab3802424523318fad1c52abad932ee20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d6c20d5ebc3ee10819cad4e409961a6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html#a0d6c20d5ebc3ee10819cad4e409961a6">ToString</a> (void) const</td></tr>
@@ -292,6 +294,32 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 </div><div class="memdoc">
 <p>This method returns if the Ip6 prefix is valid.</p>
 <dl class="section return"><dt>Returns</dt><dd>If the Ip6 prefix is valid. </dd></dl>
+
+</div>
+</div>
+<a id="a1ab9c84f84c8616e9d0704fe50c1af56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab9c84f84c8616e9d0704fe50c1af56">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::Ip6Prefix::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a> &amp;&#160;</td>
+          <td class="paramname"><em>aOther</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method overloads <code>!=</code> operator for comparing two <a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a> objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aOther</td><td>The <a class="el" href="../../da/d3a/classotbr_1_1Ip6Prefix.html">Ip6Prefix</a> object to compare with.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the two objects are NOT equal, false otherwise. </dd></dl>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-5bba00e</span>
+   &#160;<span id="projectnumber">0.3.0-31da23b</span>
    </div>
   </td>
  </tr>
@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0e90b04252d31f512b5f6d7887323a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d421f0b97b65032e56924a585a5b91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ac5d421f0b97b65032e56924a585a5b91">Reset</a> (void)</td></tr>
 <tr class="separator:ac5d421f0b97b65032e56924a585a5b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67769830c0f69070bef8bd9129ac6cfa"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a67769830c0f69070bef8bd9129ac6cfa">GetInterfaceName</a> (void) const</td></tr>
-<tr class="separator:a67769830c0f69070bef8bd9129ac6cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46fbc54dae84eb06f6a490191d0cf677"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a46fbc54dae84eb06f6a490191d0cf677">GetInterfaceName</a> (void) const override</td></tr>
+<tr class="separator:a46fbc54dae84eb06f6a490191d0cf677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add576346e709a4c56abb4f65075ca81c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#add576346e709a4c56abb4f65075ca81c">GetDeviceRole</a> (const DeviceRoleHandler aHandler) override</td></tr>
 <tr class="separator:add576346e709a4c56abb4f65075ca81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13506183984ded2c39515e0fc3d81b33"><td class="memItemLeft" align="right" valign="top">CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a13506183984ded2c39515e0fc3d81b33">GetCoprocessorType</a> (void) override</td></tr>
@@ -393,8 +393,8 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
 
 </div>
 </div>
-<a id="a67769830c0f69070bef8bd9129ac6cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67769830c0f69070bef8bd9129ac6cfa">&#9670;&nbsp;</a></span>GetInterfaceName()</h2>
+<a id="a46fbc54dae84eb06f6a490191d0cf677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46fbc54dae84eb06f6a490191d0cf677">&#9670;&nbsp;</a></span>GetInterfaceName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,12 +412,14 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>This method returns the Thread network interface name.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the Thread network interface name string. </dd></dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a9c3ec819b42d935abf5af0ca32d01c12">otbr::Ncp::ThreadHost</a>.</p>
 
 </div>
 </div>
