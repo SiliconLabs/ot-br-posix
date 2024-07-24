@@ -114,7 +114,7 @@ var searchData=
   ['mnumrxgrantwaitactivated_441',['mNumRxGrantWaitActivated',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#add57750a24cddb34d6b4127bb57a7319',1,'otbr::DBus::RadioCoexMetrics']]],
   ['mnumrxgrantwaittimeout_442',['mNumRxGrantWaitTimeout',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#ae55ec615d2e94c8515957d9684b57dbb',1,'otbr::DBus::RadioCoexMetrics']]],
   ['mnumrxrequest_443',['mNumRxRequest',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#a4ceb49afb69464eca34917b1d70326d7',1,'otbr::DBus::RadioCoexMetrics']]],
-  ['mnumtrelpeers_444',['mNumTrelPeers',['../d7/d27/structotbr_1_1DBus_1_1TrelInfo.html#a63e97be30f3de64713e45b8341f0ecc2',1,'otbr::DBus::TrelInfo']]],
+  ['mnumtrelpeers_444',['mNumTrelPeers',['../d7/d27/structotbr_1_1DBus_1_1TrelInfo.html#a51ad80f297b519e3a023c7a24e669811',1,'otbr::DBus::TrelInfo']]],
   ['mnumtxdelayedgrant_445',['mNumTxDelayedGrant',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#ac4eba4a3035914ffa03bdba802e6ff26',1,'otbr::DBus::RadioCoexMetrics']]],
   ['mnumtxgrantdeactivatedduringrequest_446',['mNumTxGrantDeactivatedDuringRequest',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#a51455a7447138a7cbfee0ca061370fc6',1,'otbr::DBus::RadioCoexMetrics']]],
   ['mnumtxgrantimmediate_447',['mNumTxGrantImmediate',['../d5/d2d/structotbr_1_1DBus_1_1RadioCoexMetrics.html#a5638e604232ea0334043a432b1fac25e',1,'otbr::DBus::RadioCoexMetrics']]],

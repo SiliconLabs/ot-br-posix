@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9f69fd0</span>
+   &#160;<span id="projectnumber">0.3.0-2325a35</span>
    </div>
   </td>
  </tr>
@@ -238,59 +238,60 @@ $(function() {
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_TELEMETRY_DATA_API</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_BORDER_ROUTING</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordtype">void</span> RetrieveExternalRouteInfo(threadnetwork::TelemetryData::ExternalRoutes *aExternalRouteInfo);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">void</span> RetrievePdInfo(threadnetwork::TelemetryData::WpanBorderRouter *aWpanBorderRouter);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">void</span> RetrieveHashedPdPrefix(std::string *aHashedPdPrefix);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> RetrievePdProcessedRaInfo(threadnetwork::TelemetryData::PdProcessedRaInfo *aPdProcessedRaInfo);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_ENABLE_TELEMETRY_DATA_API</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    otInstance *mInstance;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> *mHost;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    ScanHandler                     mScanHandler;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    std::vector&lt;otActiveScanResult&gt; mScanResults;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    EnergyScanHandler               mEnergyScanHandler;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    std::vector&lt;otEnergyScanResult&gt; mEnergyScanResults;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    std::vector&lt;DeviceRoleHandler&gt;    mDeviceRoleHandlers;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    std::vector&lt;DatasetChangeHandler&gt; mActiveDatasetChangeHandlers;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    std::map&lt;uint16_t, size_t&gt; mUnsecurePortRefCounter;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordtype">bool</span> mWaitingMgmtSetResponse =</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keyword">false</span>; <span class="comment">// During waiting for mgmt set response, calls to AttachHandler by StateChangedCallback will be ignored</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    int64_t       mAttachDelayMs = 0;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    AttachHandler mAttachHandler;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    ResultHandler mJoinerHandler;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    ResultHandler mDetachGracefullyHandler = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    otOperationalDatasetTlvs mAttachPendingDatasetTlvs = {};</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    std::random_device mRandomDevice;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    Dhcp6PdStateCallback mDhcp6PdCallback;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    UpdateMeshCopTxtHandler mUpdateMeshCopTxtHandler;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_TELEMETRY_DATA_API &amp;&amp; (OTBR_ENABLE_NAT64 || OTBR_ENABLE_DHCP6_PD)</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kNat64PdCommonHashSaltLength = 16;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    uint8_t                  mNat64PdCommonSalt[kNat64PdCommonHashSaltLength];</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;};</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;} <span class="comment">// namespace agent</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_THREAD_HELPER_HPP_</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordtype">void</span> RetrieveInfraLinkInfo(threadnetwork::TelemetryData::InfraLinkInfo &amp;aInfraLinkInfo);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordtype">void</span> RetrieveExternalRouteInfo(threadnetwork::TelemetryData::ExternalRoutes &amp;aExternalRouteInfo);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">void</span> RetrievePdInfo(threadnetwork::TelemetryData::WpanBorderRouter *aWpanBorderRouter);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> RetrieveHashedPdPrefix(std::string *aHashedPdPrefix);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordtype">void</span> RetrievePdProcessedRaInfo(threadnetwork::TelemetryData::PdProcessedRaInfo *aPdProcessedRaInfo);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_ENABLE_TELEMETRY_DATA_API</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    otInstance *mInstance;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> *mHost;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    ScanHandler                     mScanHandler;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    std::vector&lt;otActiveScanResult&gt; mScanResults;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    EnergyScanHandler               mEnergyScanHandler;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    std::vector&lt;otEnergyScanResult&gt; mEnergyScanResults;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    std::vector&lt;DeviceRoleHandler&gt;    mDeviceRoleHandlers;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    std::vector&lt;DatasetChangeHandler&gt; mActiveDatasetChangeHandlers;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    std::map&lt;uint16_t, size_t&gt; mUnsecurePortRefCounter;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">bool</span> mWaitingMgmtSetResponse =</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keyword">false</span>; <span class="comment">// During waiting for mgmt set response, calls to AttachHandler by StateChangedCallback will be ignored</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    int64_t       mAttachDelayMs = 0;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    AttachHandler mAttachHandler;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    ResultHandler mJoinerHandler;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    ResultHandler mDetachGracefullyHandler = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    otOperationalDatasetTlvs mAttachPendingDatasetTlvs = {};</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    std::random_device mRandomDevice;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    Dhcp6PdStateCallback mDhcp6PdCallback;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    UpdateMeshCopTxtHandler mUpdateMeshCopTxtHandler;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_TELEMETRY_DATA_API &amp;&amp; (OTBR_ENABLE_NAT64 || OTBR_ENABLE_DHCP6_PD)</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kNat64PdCommonHashSaltLength = 16;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    uint8_t                  mNat64PdCommonSalt[kNat64PdCommonHashSaltLength];</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;};</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;} <span class="comment">// namespace agent</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_THREAD_HELPER_HPP_</span></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:75</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:68</div></div>
 <div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html">otbr::agent::ThreadHelper</a></div><div class="ttdef"><b>Definition:</b> thread_helper.hpp:71</div></div>
