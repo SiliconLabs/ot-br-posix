@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2325a35</span>
+   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
    </div>
   </td>
  </tr>
@@ -103,114 +103,128 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">openthread-br/config.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#if !(OTBR_ENABLE_MDNS_AVAHI || OTBR_ENABLE_MDNS_MDNSSD || OTBR_ENABLE_MDNS_MOJO)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#error &quot;Border Agent feature requires at least one `OTBR_MDNS` implementation&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/df4/backbone__agent_8hpp.html">backbone_router/backbone_agent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d7b/code__utils_8hpp.html">common/code_utils.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d7c/mdns_8hpp.html">mdns/mdns.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d20/advertising__proxy_8hpp.html">sdp_proxy/advertising_proxy.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d90/discovery__proxy_8hpp.html">sdp_proxy/discovery_proxy.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d62/trel__dnssd_8hpp.html">trel_dnssd/trel_dnssd.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/df4/backbone__agent_8hpp.html">backbone_router/backbone_agent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d7b/code__utils_8hpp.html">common/code_utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/dfd/mainloop_8hpp.html">common/mainloop.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d7c/mdns_8hpp.html">mdns/mdns.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d89/rcp__host_8hpp.html">ncp/rcp_host.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d20/advertising__proxy_8hpp.html">sdp_proxy/advertising_proxy.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d90/discovery__proxy_8hpp.html">sdp_proxy/discovery_proxy.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d62/trel__dnssd_8hpp.html">trel_dnssd/trel_dnssd.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifndef OTBR_VENDOR_NAME</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define OTBR_VENDOR_NAME &quot;OpenThread&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef OTBR_VENDOR_NAME</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define OTBR_VENDOR_NAME &quot;OpenThread&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef OTBR_PRODUCT_NAME</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define OTBR_PRODUCT_NAME &quot;BorderRouter&quot;</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef OTBR_PRODUCT_NAME</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define OTBR_PRODUCT_NAME &quot;BorderRouter&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef OTBR_MESHCOP_SERVICE_INSTANCE_NAME</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define OTBR_MESHCOP_SERVICE_INSTANCE_NAME (OTBR_VENDOR_NAME &quot; &quot;</span> OTBR_PRODUCT_NAME)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifndef OTBR_MESHCOP_SERVICE_INSTANCE_NAME</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define OTBR_MESHCOP_SERVICE_INSTANCE_NAME (OTBR_VENDOR_NAME &quot; &quot;</span> OTBR_PRODUCT_NAME)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d4/dfd/classotbr_1_1BorderAgent.html">   83</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a> : <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3bed781c896e8b71eda98fbc673a34df">BorderAgent</a>(<a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;aHost, <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;aPublisher);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    ~<a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3fa72b202e6979b62b561f9438e7e376">SetMeshCopServiceValues</a>(<span class="keyword">const</span> std::string              &amp;aServiceInstanceName,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                      <span class="keyword">const</span> std::string              &amp;aProductName,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                      <span class="keyword">const</span> std::string              &amp;aVendorName,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                      <span class="keyword">const</span> std::vector&lt;uint8_t&gt;     &amp;aVendorOui             = {},</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                      <span class="keyword">const</span> Mdns::Publisher::TxtList &amp;aNonStandardTxtEntries = {});</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">SetEnabled</a>(<span class="keywordtype">bool</span> aIsEnabled);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">HandleMdnsState</a>(<a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a> aState);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> Start(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> Stop(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">bool</span> IsEnabled(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mIsEnabled; }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> PublishMeshCopService(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> UpdateMeshCopService(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> UnpublishMeshCopService(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> HandleUpdateVendorMeshCoPTxtEntries(std::map&lt;std::string, std::vector&lt;uint8_t&gt;&gt; aUpdate);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> HandleThreadStateChanged(otChangedFlags aFlags);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d4/dfd/classotbr_1_1BorderAgent.html">   79</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a> : <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">   83</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">EphemeralKeyChangedCallback</a> = std::function&lt;void(<span class="keywordtype">void</span>)&gt;;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3bed781c896e8b71eda98fbc673a34df">BorderAgent</a>(<a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;aHost, <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;aPublisher);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ~<a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">BorderAgent</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3fa72b202e6979b62b561f9438e7e376">SetMeshCopServiceValues</a>(<span class="keyword">const</span> std::string              &amp;aServiceInstanceName,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                      <span class="keyword">const</span> std::string              &amp;aProductName,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                      <span class="keyword">const</span> std::string              &amp;aVendorName,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                      <span class="keyword">const</span> std::vector&lt;uint8_t&gt;     &amp;aVendorOui             = {},</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                      <span class="keyword">const</span> Mdns::Publisher::TxtList &amp;aNonStandardTxtEntries = {});</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">SetEnabled</a>(<span class="keywordtype">bool</span> aIsEnabled);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#af4656bc92ad466131bc9db31429f5a2d">SetEphemeralKeyEnabled</a>(<span class="keywordtype">bool</span> aIsEnabled);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a37e820aa1a726655846149b1f4ccb8c5">  140</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a37e820aa1a726655846149b1f4ccb8c5">GetEphemeralKeyEnabled</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mIsEphemeralKeyEnabled; }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">HandleMdnsState</a>(<a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a> aState);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">bool</span>        IsThreadStarted(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    std::string GetServiceInstanceNameWithExtAddr(<span class="keyword">const</span> std::string &amp;aServiceInstanceName) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::string GetAlternativeServiceInstanceName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleEpskcStateChanged(<span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span>        PublishEpskcService(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span>        UnpublishEpskcService(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;mHost;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a>    &amp;mPublisher;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">bool</span>                mIsEnabled;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::map&lt;std::string, std::vector&lt;uint8_t&gt;&gt; mMeshCopTxtUpdate;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::vector&lt;uint8_t&gt; mVendorOui;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::string mVendorName;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::string mProductName;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#ac79458e25c04633585b8e7b610f2ff40">CreateEphemeralKey</a>(std::string &amp;aEphemeralKey);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a382e5b6b3b2dc5c1a426f0f99fc3a7da">AddEphemeralKeyChangedCallback</a>(<a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">EphemeralKeyChangedCallback</a> aCallback);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// The base service instance name typically consists of the vendor and product name. But it can</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// also be overridden by `OTBR_MESHCOP_SERVICE_INSTANCE_NAME` or method `SetMeshCopServiceValues()`.</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// For example, this value can be &quot;OpenThread Border Router&quot;.</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    std::string mBaseServiceInstanceName;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// The actual instance name advertised in the mDNS service. This is usually the value of</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// `mBaseServiceInstanceName` plus the Extended Address and optional random number for avoiding</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// conflicts. For example, this value can be &quot;OpenThread Border Router #7AC3&quot; or</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// &quot;OpenThread Border Router #7AC3 (14379)&quot;.</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::string mServiceInstanceName;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_BORDER_AGENT_HPP_</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> Start(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> Stop(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">bool</span> IsEnabled(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mIsEnabled; }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> PublishMeshCopService(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> UpdateMeshCopService(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> UnpublishMeshCopService(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> HandleUpdateVendorMeshCoPTxtEntries(std::map&lt;std::string, std::vector&lt;uint8_t&gt;&gt; aUpdate);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> HandleThreadStateChanged(otChangedFlags aFlags);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">bool</span>        IsThreadStarted(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    std::string GetServiceInstanceNameWithExtAddr(<span class="keyword">const</span> std::string &amp;aServiceInstanceName) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::string GetAlternativeServiceInstanceName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> HandleEpskcStateChanged(<span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span>        PublishEpskcService(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span>        UnpublishEpskcService(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;mHost;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    Mdns::Publisher    &amp;mPublisher;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">bool</span>                mIsEnabled;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">bool</span>                mIsEphemeralKeyEnabled;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    std::map&lt;std::string, std::vector&lt;uint8_t&gt;&gt; mMeshCopTxtUpdate;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    std::vector&lt;uint8_t&gt; mVendorOui;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    std::string mVendorName;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    std::string mProductName;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// The base service instance name typically consists of the vendor and product name. But it can</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// also be overridden by `OTBR_MESHCOP_SERVICE_INSTANCE_NAME` or method `SetMeshCopServiceValues()`.</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// For example, this value can be &quot;OpenThread Border Router&quot;.</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::string mBaseServiceInstanceName;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// The actual instance name advertised in the mDNS service. This is usually the value of</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">// `mBaseServiceInstanceName` plus the Extended Address and optional random number for avoiding</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// conflicts. For example, this value can be &quot;OpenThread Border Router #7AC3&quot; or</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// &quot;OpenThread Border Router #7AC3 (14379)&quot;.</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    std::string mServiceInstanceName;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    std::vector&lt;EphemeralKeyChangedCallback&gt; mEphemeralKeyChangedCallbacks;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_BORDER_AGENT_HPP_</span></div>
 <div class="ttc" id="aadvertising__proxy_8hpp_html"><div class="ttname"><a href="../../dd/d20/advertising__proxy_8hpp.html">advertising_proxy.hpp</a></div></div>
 <div class="ttc" id="abackbone__agent_8hpp_html"><div class="ttname"><a href="../../d0/df4/backbone__agent_8hpp.html">backbone_agent.hpp</a></div></div>
 <div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:198</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:84</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a3bed781c896e8b71eda98fbc673a34df"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3bed781c896e8b71eda98fbc673a34df">otbr::BorderAgent::BorderAgent</a></div><div class="ttdeci">BorderAgent(otbr::Ncp::RcpHost &amp;aHost, Mdns::Publisher &amp;aPublisher)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:152</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a3fa72b202e6979b62b561f9438e7e376"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3fa72b202e6979b62b561f9438e7e376">otbr::BorderAgent::SetMeshCopServiceValues</a></div><div class="ttdeci">otbrError SetMeshCopServiceValues(const std::string &amp;aServiceInstanceName, const std::string &amp;aProductName, const std::string &amp;aVendorName, const std::vector&lt; uint8_t &gt; &amp;aVendorOui={}, const Mdns::Publisher::TxtList &amp;aNonStandardTxtEntries={})</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:163</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a6efea6841bdd6c1d9544d92641e45e61"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">otbr::BorderAgent::HandleMdnsState</a></div><div class="ttdeci">void HandleMdnsState(Mdns::Publisher::State aState)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:299</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html_affc077ed4545cc1348d0c48bb7c84dfb"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">otbr::BorderAgent::SetEnabled</a></div><div class="ttdeci">void SetEnabled(bool aIsEnabled)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:194</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:80</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a37e820aa1a726655846149b1f4ccb8c5"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a37e820aa1a726655846149b1f4ccb8c5">otbr::BorderAgent::GetEphemeralKeyEnabled</a></div><div class="ttdeci">bool GetEphemeralKeyEnabled(void) const</div><div class="ttdef"><b>Definition:</b> border_agent.hpp:140</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a382e5b6b3b2dc5c1a426f0f99fc3a7da"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a382e5b6b3b2dc5c1a426f0f99fc3a7da">otbr::BorderAgent::AddEphemeralKeyChangedCallback</a></div><div class="ttdeci">void AddEphemeralKeyChangedCallback(EphemeralKeyChangedCallback aCallback)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:358</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a3bed781c896e8b71eda98fbc673a34df"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3bed781c896e8b71eda98fbc673a34df">otbr::BorderAgent::BorderAgent</a></div><div class="ttdeci">BorderAgent(otbr::Ncp::RcpHost &amp;aHost, Mdns::Publisher &amp;aPublisher)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:159</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a3fa72b202e6979b62b561f9438e7e376"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3fa72b202e6979b62b561f9438e7e376">otbr::BorderAgent::SetMeshCopServiceValues</a></div><div class="ttdeci">otbrError SetMeshCopServiceValues(const std::string &amp;aServiceInstanceName, const std::string &amp;aProductName, const std::string &amp;aVendorName, const std::vector&lt; uint8_t &gt; &amp;aVendorOui={}, const Mdns::Publisher::TxtList &amp;aNonStandardTxtEntries={})</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:198</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_a6efea6841bdd6c1d9544d92641e45e61"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">otbr::BorderAgent::HandleMdnsState</a></div><div class="ttdeci">void HandleMdnsState(Mdns::Publisher::State aState)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:363</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_aa6be012f0ddb6ea06806e7eebdd3733c"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">otbr::BorderAgent::EphemeralKeyChangedCallback</a></div><div class="ttdeci">std::function&lt; void(void)&gt; EphemeralKeyChangedCallback</div><div class="ttdef"><b>Definition:</b> border_agent.hpp:83</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_ac79458e25c04633585b8e7b610f2ff40"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#ac79458e25c04633585b8e7b610f2ff40">otbr::BorderAgent::CreateEphemeralKey</a></div><div class="ttdeci">static otbrError CreateEphemeralKey(std::string &amp;aEphemeralKey)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:171</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_af4656bc92ad466131bc9db31429f5a2d"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#af4656bc92ad466131bc9db31429f5a2d">otbr::BorderAgent::SetEphemeralKeyEnabled</a></div><div class="ttdeci">void SetEphemeralKeyEnabled(bool aIsEnabled)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:245</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html_affc077ed4545cc1348d0c48bb7c84dfb"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">otbr::BorderAgent::SetEnabled</a></div><div class="ttdeci">void SetEnabled(bool aIsEnabled)</div><div class="ttdef"><b>Definition:</b> border_agent.cpp:229</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:75</div></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html_a33836f14c4f81a2487616acc08296fa4"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">otbr::Mdns::Publisher::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> mdns.hpp:183</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:68</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:91</div></div>
 <div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
-<div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:73</div></div>
+<div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:74</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="adiscovery__proxy_8hpp_html"><div class="ttname"><a href="../../df/d90/discovery__proxy_8hpp.html">discovery_proxy.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>

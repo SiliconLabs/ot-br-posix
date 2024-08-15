@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2325a35</span>
+   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7658081a534ea1a62ce81022e8099acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e8607d035ab4441df54cd97f36368ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/classotbr_1_1Ip6Address.html#a7e8607d035ab4441df54cd97f36368ec">Ip6Address</a> (const uint8_t(&amp;aAddress)[16])</td></tr>
 <tr class="separator:a7e8607d035ab4441df54cd97f36368ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144391cda3fb612af733a13ab9e72e8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/classotbr_1_1Ip6Address.html#a144391cda3fb612af733a13ab9e72e8e">Ip6Address</a> (const otIp6Address &amp;aAddress)</td></tr>
+<tr class="separator:a144391cda3fb612af733a13ab9e72e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139e3ffc5a4afdb96239f7f98b8bd6d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/classotbr_1_1Ip6Address.html#a139e3ffc5a4afdb96239f7f98b8bd6d7">Ip6Address</a> (const char *aString)</td></tr>
 <tr class="separator:a139e3ffc5a4afdb96239f7f98b8bd6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73df14a540f0d77e59cae487735ba443"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/classotbr_1_1Ip6Address.html#a73df14a540f0d77e59cae487735ba443">operator&lt;</a> (const <a class="el" href="../../d2/dfe/classotbr_1_1Ip6Address.html">Ip6Address</a> &amp;aOther) const</td></tr>
@@ -149,7 +151,7 @@ union {</td></tr>
 <div class="textblock"><p>This class implements the Ipv6 address functionality. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afa45960986df2fdbdddfd4dd9a974a4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa45960986df2fdbdddfd4dd9a974a4c">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa45960986df2fdbdddfd4dd9a974a4c">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +178,7 @@ union {</td></tr>
 </div>
 </div>
 <a id="a7658081a534ea1a62ce81022e8099acf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7658081a534ea1a62ce81022e8099acf">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7658081a534ea1a62ce81022e8099acf">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +211,7 @@ union {</td></tr>
 </div>
 </div>
 <a id="a7e8607d035ab4441df54cd97f36368ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e8607d035ab4441df54cd97f36368ec">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8607d035ab4441df54cd97f36368ec">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,8 +235,41 @@ union {</td></tr>
 
 </div>
 </div>
+<a id="a144391cda3fb612af733a13ab9e72e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144391cda3fb612af733a13ab9e72e8e">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">otbr::Ip6Address::Ip6Address </td>
+          <td>(</td>
+          <td class="paramtype">const otIp6Address &amp;&#160;</td>
+          <td class="paramname"><em>aAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor with an otIp6Address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aAddress</td><td>A const reference to an otIp6Address. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a139e3ffc5a4afdb96239f7f98b8bd6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a139e3ffc5a4afdb96239f7f98b8bd6d7">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a139e3ffc5a4afdb96239f7f98b8bd6d7">&#9670;&nbsp;</a></span>Ip6Address() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

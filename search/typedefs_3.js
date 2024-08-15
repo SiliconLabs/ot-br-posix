@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statecallback_1713',['StateCallback',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a5ca42e0c19980f5cf2c53dada1129171',1,'otbr::Mdns::Publisher']]]
+  ['resultcallback_1771',['ResultCallback',['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a80beefc2c41ca4779bb2e592e1de1da2',1,'otbr::Mdns::Publisher']]]
 ];

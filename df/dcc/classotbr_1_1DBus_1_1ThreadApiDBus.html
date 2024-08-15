@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2325a35</span>
+   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
    </div>
   </td>
  </tr>
@@ -140,6 +140,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0c143418162361a238a0647dc98a002f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0a6784e781cf7fa3da1d3b9fdc5c687"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#ad0a6784e781cf7fa3da1d3b9fdc5c687">SetNat64Enabled</a> (bool aEnabled)</td></tr>
 <tr class="separator:ad0a6784e781cf7fa3da1d3b9fdc5c687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0765515bf7315f9562597b851bafedd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a0765515bf7315f9562597b851bafedd9">SetEphemeralKeyEnabled</a> (bool aEnabled)</td></tr>
+<tr class="separator:a0765515bf7315f9562597b851bafedd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab762a130347f561710eb7539535c0dc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#ab762a130347f561710eb7539535c0dc7">GetEphemeralKeyEnabled</a> (bool &amp;aEnabled)</td></tr>
+<tr class="separator:ab762a130347f561710eb7539535c0dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74350f476c0775c66b00dc23c251601c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a74350f476c0775c66b00dc23c251601c">GetLinkMode</a> (<a class="el" href="../../d1/d82/structotbr_1_1DBus_1_1LinkModeConfig.html">LinkModeConfig</a> &amp;aConfig)</td></tr>
 <tr class="separator:a74350f476c0775c66b00dc23c251601c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a070545142d99e3c24f72f9de88a07c0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcc/classotbr_1_1DBus_1_1ThreadApiDBus.html#a070545142d99e3c24f72f9de88a07c0c">GetDeviceRole</a> (DeviceRole &amp;aDeviceRole)</td></tr>
@@ -884,6 +888,39 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">aDeviceRole</td><td>The device role</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab762a130347f561710eb7539535c0dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab762a130347f561710eb7539535c0dc7">&#9670;&nbsp;</a></span>GetEphemeralKeyEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::GetEphemeralKeyEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>aEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method gets the Ephemeral Key switch.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aEnabled</td><td>A boolean of enable/disable for Ephemeral Key state.</td></tr>
   </table>
   </dd>
 </dl>
@@ -2285,6 +2322,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0765515bf7315f9562597b851bafedd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0765515bf7315f9562597b851bafedd9">&#9670;&nbsp;</a></span>SetEphemeralKeyEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de9/namespaceotbr_1_1DBus.html#a874640b045462e47baabc7a2e2763e95">ClientError</a> otbr::DBus::ThreadApiDBus::SetEphemeralKeyEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method sets the Ephemeral Key switch.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEnabled</td><td>A boolean to enable/disable the Ephemeral Key.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_NONE</td><td>Successfully performed the dbus function call </td></tr>
+    <tr><td class="paramname">ERROR_DBUS</td><td>dbus encode/decode error </td></tr>
+    <tr><td class="paramname">...</td><td>OpenThread defined error value otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af8b47f379c07f709979ac3ab4e91c861"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8b47f379c07f709979ac3ab4e91c861">&#9670;&nbsp;</a></span>SetFeatureFlagListData()</h2>
 
@@ -2402,7 +2472,7 @@ Public Member Functions</h2></td></tr>
 <p>This method sets the NAT64 switch.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aEnable</td><td>A boolean to enable/disable the NAT64.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEnabled</td><td>A boolean to enable/disable the NAT64.</td></tr>
   </table>
   </dd>
 </dl>

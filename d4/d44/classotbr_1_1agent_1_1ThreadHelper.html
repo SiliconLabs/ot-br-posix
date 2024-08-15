@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2325a35</span>
+   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
    </div>
   </td>
  </tr>
@@ -142,6 +142,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DetachGracefully</b> 
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0569c5bec5dd73e5ffa2c99232f5a7c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a0569c5bec5dd73e5ffa2c99232f5a7c4">LogOpenThreadResult</a> (const char *aAction, otError aError)</td></tr>
 <tr class="separator:a0569c5bec5dd73e5ffa2c99232f5a7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a09567ca8afa9545335cd9ec66fe1e"><td class="memItemLeft" align="right" valign="top">static otError&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a50a09567ca8afa9545335cd9ec66fe1e">ProcessDatasetForMigration</a> (otOperationalDatasetTlvs &amp;aDatasetTlvs, uint32_t aDelayMilli)</td></tr>
+<tr class="separator:a50a09567ca8afa9545335cd9ec66fe1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements Thread helper. </p>
@@ -601,6 +603,62 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The error value of underlying OpenThread api calls. </dd></dl>
+
+</div>
+</div>
+<a id="a50a09567ca8afa9545335cd9ec66fe1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a09567ca8afa9545335cd9ec66fe1e">&#9670;&nbsp;</a></span>ProcessDatasetForMigration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">otError otbr::agent::ThreadHelper::ProcessDatasetForMigration </td>
+          <td>(</td>
+          <td class="paramtype">otOperationalDatasetTlvs &amp;&#160;</td>
+          <td class="paramname"><em>aDatasetTlvs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>aDelayMilli</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method validates and updates a pending dataset do Thread network migration.</p>
+<p>This method validates that:</p><ol type="1">
+<li>the given dataset doesn't contain a meshcop Pending Timestamp TLV or a meshcop Delay Timer TLV.</li>
+<li>the given dataset has sufficient space to append a Pending Timestamp TLV and a Delay Timer TLV.</li>
+</ol>
+<p>If it's valid, the method will append a meshcop Pending Timestamp TLV with value being the current unix timestamp and a meshcop Delay Timer TLV with value being <code>aDelayMilli</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">[in/out]</td><td>aDatasetTlvs The dataset to validate and process in TLVs format. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDelayMilli</td><td>The delay time for migration in milliseconds.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">OT_ERROR_NONE</td><td>Dataset is valid to do Thread network migration. </td></tr>
+    <tr><td class="paramname">OT_ERROR_INVALID_ARGS</td><td>Dataset is invalid to do Thread network migration. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

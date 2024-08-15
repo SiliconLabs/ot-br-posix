@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2325a35</span>
+   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../de/d4f/classotbr_1_1BorderAgent-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">otbr::BorderAgent Class Reference<div class="ingroups"><a class="el" href="../../d4/d5a/group__border-router-border-agent.html">Border-router-border-agent</a></div></div>  </div>
@@ -85,6 +87,11 @@ Inheritance diagram for otbr::BorderAgent:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa6be012f0ddb6ea06806e7eebdd3733c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">EphemeralKeyChangedCallback</a> = std::function&lt; void(void)&gt;</td></tr>
+<tr class="separator:aa6be012f0ddb6ea06806e7eebdd3733c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bed781c896e8b71eda98fbc673a34df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a3bed781c896e8b71eda98fbc673a34df">BorderAgent</a> (<a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> &amp;aHost, <a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">Mdns::Publisher</a> &amp;aPublisher)</td></tr>
@@ -93,12 +100,39 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3fa72b202e6979b62b561f9438e7e376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#affc077ed4545cc1348d0c48bb7c84dfb">SetEnabled</a> (bool aIsEnabled)</td></tr>
 <tr class="separator:affc077ed4545cc1348d0c48bb7c84dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4656bc92ad466131bc9db31429f5a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#af4656bc92ad466131bc9db31429f5a2d">SetEphemeralKeyEnabled</a> (bool aIsEnabled)</td></tr>
+<tr class="separator:af4656bc92ad466131bc9db31429f5a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e820aa1a726655846149b1f4ccb8c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a37e820aa1a726655846149b1f4ccb8c5">GetEphemeralKeyEnabled</a> (void) const</td></tr>
+<tr class="separator:a37e820aa1a726655846149b1f4ccb8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6efea6841bdd6c1d9544d92641e45e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a6efea6841bdd6c1d9544d92641e45e61">HandleMdnsState</a> (<a class="el" href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a33836f14c4f81a2487616acc08296fa4">Mdns::Publisher::State</a> aState)</td></tr>
 <tr class="separator:a6efea6841bdd6c1d9544d92641e45e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382e5b6b3b2dc5c1a426f0f99fc3a7da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#a382e5b6b3b2dc5c1a426f0f99fc3a7da">AddEphemeralKeyChangedCallback</a> (<a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">EphemeralKeyChangedCallback</a> aCallback)</td></tr>
+<tr class="separator:a382e5b6b3b2dc5c1a426f0f99fc3a7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac79458e25c04633585b8e7b610f2ff40"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#ac79458e25c04633585b8e7b610f2ff40">CreateEphemeralKey</a> (std::string &amp;aEphemeralKey)</td></tr>
+<tr class="separator:ac79458e25c04633585b8e7b610f2ff40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements Thread border agent functionality. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aa6be012f0ddb6ea06806e7eebdd3733c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6be012f0ddb6ea06806e7eebdd3733c">&#9670;&nbsp;</a></span>EphemeralKeyChangedCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">otbr::BorderAgent::EphemeralKeyChangedCallback</a> =  std::function&lt;void(void)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The callback for receiving ephemeral key changes. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3bed781c896e8b71eda98fbc673a34df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3bed781c896e8b71eda98fbc673a34df">&#9670;&nbsp;</a></span>BorderAgent()</h2>
 
@@ -136,6 +170,94 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a382e5b6b3b2dc5c1a426f0f99fc3a7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382e5b6b3b2dc5c1a426f0f99fc3a7da">&#9670;&nbsp;</a></span>AddEphemeralKeyChangedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::BorderAgent::AddEphemeralKeyChangedCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dfd/classotbr_1_1BorderAgent.html#aa6be012f0ddb6ea06806e7eebdd3733c">EphemeralKeyChangedCallback</a>&#160;</td>
+          <td class="paramname"><em>aCallback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method adds a callback for ephemeral key changes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The callback to receive ephemeral key changed events. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac79458e25c04633585b8e7b610f2ff40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79458e25c04633585b8e7b610f2ff40">&#9670;&nbsp;</a></span>CreateEphemeralKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> otbr::BorderAgent::CreateEphemeralKey </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>aEphemeralKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method creates ephemeral key in the Border Agent.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">aEphemeralKey</td><td>The ephemeral key digit string of length 9 with first 8 digits randomly generated, and the last 9th digit as verhoeff checksum.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OTBR_ERROR_INVALID_ARGS If Verhoeff checksum calculate returns error. </dd>
+<dd>
+OTBR_ERROR_NONE If successfully generate the ePSKc. </dd></dl>
+
+</div>
+</div>
+<a id="a37e820aa1a726655846149b1f4ccb8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e820aa1a726655846149b1f4ccb8c5">&#9670;&nbsp;</a></span>GetEphemeralKeyEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool otbr::BorderAgent::GetEphemeralKeyEnabled </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method returns the Border Agent Ephemeral Key feature state. </p>
+
+</div>
+</div>
 <a id="a6efea6841bdd6c1d9544d92641e45e61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6efea6841bdd6c1d9544d92641e45e61">&#9670;&nbsp;</a></span>HandleMdnsState()</h2>
 
@@ -180,6 +302,31 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aIsEnabled</td><td>Whether to enable the Border Agent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4656bc92ad466131bc9db31429f5a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4656bc92ad466131bc9db31429f5a2d">&#9670;&nbsp;</a></span>SetEphemeralKeyEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::BorderAgent::SetEphemeralKeyEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aIsEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method enables/disables the Border Agent Ephemeral Key feature.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aIsEnabled</td><td>Whether to enable the BA Ephemeral Key feature. </td></tr>
   </table>
   </dd>
 </dl>
