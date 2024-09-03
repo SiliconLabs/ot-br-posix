@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
+   &#160;<span id="projectnumber">0.3.0-b827539</span>
    </div>
   </td>
  </tr>
@@ -134,6 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3a0f00ff6ac41d7b1546cf46f561df0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c9c613f851efd44feafad2a0a71239a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a1c9c613f851efd44feafad2a0a71239a">Leave</a> (const AsyncResultReceiver &amp;aRecevier) override</td></tr>
 <tr class="separator:a1c9c613f851efd44feafad2a0a71239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35917a3c681f64bb11fd08cce9b005f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a35917a3c681f64bb11fd08cce9b005f9">ScheduleMigration</a> (const otOperationalDatasetTlvs &amp;aPendingOpDatasetTlvs, const AsyncResultReceiver aReceiver) override</td></tr>
+<tr class="separator:a35917a3c681f64bb11fd08cce9b005f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13506183984ded2c39515e0fc3d81b33"><td class="memItemLeft" align="right" valign="top">CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a13506183984ded2c39515e0fc3d81b33">GetCoprocessorType</a> (void) override</td></tr>
 <tr class="separator:a13506183984ded2c39515e0fc3d81b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02340ac02b7e45f0ba8ddbc18bc3cf7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ae02340ac02b7e45f0ba8ddbc18bc3cf7">GetCoprocessorVersion</a> (void) override</td></tr>
@@ -697,6 +699,52 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
       </table>
 </div><div class="memdoc">
 <p>This method resets the OpenThread instance. </p>
+
+</div>
+</div>
+<a id="a35917a3c681f64bb11fd08cce9b005f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35917a3c681f64bb11fd08cce9b005f9">&#9670;&nbsp;</a></span>ScheduleMigration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::RcpHost::ScheduleMigration </td>
+          <td>(</td>
+          <td class="paramtype">const otOperationalDatasetTlvs &amp;&#160;</td>
+          <td class="paramname"><em>aPendingOpDatasetTlvs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver&#160;</td>
+          <td class="paramname"><em>aReceiver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method migrates this device to the new network specified by <code>aPendingOpDatasetTlvs</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPendingOpDatasetTlvs</td><td>A reference to the pending operational dataset of the Thread network. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aReceiver</td><td>A receiver to get the async result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a26b4c0983dbf032f5d635f1524d93b91">otbr::Ncp::ThreadHost</a>.</p>
 
 </div>
 </div>

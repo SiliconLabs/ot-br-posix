@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-b66cabf</span>
+   &#160;<span id="projectnumber">0.3.0-b827539</span>
    </div>
   </td>
  </tr>
@@ -248,71 +248,74 @@ $(function() {
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">void</span> RetrieveHashedPdPrefix(std::string *aHashedPdPrefix);</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordtype">void</span> RetrievePdProcessedRaInfo(threadnetwork::TelemetryData::PdProcessedRaInfo *aPdProcessedRaInfo);</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_ENABLE_TELEMETRY_DATA_API</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    otInstance *mInstance;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> *mHost;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    ScanHandler                     mScanHandler;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    std::vector&lt;otActiveScanResult&gt; mScanResults;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    EnergyScanHandler               mEnergyScanHandler;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    std::vector&lt;otEnergyScanResult&gt; mEnergyScanResults;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    std::vector&lt;DeviceRoleHandler&gt;    mDeviceRoleHandlers;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    std::vector&lt;DatasetChangeHandler&gt; mActiveDatasetChangeHandlers;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_BORDER_AGENT</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">void</span> RetrieveBorderAgentInfo(threadnetwork::TelemetryData::BorderAgentInfo *aBorderAgentInfo);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_ENABLE_TELEMETRY_DATA_API</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    otInstance *mInstance;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a> *mHost;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    ScanHandler                     mScanHandler;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    std::vector&lt;otActiveScanResult&gt; mScanResults;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    EnergyScanHandler               mEnergyScanHandler;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    std::vector&lt;otEnergyScanResult&gt; mEnergyScanResults;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    std::map&lt;uint16_t, size_t&gt; mUnsecurePortRefCounter;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordtype">bool</span> mWaitingMgmtSetResponse =</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keyword">false</span>; <span class="comment">// During waiting for mgmt set response, calls to AttachHandler by StateChangedCallback will be ignored</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    int64_t       mAttachDelayMs = 0;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    AttachHandler mAttachHandler;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    ResultHandler mJoinerHandler;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    ResultHandler mDetachGracefullyHandler = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    otOperationalDatasetTlvs mAttachPendingDatasetTlvs = {};</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    std::random_device mRandomDevice;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    Dhcp6PdStateCallback mDhcp6PdCallback;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    UpdateMeshCopTxtHandler mUpdateMeshCopTxtHandler;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_TELEMETRY_DATA_API &amp;&amp; (OTBR_ENABLE_NAT64 || OTBR_ENABLE_DHCP6_PD)</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kNat64PdCommonHashSaltLength = 16;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    uint8_t                  mNat64PdCommonSalt[kNat64PdCommonHashSaltLength];</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;};</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;} <span class="comment">// namespace agent</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    std::vector&lt;DeviceRoleHandler&gt;    mDeviceRoleHandlers;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    std::vector&lt;DatasetChangeHandler&gt; mActiveDatasetChangeHandlers;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    std::map&lt;uint16_t, size_t&gt; mUnsecurePortRefCounter;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">bool</span> mWaitingMgmtSetResponse =</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keyword">false</span>; <span class="comment">// During waiting for mgmt set response, calls to AttachHandler by StateChangedCallback will be ignored</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    int64_t       mAttachDelayMs = 0;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    AttachHandler mAttachHandler;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    ResultHandler mJoinerHandler;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    ResultHandler mDetachGracefullyHandler = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    otOperationalDatasetTlvs mAttachPendingDatasetTlvs = {};</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    std::random_device mRandomDevice;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DHCP6_PD</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    Dhcp6PdStateCallback mDhcp6PdCallback;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    UpdateMeshCopTxtHandler mUpdateMeshCopTxtHandler;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#if OTBR_ENABLE_TELEMETRY_DATA_API &amp;&amp; (OTBR_ENABLE_NAT64 || OTBR_ENABLE_DHCP6_PD)</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kNat64PdCommonHashSaltLength = 16;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    uint8_t                  mNat64PdCommonSalt[kNat64PdCommonHashSaltLength];</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;};</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_THREAD_HELPER_HPP_</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;} <span class="comment">// namespace agent</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_THREAD_HELPER_HPP_</span></div>
 <div class="ttc" id="aclassotbr_1_1Mdns_1_1Publisher_html"><div class="ttname"><a href="../../da/ddc/classotbr_1_1Mdns_1_1Publisher.html">otbr::Mdns::Publisher</a></div><div class="ttdef"><b>Definition:</b> mdns.hpp:75</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:91</div></div>
 <div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html">otbr::agent::ThreadHelper</a></div><div class="ttdef"><b>Definition:</b> thread_helper.hpp:71</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a0569c5bec5dd73e5ffa2c99232f5a7c4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a0569c5bec5dd73e5ffa2c99232f5a7c4">otbr::agent::ThreadHelper::LogOpenThreadResult</a></div><div class="ttdeci">static void LogOpenThreadResult(const char *aAction, otError aError)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:691</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a091901bf4e19a0a2ab3a93ac701102fa"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a091901bf4e19a0a2ab3a93ac701102fa">otbr::agent::ThreadHelper::TryResumeNetwork</a></div><div class="ttdeci">otError TryResumeNetwork(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:669</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a3ff1ee5f71e5b90e03956a8f7fa6920c"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a3ff1ee5f71e5b90e03956a8f7fa6920c">otbr::agent::ThreadHelper::AttachAllNodesTo</a></div><div class="ttdeci">void AttachAllNodesTo(const std::vector&lt; uint8_t &gt; &amp;aDatasetTlvs, AttachHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:703</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a0569c5bec5dd73e5ffa2c99232f5a7c4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a0569c5bec5dd73e5ffa2c99232f5a7c4">otbr::agent::ThreadHelper::LogOpenThreadResult</a></div><div class="ttdeci">static void LogOpenThreadResult(const char *aAction, otError aError)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:692</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a091901bf4e19a0a2ab3a93ac701102fa"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a091901bf4e19a0a2ab3a93ac701102fa">otbr::agent::ThreadHelper::TryResumeNetwork</a></div><div class="ttdeci">otError TryResumeNetwork(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:670</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a3ff1ee5f71e5b90e03956a8f7fa6920c"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a3ff1ee5f71e5b90e03956a8f7fa6920c">otbr::agent::ThreadHelper::AttachAllNodesTo</a></div><div class="ttdeci">void AttachAllNodesTo(const std::vector&lt; uint8_t &gt; &amp;aDatasetTlvs, AttachHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:704</div></div>
 <div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a420d4d28dc3d80811d428f4dfeddaa5a"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a420d4d28dc3d80811d428f4dfeddaa5a">otbr::agent::ThreadHelper::GetInstance</a></div><div class="ttdeci">otInstance * GetInstance(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.hpp:240</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a454c32eb0d227ffc23a65a58e2c410e4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a454c32eb0d227ffc23a65a58e2c410e4">otbr::agent::ThreadHelper::AddActiveDatasetChangeHandler</a></div><div class="ttdeci">void AddActiveDatasetChangeHandler(DatasetChangeHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:885</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a50a09567ca8afa9545335cd9ec66fe1e"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a50a09567ca8afa9545335cd9ec66fe1e">otbr::agent::ThreadHelper::ProcessDatasetForMigration</a></div><div class="ttdeci">static otError ProcessDatasetForMigration(otOperationalDatasetTlvs &amp;aDatasetTlvs, uint32_t aDelayMilli)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:1672</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a73318f3ac986312dcfe4afc8dc912ea5"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a73318f3ac986312dcfe4afc8dc912ea5">otbr::agent::ThreadHelper::ThreadHelper</a></div><div class="ttdeci">ThreadHelper(otInstance *aInstance, otbr::Ncp::RcpHost *aHost)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:230</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a75f1f56479b09df49786f76f1aecccda"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a75f1f56479b09df49786f76f1aecccda">otbr::agent::ThreadHelper::AddDeviceRoleHandler</a></div><div class="ttdeci">void AddDeviceRoleHandler(DeviceRoleHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:345</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a7b818790e83d9ad3a330a80f96bc938f"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a7b818790e83d9ad3a330a80f96bc938f">otbr::agent::ThreadHelper::Detach</a></div><div class="ttdeci">otError Detach(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:597</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_aac024301fc948bc1942788c2dff1517d"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aac024301fc948bc1942788c2dff1517d">otbr::agent::ThreadHelper::Reset</a></div><div class="ttdeci">otError Reset(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:608</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_aaf50cd6dd6f97142f51b093275ae3a08"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aaf50cd6dd6f97142f51b093275ae3a08">otbr::agent::ThreadHelper::Scan</a></div><div class="ttdeci">void Scan(ScanHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:350</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_ad4075ea26ccf44aadb404d9680b4f5d6"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#ad4075ea26ccf44aadb404d9680b4f5d6">otbr::agent::ThreadHelper::Attach</a></div><div class="ttdeci">void Attach(const std::string &amp;aNetworkName, uint16_t aPanId, uint64_t aExtPanId, const std::vector&lt; uint8_t &gt; &amp;aNetworkKey, const std::vector&lt; uint8_t &gt; &amp;aPSKc, uint32_t aChannelMask, AttachHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:505</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a454c32eb0d227ffc23a65a58e2c410e4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a454c32eb0d227ffc23a65a58e2c410e4">otbr::agent::ThreadHelper::AddActiveDatasetChangeHandler</a></div><div class="ttdeci">void AddActiveDatasetChangeHandler(DatasetChangeHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:886</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a50a09567ca8afa9545335cd9ec66fe1e"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a50a09567ca8afa9545335cd9ec66fe1e">otbr::agent::ThreadHelper::ProcessDatasetForMigration</a></div><div class="ttdeci">static otError ProcessDatasetForMigration(otOperationalDatasetTlvs &amp;aDatasetTlvs, uint32_t aDelayMilli)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:1703</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a73318f3ac986312dcfe4afc8dc912ea5"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a73318f3ac986312dcfe4afc8dc912ea5">otbr::agent::ThreadHelper::ThreadHelper</a></div><div class="ttdeci">ThreadHelper(otInstance *aInstance, otbr::Ncp::RcpHost *aHost)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:231</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a75f1f56479b09df49786f76f1aecccda"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a75f1f56479b09df49786f76f1aecccda">otbr::agent::ThreadHelper::AddDeviceRoleHandler</a></div><div class="ttdeci">void AddDeviceRoleHandler(DeviceRoleHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:346</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_a7b818790e83d9ad3a330a80f96bc938f"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#a7b818790e83d9ad3a330a80f96bc938f">otbr::agent::ThreadHelper::Detach</a></div><div class="ttdeci">otError Detach(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:598</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_aac024301fc948bc1942788c2dff1517d"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aac024301fc948bc1942788c2dff1517d">otbr::agent::ThreadHelper::Reset</a></div><div class="ttdeci">otError Reset(void)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:609</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_aaf50cd6dd6f97142f51b093275ae3a08"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#aaf50cd6dd6f97142f51b093275ae3a08">otbr::agent::ThreadHelper::Scan</a></div><div class="ttdeci">void Scan(ScanHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:351</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_ad4075ea26ccf44aadb404d9680b4f5d6"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#ad4075ea26ccf44aadb404d9680b4f5d6">otbr::agent::ThreadHelper::Attach</a></div><div class="ttdeci">void Attach(const std::string &amp;aNetworkName, uint16_t aPanId, uint64_t aExtPanId, const std::vector&lt; uint8_t &gt; &amp;aNetworkKey, const std::vector&lt; uint8_t &gt; &amp;aPSKc, uint32_t aChannelMask, AttachHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:506</div></div>
 <div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_af23ed2f42134e7082169258b52e8e782"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#af23ed2f42134e7082169258b52e8e782">otbr::agent::ThreadHelper::PermitUnsecureJoin</a></div><div class="ttdeci">otError PermitUnsecureJoin(uint16_t aPort, uint32_t aSeconds)</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_af7e8dc0b68aeb57aebd67f60097b661b"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#af7e8dc0b68aeb57aebd67f60097b661b">otbr::agent::ThreadHelper::EnergyScan</a></div><div class="ttdeci">void EnergyScan(uint32_t aScanDuration, EnergyScanHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:372</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_afa8c94c986ec9e2cc02b6ec0f7e2d848"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#afa8c94c986ec9e2cc02b6ec0f7e2d848">otbr::agent::ThreadHelper::StateChangedCallback</a></div><div class="ttdeci">void StateChangedCallback(otChangedFlags aFlags)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:247</div></div>
-<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_afc900b6b541a46fc421f0a16ccf343b4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#afc900b6b541a46fc421f0a16ccf343b4">otbr::agent::ThreadHelper::JoinerStart</a></div><div class="ttdeci">void JoinerStart(const std::string &amp;aPskd, const std::string &amp;aProvisioningUrl, const std::string &amp;aVendorName, const std::string &amp;aVendorModel, const std::string &amp;aVendorSwVersion, const std::string &amp;aVendorData, ResultHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:616</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_af7e8dc0b68aeb57aebd67f60097b661b"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#af7e8dc0b68aeb57aebd67f60097b661b">otbr::agent::ThreadHelper::EnergyScan</a></div><div class="ttdeci">void EnergyScan(uint32_t aScanDuration, EnergyScanHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:373</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_afa8c94c986ec9e2cc02b6ec0f7e2d848"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#afa8c94c986ec9e2cc02b6ec0f7e2d848">otbr::agent::ThreadHelper::StateChangedCallback</a></div><div class="ttdeci">void StateChangedCallback(otChangedFlags aFlags)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:248</div></div>
+<div class="ttc" id="aclassotbr_1_1agent_1_1ThreadHelper_html_afc900b6b541a46fc421f0a16ccf343b4"><div class="ttname"><a href="../../d4/d44/classotbr_1_1agent_1_1ThreadHelper.html#afc900b6b541a46fc421f0a16ccf343b4">otbr::agent::ThreadHelper::JoinerStart</a></div><div class="ttdeci">void JoinerStart(const std::string &amp;aPskd, const std::string &amp;aProvisioningUrl, const std::string &amp;aVendorName, const std::string &amp;aVendorModel, const std::string &amp;aVendorSwVersion, const std::string &amp;aVendorData, ResultHandler aHandler)</div><div class="ttdef"><b>Definition:</b> thread_helper.cpp:617</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="amdns_8hpp_html"><div class="ttname"><a href="../../de/d7c/mdns_8hpp.html">mdns.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
