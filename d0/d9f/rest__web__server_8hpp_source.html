@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-b827539</span>
+   &#160;<span id="projectnumber">0.3.0-9f86725</span>
    </div>
   </td>
  </tr>
@@ -125,8 +125,8 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a7f9eb47832b6a214cf7090918162d111">Init</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a66d0434b4d34d3248be9372a7ef40578">Update</a>(<a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#af82f8046e6ecb73e78f739296c73255c">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a66d0434b4d34d3248be9372a7ef40578">Update</a>(<a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#af82f8046e6ecb73e78f739296c73255c">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span>      UpdateConnections(<span class="keyword">const</span> fd_set &amp;aReadFdSet);</div>
@@ -150,7 +150,8 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace otbr</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_REST_WEB_SERVER_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:55</div></div>
+<div class="ttc" id="aclassotbr_1_1MainloopContext_html"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html">otbr::MainloopContext</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
+<div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:78</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1RcpHost_html"><div class="ttname"><a href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html">otbr::Ncp::RcpHost</a></div><div class="ttdef"><b>Definition:</b> rcp_host.hpp:91</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Resource_html"><div class="ttname"><a href="../../d7/d6e/classotbr_1_1rest_1_1Resource.html">otbr::rest::Resource</a></div><div class="ttdef"><b>Definition:</b> resource.hpp:64</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html">otbr::rest::RestWebServer</a></div><div class="ttdef"><b>Definition:</b> rest_web_server.hpp:57</div></div>
@@ -158,12 +159,11 @@ $(function() {
 <div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html_a66d0434b4d34d3248be9372a7ef40578"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a66d0434b4d34d3248be9372a7ef40578">otbr::rest::RestWebServer::Update</a></div><div class="ttdeci">void Update(MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> rest_web_server.cpp:80</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html_a7f9eb47832b6a214cf7090918162d111"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a7f9eb47832b6a214cf7090918162d111">otbr::rest::RestWebServer::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition:</b> rest_web_server.cpp:74</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html_ab8b5e1f7e426baaca328dcdac8ede626"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#ab8b5e1f7e426baaca328dcdac8ede626">otbr::rest::RestWebServer::RestWebServer</a></div><div class="ttdeci">RestWebServer(RcpHost &amp;aHost, const std::string &amp;aRestListenAddress, int aRestListenPort)</div><div class="ttdef"><b>Definition:</b> rest_web_server.cpp:50</div></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html_af82f8046e6ecb73e78f739296c73255c"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#af82f8046e6ecb73e78f739296c73255c">otbr::rest::RestWebServer::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> rest_web_server.cpp:88</div></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1RestWebServer_html_af82f8046e6ecb73e78f739296c73255c"><div class="ttname"><a href="../../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#af82f8046e6ecb73e78f739296c73255c">otbr::rest::RestWebServer::Process</a></div><div class="ttdeci">void Process(const MainloopContext &amp;aMainloop) override</div><div class="ttdef"><b>Definition:</b> rest_web_server.cpp:87</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:74</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="aconnection_8hpp_html"><div class="ttname"><a href="../../dd/d42/connection_8hpp.html">connection.hpp</a></div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
-<div class="ttc" id="amainloop_8hpp_html_af517b768b4ea7748a2ad90dee62efc60"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html#af517b768b4ea7748a2ad90dee62efc60">otbr::MainloopContext</a></div><div class="ttdeci">otSysMainloopContext MainloopContext</div><div class="ttdef"><b>Definition:</b> mainloop.hpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
