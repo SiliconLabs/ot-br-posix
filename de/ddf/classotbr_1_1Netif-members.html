@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9f86725</span>
+   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
    </div>
   </td>
  </tr>
@@ -74,15 +74,14 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>, including all inherited members.</p>
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Deinit</b>(void) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Init</b>(const std::string &amp;aInterfaceName, const Ip6SendFunc &amp;aIp6SendFunc) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Init</b>(const std::string &amp;aInterfaceName) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Ip6Receive</b>(const uint8_t *aBuf, uint16_t aLen) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Ip6SendFunc</b> typedef (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Netif</b>(void) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Process</b>(const MainloopContext *aContext) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetNetifState</b>(bool aState) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>UpdateFdSet</b>(MainloopContext *aContext) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>UpdateIp6MulticastAddresses</b>(const std::vector&lt; Ip6Address &gt; &amp;aAddrs) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>UpdateIp6UnicastAddresses</b>(const std::vector&lt; Ip6AddressInfo &gt; &amp;aAddrInfos) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Netif</b>(Dependencies &amp;aDependencies) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Process</b>(const MainloopContext *aContext) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>SetNetifState</b>(bool aState) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>UpdateFdSet</b>(MainloopContext *aContext) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>UpdateIp6MulticastAddresses</b>(const std::vector&lt; Ip6Address &gt; &amp;aAddrs) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>UpdateIp6UnicastAddresses</b>(const std::vector&lt; Ip6AddressInfo &gt; &amp;aAddrInfos) (defined in <a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a>)</td><td class="entry"><a class="el" href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

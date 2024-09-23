@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9f86725</span>
+   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
    </div>
   </td>
  </tr>
@@ -76,6 +76,15 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="../../dc/d00/ncp__spinel_8hpp_source.html">src/ncp/ncp_spinel.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for otbr::Ncp::NcpSpinel:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.png" usemap="#otbr::Ncp::NcpSpinel_map" alt=""/>
+  <map id="otbr::Ncp::NcpSpinel_map" name="otbr::Ncp::NcpSpinel_map">
+<area href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html" alt="otbr::Netif::Dependencies" shape="rect" coords="0,0,153,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -88,6 +97,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Ip6MulticastAddressT
 <tr class="memitem:af689d30338d74153b6da642e68a504d3"><td class="memItemLeft" align="right" valign="top"><a id="af689d30338d74153b6da642e68a504d3"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>NetifStateChangedCallback</b> = std::function&lt; void(bool)&gt;</td></tr>
 <tr class="separator:af689d30338d74153b6da642e68a504d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73beb363e5bedc518508bcfeae65d7b4"><td class="memItemLeft" align="right" valign="top"><a id="a73beb363e5bedc518508bcfeae65d7b4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Ip6ReceiveCallback</b> = std::function&lt; void(const uint8_t *, uint16_t)&gt;</td></tr>
+<tr class="separator:a73beb363e5bedc518508bcfeae65d7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -109,8 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9adba505196d1391551fe631e4b404cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a765ff33f16c94fd9c5979eed65604872"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#a765ff33f16c94fd9c5979eed65604872">Ip6SetAddressMulticastCallback</a> (const Ip6MulticastAddressTableCallback &amp;aCallback)</td></tr>
 <tr class="separator:a765ff33f16c94fd9c5979eed65604872"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68cacbddddeebc6c9ed1a4e7d7515fd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#a68cacbddddeebc6c9ed1a4e7d7515fd5">Ip6Send</a> (const uint8_t *aData, uint16_t aLength)</td></tr>
-<tr class="separator:a68cacbddddeebc6c9ed1a4e7d7515fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45c6c5378a724b13046c6c62e59c5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#af45c6c5378a724b13046c6c62e59c5f9">Ip6SetReceiveCallback</a> (const Ip6ReceiveCallback &amp;aCallback)</td></tr>
+<tr class="separator:af45c6c5378a724b13046c6c62e59c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4ce0841ba9f9590c8e2bd30c2639dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#aab4ce0841ba9f9590c8e2bd30c2639dc">Ip6Send</a> (const uint8_t *aData, uint16_t aLength) override</td></tr>
+<tr class="separator:aab4ce0841ba9f9590c8e2bd30c2639dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3b6e5f0379780bf9754b0193d262ed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#af3b6e5f0379780bf9754b0193d262ed8">ThreadSetEnabled</a> (bool aEnable, AsyncTaskPtr aAsyncTask)</td></tr>
 <tr class="separator:af3b6e5f0379780bf9754b0193d262ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2399b0d6b98ef35766af549201a9fff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1b/classotbr_1_1Ncp_1_1NcpSpinel.html#ac2399b0d6b98ef35766af549201a9fff">ThreadDetachGracefully</a> (AsyncTaskPtr aAsyncTask)</td></tr>
@@ -299,11 +313,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a68cacbddddeebc6c9ed1a4e7d7515fd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68cacbddddeebc6c9ed1a4e7d7515fd5">&#9670;&nbsp;</a></span>Ip6Send()</h2>
+<a id="aab4ce0841ba9f9590c8e2bd30c2639dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4ce0841ba9f9590c8e2bd30c2639dc">&#9670;&nbsp;</a></span>Ip6Send()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> otbr::Ncp::NcpSpinel::Ip6Send </td>
@@ -323,6 +340,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>This methods sends an IP6 datagram through the NCP.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -339,6 +361,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented from <a class="el" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">otbr::Netif::Dependencies</a>.</p>
 
 </div>
 </div>
@@ -441,6 +465,39 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aEnable</td><td>TRUE to enable and FALSE to disable. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aAsyncTask</td><td>A pointer to an async result to receive the result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af45c6c5378a724b13046c6c62e59c5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45c6c5378a724b13046c6c62e59c5f9">&#9670;&nbsp;</a></span>Ip6SetReceiveCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::NcpSpinel::Ip6SetReceiveCallback </td>
+          <td>(</td>
+          <td class="paramtype">const Ip6ReceiveCallback &amp;&#160;</td>
+          <td class="paramname"><em>aCallback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method sets the callback to receive IP6 datagrams.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The callback to receive IP6 datagrams. </td></tr>
   </table>
   </dd>
 </dl>

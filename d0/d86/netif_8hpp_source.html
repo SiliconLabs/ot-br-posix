@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-9f86725</span>
+   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
    </div>
   </td>
  </tr>
@@ -116,55 +116,66 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d3/d72/classotbr_1_1Netif.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d72/classotbr_1_1Netif.html">Netif</a></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">using</span> Ip6SendFunc = std::function&lt;<a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a>(<span class="keyword">const</span> uint8_t *, uint16_t)&gt;;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../d3/d72/classotbr_1_1Netif.html">Netif</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> Init(<span class="keyword">const</span> std::string &amp;aInterfaceName, <span class="keyword">const</span> Ip6SendFunc &amp;aIp6SendFunc);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span>      Deinit(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span>      Process(<span class="keyword">const</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> *aContext);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span>      UpdateFdSet(<a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> *aContext);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span>      UpdateIp6UnicastAddresses(<span class="keyword">const</span> std::vector&lt;Ip6AddressInfo&gt; &amp;aAddrInfos);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> UpdateIp6MulticastAddresses(<span class="keyword">const</span> std::vector&lt;Ip6Address&gt; &amp;aAddrs);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span>      SetNetifState(<span class="keywordtype">bool</span> aState);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> Ip6Receive(<span class="keyword">const</span> uint8_t *aBuf, uint16_t aLen);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// TODO: Retrieve the Maximum Ip6 size from the coprocessor.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> kIp6Mtu = 1280;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> Clear(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> CreateTunDevice(<span class="keyword">const</span> std::string &amp;aInterfaceName);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> InitNetlink(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span>      PlatformSpecificInit(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span>      SetAddrGenModeToNone(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span>      ProcessUnicastAddressChange(<span class="keyword">const</span> <a class="code" href="../../dd/d58/classotbr_1_1Ip6AddressInfo.html">Ip6AddressInfo</a> &amp;aAddressInfo, <span class="keywordtype">bool</span> aIsAdded);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> ProcessMulticastAddressChange(<span class="keyword">const</span> <a class="code" href="../../d2/dfe/classotbr_1_1Ip6Address.html">Ip6Address</a> &amp;aAddress, <span class="keywordtype">bool</span> aIsAdded);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span>      ProcessIp6Send(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span>      mTunFd;           </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span>      mIpFd;            </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span>      mNetlinkFd;       </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint32_t mNetlinkSequence; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNetifIndex;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string  mNetifName;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;Ip6AddressInfo&gt; mIp6UnicastAddresses;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;Ip6Address&gt;     mIp6MulticastAddresses;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Ip6SendFunc                 mIp6SendFunc;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">   52</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">Dependencies</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">Dependencies</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> Ip6Send(<span class="keyword">const</span> uint8_t *aData, uint16_t aLength);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> Ip6MulAddrUpdateSubscription(<span class="keyword">const</span> otIp6Address &amp;aAddress, <span class="keywordtype">bool</span> aIsAdded);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d3/d72/classotbr_1_1Netif.html">Netif</a>(<a class="code" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">Dependencies</a> &amp;aDependencies);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> Init(<span class="keyword">const</span> std::string &amp;aInterfaceName);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span>      Deinit(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span>      Process(<span class="keyword">const</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> *aContext);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span>      UpdateFdSet(<a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> *aContext);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span>      UpdateIp6UnicastAddresses(<span class="keyword">const</span> std::vector&lt;Ip6AddressInfo&gt; &amp;aAddrInfos);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> UpdateIp6MulticastAddresses(<span class="keyword">const</span> std::vector&lt;Ip6Address&gt; &amp;aAddrs);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span>      SetNetifState(<span class="keywordtype">bool</span> aState);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> Ip6Receive(<span class="keyword">const</span> uint8_t *aBuf, uint16_t aLen);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// TODO: Retrieve the Maximum Ip6 size from the coprocessor.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> kIp6Mtu = 1280;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> Clear(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> CreateTunDevice(<span class="keyword">const</span> std::string &amp;aInterfaceName);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> InitNetlink(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> InitMldListener(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span>      PlatformSpecificInit(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span>      SetAddrGenModeToNone(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span>      ProcessUnicastAddressChange(<span class="keyword">const</span> <a class="code" href="../../dd/d58/classotbr_1_1Ip6AddressInfo.html">Ip6AddressInfo</a> &amp;aAddressInfo, <span class="keywordtype">bool</span> aIsAdded);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> ProcessMulticastAddressChange(<span class="keyword">const</span> <a class="code" href="../../d2/dfe/classotbr_1_1Ip6Address.html">Ip6Address</a> &amp;aAddress, <span class="keywordtype">bool</span> aIsAdded);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span>      ProcessIp6Send(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span>      ProcessMldEvent(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span>      mTunFd;           </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span>      mIpFd;            </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span>      mNetlinkFd;       </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span>      mMldFd;           </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint32_t mNetlinkSequence; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_POSIX_NETIF_HPP_</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNetifIndex;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string  mNetifName;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;Ip6AddressInfo&gt; mIp6UnicastAddresses;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::vector&lt;Ip6Address&gt;     mIp6MulticastAddresses;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">Dependencies</a>               &amp;mDeps;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_POSIX_NETIF_HPP_</span></div>
 <div class="ttc" id="aclassotbr_1_1Ip6AddressInfo_html"><div class="ttname"><a href="../../dd/d58/classotbr_1_1Ip6AddressInfo.html">otbr::Ip6AddressInfo</a></div><div class="ttdef"><b>Definition:</b> types.hpp:439</div></div>
 <div class="ttc" id="aclassotbr_1_1Ip6Address_html"><div class="ttname"><a href="../../d2/dfe/classotbr_1_1Ip6Address.html">otbr::Ip6Address</a></div><div class="ttdef"><b>Definition:</b> types.hpp:113</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopContext_html"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html">otbr::MainloopContext</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
+<div class="ttc" id="aclassotbr_1_1Netif_1_1Dependencies_html"><div class="ttname"><a href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html">otbr::Netif::Dependencies</a></div><div class="ttdef"><b>Definition:</b> netif.hpp:53</div></div>
 <div class="ttc" id="aclassotbr_1_1Netif_html"><div class="ttname"><a href="../../d3/d72/classotbr_1_1Netif.html">otbr::Netif</a></div><div class="ttdef"><b>Definition:</b> netif.hpp:50</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition:</b> types.hpp:74</div></div>
 <div class="ttc" id="amainloop_8hpp_html"><div class="ttname"><a href="../../d0/dfd/mainloop_8hpp.html">mainloop.hpp</a></div></div>
