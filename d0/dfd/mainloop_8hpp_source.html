@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
+   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
    </div>
   </td>
  </tr>
@@ -107,37 +107,37 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d0/d6c/classotbr_1_1MainloopContext.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> : <span class="keyword">public</span> otSysMainloopContext</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kErrorFdSet = 1 &lt;&lt; 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kReadFdSet  = 1 &lt;&lt; 1;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kWriteFdSet = 1 &lt;&lt; 2;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html#afa351756684f77747cc435e9b8a66b23">AddFdToReadSet</a>(<span class="keywordtype">int</span> aFd);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html#aa08588c59c224e7308b4c4af0b267154">AddFdToSet</a>(<span class="keywordtype">int</span> aFd, uint8_t aFdSetsMask);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">   90</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">Update</a>(<a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a846ebf57ac6735c885bb76a9d07ff3ee">   98</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a846ebf57ac6735c885bb76a9d07ff3ee">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_COMMON_OTBR_MAINLOOP_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1MainloopContext_html"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html">otbr::MainloopContext</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:48</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d0/d6c/classotbr_1_1MainloopContext.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> : <span class="keyword">public</span> otSysMainloopContext</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kErrorFdSet = 1 &lt;&lt; 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kReadFdSet  = 1 &lt;&lt; 1;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> constexpr uint8_t kWriteFdSet = 1 &lt;&lt; 2;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html#afa351756684f77747cc435e9b8a66b23">AddFdToReadSet</a>(<span class="keywordtype">int</span> aFd);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html#aa08588c59c224e7308b4c4af0b267154">AddFdToSet</a>(<span class="keywordtype">int</span> aFd, uint8_t aFdSetsMask);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html">MainloopProcessor</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">   85</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">Update</a>(<a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a846ebf57ac6735c885bb76a9d07ff3ee">   92</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d03/classotbr_1_1MainloopProcessor.html#a846ebf57ac6735c885bb76a9d07ff3ee">Process</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) = 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_COMMON_OTBR_MAINLOOP_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1MainloopContext_html"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html">otbr::MainloopContext</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:47</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopContext_html_aa08588c59c224e7308b4c4af0b267154"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html#aa08588c59c224e7308b4c4af0b267154">otbr::MainloopContext::AddFdToSet</a></div><div class="ttdeci">void AddFdToSet(int aFd, uint8_t aFdSetsMask)</div><div class="ttdef"><b>Definition:</b> mainloop.cpp:49</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopContext_html_afa351756684f77747cc435e9b8a66b23"><div class="ttname"><a href="../../d0/d6c/classotbr_1_1MainloopContext.html#afa351756684f77747cc435e9b8a66b23">otbr::MainloopContext::AddFdToReadSet</a></div><div class="ttdeci">void AddFdToReadSet(int aFd)</div><div class="ttdef"><b>Definition:</b> mainloop.cpp:44</div></div>
-<div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:78</div></div>
+<div class="ttc" id="aclassotbr_1_1MainloopProcessor_html"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html">otbr::MainloopProcessor</a></div><div class="ttdef"><b>Definition:</b> mainloop.hpp:74</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html_a537ae40626823cf2a044d4764dcc0c0d"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html#a537ae40626823cf2a044d4764dcc0c0d">otbr::MainloopProcessor::Update</a></div><div class="ttdeci">virtual void Update(MainloopContext &amp;aMainloop)=0</div></div>
 <div class="ttc" id="aclassotbr_1_1MainloopProcessor_html_a846ebf57ac6735c885bb76a9d07ff3ee"><div class="ttname"><a href="../../db/d03/classotbr_1_1MainloopProcessor.html#a846ebf57ac6735c885bb76a9d07ff3ee">otbr::MainloopProcessor::Process</a></div><div class="ttdeci">virtual void Process(const MainloopContext &amp;aMainloop)=0</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
+   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
    </div>
   </td>
  </tr>
@@ -112,52 +112,52 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>rest {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../da/df0/classotbr_1_1rest_1_1Request.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html">Request</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a52c5b75f73fa531174de4b86df11ad8f">Request</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a77fc2fa9ddb6fa6ba1c8551ab68d3563">SetUrl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a139c654d39d3cfc444ff7aed580f236d">SetBody</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#af0e3ca0733f039026af3d0e56e58a107">SetContentLength</a>(<span class="keywordtype">size_t</span> aContentLength);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a46d2c0597196d558047c85ec6aa6d36f">SetMethod</a>(int32_t aMethod);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a5284357dbdc3283a5cf7bdddb414cf9a">SetNextHeaderField</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a72604b899031d80ad4eceeba243ae465">SetHeaderValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a4cab6fde99c6b49f780415e558c0e349">SetReadComplete</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#aacabd076aff9c6bf42d189b7deace308">ResetReadComplete</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../de/daa/rest_2types_8hpp.html#a06f5b86d59d177d419e9af98c501151b">HttpMethod</a> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a819e3562094a0605d484cf6129d21c50">GetMethod</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a28358ce62ac52e27c96d3a1e9d9263a3">GetBody</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a11f6c0ebf75e354af095885b9b604198">GetUrl</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a8050adf2c0276684625e686e1e3432b0">GetHeaderValue</a>(<span class="keyword">const</span> std::string aHeaderField) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#af52a944a8dd3cd4d85d2dc1d1a2f17be">IsComplete</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    int32_t                            mMethod;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">size_t</span>                             mContentLength;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::string                        mUrl;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::string                        mBody;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::string                        mNextHeaderField;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::map&lt;std::string, std::string&gt; mHeaders;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">bool</span>                               mComplete;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;};</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;} <span class="comment">// namespace rest</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_REQUEST_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1rest_1_1Request_html"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html">otbr::rest::Request</a></div><div class="ttdef"><b>Definition:</b> request.hpp:53</div></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../da/df0/classotbr_1_1rest_1_1Request.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html">Request</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a52c5b75f73fa531174de4b86df11ad8f">Request</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a77fc2fa9ddb6fa6ba1c8551ab68d3563">SetUrl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a139c654d39d3cfc444ff7aed580f236d">SetBody</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#af0e3ca0733f039026af3d0e56e58a107">SetContentLength</a>(<span class="keywordtype">size_t</span> aContentLength);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a46d2c0597196d558047c85ec6aa6d36f">SetMethod</a>(int32_t aMethod);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a5284357dbdc3283a5cf7bdddb414cf9a">SetNextHeaderField</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a72604b899031d80ad4eceeba243ae465">SetHeaderValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *aString, <span class="keywordtype">size_t</span> aLength);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a4cab6fde99c6b49f780415e558c0e349">SetReadComplete</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#aacabd076aff9c6bf42d189b7deace308">ResetReadComplete</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../de/daa/rest_2types_8hpp.html#a06f5b86d59d177d419e9af98c501151b">HttpMethod</a> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a819e3562094a0605d484cf6129d21c50">GetMethod</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a28358ce62ac52e27c96d3a1e9d9263a3">GetBody</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a11f6c0ebf75e354af095885b9b604198">GetUrl</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::string <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#a8050adf2c0276684625e686e1e3432b0">GetHeaderValue</a>(<span class="keyword">const</span> std::string aHeaderField) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../da/df0/classotbr_1_1rest_1_1Request.html#af52a944a8dd3cd4d85d2dc1d1a2f17be">IsComplete</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    int32_t                            mMethod;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">size_t</span>                             mContentLength;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::string                        mUrl;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    std::string                        mBody;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::string                        mNextHeaderField;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    std::map&lt;std::string, std::string&gt; mHeaders;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">bool</span>                               mComplete;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;} <span class="comment">// namespace rest</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_REST_REQUEST_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1rest_1_1Request_html"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html">otbr::rest::Request</a></div><div class="ttdef"><b>Definition:</b> request.hpp:52</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Request_html_a11f6c0ebf75e354af095885b9b604198"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html#a11f6c0ebf75e354af095885b9b604198">otbr::rest::Request::GetUrl</a></div><div class="ttdeci">std::string GetUrl(void) const</div><div class="ttdef"><b>Definition:</b> request.cpp:80</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Request_html_a139c654d39d3cfc444ff7aed580f236d"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html#a139c654d39d3cfc444ff7aed580f236d">otbr::rest::Request::SetBody</a></div><div class="ttdeci">void SetBody(const char *aString, size_t aLength)</div><div class="ttdef"><b>Definition:</b> request.cpp:45</div></div>
 <div class="ttc" id="aclassotbr_1_1rest_1_1Request_html_a28358ce62ac52e27c96d3a1e9d9263a3"><div class="ttname"><a href="../../da/df0/classotbr_1_1rest_1_1Request.html#a28358ce62ac52e27c96d3a1e9d9263a3">otbr::rest::Request::GetBody</a></div><div class="ttdeci">std::string GetBody() const</div><div class="ttdef"><b>Definition:</b> request.cpp:75</div></div>

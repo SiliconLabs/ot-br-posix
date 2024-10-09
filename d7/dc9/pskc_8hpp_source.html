@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
+   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
    </div>
   </td>
  </tr>
@@ -126,20 +126,20 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html">Pskc</a></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> uint8_t *<a class="code" href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html#ad84cca3347eff9e028e48301f23fd983">ComputePskc</a>(<span class="keyword">const</span> uint8_t *aExtPanId, <span class="keyword">const</span> <span class="keywordtype">char</span> *aNetworkName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aPassphrase);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> SetSalt(<span class="keyword">const</span> uint8_t *aExtPanId, <span class="keyword">const</span> <span class="keywordtype">char</span> *aNetworkName);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span>     mSalt[OT_PBKDF2_SALT_MAX_LENGTH];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    uint16_t mSaltLen;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    uint8_t  mPskc[OT_PSKC_LENGTH];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// namespace Psk</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_UTILS_PSKC_HPP_</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> uint8_t *<a class="code" href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html#ad84cca3347eff9e028e48301f23fd983">ComputePskc</a>(<span class="keyword">const</span> uint8_t *aExtPanId, <span class="keyword">const</span> <span class="keywordtype">char</span> *aNetworkName, <span class="keyword">const</span> <span class="keywordtype">char</span> *aPassphrase);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> SetSalt(<span class="keyword">const</span> uint8_t *aExtPanId, <span class="keyword">const</span> <span class="keywordtype">char</span> *aNetworkName);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span>     mSalt[OT_PBKDF2_SALT_MAX_LENGTH];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    uint16_t mSaltLen;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    uint8_t  mPskc[OT_PSKC_LENGTH];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace Psk</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_UTILS_PSKC_HPP_</span></div>
 <div class="ttc" id="aclassotbr_1_1Psk_1_1Pskc_html"><div class="ttname"><a href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html">otbr::Psk::Pskc</a></div><div class="ttdef"><b>Definition:</b> pskc.hpp:60</div></div>
 <div class="ttc" id="aclassotbr_1_1Psk_1_1Pskc_html_ad84cca3347eff9e028e48301f23fd983"><div class="ttname"><a href="../../d6/dad/classotbr_1_1Psk_1_1Pskc.html#ad84cca3347eff9e028e48301f23fd983">otbr::Psk::Pskc::ComputePskc</a></div><div class="ttdeci">const uint8_t * ComputePskc(const uint8_t *aExtPanId, const char *aNetworkName, const char *aPassphrase)</div><div class="ttdef"><b>Definition:</b> pskc.cpp:82</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>

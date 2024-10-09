@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
+   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
    </div>
   </td>
  </tr>
@@ -108,43 +108,43 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;mbedtls/sha256.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d1/d15/classotbr_1_1Sha256.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d15/classotbr_1_1Sha256.html">Sha256</a></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">   62</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">Hash</a> : <span class="keyword">public</span> otCryptoSha256Hash</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">   65</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">kSize</a> = OT_CRYPTO_SHA256_HASH_SIZE; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">   73</a></span>&#160;        <span class="keyword">const</span> uint8_t *<a class="code" href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">GetBytes</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m8; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../dd/dcf/group__core-security.html#ga3547c4a188c495fc93b2dd37c19fab93">Sha256</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d1/d15/classotbr_1_1Sha256.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d15/classotbr_1_1Sha256.html">Sha256</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">   59</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">Hash</a> : <span class="keyword">public</span> otCryptoSha256Hash</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">   62</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">kSize</a> = OT_CRYPTO_SHA256_HASH_SIZE; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">   69</a></span>&#160;        <span class="keyword">const</span> uint8_t *<a class="code" href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">GetBytes</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m8; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../dd/dcf/group__core-security.html#ga3547c4a188c495fc93b2dd37c19fab93">Sha256</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../dd/dcf/group__core-security.html#gae90045abb8e8625ebdbbcd8631878863">~Sha256</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../dd/dcf/group__core-security.html#gae90045abb8e8625ebdbbcd8631878863">~Sha256</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#gae390ec84d889e2cd21d88d2dc8e937fe">Start</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#ga3b370d3f52176735ed022c5456911766">Update</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *aBuf, uint16_t aBufLength);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#ga3eec21b6e5e744b42136cdc2e672e5fb">Finish</a>(Hash &amp;aHash);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    otCryptoContext       mContext;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> uint16_t kSha256ContextSize = <span class="keyword">sizeof</span>(mbedtls_sha256_context);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    OT_DEFINE_ALIGNED_VAR(mContextStorage, kSha256ContextSize, uint64_t);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SHA256_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1Sha256_1_1Hash_html"><div class="ttname"><a href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">otbr::Sha256::Hash</a></div><div class="ttdef"><b>Definition:</b> sha256.hpp:63</div></div>
-<div class="ttc" id="aclassotbr_1_1Sha256_html"><div class="ttname"><a href="../../d1/d15/classotbr_1_1Sha256.html">otbr::Sha256</a></div><div class="ttdef"><b>Definition:</b> sha256.hpp:56</div></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#gae390ec84d889e2cd21d88d2dc8e937fe">Start</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#ga3b370d3f52176735ed022c5456911766">Update</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *aBuf, uint16_t aBufLength);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/dcf/group__core-security.html#ga3eec21b6e5e744b42136cdc2e672e5fb">Finish</a>(Hash &amp;aHash);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    otCryptoContext       mContext;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> uint16_t kSha256ContextSize = <span class="keyword">sizeof</span>(mbedtls_sha256_context);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    OT_DEFINE_ALIGNED_VAR(mContextStorage, kSha256ContextSize, uint64_t);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SHA256_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1Sha256_1_1Hash_html"><div class="ttname"><a href="../../d1/d0e/classotbr_1_1Sha256_1_1Hash.html">otbr::Sha256::Hash</a></div><div class="ttdef"><b>Definition:</b> sha256.hpp:60</div></div>
+<div class="ttc" id="aclassotbr_1_1Sha256_html"><div class="ttname"><a href="../../d1/d15/classotbr_1_1Sha256.html">otbr::Sha256</a></div><div class="ttdef"><b>Definition:</b> sha256.hpp:54</div></div>
 <div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
-<div class="ttc" id="agroup__core-security_html_ga2a6ecac82c7da6f8926f0de45cfa9651"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">otbr::Sha256::Hash::GetBytes</a></div><div class="ttdeci">const uint8_t * GetBytes(void) const</div><div class="ttdef"><b>Definition:</b> sha256.hpp:73</div></div>
+<div class="ttc" id="agroup__core-security_html_ga2a6ecac82c7da6f8926f0de45cfa9651"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#ga2a6ecac82c7da6f8926f0de45cfa9651">otbr::Sha256::Hash::GetBytes</a></div><div class="ttdeci">const uint8_t * GetBytes(void) const</div><div class="ttdef"><b>Definition:</b> sha256.hpp:69</div></div>
 <div class="ttc" id="agroup__core-security_html_ga3547c4a188c495fc93b2dd37c19fab93"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#ga3547c4a188c495fc93b2dd37c19fab93">otbr::Sha256::Sha256</a></div><div class="ttdeci">Sha256(void)</div><div class="ttdef"><b>Definition:</b> sha256.cpp:38</div></div>
 <div class="ttc" id="agroup__core-security_html_ga3b370d3f52176735ed022c5456911766"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#ga3b370d3f52176735ed022c5456911766">otbr::Sha256::Update</a></div><div class="ttdeci">void Update(const void *aBuf, uint16_t aBufLength)</div><div class="ttdef"><b>Definition:</b> sha256.cpp:80</div></div>
 <div class="ttc" id="agroup__core-security_html_ga3eec21b6e5e744b42136cdc2e672e5fb"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#ga3eec21b6e5e744b42136cdc2e672e5fb">otbr::Sha256::Finish</a></div><div class="ttdeci">void Finish(Hash &amp;aHash)</div><div class="ttdef"><b>Definition:</b> sha256.cpp:93</div></div>
-<div class="ttc" id="agroup__core-security_html_gadd0d38bffb6a82a1fff8e7c9ba8f1c82"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">otbr::Sha256::Hash::kSize</a></div><div class="ttdeci">static const uint8_t kSize</div><div class="ttdoc">SHA-256 hash size (bytes)</div><div class="ttdef"><b>Definition:</b> sha256.hpp:65</div></div>
+<div class="ttc" id="agroup__core-security_html_gadd0d38bffb6a82a1fff8e7c9ba8f1c82"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#gadd0d38bffb6a82a1fff8e7c9ba8f1c82">otbr::Sha256::Hash::kSize</a></div><div class="ttdeci">static const uint8_t kSize</div><div class="ttdoc">SHA-256 hash size (bytes)</div><div class="ttdef"><b>Definition:</b> sha256.hpp:62</div></div>
 <div class="ttc" id="agroup__core-security_html_gae390ec84d889e2cd21d88d2dc8e937fe"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#gae390ec84d889e2cd21d88d2dc8e937fe">otbr::Sha256::Start</a></div><div class="ttdeci">void Start(void)</div><div class="ttdef"><b>Definition:</b> sha256.cpp:67</div></div>
 <div class="ttc" id="agroup__core-security_html_gae90045abb8e8625ebdbbcd8631878863"><div class="ttname"><a href="../../dd/dcf/group__core-security.html#gae90045abb8e8625ebdbbcd8631878863">otbr::Sha256::~Sha256</a></div><div class="ttdeci">~Sha256(void)</div><div class="ttdef"><b>Definition:</b> sha256.cpp:54</div></div>
 </div><!-- fragment --></div><!-- contents -->

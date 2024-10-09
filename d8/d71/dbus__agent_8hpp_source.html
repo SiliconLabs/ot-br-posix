@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-0cb3d3c</span>
+   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
    </div>
   </td>
  </tr>
@@ -123,41 +123,41 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>DBusAgent : <span class="keyword">public</span> MainloopProcessor, <span class="keyword">private</span> <a class="code" href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a3e8c9a9d783ca361e1ede4b687ac00fe">DBusAgent</a>(<a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a> &amp;aHost, Mdns::Publisher &amp;aPublisher);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a44a0d5c7f3ad0ed7f24d6e1eb9e53841">Init</a>(<a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a> &amp;aBorderAgent);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a91ab1eaf73064297811005488762707e">Update</a>(MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab74bf50fd467a833779e69a65df18eed">Process</a>(<span class="keyword">const</span> MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">using</span> Clock                                              = std::chrono::steady_clock;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    constexpr <span class="keyword">static</span> std::chrono::seconds kDBusWaitAllowance = std::chrono::seconds(30);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a3e8c9a9d783ca361e1ede4b687ac00fe">DBusAgent</a>(<a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a> &amp;aHost, Mdns::Publisher &amp;aPublisher);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a44a0d5c7f3ad0ed7f24d6e1eb9e53841">Init</a>(<a class="code" href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a> &amp;aBorderAgent);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#a91ab1eaf73064297811005488762707e">Update</a>(MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dd6/structotbr_1_1DBus_1_1DBusAgent.html#ab74bf50fd467a833779e69a65df18eed">Process</a>(<span class="keyword">const</span> MainloopContext &amp;aMainloop) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">using</span> Clock                                              = std::chrono::steady_clock;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    constexpr <span class="keyword">static</span> std::chrono::seconds kDBusWaitAllowance = std::chrono::seconds(30);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">using</span> UniqueDBusConnection = std::unique_ptr&lt;DBusConnection, std::function&lt;void(DBusConnection *)&gt;&gt;;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">using</span> UniqueDBusConnection = std::unique_ptr&lt;DBusConnection, std::function&lt;void(DBusConnection *)&gt;&gt;;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> dbus_bool_t   AddDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>          RemoveDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    UniqueDBusConnection PrepareDBusConnection(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> dbus_bool_t   AddDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>          RemoveDBusWatch(<span class="keyword">struct</span> DBusWatch *aWatch, <span class="keywordtype">void</span> *aContext);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    UniqueDBusConnection PrepareDBusConnection(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">struct </span>timeval kPollTimeout;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">struct </span>timeval kPollTimeout;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::string                 mInterfaceName;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::unique_ptr&lt;DBusObject&gt; mThreadObject;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    UniqueDBusConnection        mConnection;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a>      &amp;mHost;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    Mdns::Publisher            &amp;mPublisher;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::set&lt;DBusWatch *&gt; mWatches;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string                 mInterfaceName;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::unique_ptr&lt;DBusObject&gt; mThreadObject;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    UniqueDBusConnection        mConnection;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a>      &amp;mHost;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Mdns::Publisher            &amp;mPublisher;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::set&lt;DBusWatch *&gt; mWatches;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace DBus</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace otbr</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;} <span class="comment">// namespace DBus</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_AGENT_HPP_</span></div>
-<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:198</div></div>
-<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:80</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></div><div class="ttdef"><b>Definition:</b> thread_host.hpp:82</div></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_AGENT_HPP_</span></div>
+<div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition:</b> code_utils.hpp:190</div></div>
+<div class="ttc" id="aclassotbr_1_1BorderAgent_html"><div class="ttname"><a href="../../d4/dfd/classotbr_1_1BorderAgent.html">otbr::BorderAgent</a></div><div class="ttdef"><b>Definition:</b> border_agent.hpp:79</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></div><div class="ttdef"><b>Definition:</b> thread_host.hpp:79</div></div>
 <div class="ttc" id="acode__utils_8hpp_html"><div class="ttname"><a href="../../da/d7b/code__utils_8hpp.html">code_utils.hpp</a></div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
 <div class="ttc" id="adbus__message__helper_8hpp_html"><div class="ttname"><a href="../../d0/dea/dbus__message__helper_8hpp.html">dbus_message_helper.hpp</a></div></div>
