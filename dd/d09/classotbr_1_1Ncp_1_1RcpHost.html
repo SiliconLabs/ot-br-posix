@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
+   &#160;<span id="projectnumber">0.3.0-6934ff0</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d3/dc5/classotbr_1_1Ncp_1_1RcpHost-members.html">List of all members</a>  </div>
@@ -91,19 +90,6 @@ Inheritance diagram for otbr::Ncp::RcpHost:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a6758d55fc9e91f0ec4743531357997d6"><td class="memItemLeft" align="right" valign="top"><a id="a6758d55fc9e91f0ec4743531357997d6"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadStateChangedCallback</b> = std::function&lt; void(otChangedFlags aFlags)&gt;</td></tr>
-<tr class="separator:a6758d55fc9e91f0ec4743531357997d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classotbr_1_1Ncp_1_1ThreadHost')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></td></tr>
-<tr class="memitem:a0c472ee90d2abc040a0210f9ad30e2a4 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a0c472ee90d2abc040a0210f9ad30e2a4"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncResultReceiver</b> = std::function&lt; void(otError, const std::string &amp;)&gt;</td></tr>
-<tr class="separator:a0c472ee90d2abc040a0210f9ad30e2a4 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84c8612c8ea95e5dd5f9f6684b53a62c inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a84c8612c8ea95e5dd5f9f6684b53a62c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b> = std::function&lt; void(otError, otDeviceRole)&gt;</td></tr>
-<tr class="separator:a84c8612c8ea95e5dd5f9f6684b53a62c inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abf4bbc3b43531cf49ea108da52d79f86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#abf4bbc3b43531cf49ea108da52d79f86">RcpHost</a> (const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</td></tr>
@@ -124,8 +110,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05bef6295cb7b30110511fa2e972e98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58c0cc133b6e0b512ac9d3f19a5aaed1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a58c0cc133b6e0b512ac9d3f19a5aaed1">RegisterResetHandler</a> (std::function&lt; void(void)&gt; aHandler)</td></tr>
 <tr class="separator:a58c0cc133b6e0b512ac9d3f19a5aaed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e90b04252d31f512b5f6d7887323a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a0e90b04252d31f512b5f6d7887323a02">AddThreadStateChangedCallback</a> (ThreadStateChangedCallback aCallback)</td></tr>
-<tr class="separator:a0e90b04252d31f512b5f6d7887323a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d421f0b97b65032e56924a585a5b91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ac5d421f0b97b65032e56924a585a5b91">Reset</a> (void)</td></tr>
 <tr class="separator:ac5d421f0b97b65032e56924a585a5b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46fbc54dae84eb06f6a490191d0cf677"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a46fbc54dae84eb06f6a490191d0cf677">GetInterfaceName</a> (void) const override</td></tr>
@@ -136,6 +120,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1c9c613f851efd44feafad2a0a71239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35917a3c681f64bb11fd08cce9b005f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a35917a3c681f64bb11fd08cce9b005f9">ScheduleMigration</a> (const otOperationalDatasetTlvs &amp;aPendingOpDatasetTlvs, const AsyncResultReceiver aReceiver) override</td></tr>
 <tr class="separator:a35917a3c681f64bb11fd08cce9b005f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085803130a7bcac8f23f128811ee91e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a085803130a7bcac8f23f128811ee91e9">SetThreadEnabled</a> (bool aEnabled, const AsyncResultReceiver aReceiver) override</td></tr>
+<tr class="separator:a085803130a7bcac8f23f128811ee91e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16d6c72b4fdcf4ce30ba7cb525d8a0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ac16d6c72b4fdcf4ce30ba7cb525d8a0e">SetCountryCode</a> (const std::string &amp;aCountryCode, const AsyncResultReceiver &amp;aReceiver) override</td></tr>
+<tr class="separator:ac16d6c72b4fdcf4ce30ba7cb525d8a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32891e0231dc26beac3f3647ae65fa82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a32891e0231dc26beac3f3647ae65fa82">GetChannelMasks</a> (const ChannelMasksReceiver &amp;aReceiver, const AsyncResultReceiver &amp;aErrReceiver) override</td></tr>
+<tr class="separator:a32891e0231dc26beac3f3647ae65fa82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491a7ab1600088e83c2a619a1d2dc9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a491a7ab1600088e83c2a619a1d2dc9d9">SetChannelMaxPowers</a> (const std::vector&lt; <a class="el" href="../../d7/d8d/structotbr_1_1Ncp_1_1ThreadHost_1_1ChannelMaxPower.html">ChannelMaxPower</a> &gt; &amp;aChannelMaxPowers, const AsyncResultReceiver &amp;aReceiver) override</td></tr>
+<tr class="separator:a491a7ab1600088e83c2a619a1d2dc9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ffaf0a462e4a618ab0b7eb6581cdf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a87ffaf0a462e4a618ab0b7eb6581cdf3">AddThreadStateChangedCallback</a> (ThreadStateChangedCallback aCallback) override</td></tr>
+<tr class="separator:a87ffaf0a462e4a618ab0b7eb6581cdf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13506183984ded2c39515e0fc3d81b33"><td class="memItemLeft" align="right" valign="top">CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a13506183984ded2c39515e0fc3d81b33">GetCoprocessorType</a> (void) override</td></tr>
 <tr class="separator:a13506183984ded2c39515e0fc3d81b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02340ac02b7e45f0ba8ddbc18bc3cf7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ae02340ac02b7e45f0ba8ddbc18bc3cf7">GetCoprocessorVersion</a> (void) override</td></tr>
@@ -151,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a584e37674eced73d19359eb8a6cce7ad inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7fec2c8e7b2f0cb67bc02558e8e04f5 inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memItemLeft" align="right" valign="top">otDeviceRole&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8c/classotbr_1_1Ncp_1_1OtNetworkProperties.html#ab7fec2c8e7b2f0cb67bc02558e8e04f5">GetDeviceRole</a> (void) const override</td></tr>
 <tr class="separator:ab7fec2c8e7b2f0cb67bc02558e8e04f5 inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf112802ddc4d86a382d073d53fddefe inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8c/classotbr_1_1Ncp_1_1OtNetworkProperties.html#abf112802ddc4d86a382d073d53fddefe">GetDatasetActiveTlvs</a> (otOperationalDatasetTlvs &amp;aDatasetTlvs) const override</td></tr>
+<tr class="separator:abf112802ddc4d86a382d073d53fddefe inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4f1a1f5ebc9a25d7f542245005c5c8 inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memItemLeft" align="right" valign="top"><a id="a9e4f1a1f5ebc9a25d7f542245005c5c8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInstance</b> (otInstance *aInstance)</td></tr>
 <tr class="separator:a9e4f1a1f5ebc9a25d7f542245005c5c8 inherit pub_methods_classotbr_1_1Ncp_1_1OtNetworkProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,10 +164,19 @@ static <a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_static_methods_classotbr_1_1Ncp_1_1ThreadHost"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classotbr_1_1Ncp_1_1ThreadHost')"><img src="../../closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></td></tr>
-<tr class="memitem:a40e4fee96975e25eaa4ad7f9a3307135 inherit pro_static_methods_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a40e4fee96975e25eaa4ad7f9a3307135"></a>
-static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertToOtLogLevel</b> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel)</td></tr>
-<tr class="separator:a40e4fee96975e25eaa4ad7f9a3307135 inherit pro_static_methods_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classotbr_1_1Ncp_1_1ThreadHost')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></td></tr>
+<tr class="memitem:a0c472ee90d2abc040a0210f9ad30e2a4 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a0c472ee90d2abc040a0210f9ad30e2a4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncResultReceiver</b> = std::function&lt; void(otError, const std::string &amp;)&gt;</td></tr>
+<tr class="separator:a0c472ee90d2abc040a0210f9ad30e2a4 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab384d9b73304048a19223f06ebfe7e0e inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="ab384d9b73304048a19223f06ebfe7e0e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ChannelMasksReceiver</b> = std::function&lt; void(uint32_t, uint32_t)&gt;</td></tr>
+<tr class="separator:ab384d9b73304048a19223f06ebfe7e0e inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c8612c8ea95e5dd5f9f6684b53a62c inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a84c8612c8ea95e5dd5f9f6684b53a62c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b> = std::function&lt; void(otError, otDeviceRole)&gt;</td></tr>
+<tr class="separator:a84c8612c8ea95e5dd5f9f6684b53a62c inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aa182aa965d36214f803bfd4b38b1b1 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memItemLeft" align="right" valign="top"><a id="a9aa182aa965d36214f803bfd4b38b1b1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadStateChangedCallback</b> = std::function&lt; void(otChangedFlags aFlags)&gt;</td></tr>
+<tr class="separator:a9aa182aa965d36214f803bfd4b38b1b1 inherit pub_types_classotbr_1_1Ncp_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This interface defines OpenThread Controller under RCP mode. </p>
@@ -234,11 +239,14 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0e90b04252d31f512b5f6d7887323a02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e90b04252d31f512b5f6d7887323a02">&#9670;&nbsp;</a></span>AddThreadStateChangedCallback()</h2>
+<a id="a87ffaf0a462e4a618ab0b7eb6581cdf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ffaf0a462e4a618ab0b7eb6581cdf3">&#9670;&nbsp;</a></span>AddThreadStateChangedCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void otbr::Ncp::RcpHost::AddThreadStateChangedCallback </td>
@@ -248,6 +256,11 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>This method adds a event listener for Thread state changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -256,6 +269,8 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
   </table>
   </dd>
 </dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a9f9f36135f6c171acba0ec2cde09c0e5">otbr::Ncp::ThreadHost</a>.</p>
 
 </div>
 </div>
@@ -285,6 +300,53 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
 <p>This method deinitialize the Thread controller. </p>
 
 <p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#ac8cbf3916b97cbd9a79ace92eee61f8a">otbr::Ncp::ThreadHost</a>.</p>
+
+</div>
+</div>
+<a id="a32891e0231dc26beac3f3647ae65fa82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32891e0231dc26beac3f3647ae65fa82">&#9670;&nbsp;</a></span>GetChannelMasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::RcpHost::GetChannelMasks </td>
+          <td>(</td>
+          <td class="paramtype">const ChannelMasksReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aReceiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aErrReceiver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the supported and preferred channel masks.</p>
+<p>If the operation succeeded, <code>aReceiver</code> will be invoked with the supported and preferred channel masks. Otherwise, <code>aErrReceiver</code> will be invoked with the error and <code>aReceiver</code> won't be invoked in this case.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aReceiver</td><td>A receiver to get the channel masks. </td></tr>
+    <tr><td class="paramname">aErrReceiver</td><td>A receiver to get the error if the operation fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a6c338dd2fa0ecd3290bff34d3f59fbd1">otbr::Ncp::ThreadHost</a>.</p>
 
 </div>
 </div>
@@ -745,6 +807,157 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
 </dl>
 
 <p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a26b4c0983dbf032f5d635f1524d93b91">otbr::Ncp::ThreadHost</a>.</p>
+
+</div>
+</div>
+<a id="a491a7ab1600088e83c2a619a1d2dc9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a491a7ab1600088e83c2a619a1d2dc9d9">&#9670;&nbsp;</a></span>SetChannelMaxPowers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::RcpHost::SetChannelMaxPowers </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d7/d8d/structotbr_1_1Ncp_1_1ThreadHost_1_1ChannelMaxPower.html">ChannelMaxPower</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aChannelMaxPowers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aReceiver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the max power of each channel.</p>
+<ol type="1">
+<li>If the host hasn't been initialized, <code>aReceiver</code> will be invoked with error OT_ERROR_INVALID_STATE.</li>
+<li>If any value in <code>aChannelMaxPowers</code> is invalid, <code>aReceiver</code> will be invoked with error OT_ERROR_INVALID_ARGS.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aChannelMaxPowers</td><td>A vector of ChannelMaxPower. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aReceiver</td><td>A receiver to get the async result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a99558f6baef98c133cea8c6ae87f04e1">otbr::Ncp::ThreadHost</a>.</p>
+
+</div>
+</div>
+<a id="ac16d6c72b4fdcf4ce30ba7cb525d8a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16d6c72b4fdcf4ce30ba7cb525d8a0e">&#9670;&nbsp;</a></span>SetCountryCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::RcpHost::SetCountryCode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>aCountryCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aReceiver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method sets the country code.</p>
+<p>The country code refers to the 2-alpha code defined in ISO-3166.</p>
+<ol type="1">
+<li>If <code>aCountryCode</code> isn't valid, <code>aReceiver</code> will be invoked with error OT_ERROR_INVALID_ARGS.</li>
+<li>If the host hasn't been initialized, <code>aReceiver</code> will be invoked with error OT_ERROR_INVALID_STATE.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCountryCode</td><td>The country code. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a1a3adedee59625947b2a2534d95956d6">otbr::Ncp::ThreadHost</a>.</p>
+
+</div>
+</div>
+<a id="a085803130a7bcac8f23f128811ee91e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085803130a7bcac8f23f128811ee91e9">&#9670;&nbsp;</a></span>SetThreadEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Ncp::RcpHost::SetThreadEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aEnabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver&#160;</td>
+          <td class="paramname"><em>aReceiver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method enables/disables the Thread network.</p>
+<ol type="1">
+<li>If there is an ongoing 'SetThreadEnabled' operation, no action will be taken and <code>aReceiver</code> will be invoked with error OT_ERROR_BUSY.</li>
+<li>If the host hasn't been initialized, <code>aReceiver</code> will be invoked with error OT_ERROR_INVALID_STATE.</li>
+<li>When <code>aEnabled</code> is false, this method will first trigger a graceful detach and then disable Thread network interface and the stack.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEnabled</td><td>true to enable and false to disable. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aReceiver</td><td>A receiver to get the async result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a89763f6929ca768d4ebc670b84f8510b">otbr::Ncp::ThreadHost</a>.</p>
 
 </div>
 </div>

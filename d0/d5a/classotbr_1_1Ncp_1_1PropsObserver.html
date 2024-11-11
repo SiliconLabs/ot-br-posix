@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-4bb0d4d</span>
+   &#160;<span id="projectnumber">0.3.0-6934ff0</span>
    </div>
   </td>
  </tr>
@@ -90,6 +90,8 @@ Inheritance diagram for otbr::Ncp::PropsObserver:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:accd7cfa7dd384eab980bd43a5a6ae59e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5a/classotbr_1_1Ncp_1_1PropsObserver.html#accd7cfa7dd384eab980bd43a5a6ae59e">SetDeviceRole</a> (otDeviceRole aRole)=0</td></tr>
 <tr class="separator:accd7cfa7dd384eab980bd43a5a6ae59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac480ee8162825b04f6c4d64b2d29b952"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5a/classotbr_1_1Ncp_1_1PropsObserver.html#ac480ee8162825b04f6c4d64b2d29b952">SetDatasetActiveTlvs</a> (const otOperationalDatasetTlvs &amp;aActiveOpDatasetTlvs)=0</td></tr>
+<tr class="separator:ac480ee8162825b04f6c4d64b2d29b952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5de3831f0d74c9ee0e93ca755123ba2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5a/classotbr_1_1Ncp_1_1PropsObserver.html#ac5de3831f0d74c9ee0e93ca755123ba2">~PropsObserver</a> (void)=default</td></tr>
 <tr class="separator:ac5de3831f0d74c9ee0e93ca755123ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -124,6 +126,39 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac480ee8162825b04f6c4d64b2d29b952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac480ee8162825b04f6c4d64b2d29b952">&#9670;&nbsp;</a></span>SetDatasetActiveTlvs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Ncp::PropsObserver::SetDatasetActiveTlvs </td>
+          <td>(</td>
+          <td class="paramtype">const otOperationalDatasetTlvs &amp;&#160;</td>
+          <td class="paramname"><em>aActiveOpDatasetTlvs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Updates the active dataset.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aActiveOpDatasetTlvs</td><td>The active dataset tlvs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="accd7cfa7dd384eab980bd43a5a6ae59e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#accd7cfa7dd384eab980bd43a5a6ae59e">&#9670;&nbsp;</a></span>SetDeviceRole()</h2>
 
