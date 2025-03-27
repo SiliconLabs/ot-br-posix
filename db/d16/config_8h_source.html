@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-23149c3</span>
+   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-da4b5cf</span>
    </div>
   </td>
  </tr>
@@ -116,7 +116,17 @@ $(document).ready(function() { init_codefold(1); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include OTBR_CONFIG_FILE</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_CONFIG_H_</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../db/d16/config_8h.html#a88f64165af10896872da17d61c662d8b">   45</a></span><span class="preprocessor">#define OTBR_ENABLE_SRP_SERVER (OTBR_ENABLE_SRP_ADVERTISING_PROXY || OTBR_ENABLE_OT_SRP_ADV_PROXY)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#ifndef OTBR_SRP_SERVER_AUTO_ENABLE</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../db/d16/config_8h.html#a3a60107feab0731ffcd9ad358134ab2a">   53</a></span><span class="preprocessor">#define OTBR_SRP_SERVER_AUTO_ENABLE (OTBR_ENABLE_SRP_SERVER &amp;&amp; OTBR_BORDER_ROUTING)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#ifndef OTBR_CONFIG_CLI_MAX_LINE_LENGTH</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../db/d16/config_8h.html#a7857d7cea3cdb8ea950a8322fbeb9e36">   62</a></span><span class="preprocessor">#define OTBR_CONFIG_CLI_MAX_LINE_LENGTH 640</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_CONFIG_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

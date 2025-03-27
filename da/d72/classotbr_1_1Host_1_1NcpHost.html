@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-23149c3</span>
+   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-da4b5cf</span>
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>otbr</b></li><li class="navelem"><b>Host</b></li><li class="navelem"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">NcpHost</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../db/d9a/namespaceotbr.html">otbr</a></li><li class="navelem"><b>Host</b></li><li class="navelem"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">NcpHost</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,6 +88,7 @@ Inheritance diagram for otbr::Host::NcpHost:</div>
 <area href="../../db/d03/classotbr_1_1MainloopProcessor.html" alt="otbr::MainloopProcessor" shape="rect" coords="0,56,198,80"/>
 <area href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html" alt="otbr::Host::ThreadHost" shape="rect" coords="208,56,406,80"/>
 <area href="../../dc/dc1/classotbr_1_1Host_1_1NcpNetworkProperties.html" alt="otbr::Host::NcpNetworkProperties" shape="rect" coords="520,56,718,80"/>
+<area href="../../da/d4a/classotbr_1_1Netif_1_1Dependencies.html" alt="otbr::Netif::Dependencies" shape="rect" coords="728,56,926,80"/>
 <area href="../../d8/d7f/classotbr_1_1Host_1_1NetworkProperties.html" alt="otbr::Host::NetworkProperties" shape="rect" coords="208,0,406,24"/>
 <area href="../../d8/d7f/classotbr_1_1Host_1_1NetworkProperties.html" alt="otbr::Host::NetworkProperties" shape="rect" coords="416,0,614,24"/>
 <area href="../../de/d18/classotbr_1_1Host_1_1PropsObserver.html" alt="otbr::Host::PropsObserver" shape="rect" coords="624,0,822,24"/>
@@ -116,6 +117,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a492267d4be53fc2885e8008072e97fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a6adacff628d005a30f10994f98443b" id="r_a3a6adacff628d005a30f10994f98443b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a3a6adacff628d005a30f10994f98443b">AddThreadEnabledStateChangedCallback</a> (ThreadEnabledStateCallback aCallback) override</td></tr>
 <tr class="separator:a3a6adacff628d005a30f10994f98443b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323215b938cfc3838653a839a58d77bd" id="r_a323215b938cfc3838653a839a58d77bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a323215b938cfc3838653a839a58d77bd">SetBorderAgentMeshCoPServiceChangedCallback</a> (BorderAgentMeshCoPServiceChangedCallback aCallback) override</td></tr>
+<tr class="separator:a323215b938cfc3838653a839a58d77bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29744e212394cc5cf316c7d8b3ed62bd" id="r_a29744e212394cc5cf316c7d8b3ed62bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a29744e212394cc5cf316c7d8b3ed62bd">AddEphemeralKeyStateChangedCallback</a> (EphemeralKeyStateChangedCallback aCallback) override</td></tr>
+<tr class="separator:a29744e212394cc5cf316c7d8b3ed62bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ff7f9caffa3bd1528398bc728479c3" id="r_a32ff7f9caffa3bd1528398bc728479c3"><td class="memItemLeft" align="right" valign="top">CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a32ff7f9caffa3bd1528398bc728479c3">GetCoprocessorType</a> (void) override</td></tr>
 <tr class="separator:a32ff7f9caffa3bd1528398bc728479c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4146e40a3b66715fe7c33717a89def7a" id="r_a4146e40a3b66715fe7c33717a89def7a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a4146e40a3b66715fe7c33717a89def7a">GetCoprocessorVersion</a> (void) override</td></tr>
@@ -130,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2c5c6fc60b57f02e8d4f85f05acb3e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092d6b32b0b4575724ac67152e4227c5" id="r_a092d6b32b0b4575724ac67152e4227c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html#a092d6b32b0b4575724ac67152e4227c5">Process</a> (const <a class="el" href="../../d0/d6c/classotbr_1_1MainloopContext.html">MainloopContext</a> &amp;aMainloop) override</td></tr>
 <tr class="separator:a092d6b32b0b4575724ac67152e4227c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99b1532769f4bfe13bb09b1ed790ad3" id="r_ab99b1532769f4bfe13bb09b1ed790ad3"><td class="memItemLeft" align="right" valign="top"><a id="ab99b1532769f4bfe13bb09b1ed790ad3" name="ab99b1532769f4bfe13bb09b1ed790ad3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitNetifCallbacks</b> (<a class="el" href="../../d3/d72/classotbr_1_1Netif.html">Netif</a> &amp;aNetif)</td></tr>
+<tr class="separator:ab99b1532769f4bfe13bb09b1ed790ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classotbr_1_1Host_1_1ThreadHost"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classotbr_1_1Host_1_1ThreadHost')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html">otbr::Host::ThreadHost</a></td></tr>
 <tr class="memitem:a94d78ac9575ba9c2bfe008e545efb94a inherit pub_methods_classotbr_1_1Host_1_1ThreadHost" id="r_a94d78ac9575ba9c2bfe008e545efb94a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html#a94d78ac9575ba9c2bfe008e545efb94a">~ThreadHost</a> (void)=default</td></tr>
 <tr class="separator:a94d78ac9575ba9c2bfe008e545efb94a inherit pub_methods_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,12 +173,18 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ChannelMasksReceiver
 <tr class="memitem:acc4438c5cb7a23a18c13da86c911930c inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_acc4438c5cb7a23a18c13da86c911930c"><td class="memItemLeft" align="right" valign="top">
 using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b> = std::function&lt; void(otError, otDeviceRole)&gt;</td></tr>
 <tr class="separator:acc4438c5cb7a23a18c13da86c911930c inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9cdaec265ba7dca837659048208698 inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_adf9cdaec265ba7dca837659048208698"><td class="memItemLeft" align="right" valign="top">
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadStateChangedCallback</b> = std::function&lt; void(otChangedFlags aFlags)&gt;</td></tr>
-<tr class="separator:adf9cdaec265ba7dca837659048208698 inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752079aef1289a81d8836e89e8d5c0b9 inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_a752079aef1289a81d8836e89e8d5c0b9"><td class="memItemLeft" align="right" valign="top">
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadEnabledStateCallback</b> = std::function&lt; void(ThreadEnabledState aState)&gt;</td></tr>
-<tr class="separator:a752079aef1289a81d8836e89e8d5c0b9 inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82eeb5d94f015add9f2c6c3c7ff5da79 inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_a82eeb5d94f015add9f2c6c3c7ff5da79"><td class="memItemLeft" align="right" valign="top">
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadStateChangedCallback</b> = std::function&lt; void(otChangedFlags)&gt;</td></tr>
+<tr class="separator:a82eeb5d94f015add9f2c6c3c7ff5da79 inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15214495a3ab625aad15dbd8e9f51493 inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_a15214495a3ab625aad15dbd8e9f51493"><td class="memItemLeft" align="right" valign="top">
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadEnabledStateCallback</b> = std::function&lt; void(ThreadEnabledState)&gt;</td></tr>
+<tr class="separator:a15214495a3ab625aad15dbd8e9f51493 inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2560c69c5e4b9b7a6823b18773b70441 inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_a2560c69c5e4b9b7a6823b18773b70441"><td class="memItemLeft" align="right" valign="top">
+using&#160;</td><td class="memItemRight" valign="bottom"><b>BorderAgentMeshCoPServiceChangedCallback</b> = std::function&lt; void(bool, uint16_t, const uint8_t *, uint16_t)&gt;</td></tr>
+<tr class="separator:a2560c69c5e4b9b7a6823b18773b70441 inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa456cae9fa4a4f9bea0ea803ec01ec7f inherit pub_types_classotbr_1_1Host_1_1ThreadHost" id="r_aa456cae9fa4a4f9bea0ea803ec01ec7f"><td class="memItemLeft" align="right" valign="top">
+using&#160;</td><td class="memItemRight" valign="bottom"><b>EphemeralKeyStateChangedCallback</b> = std::function&lt; void(otBorderAgentEphemeralKeyState, uint16_t)&gt;</td></tr>
+<tr class="separator:aa456cae9fa4a4f9bea0ea803ec01ec7f inherit pub_types_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classotbr_1_1Host_1_1ThreadHost"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classotbr_1_1Host_1_1ThreadHost')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html">otbr::Host::ThreadHost</a></td></tr>
 <tr class="memitem:a57f7ebd547e3a2db0e7af195449c0255 inherit pub_static_methods_classotbr_1_1Host_1_1ThreadHost" id="r_a57f7ebd547e3a2db0e7af195449c0255"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html">ThreadHost</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html#a57f7ebd547e3a2db0e7af195449c0255">Create</a> (const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</td></tr>
 <tr class="separator:a57f7ebd547e3a2db0e7af195449c0255 inherit pub_static_methods_classotbr_1_1Host_1_1ThreadHost"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,6 +261,41 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadEnabledStateCa
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a29744e212394cc5cf316c7d8b3ed62bd" name="a29744e212394cc5cf316c7d8b3ed62bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29744e212394cc5cf316c7d8b3ed62bd">&#9670;&#160;</a></span>AddEphemeralKeyStateChangedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Host::NcpHost::AddEphemeralKeyStateChangedCallback </td>
+          <td>(</td>
+          <td class="paramtype">EphemeralKeyStateChangedCallback&#160;</td>
+          <td class="paramname"><em>aCallback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method adds a callback that will be invoked when there are any changes related to the ephemeral key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html#a6a5807c0641677248b05df2e0dc1abdf">otbr::Host::ThreadHost</a>.</p>
+
+</div>
+</div>
 <a id="a3a6adacff628d005a30f10994f98443b" name="a3a6adacff628d005a30f10994f98443b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a6adacff628d005a30f10994f98443b">&#9670;&#160;</a></span>AddThreadEnabledStateChangedCallback()</h2>
 
@@ -686,6 +735,41 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadEnabledStateCa
 </dl>
 
 <p>Implements <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html#a40c1bb7f3a9b78d7e997e79744254683">otbr::Host::ThreadHost</a>.</p>
+
+</div>
+</div>
+<a id="a323215b938cfc3838653a839a58d77bd" name="a323215b938cfc3838653a839a58d77bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a323215b938cfc3838653a839a58d77bd">&#9670;&#160;</a></span>SetBorderAgentMeshCoPServiceChangedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void otbr::Host::NcpHost::SetBorderAgentMeshCoPServiceChangedCallback </td>
+          <td>(</td>
+          <td class="paramtype">BorderAgentMeshCoPServiceChangedCallback&#160;</td>
+          <td class="paramname"><em>aCallback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method sets a callback that will be invoked when there are any changes on the MeshCoP service from Thread core.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aCallback</td><td>The callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../d0/d9b/classotbr_1_1Host_1_1ThreadHost.html#af266b10ad27d6136f74f70c21e4429f8">otbr::Host::ThreadHost</a>.</p>
 
 </div>
 </div>

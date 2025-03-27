@@ -60,7 +60,7 @@ var searchData=
   ['dbustypetrait_3c_20uint32_5ft_20_3e_57',['DBusTypeTrait&lt; uint32_t &gt;',['../d7/dbd/structotbr_1_1DBus_1_1DBusTypeTrait_3_01uint32__t_01_4.html',1,'otbr::DBus']]],
   ['dbustypetrait_3c_20uint64_5ft_20_3e_58',['DBusTypeTrait&lt; uint64_t &gt;',['../d0/dd7/structotbr_1_1DBus_1_1DBusTypeTrait_3_01uint64__t_01_4.html',1,'otbr::DBus']]],
   ['dbustypetrait_3c_20uint8_5ft_20_3e_59',['DBusTypeTrait&lt; uint8_t &gt;',['../d3/da2/structotbr_1_1DBus_1_1DBusTypeTrait_3_01uint8__t_01_4.html',1,'otbr::DBus']]],
-  ['dependencies_60',['dependencies',['../db/d1c/classotbr_1_1InfraIf_1_1Dependencies.html',1,'otbr::InfraIf::Dependencies'],['../da/d4a/classotbr_1_1Netif_1_1Dependencies.html',1,'otbr::Netif::Dependencies']]],
+  ['dependencies_60',['dependencies',['../da/d4a/classotbr_1_1Netif_1_1Dependencies.html',1,'otbr::Netif::Dependencies'],['../dd/d68/classotbr_1_1UdpProxy_1_1Dependencies.html',1,'otbr::UdpProxy::Dependencies'],['../db/d1c/classotbr_1_1InfraIf_1_1Dependencies.html',1,'otbr::InfraIf::Dependencies'],['../da/d16/classotbr_1_1CliDaemon_1_1Dependencies.html',1,'otbr::CliDaemon::Dependencies']]],
   ['diaginfo_61',['DiagInfo',['../da/dfd/structotbr_1_1rest_1_1DiagInfo.html',1,'otbr::rest']]],
   ['discovercallback_62',['DiscoverCallback',['../d0/d17/structotbr_1_1Mdns_1_1Publisher_1_1DiscoverCallback.html',1,'otbr::Mdns::Publisher']]],
   ['discoveredhostinfo_63',['DiscoveredHostInfo',['../d9/db0/structotbr_1_1Mdns_1_1Publisher_1_1DiscoveredHostInfo.html',1,'otbr::Mdns::Publisher']]],
