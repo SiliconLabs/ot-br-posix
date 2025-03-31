@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-da4b5cf</span>
+   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-f5c2554</span>
    </div>
   </td>
  </tr>
@@ -235,7 +235,7 @@ $(document).ready(function() { init_codefold(1); });
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    DBus::DBusAgent &amp;GetDBusAgent(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    {</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">return</span> *mDBusAgent;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">return</span> mDBusAgent;</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
@@ -256,54 +256,57 @@ $(document).ready(function() { init_codefold(1); });
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#if OTBR_ENABLE_BORDER_AGENT</span></div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordtype">void</span> SetBorderAgentOnInitState(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    std::string            mInterfaceName;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>            *mBackboneInterfaceName;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    Host::ThreadHost      &amp;mHost;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    std::unique_ptr&lt;Netif&gt; mNetif;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#if OTBR_ENABLE_MDNS</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    Mdns::StateSubject               mMdnsStateSubject;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    std::unique_ptr&lt;Mdns::Publisher&gt; mPublisher;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#if OTBR_ENABLE_DNSSD_PLAT</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    DnssdPlatform mDnssdPlatform;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    DBus::DependentComponents MakeDBusDependentComponents(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    std::string            mInterfaceName;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>            *mBackboneInterfaceName;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    Host::ThreadHost      &amp;mHost;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    std::unique_ptr&lt;Netif&gt; mNetif;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#if OTBR_ENABLE_MDNS</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    Mdns::StateSubject               mMdnsStateSubject;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    std::unique_ptr&lt;Mdns::Publisher&gt; mPublisher;</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">#if OTBR_ENABLE_BORDER_AGENT</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    BorderAgent mBorderAgent;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">#if OTBR_ENABLE_DNSSD_PLAT</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    DnssdPlatform mDnssdPlatform;</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#if OTBR_ENABLE_BACKBONE_ROUTER</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    std::unique_ptr&lt;BackboneRouter::BackboneAgent&gt; mBackboneAgent;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#if OTBR_ENABLE_BORDER_AGENT</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    BorderAgent mBorderAgent;</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">#if OTBR_ENABLE_SRP_ADVERTISING_PROXY</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    std::unique_ptr&lt;AdvertisingProxy&gt; mAdvertisingProxy;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">#if OTBR_ENABLE_BACKBONE_ROUTER</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    std::unique_ptr&lt;BackboneRouter::BackboneAgent&gt; mBackboneAgent;</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    std::unique_ptr&lt;Dnssd::DiscoveryProxy&gt; mDiscoveryProxy;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#if OTBR_ENABLE_SRP_ADVERTISING_PROXY</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    std::unique_ptr&lt;AdvertisingProxy&gt; mAdvertisingProxy;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#if OTBR_ENABLE_TREL</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    std::unique_ptr&lt;TrelDnssd::TrelDnssd&gt; mTrelDnssd;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#if OTBR_ENABLE_DNSSD_DISCOVERY_PROXY</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    std::unique_ptr&lt;Dnssd::DiscoveryProxy&gt; mDiscoveryProxy;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#if OTBR_ENABLE_OPENWRT</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    std::unique_ptr&lt;ubus::UBusAgent&gt; mUbusAgent;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#if OTBR_ENABLE_TREL</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    std::unique_ptr&lt;TrelDnssd::TrelDnssd&gt; mTrelDnssd;</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#if OTBR_ENABLE_REST_SERVER</span></div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    std::unique_ptr&lt;rest::RestWebServer&gt; mRestWebServer;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="preprocessor">#if OTBR_ENABLE_OPENWRT</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    std::unique_ptr&lt;ubus::UBusAgent&gt; mUbusAgent;</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    std::unique_ptr&lt;DBus::DBusAgent&gt; mDBusAgent;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">#if OTBR_ENABLE_REST_SERVER</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    std::unique_ptr&lt;rest::RestWebServer&gt; mRestWebServer;</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#if OTBR_ENABLE_VENDOR_SERVER</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    std::shared_ptr&lt;vendor::VendorServer&gt; mVendorServer;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#if OTBR_ENABLE_DBUS_SERVER</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    DBus::DBusAgent mDBusAgent;</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keyword">static</span> std::atomic_bool sShouldTerminate;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    ErrorCondition          mErrorCondition;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>};</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_APPLICATION_HPP_</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">#if OTBR_ENABLE_VENDOR_SERVER</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    std::shared_ptr&lt;vendor::VendorServer&gt; mVendorServer;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <span class="keyword">static</span> std::atomic_bool sShouldTerminate;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    ErrorCondition          mErrorCondition;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>};</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_APPLICATION_HPP_</span></div>
 <div class="ttc" id="abackbone__agent_8hpp_html"><div class="ttname"><a href="../../d0/df4/backbone__agent_8hpp.html">backbone_agent.hpp</a></div></div>
 <div class="ttc" id="aborder__agent_8hpp_html"><div class="ttname"><a href="../../de/df0/border__agent_8hpp.html">border_agent.hpp</a></div></div>
 <div class="ttc" id="aclassNonCopyable_html"><div class="ttname"><a href="../../dc/d3c/classNonCopyable.html">NonCopyable</a></div><div class="ttdef"><b>Definition</b> code_utils.hpp:190</div></div>
@@ -322,9 +325,9 @@ $(document).ready(function() { init_codefold(1); });
 <div class="ttc" id="arest__web__server_8hpp_html"><div class="ttname"><a href="../../d0/d9f/rest__web__server_8hpp.html">rest_web_server.hpp</a></div></div>
 <div class="ttc" id="astructotbr_1_1Application_html_a0ff7f453566d8b877efe74bce7b58c79"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#a0ff7f453566d8b877efe74bce7b58c79">otbr::Application::Init</a></div><div class="ttdeci">void Init(void)</div><div class="ttdef"><b>Definition</b> application.cpp:91</div></div>
 <div class="ttc" id="astructotbr_1_1Application_html_a184594feae42c503363313485e315749"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#a184594feae42c503363313485e315749">otbr::Application::Application</a></div><div class="ttdeci">Application(Host::ThreadHost &amp;aHost, const std::string &amp;aInterfaceName, const std::string &amp;aBackboneInterfaceName, const std::string &amp;aRestListenAddress, int aRestListenPort)</div><div class="ttdef"><b>Definition</b> application.cpp:55</div></div>
-<div class="ttc" id="astructotbr_1_1Application_html_a69ae64f6b3a7859ed462019816a05475"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#a69ae64f6b3a7859ed462019816a05475">otbr::Application::Run</a></div><div class="ttdeci">otbrError Run(void)</div><div class="ttdef"><b>Definition</b> application.cpp:129</div></div>
+<div class="ttc" id="astructotbr_1_1Application_html_a69ae64f6b3a7859ed462019816a05475"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#a69ae64f6b3a7859ed462019816a05475">otbr::Application::Run</a></div><div class="ttdeci">otbrError Run(void)</div><div class="ttdef"><b>Definition</b> application.cpp:133</div></div>
 <div class="ttc" id="astructotbr_1_1Application_html_ab0e92efc64c9825cd522b445f048336e"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#ab0e92efc64c9825cd522b445f048336e">otbr::Application::SetErrorCondition</a></div><div class="ttdeci">void SetErrorCondition(ErrorCondition aErrorCondition)</div><div class="ttdef"><b>Definition</b> application.hpp:130</div></div>
-<div class="ttc" id="astructotbr_1_1Application_html_adf5dda38fabceb5ad6f81fbdca30a6f8"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#adf5dda38fabceb5ad6f81fbdca30a6f8">otbr::Application::Deinit</a></div><div class="ttdeci">void Deinit(void)</div><div class="ttdef"><b>Definition</b> application.cpp:111</div></div>
+<div class="ttc" id="astructotbr_1_1Application_html_adf5dda38fabceb5ad6f81fbdca30a6f8"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#adf5dda38fabceb5ad6f81fbdca30a6f8">otbr::Application::Deinit</a></div><div class="ttdeci">void Deinit(void)</div><div class="ttdef"><b>Definition</b> application.cpp:115</div></div>
 <div class="ttc" id="astructotbr_1_1Application_html_ae3e45cac5cdab54fd2f497ef2b30b421"><div class="ttname"><a href="../../d5/d01/structotbr_1_1Application.html#ae3e45cac5cdab54fd2f497ef2b30b421">otbr::Application::GetHost</a></div><div class="ttdeci">Host::ThreadHost &amp; GetHost(void)</div><div class="ttdef"><b>Definition</b> application.hpp:145</div></div>
 <div class="ttc" id="avendor_8hpp_html"><div class="ttname"><a href="../../d2/d92/vendor_8hpp.html">vendor.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

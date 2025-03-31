@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-da4b5cf</span>
+   <div id="projectname">openthread-br<span id="projectnumber">&#160;0.3.0-f5c2554</span>
    </div>
   </td>
  </tr>
@@ -129,30 +129,33 @@ $(document).ready(function() { init_codefold(1); });
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">DBusThreadObjectNcp</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">DBusObject</a></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">DBusThreadObjectNcp</a>(DBusConnection &amp;aConnection, <span class="keyword">const</span> std::string &amp;aInterfaceName, <a class="code hl_class" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">otbr::Host::NcpHost</a> &amp;aHost);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_enumeration" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code hl_function" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html#a92e2b7dcaf5701d78521e8f849312674">Init</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> AsyncGetDeviceRoleHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> ReplyAsyncGetProperty(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest, <span class="keyword">const</span> std::string &amp;aContent);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> JoinHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> LeaveHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> ScheduleMigrationHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">otbr::Host::NcpHost</a> &amp;mHost;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">DBusThreadObjectNcp</a>(DBusConnection            &amp;aConnection,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                        <span class="keyword">const</span> std::string         &amp;aInterfaceName,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        <span class="keyword">const</span> <a class="code hl_class" href="../../d2/db5/classotbr_1_1DBus_1_1DependentComponents.html">DependentComponents</a> &amp;aDeps);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_enumeration" href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a> <a class="code hl_function" href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html#a92e2b7dcaf5701d78521e8f849312674">Init</a>(<span class="keywordtype">void</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> AsyncGetDeviceRoleHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> ReplyAsyncGetProperty(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest, <span class="keyword">const</span> std::string &amp;aContent);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> JoinHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> LeaveHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> ScheduleMigrationHandler(<a class="code hl_class" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">otbr::Host::NcpHost</a> &amp;mHost;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>} <span class="comment">// namespace DBus</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_THREAD_OBJECT_NCP_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusObject_html"><div class="ttname"><a href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">otbr::DBus::DBusObject</a></div><div class="ttdef"><b>Definition</b> dbus_object.hpp:65</div></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>} <span class="comment">// namespace DBus</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_THREAD_OBJECT_NCP_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DBusObject_html"><div class="ttname"><a href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">otbr::DBus::DBusObject</a></div><div class="ttdef"><b>Definition</b> dbus_object.hpp:78</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">otbr::DBus::DBusRequest</a></div><div class="ttdef"><b>Definition</b> dbus_request.hpp:58</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObjectNcp_html"><div class="ttname"><a href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">otbr::DBus::DBusThreadObjectNcp</a></div><div class="ttdef"><b>Definition</b> dbus_thread_object_ncp.hpp:61</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObjectNcp_html_a92e2b7dcaf5701d78521e8f849312674"><div class="ttname"><a href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html#a92e2b7dcaf5701d78521e8f849312674">otbr::DBus::DBusThreadObjectNcp::Init</a></div><div class="ttdeci">otbrError Init(void) override</div><div class="ttdef"><b>Definition</b> dbus_thread_object_ncp.cpp:52</div></div>
+<div class="ttc" id="aclassotbr_1_1DBus_1_1DependentComponents_html"><div class="ttname"><a href="../../d2/db5/classotbr_1_1DBus_1_1DependentComponents.html">otbr::DBus::DependentComponents</a></div><div class="ttdef"><b>Definition</b> dbus_object.hpp:65</div></div>
 <div class="ttc" id="aclassotbr_1_1Host_1_1NcpHost_html"><div class="ttname"><a href="../../da/d72/classotbr_1_1Host_1_1NcpHost.html">otbr::Host::NcpHost</a></div><div class="ttdef"><b>Definition</b> ncp_host.hpp:83</div></div>
 <div class="ttc" id="acommon_2types_8hpp_html_a9addd74a14dca1dab1b3e7a8205455aa"><div class="ttname"><a href="../../dc/d53/common_2types_8hpp.html#a9addd74a14dca1dab1b3e7a8205455aa">otbrError</a></div><div class="ttdeci">otbrError</div><div class="ttdef"><b>Definition</b> types.hpp:72</div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
