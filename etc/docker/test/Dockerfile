@@ -67,7 +67,7 @@ ENV OTBR_DOCKER_DEPS git ca-certificates
 
 # Required and installed during build (script/bootstrap), could be removed
 ENV OTBR_BUILD_DEPS apt-utils build-essential psmisc ninja-build cmake wget ca-certificates \
-  libreadline-dev libncurses-dev libdbus-1-dev libavahi-common-dev \
+  libreadline-dev libedit-dev libncurses-dev libdbus-1-dev libavahi-common-dev \
   libavahi-client-dev \
   libnetfilter-queue-dev
 
@@ -81,7 +81,7 @@ RUN rm /var/lib/dpkg/info/libc-bin.* \
   && apt-get install --no-install-recommends -y libc-bin
 
 RUN apt-get update \
-  && apt-get install --no-install-recommends -y $OTBR_DOCKER_REQS $OTBR_DOCKER_DEPS \
+  && apt-get install --no-install-recommends -y $OTBR_DOCKER_REQS $OTBR_DOCKER_DEPS $OTBR_BUILD_DEPS \
   && ([ "${OT_BACKBONE_CI}" != "1" ] || apt-get install --no-install-recommends -y $OTBR_OT_BACKBONE_CI_DEPS) \
   && ln -fs /usr/share/zoneinfo/UTC /etc/localtime
 
