@@ -129,6 +129,20 @@ public:
     using BackboneRouterStateChangedCallback = std::function<void(otBackboneRouterState)>;
     using EphemeralKeyStateChangedCallback   = std::function<void(otBorderAgentEphemeralKeyState, uint16_t)>;
 
+    using TrelPortChangedCallback = std::function<void(uint16_t)>;
+    using ExtAddrChangedCallback  = std::function<void(const uint8_t[OT_EXT_ADDRESS_SIZE])>;
+    using ExtPanIdChangedCallback = std::function<void(const uint8_t[OT_EXT_PAN_ID_SIZE])>;
+    struct TrelPeerInfo
+    {
+        uint8_t              mExtAddr[OT_EXT_ADDRESS_SIZE];
+        otIp6Address         mIp6Addr;
+        uint16_t             mPort  = 0;
+        uint8_t              mFlags = 0; // Bit 0 = removed.
+        std::vector<uint8_t> mTxtData;
+    };
+    using TrelPeerAddedCallback   = std::function<void(const TrelPeerInfo &)>;
+    using TrelPeerRemovedCallback = std::function<void(const TrelPeerInfo &)>;
+
     /**
      * Constructor.
      */
@@ -437,7 +451,6 @@ public:
      */
     void SetHostPowerState(uint8_t aState, AsyncTaskPtr aAsyncTask);
 
-
 #if OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
     /**
      * This method enables/disables the DHCP6 PD on NCP.
@@ -490,6 +503,18 @@ public:
      */
     void DeactivateEphemeralKey(bool aRetainActiveSession, AsyncTaskPtr aAsyncTask);
 #endif // OTBR_ENABLE_EPSKC
+
+#if OTBR_ENABLE_TREL
+    void SetTrelPortChangedCallback(TrelPortChangedCallback aCallback) { mTrelPortChangedCallback = aCallback; }
+    void SetExtAddrChangedCallback(ExtAddrChangedCallback aCallback) { mExtAddrChangedCallback = aCallback; }
+    void SetExtPanIdChangedCallback(ExtPanIdChangedCallback aCallback) { mExtPanIdChangedCallback = aCallback; }
+
+    void SetTrelPeerAddedCallback(TrelPeerAddedCallback aCallback) { mTrelPeerAddedCallback = aCallback; }
+    void SetTrelPeerRemovedCallback(TrelPeerRemovedCallback aCallback) { mTrelPeerRemovedCallback = aCallback; }
+
+    otError InsertTrelPeer(const TrelPeerInfo &aPeerInfo);
+    otError RemoveTrelPeer(const TrelPeerInfo &aPeerInfo);
+#endif
 
 private:
     using FailureHandler = std::function<void(otError)>;
@@ -624,6 +649,15 @@ private:
     BackboneRouterStateChangedCallback       mBackboneRouterStateChangedCallback;
     BackboneRouterMulticastListenerCallback  mBackboneRouterMulticastListenerCallback;
     EphemeralKeyStateChangedCallback         mEphemeralKeyStateChangedCallback;
+
+    uint16_t                mTrelPort = 0; // Last observed TREL UDP port (0 = unknown).
+    TrelPortChangedCallback mTrelPortChangedCallback;
+    ExtAddrChangedCallback  mExtAddrChangedCallback;
+    ExtPanIdChangedCallback mExtPanIdChangedCallback;
+    TrelPeerAddedCallback   mTrelPeerAddedCallback;
+    TrelPeerRemovedCallback mTrelPeerRemovedCallback;
+
+    otError EncodeTrelPeerInfo(const TrelPeerInfo &aPeerInfo, ot::Spinel::Encoder &aEncoder);
 };
 
 } // namespace Host
