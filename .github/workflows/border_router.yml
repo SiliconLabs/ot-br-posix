@@ -150,9 +150,9 @@ jobs:
       MAX_JOBS: 3
       VERBOSE: 1
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       with:
-        submodules: true
+        submodules: recursive
     - name: Get Border Router Test ID
       id: unique_action_id
       run: |
@@ -198,7 +198,7 @@ jobs:
         export CI_ENV="$(bash <(curl -s https://codecov.io/env)) -e GITHUB_ACTIONS -e OTBR_COVERAGE"
         echo "CI_ENV=${CI_ENV}"
         (cd third_party/openthread/repo && sudo -E ./script/test cert_suite ${{ matrix.cert_scripts }} || (sudo chmod a+r ot_testing/* && false))
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: ${{ failure() && steps.check_cache_result.outputs.cache-hit != 'true' }}
       with:
         name: thread-1-4-backbone-results
@@ -208,7 +208,7 @@ jobs:
           third_party/openthread/repo/ot_testing/*.log
     - name: Codecov
       if: ${{ success() && steps.check_cache_result.outputs.cache-hit != 'true' }}
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
     - name: Cache test result
       if: ${{ success() && steps.check_cache_result.outputs.cache-hit != 'true' }}
       run: |
