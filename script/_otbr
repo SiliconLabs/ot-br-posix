@@ -39,6 +39,30 @@ readonly BACKBONE_ROUTER
 NAT64="${NAT64:-1}"
 readonly NAT64
 
+DISCOVERY_PROXY="${DISCOVERY_PROXY:-1}"
+readonly DISCOVERY_PROXY
+
+# Handle deprecated DHCPV6_PD_REF flag
+if [[ -n ${DHCPV6_PD_REF+x} ]]; then
+    echo >&2 "WARNING: DHCPV6_PD_REF is now deprecated, please use OTBR_DHCP6_PD_CLIENT instead:"
+    echo >&2 "         DHCPV6_PD_REF=1  -> OTBR_DHCP6_PD_CLIENT=dhcpcd"
+    echo >&2 "         DHCPV6_PD_REF=0  -> OTBR_DHCP6_PD_CLIENT=none"
+    echo >&2 "         It is also possible to use native implementation by setting OTBR_DHCP6_PD_CLIENT=openthread"
+
+    if [[ -z ${OTBR_DHCP6_PD_CLIENT+x} ]]; then
+        if [[ ${DHCPV6_PD_REF} == "1" ]]; then
+            OTBR_DHCP6_PD_CLIENT="dhcpcd"
+            echo >&2 " Setting OTBR_DHCP6_PD_CLIENT=dhcpcd"
+        else
+            OTBR_DHCP6_PD_CLIENT="none"
+            echo >&2 " Setting OTBR_DHCP6_PD_CLIENT=none"
+        fi
+    fi
+fi
+
+OTBR_DHCP6_PD_CLIENT="${OTBR_DHCP6_PD_CLIENT:-none}"
+readonly OTBR_DHCP6_PD_CLIENT
+
 OTBR_MDNS="${OTBR_MDNS:-openthread}"
 readonly OTBR_MDNS
 
@@ -47,6 +71,16 @@ readonly OTBR_OPTIONS
 
 REFERENCE_DEVICE="${REFERENCE_DEVICE:-0}"
 readonly REFERENCE_DEVICE
+
+if [[ ${REFERENCE_DEVICE} == "0" ]]; then
+    OTBR_VENDOR_NAME="${OTBR_VENDOR_NAME:-OpenThread}"
+else
+    OTBR_VENDOR_NAME="${OTBR_VENDOR_NAME:-RD:OpenThread}"
+fi
+readonly OTBR_VENDOR_NAME
+
+OTBR_PRODUCT_NAME="${OTBR_PRODUCT_NAME:-BorderRouter}"
+readonly OTBR_PRODUCT_NAME
 
 otbr_uninstall()
 {
@@ -78,7 +112,10 @@ otbr_install()
         "-DCMAKE_INSTALL_PREFIX=/usr"
         "-DOTBR_DBUS=ON"
         "-DOTBR_INFRA_IF_NAME=${INFRA_IF_NAME}"
+        "-DOTBR_DHCP6_PD_CLIENT=${OTBR_DHCP6_PD_CLIENT}"
         "-DOTBR_MDNS=${OTBR_MDNS}"
+        "-DOTBR_VENDOR_NAME=${OTBR_VENDOR_NAME}"
+        "-DOTBR_PRODUCT_NAME=${OTBR_PRODUCT_NAME}"
         # Force re-evaluation of version strings
         "-DOTBR_VERSION="
         "-DOT_PACKAGE_VERSION="
@@ -101,7 +138,7 @@ otbr_install()
         otbr_options+=("-DOTBR_WEB=ON")
     fi
 
-    if with DHCPV6_PD_REF; then
+    if [[ ${OTBR_DHCP6_PD_CLIENT} == "openthread" || ${OTBR_DHCP6_PD_CLIENT} == "dhcpcd" ]]; then
         otbr_options+=(
             "-DOTBR_DHCP6_PD=ON"
         )
@@ -123,6 +160,13 @@ otbr_install()
     if without NAT64; then
         otbr_options+=(
             "-DOTBR_NAT64=OFF"
+        )
+    fi
+
+    # OT Discovery Proxy depends on Border Routing. Disable it if Border Routing is disabled or if explicitly disabled.
+    if without DISCOVERY_PROXY || without BORDER_ROUTING; then
+        otbr_options+=(
+            "-DOTBR_OT_DISCOVERY_PROXY=OFF"
         )
     fi
 

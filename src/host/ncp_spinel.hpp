@@ -41,6 +41,9 @@
 
 #include <openthread/backbone_router_ftd.h>
 #include <openthread/border_agent.h>
+#if OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
+#include <openthread/border_routing.h>
+#endif
 #include <openthread/dataset.h>
 #include <openthread/error.h>
 #include <openthread/link.h>
@@ -59,10 +62,6 @@
 #include "host/posix/infra_if.hpp"
 #include "host/posix/netif.hpp"
 #include "mdns/mdns.hpp"
-
-#if OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
-#include <openthread/border_routing.h>
-#endif
 
 namespace otbr {
 namespace Host {
@@ -437,26 +436,6 @@ public:
      */
     void SetHostPowerState(uint8_t aState, AsyncTaskPtr aAsyncTask);
 
-
-#if OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
-    /**
-     * This method enables/disables the DHCP6 PD on NCP.
-     *
-     * @param[in] aEnabled  A boolean to enable/disable the DHCP6 PD.
-     */
-    void BorderRoutingSetDhcp6PdEnabled(bool aEnabled);
-
-    /**
-     * This method processes a DHCP6 PD prefix by sending it to the NCP via SPINEL.
-     *
-     * @param[in] aPrefixInfo  A pointer to the prefix information structure containing all fields.
-     *
-     * @retval OT_ERROR_NONE  The prefix was sent successfully.
-     * @retval OT_ERROR_FAILED  Failed to encode or send the SPINEL command.
-     */
-    otError BorderRoutingProcessDhcp6PdPrefix(const otBorderRoutingPrefixTableEntry *aPrefixInfo);
-#endif
-
 #if OTBR_ENABLE_EPSKC
     /**
      * Enables or disables the Ephemeral Key on the NCP.
@@ -490,6 +469,25 @@ public:
      */
     void DeactivateEphemeralKey(bool aRetainActiveSession, AsyncTaskPtr aAsyncTask);
 #endif // OTBR_ENABLE_EPSKC
+
+#if OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
+    /**
+     * This method enables/disables the DHCP6 PD on NCP.
+     *
+     * @param[in] aEnabled  A boolean to enable/disable the DHCP6 PD.
+     */
+    void BorderRoutingSetDhcp6PdEnabled(bool aEnabled);
+
+    /**
+     * This method processes a DHCP6 PD prefix by sending it to the NCP via SPINEL.
+     *
+     * @param[in] aPrefixInfo  A pointer to the prefix information structure containing all fields.
+     *
+     * @retval OTBR_ERROR_NONE        The prefix was sent successfully.
+     * @retval OTBR_ERROR_OPENTHREAD  Failed to encode or send the SPINEL command.
+     */
+    otbrError BorderRoutingProcessDhcp6PdPrefix(const otBorderRoutingPrefixTableEntry *aPrefixInfo);
+#endif
 
 private:
     using FailureHandler = std::function<void(otError)>;
@@ -550,6 +548,7 @@ private:
                                           spinel_prop_key_t aKey,
                                           const uint8_t    *aData,
                                           uint16_t          aLength);
+    void      HandleNcpUnexpectedReset(spinel_status_t aStatus);
 
     spinel_tid_t GetNextTid(void);
     void         FreeTidTableItem(spinel_tid_t aTid);
@@ -582,6 +581,9 @@ private:
                                   uint16_t            &aPeerPort,
                                   uint16_t            &aLocalPort);
     otError SendDnssdResult(otPlatDnssdRequestId aRequestId, const std::vector<uint8_t> &aCallbackData, otError aError);
+#if OTBR_ENABLE_DNSSD_PLAT
+    otError SendDnssdBrowseResult(const otPlatDnssdBrowseResult &aResult, const std::vector<uint8_t> &aCallbackData);
+#endif
 
     ot::Spinel::SpinelDriver *mSpinelDriver;
     uint16_t                  mCmdTidsInUse; ///< Used transaction ids.
@@ -602,6 +604,9 @@ private:
     PropsObserver *mPropsObserver;
 #if OTBR_ENABLE_MDNS
     otbr::Mdns::Publisher *mPublisher;
+#endif
+#if OTBR_ENABLE_DNSSD_PLAT
+    uint64_t mDiscoveryProxyId;
 #endif
 
     AsyncTaskPtr mDatasetSetActiveTask;

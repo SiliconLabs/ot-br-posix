@@ -113,7 +113,7 @@ jobs:
             cert_scripts: ./tests/scripts/thread-cert/border_router/internet/*.py
             packet_verification: 1
           - name: "Backbone Router (mDNSResponder)"
-            otbr_options: "-DOT_DUA=ON -DOTBR_COVERAGE=ON -DOTBR_DUA_ROUTING=ON -DOTBR_TREL=OFF"
+            otbr_options: "-DOT_DUA=ON -DOTBR_COVERAGE=ON -DOTBR_DUA_ROUTING=ON -DOTBR_TREL=OFF -DOTBR_OT_DISCOVERY_PROXY=OFF"
             border_routing: 0
             internet: 0
             otbr_mdns: "mDNSResponder"
@@ -150,7 +150,7 @@ jobs:
       MAX_JOBS: 3
       VERBOSE: 1
     steps:
-    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         submodules: recursive
     - name: Get Border Router Test ID
@@ -159,7 +159,7 @@ jobs:
         echo "id=${GITHUB_WORKFLOW}-${GITHUB_JOB}-${GITHUB_RUN_ID}-${{matrix.name}}" >> $GITHUB_OUTPUT
     - name: Check cached result
       id: check_cache_result
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           _test_complete_
@@ -198,7 +198,7 @@ jobs:
         export CI_ENV="$(bash <(curl -s https://codecov.io/env)) -e GITHUB_ACTIONS -e OTBR_COVERAGE"
         echo "CI_ENV=${CI_ENV}"
         (cd third_party/openthread/repo && sudo -E ./script/test cert_suite ${{ matrix.cert_scripts }} || (sudo chmod a+r ot_testing/* && false))
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6.0.0
       if: ${{ failure() && steps.check_cache_result.outputs.cache-hit != 'true' }}
       with:
         name: thread-1-4-backbone-results
@@ -208,7 +208,7 @@ jobs:
           third_party/openthread/repo/ot_testing/*.log
     - name: Codecov
       if: ${{ success() && steps.check_cache_result.outputs.cache-hit != 'true' }}
-      uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+      uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
     - name: Cache test result
       if: ${{ success() && steps.check_cache_result.outputs.cache-hit != 'true' }}
       run: |

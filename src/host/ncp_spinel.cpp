@@ -41,6 +41,7 @@
 
 #include "common/code_utils.hpp"
 #include "common/logging.hpp"
+#include "host/posix/dnssd.hpp"
 #include "lib/spinel/spinel.h"
 #include "lib/spinel/spinel_decoder.hpp"
 #include "lib/spinel/spinel_driver.hpp"
@@ -63,6 +64,9 @@ NcpSpinel::NcpSpinel(void)
     , mPropsObserver(nullptr)
 #if OTBR_ENABLE_SRP_ADVERTISING_PROXY
     , mPublisher(nullptr)
+#endif
+#if OTBR_ENABLE_DNSSD_PLAT
+    , mDiscoveryProxyId(0)
 #endif
 {
     std::fill_n(mWaitingKeyTable, SPINEL_PROP_LAST_STATUS, sizeof(mWaitingKeyTable));
@@ -438,6 +442,12 @@ void NcpSpinel::HandleValueIs(spinel_prop_key_t aKey, const uint8_t *aBuffer, ui
 
         SuccessOrExit(error = SpinelDataUnpack(aBuffer, aLength, SPINEL_DATATYPE_UINT_PACKED_S, &status));
 
+        if (status >= SPINEL_STATUS_RESET__BEGIN && status <= SPINEL_STATUS_RESET__END)
+        {
+            HandleNcpUnexpectedReset(status);
+            ExitNow();
+        }
+
         otbrLogInfo("NCP last status: %s", spinel_status_to_cstr(status));
         break;
     }
@@ -708,6 +718,26 @@ void NcpSpinel::HandleValueInserted(spinel_prop_key_t aKey, const uint8_t *aBuff
         break;
     }
 #endif // OTBR_ENABLE_SRP_ADVERTISING_PROXY
+#if OTBR_ENABLE_DNSSD_PLAT
+    case SPINEL_PROP_DNSSD_BROWSER:
+    {
+        otPlatDnssdBrowser   browser;
+        const uint8_t       *callbackData;
+        uint16_t             callbackDataSize;
+        std::vector<uint8_t> callbackDataCopy;
+
+        SuccessOrExit(ot::Spinel::DecodeDnssdBrowser(decoder, browser, callbackData, callbackDataSize));
+        callbackDataCopy.assign(callbackData, callbackData + callbackDataSize);
+
+        DnssdPlatform::Get().StartServiceBrowser(browser,
+                                                 std::make_shared<DnssdPlatform::StdBrowseCallback>(
+                                                     [this, callbackDataCopy](const otPlatDnssdBrowseResult &aResult) {
+                                                         SendDnssdBrowseResult(aResult, callbackDataCopy);
+                                                     },
+                                                     mDiscoveryProxyId++));
+        break;
+    }
+#endif // OTBR_ENABLE_DNSSD_PLAT
     case SPINEL_PROP_BACKBONE_ROUTER_MULTICAST_LISTENER:
     {
         const otIp6Address *addr;
@@ -1015,6 +1045,13 @@ exit:
     return error;
 }
 
+void NcpSpinel::HandleNcpUnexpectedReset(spinel_status_t aStatus)
+{
+    otbrLogCrit("Unexpected NCP reset: %s", spinel_status_to_cstr(aStatus));
+
+    DieNow("NCP reset detected!");
+}
+
 otbrError NcpSpinel::Ip6MulAddrUpdateSubscription(const otIp6Address &aAddress, bool aIsAdded)
 {
     otbrError    error        = OTBR_ERROR_NONE;
@@ -1306,6 +1343,25 @@ otError NcpSpinel::SendDnssdResult(otPlatDnssdRequestId        aRequestId,
     return error;
 }
 
+#if OTBR_ENABLE_DNSSD_PLAT
+otError NcpSpinel::SendDnssdBrowseResult(const otPlatDnssdBrowseResult &aResult,
+                                         const std::vector<uint8_t>    &aCallbackData)
+{
+    otError      error        = OT_ERROR_NONE;
+    EncodingFunc encodingFunc = [&aResult, &aCallbackData](ot::Spinel::Encoder &aEncoder) {
+        return EncodeDnssdBrowseResult(aEncoder, aResult, aCallbackData.data(), aCallbackData.size());
+    };
+
+    error = SetProperty(SPINEL_PROP_DNSSD_BROWSE_RESULT, encodingFunc);
+    if (error != OT_ERROR_NONE)
+    {
+        otbrLogWarning("Failed to Send DnssdBrowseResult, %s", otThreadErrorToString(error));
+    }
+
+    return error;
+}
+#endif
+
 otbrError NcpSpinel::SetInfraIf(uint32_t aInfraIfIndex, bool aIsRunning, const std::vector<Ip6Address> &aIp6Addresses)
 {
     otbrError    error        = OTBR_ERROR_NONE;
@@ -1527,9 +1583,9 @@ void NcpSpinel::BorderRoutingSetDhcp6PdEnabled(bool aEnabled)
     }
 }
 
-otError NcpSpinel::BorderRoutingProcessDhcp6PdPrefix(const otBorderRoutingPrefixTableEntry *aPrefixInfo)
+otbrError NcpSpinel::BorderRoutingProcessDhcp6PdPrefix(const otBorderRoutingPrefixTableEntry *aPrefixInfo)
 {
-    otError      error        = OT_ERROR_NONE;
+    otbrError    error        = OTBR_ERROR_NONE;
     EncodingFunc encodingFunc = [aPrefixInfo](ot::Spinel::Encoder &aEncoder) {
         otError error = OT_ERROR_NONE;
 
@@ -1545,12 +1601,9 @@ otError NcpSpinel::BorderRoutingProcessDhcp6PdPrefix(const otBorderRoutingPrefix
         return error;
     };
 
-    error = SetProperty(SPINEL_PROP_BORDER_ROUTER_DHCP6_PD_PREFIX, encodingFunc);
-    if (error != OT_ERROR_NONE)
-    {
-        otbrLogWarning("Failed to send DHCP6 PD prefix to NCP, %s", otThreadErrorToString(error));
-    }
+    SuccessOrExit(SetProperty(SPINEL_PROP_BORDER_ROUTER_DHCP6_PD_PREFIX, encodingFunc), error = OTBR_ERROR_OPENTHREAD);
 
+exit:
     return error;
 }
 #endif // OTBR_ENABLE_DHCP6_PD && OTBR_ENABLE_BORDER_ROUTING
