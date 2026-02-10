@@ -604,19 +604,6 @@ void NcpSpinel::HandleValueIs(spinel_prop_key_t aKey, const uint8_t *aBuffer, ui
         break;
     }
 
-    case SPINEL_PROP_TREL_UDP_PORT:
-    {
-        uint16_t port;
-        SuccessOrExit(error = SpinelDataUnpack(aBuffer, aLength, SPINEL_DATATYPE_UINT16_S, &port));
-        if (port != mTrelPort)
-        {
-            mTrelPort = port;
-            SafeInvoke(mTrelPortChangedCallback, mTrelPort);
-        }
-        otbrLogInfo("TREL UDP port updated: %u", port);
-        break;
-    }
-
     default:
         otbrLogWarning("Received unrecognized key: %u", aKey);
         break;
@@ -626,68 +613,6 @@ exit:
     otbrLogResult(error, "%s, Property:%s", __FUNCTION__, spinel_prop_key_to_cstr(aKey));
     return;
 }
-
-void ParseTrelPeerInfo(ot::Spinel::Decoder &aDecoder, NcpSpinel::TrelPeerInfo &aPeerInfo, otbrError &aError)
-{
-    const otExtAddress *extAddr;
-    const otIp6Address *ip6;
-    uint16_t            port;
-    uint8_t             flags;
-    const uint8_t      *txtData;
-    uint16_t            txtLen;
-    SuccessOrExit(aDecoder.ReadEui64(extAddr), aError = OTBR_ERROR_PARSE);
-    memcpy(aPeerInfo.mExtAddr, extAddr->m8, sizeof(aPeerInfo.mExtAddr));
-    SuccessOrExit(aDecoder.ReadIp6Address(ip6), aError = OTBR_ERROR_PARSE);
-    memcpy(&aPeerInfo.mIp6Addr, ip6->mFields.m8, sizeof(aPeerInfo.mIp6Addr.mFields.m8));
-    SuccessOrExit(aDecoder.ReadUint16(port), aError = OTBR_ERROR_PARSE);
-    aPeerInfo.mPort = port;
-    SuccessOrExit(aDecoder.ReadUint8(flags), aError = OTBR_ERROR_PARSE);
-    aPeerInfo.mFlags = flags;
-    SuccessOrExit(aDecoder.ReadUint16(txtLen), aError = OTBR_ERROR_PARSE);
-    SuccessOrExit(aDecoder.ReadData(txtData, txtLen), aError = OTBR_ERROR_PARSE);
-    aPeerInfo.mTxtData.assign(txtData, txtData + txtLen);
-exit:
-    return;
-}
-
-otError NcpSpinel::EncodeTrelPeerInfo(const TrelPeerInfo &aPeerInfo, ot::Spinel::Encoder &aEncoder)
-{
-    otError      error = OT_ERROR_NONE;
-    otExtAddress ext;
-    memcpy(ext.m8, aPeerInfo.mExtAddr, sizeof(ext.m8));
-    SuccessOrExit(error = aEncoder.WriteEui64(ext));
-    SuccessOrExit(error = aEncoder.WriteIp6Address(aPeerInfo.mIp6Addr));
-    SuccessOrExit(error = aEncoder.WriteUint16(aPeerInfo.mPort));
-    SuccessOrExit(error = aEncoder.WriteUint8(aPeerInfo.mFlags));
-    SuccessOrExit(error = aEncoder.WriteUint16(static_cast<uint16_t>(aPeerInfo.mTxtData.size())));
-    if (!aPeerInfo.mTxtData.empty())
-    {
-        SuccessOrExit(
-            error = aEncoder.WriteData(aPeerInfo.mTxtData.data(), static_cast<uint16_t>(aPeerInfo.mTxtData.size())));
-    }
-exit:
-    return error;
-}
-
-#if OTBR_ENABLE_TREL
-otError NcpSpinel::InsertTrelPeer(const TrelPeerInfo &aPeerInfo)
-{
-    EncodingFunc encodingFunc = [this, &aPeerInfo](ot::Spinel::Encoder &aEncoder) {
-        return EncodeTrelPeerInfo(aPeerInfo, aEncoder);
-    };
-    return InsertProperty(SPINEL_PROP_TREL_PEER_INFO, encodingFunc);
-}
-
-otError NcpSpinel::RemoveTrelPeer(const TrelPeerInfo &aPeerInfo)
-{
-    TrelPeerInfo tmp = aPeerInfo;
-    tmp.mFlags |= 0x01;
-    EncodingFunc encodingFunc = [this, &tmp](ot::Spinel::Encoder &aEncoder) {
-        return EncodeTrelPeerInfo(tmp, aEncoder);
-    };
-    return RemoveProperty(SPINEL_PROP_TREL_PEER_INFO, encodingFunc);
-}
-#endif // OTBR_ENABLE_TREL
 
 #if OTBR_ENABLE_SRP_ADVERTISING_PROXY
 static std::string KeyNameFor(const otPlatDnssdKey &aKey)
@@ -792,33 +717,6 @@ void NcpSpinel::HandleValueInserted(spinel_prop_key_t aKey, const uint8_t *aBuff
                    Ip6Address(*addr));
         break;
     }
-    case SPINEL_PROP_MAC_EXTENDED_ADDR:
-    {
-        const otExtAddress *ext;
-        VerifyOrExit(decoder.ReadEui64(ext) == OT_ERROR_NONE, error = OTBR_ERROR_PARSE);
-        SafeInvoke(mExtAddrChangedCallback, ext->m8);
-        break;
-    }
-    case SPINEL_PROP_NET_XPANID:
-    {
-        const uint8_t *xp;
-        uint16_t       xpLen;
-        VerifyOrExit(decoder.ReadData(xp, xpLen) == OT_ERROR_NONE, error = OTBR_ERROR_PARSE);
-        VerifyOrExit(xpLen == OT_EXT_PAN_ID_SIZE, error = OTBR_ERROR_PARSE);
-        SafeInvoke(mExtPanIdChangedCallback, xp);
-        break;
-    }
-    case SPINEL_PROP_TREL_PEER_INFO:
-    {
-        decoder.Init(aBuffer, aLength);
-        TrelPeerInfo peerInfo;
-        ParseTrelPeerInfo(decoder, peerInfo, error);
-        if (error == OTBR_ERROR_NONE)
-        {
-            SafeInvoke(mTrelPeerAddedCallback, peerInfo);
-        }
-        break;
-    }
     default:
         error = OTBR_ERROR_DROPPED;
         break;
@@ -902,17 +800,6 @@ void NcpSpinel::HandleValueRemoved(spinel_prop_key_t aKey, const uint8_t *aBuffe
                    Ip6Address(*addr));
         break;
     }
-    case SPINEL_PROP_TREL_PEER_INFO:
-    {
-        TrelPeerInfo peerInfo;
-        ParseTrelPeerInfo(decoder, peerInfo, error);
-        if (error == OTBR_ERROR_NONE)
-        {
-            peerInfo.mFlags |= 0x01; // Removed flag
-            SafeInvoke(mTrelPeerRemovedCallback, peerInfo);
-        }
-        break;
-    }
     default:
         error = OTBR_ERROR_DROPPED;
         break;
@@ -946,26 +833,6 @@ otbrError NcpSpinel::HandleResponseForPropGet(spinel_tid_t      aTid,
         SuccessOrExit(decoder.ReadData(data, dataLen), error = OTBR_ERROR_PARSE);
 
         SafeInvoke(mBorderAgentMeshCoPServiceChangedCallback, isActive, port, data, dataLen);
-        break;
-    }
-    case SPINEL_PROP_MAC_EXTENDED_ADDR:
-    {
-        const otExtAddress *ext;
-        ot::Spinel::Decoder decoder;
-        decoder.Init(aData, aLength);
-        SuccessOrExit(decoder.ReadEui64(ext), error = OTBR_ERROR_PARSE);
-        SafeInvoke(mExtAddrChangedCallback, ext->m8);
-        break;
-    }
-    case SPINEL_PROP_NET_XPANID:
-    {
-        const uint8_t      *xp;
-        uint16_t            xpLen;
-        ot::Spinel::Decoder decoder;
-        decoder.Init(aData, aLength);
-        SuccessOrExit(decoder.ReadData(xp, xpLen), error = OTBR_ERROR_PARSE);
-        VerifyOrExit(xpLen == OT_EXT_PAN_ID_SIZE, error = OTBR_ERROR_PARSE);
-        SafeInvoke(mExtPanIdChangedCallback, xp);
         break;
     }
 
