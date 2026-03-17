@@ -165,6 +165,7 @@ public:
      * @param[in]   aBackboneInterfaceName  The Backbone network interface name.
      * @param[in]   aDryRun                 TRUE to indicate dry-run mode. FALSE otherwise.
      * @param[in]   aEnableAutoAttach       Whether or not to automatically attach to the saved network.
+     * @param[in]   aDataPath               Path of directory to store data.
      *
      * @returns Non-null OpenThread Controller instance.
      */
@@ -172,7 +173,8 @@ public:
                                               const std::vector<const char *> &aRadioUrls,
                                               const char                      *aBackboneInterfaceName,
                                               bool                             aDryRun,
-                                              bool                             aEnableAutoAttach);
+                                              bool                             aEnableAutoAttach,
+                                              const char                      *aDataPath = "");
 
     /**
      * This method joins this device to the network specified by @p aActiveOpDatasetTlvs.
@@ -300,6 +302,20 @@ public:
      * @param[in] aVendorTxtData   The encoded vendor TXT Data.
      */
     virtual void SetBorderAgentVendorTxtData(const std::vector<uint8_t> &aVendorTxtData) = 0;
+
+    /**
+     * This method sets or updates the Border Agent MeshCoP Service Base Name.
+     *
+     * This is then passed to OpenThread stack to construct the advertised `meshcop` service instance name.
+     *
+     * @param[in] aBaseName   The base name string.
+     *
+     * @retval OT_ERROR_NONE             The name was set successfully.
+     * @retval OT_ERROR_INVALID_ARGS     The name is too long or invalid.
+     * @retval OT_ERROR_INVALID_STATE    otInstance is in invalid state.
+     * @retval OT_ERROR_NOT_IMPLEMENTED  Not Implemented.
+     */
+    virtual otError SetBorderAgentMeshCoPServiceBaseName(const char *aBaseName) = 0;
 #endif
 
     /**

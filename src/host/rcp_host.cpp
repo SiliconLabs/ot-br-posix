@@ -129,7 +129,8 @@ RcpHost::RcpHost(const char                      *aInterfaceName,
                  const std::vector<const char *> &aRadioUrls,
                  const char                      *aBackboneInterfaceName,
                  bool                             aDryRun,
-                 bool                             aEnableAutoAttach)
+                 bool                             aEnableAutoAttach,
+                 const char                      *aDataPath)
     : mInstance(nullptr)
     , mEnableAutoAttach(aEnableAutoAttach)
     , mThreadEnabledState(ThreadEnabledState::kStateDisabled)
@@ -141,6 +142,11 @@ RcpHost::RcpHost(const char                      *aInterfaceName,
     mConfig.mInterfaceName         = aInterfaceName;
     mConfig.mBackboneInterfaceName = aBackboneInterfaceName;
     mConfig.mDryRun                = aDryRun;
+
+    if (aDataPath != nullptr && strlen(aDataPath) > 0)
+    {
+        mConfig.mDataPath = aDataPath;
+    }
 
     for (const char *url : aRadioUrls)
     {
@@ -909,6 +915,16 @@ void RcpHost::SetBorderAgentVendorTxtData(const std::vector<uint8_t> &aVendorTxt
     otBorderAgentSetVendorTxtData(mInstance, aVendorTxtData.data(), aVendorTxtData.size());
 exit:
     return;
+}
+
+otError RcpHost::SetBorderAgentMeshCoPServiceBaseName(const char *aBaseName)
+{
+    otError error = OT_ERROR_NONE;
+
+    VerifyOrExit(mInstance != nullptr, error = OT_ERROR_INVALID_STATE);
+    error = otBorderAgentSetMeshCoPServiceBaseName(mInstance, aBaseName);
+exit:
+    return error;
 }
 #endif
 

@@ -100,12 +100,14 @@ public:
      * @param[in]   aBackboneInterfaceName  The Backbone network interface name.
      * @param[in]   aDryRun                 TRUE to indicate dry-run mode. FALSE otherwise.
      * @param[in]   aEnableAutoAttach       Whether or not to automatically attach to the saved network.
+     * @param[in]   aDataPath               Path of directory to store data.
      */
     RcpHost(const char                      *aInterfaceName,
             const std::vector<const char *> &aRadioUrls,
             const char                      *aBackboneInterfaceName,
             bool                             aDryRun,
-            bool                             aEnableAutoAttach);
+            bool                             aEnableAutoAttach,
+            const char                      *aDataPath = "");
 
     /**
      * This method initialize the Thread controller.
@@ -222,7 +224,8 @@ public:
     void AddEphemeralKeyStateChangedCallback(EphemeralKeyStateChangedCallback aCallback) override;
     void SetUdpForwardToHostCallback(UdpForwardToHostCallback aCallback) override;
 #if OTBR_ENABLE_BORDER_AGENT && !OTBR_ENABLE_BORDER_AGENT_MESHCOP_SERVICE
-    void SetBorderAgentVendorTxtData(const std::vector<uint8_t> &aVendorTxtData) override;
+    void    SetBorderAgentVendorTxtData(const std::vector<uint8_t> &aVendorTxtData) override;
+    otError SetBorderAgentMeshCoPServiceBaseName(const char *aBaseName) override;
 #endif
 #ifndef OTBR_VENDOR_NAME
     otError SetVendorName(const char *aVendorName) override;
